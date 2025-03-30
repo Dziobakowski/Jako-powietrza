@@ -1,0 +1,9 @@
+﻿  MainFrame.cpp
+C:\Users\Dziobakowski\source\repos\JPO z chujowym wykresem\JPO\MainFrame.cpp(154,27): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+  Trwa generowanie kodu
+  Previous IPDB and IOBJ mismatch, fall back to full compilation.
+  All 1051 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Zakończono generowanie kodu
+  JPO.vcxproj -> C:\Users\Dziobakowski\source\repos\JPO z chujowym wykresem\x64\Release\JPO.exe
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.

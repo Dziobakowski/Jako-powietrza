@@ -1,0 +1,3 @@
+C:\Users\Dziobakowski\Desktop\Nowy folder\JPO ledwo działa\JPO\x64\Debug\JPO.vcxproj.Up2Date
+C:\Users\Dziobakowski\source\repos\JPO\JPO\x64\Debug\JPO.vcxproj.Up2Date
+C:\Users\Dziobakowski\source\repos\JPO z chujowym wykresem\JPO\x64\Debug\JPO.vcxproj.Up2Date

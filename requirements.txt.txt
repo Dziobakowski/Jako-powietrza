@@ -1,0 +1,2 @@
+wxWidgets >= 3.0
+cURL >= 7.0

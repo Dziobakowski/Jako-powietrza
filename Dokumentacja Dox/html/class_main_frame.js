@@ -1,0 +1,26 @@
+var class_main_frame =
+[
+    [ "MainFrame", "class_main_frame.html#a00c85521dad6b24000967206bcc53688", null ],
+    [ "MainFrame", "class_main_frame.html#a00c85521dad6b24000967206bcc53688", null ],
+    [ "MainFrame", "class_main_frame.html#a00c85521dad6b24000967206bcc53688", null ],
+    [ "AnalizujDane", "class_main_frame.html#abedf1166fbb744e1f2d835d42055b118", null ],
+    [ "FiltrujStacje", "class_main_frame.html#ab57830e125abe1d6299a9eb5eb7092dc", null ],
+    [ "FiltrujStacje", "class_main_frame.html#ab57830e125abe1d6299a9eb5eb7092dc", null ],
+    [ "FiltrujStacje", "class_main_frame.html#ab57830e125abe1d6299a9eb5eb7092dc", null ],
+    [ "PobierzDane", "class_main_frame.html#a242c8190443f5149e2d277f263bba99b", null ],
+    [ "PobierzDane", "class_main_frame.html#a242c8190443f5149e2d277f263bba99b", null ],
+    [ "PobierzDane", "class_main_frame.html#a242c8190443f5149e2d277f263bba99b", null ],
+    [ "WyswietlDanePomiarowe", "class_main_frame.html#a1c35270fa8b48c39e00632a40e913076", null ],
+    [ "WyswietlStanowiska", "class_main_frame.html#aacc88f4a5f97cbd0e84f1ff2550cdf77", null ],
+    [ "WyswietlStanowiska", "class_main_frame.html#aacc88f4a5f97cbd0e84f1ff2550cdf77", null ],
+    [ "WyswietlStanowiska", "class_main_frame.html#aacc88f4a5f97cbd0e84f1ff2550cdf77", null ],
+    [ "choice", "class_main_frame.html#a33ec667d5929c1b391b3c25c7850ffd4", null ],
+    [ "cityInput", "class_main_frame.html#a2d671ef944f75e81a77556343ec32e18", null ],
+    [ "filterButton", "class_main_frame.html#a11b8bfb723bcf0788c906a603f10350b", null ],
+    [ "infoLabel", "class_main_frame.html#a49e0e387530e18560d115639ff7cb439", null ],
+    [ "label", "class_main_frame.html#adf3b83a5662c6cca04a25372cc0a0218", null ],
+    [ "resultBox", "class_main_frame.html#aceb88674d7fb1ffce7777a09ea9dca5f", null ],
+    [ "sensorList", "class_main_frame.html#a9e83413fff6cf29bd56f30f48de5037b", null ],
+    [ "sensorMap", "class_main_frame.html#ae22267277a727ee4907ba04d7e58f20b", null ],
+    [ "stationMap", "class_main_frame.html#abe311cf67898c8944ae25cac94758c66", null ]
+];

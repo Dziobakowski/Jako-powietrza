@@ -1,0 +1,33 @@
+\doxysection{Main\+Frame.\+h}
+\hypertarget{x64_2_j_p_o_2_main_frame_8h_source}{}\label{x64_2_j_p_o_2_main_frame_8h_source}\index{C:/Users/Dziobakowski/source/repos/JPO/x64/JPO/MainFrame.h@{C:/Users/Dziobakowski/source/repos/JPO/x64/JPO/MainFrame.h}}
+\mbox{\hyperlink{x64_2_j_p_o_2_main_frame_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MAINFRAME\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MAINFRAME\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <wx/wx.h>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{x64_2_j_p_o_2_curl_8h}{Curl.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_main_frame}{MainFrame}}\ :\ \textcolor{keyword}{public}\ wxFrame\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{class_main_frame_a00c85521dad6b24000967206bcc53688}{MainFrame}}(\textcolor{keyword}{const}\ wxString\&\ title);}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00014\ \ \ \ \ wxChoice*\ \mbox{\hyperlink{class_main_frame_a33ec667d5929c1b391b3c25c7850ffd4}{choice}};\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Lista\ rozwijana\ ze\ stacjami}}
+\DoxyCodeLine{00015\ \ \ \ \ wxTextCtrl*\ \mbox{\hyperlink{class_main_frame_a2d671ef944f75e81a77556343ec32e18}{cityInput}};\ \ \ \ \textcolor{comment}{//\ Pole\ do\ wpisania\ miasta}}
+\DoxyCodeLine{00016\ \ \ \ \ wxButton*\ \mbox{\hyperlink{class_main_frame_a11b8bfb723bcf0788c906a603f10350b}{filterButton}};\ \ \ \textcolor{comment}{//\ Przycisk\ do\ filtrowania}}
+\DoxyCodeLine{00017\ \ \ \ \ wxStaticText*\ \mbox{\hyperlink{class_main_frame_adf3b83a5662c6cca04a25372cc0a0218}{label}};\ \ \ \ \ \ \textcolor{comment}{//\ Etykieta\ nad\ list¹}}
+\DoxyCodeLine{00018\ \ \ \ \ wxStaticText*\ \mbox{\hyperlink{class_main_frame_a49e0e387530e18560d115639ff7cb439}{infoLabel}};\ \ \textcolor{comment}{//\ Etykieta\ do\ wyœwietlania\ informacji}}
+\DoxyCodeLine{00019\ \ \ \ \ wxListBox*\ \mbox{\hyperlink{class_main_frame_a9e83413fff6cf29bd56f30f48de5037b}{sensorList}};\ \ \ \ \textcolor{comment}{//\ Lista\ stanowisk\ pomiarowych}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ std::map<wxString,\ int>\ \mbox{\hyperlink{class_main_frame_abe311cf67898c8944ae25cac94758c66}{stationMap}};\ \textcolor{comment}{//\ Mapa\ stacji\ i\ ich\ ID}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_frame_a242c8190443f5149e2d277f263bba99b}{PobierzDane}}();\ \ \textcolor{comment}{//\ Pobiera\ listê stacji}}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_frame_ab57830e125abe1d6299a9eb5eb7092dc}{FiltrujStacje}}(wxCommandEvent\&\ event);\ \ \textcolor{comment}{//\ Filtrowanie\ listy}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_frame_aacc88f4a5f97cbd0e84f1ff2550cdf77}{WyswietlStanowiska}}(wxCommandEvent\&\ event);\ \ \textcolor{comment}{//\ Pobiera\ stanowiska\ pomiarowe}}
+\DoxyCodeLine{00026\ \};}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,7 @@
+﻿  App.cpp
+  MainFrame.cpp
+C:\Users\Dziobakowski\source\repos\JPO z chujowym wykresem\JPO\MainFrame.cpp(129,27): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+  Generowanie kodu...
+  JPO.vcxproj -> C:\Users\Dziobakowski\source\repos\JPO z chujowym wykresem\x64\Debug\JPO.exe
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.

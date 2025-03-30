@@ -1,0 +1,27 @@
+\doxysection{C\+:/\+Users/\+Dziobakowski/source/repos/\+JPO/\+JPO/\+Curl.cpp File Reference}
+\hypertarget{_j_p_o_2_curl_8cpp}{}\label{_j_p_o_2_curl_8cpp}\index{C:/Users/Dziobakowski/source/repos/JPO/JPO/Curl.cpp@{C:/Users/Dziobakowski/source/repos/JPO/JPO/Curl.cpp}}
+{\ttfamily \#include "{}Curl.\+h"{}}\newline
+{\ttfamily \#include $<$curl/curl.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{_j_p_o_2_curl_8cpp_ae153a754f69f7d45753cc3ddb01c2379}{perform\+Curl\+Request}} (const std\+::string \&url, std\+::string \&response)
+\item 
+bool \mbox{\hyperlink{_j_p_o_2_curl_8cpp_a0d098418988357a4bd8a5664ada1b047}{parse\+Json\+Response}} (const std\+::string \&response, Json\+::\+Value \&root)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_j_p_o_2_curl_8cpp_a0d098418988357a4bd8a5664ada1b047}\index{Curl.cpp@{Curl.cpp}!parseJsonResponse@{parseJsonResponse}}
+\index{parseJsonResponse@{parseJsonResponse}!Curl.cpp@{Curl.cpp}}
+\doxysubsubsection{\texorpdfstring{parseJsonResponse()}{parseJsonResponse()}}
+{\footnotesize\ttfamily \label{_j_p_o_2_curl_8cpp_a0d098418988357a4bd8a5664ada1b047} 
+bool parse\+Json\+Response (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{response}{, }\item[{Json\+::\+Value \&}]{root}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_j_p_o_2_curl_8cpp_ae153a754f69f7d45753cc3ddb01c2379}\index{Curl.cpp@{Curl.cpp}!performCurlRequest@{performCurlRequest}}
+\index{performCurlRequest@{performCurlRequest}!Curl.cpp@{Curl.cpp}}
+\doxysubsubsection{\texorpdfstring{performCurlRequest()}{performCurlRequest()}}
+{\footnotesize\ttfamily \label{_j_p_o_2_curl_8cpp_ae153a754f69f7d45753cc3ddb01c2379} 
+bool perform\+Curl\+Request (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{url}{, }\item[{std\+::string \&}]{response}{}\end{DoxyParamCaption})}
+

@@ -1,0 +1,26 @@
+\doxysection{Plot\+Panel.\+h}
+\hypertarget{_plot_panel_8h_source}{}\label{_plot_panel_8h_source}\index{C:/Users/Dziobakowski/source/repos/JPO/JPO/PlotPanel.h@{C:/Users/Dziobakowski/source/repos/JPO/JPO/PlotPanel.h}}
+\mbox{\hyperlink{_plot_panel_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PLOT\_PANEL\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PLOT\_PANEL\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <wx/wx.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_plot_panel_aad1b3ca2844e9e5c4fdeb6a423b17f30}{PlotPanel}}\ :\ \textcolor{keyword}{public}\ wxPanel\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{class_plot_panel_aad1b3ca2844e9e5c4fdeb6a423b17f30}{PlotPanel}}(wxWindow*\ parent);}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_plot_panel_afad1c71375d54806ef8308fa24d19dfc}{SetData}}(\textcolor{keyword}{const}\ std::vector<std::pair<wxString,\ double>>\&\ newData);}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_plot_panel_a72ee37d726eb276bf9aca7f3b50c7b85}{OnPaint}}(wxPaintEvent\&\ event);}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00015\ \ \ \ \ std::vector<std::pair<wxString,\ double>>\ \mbox{\hyperlink{class_plot_panel_a8871bc9c7b2c88147027834b9b8e4696}{data}};\ \textcolor{comment}{//\ Przechowuje\ wartoœci\ pomiarów i\ czas}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ DECLARE\_EVENT\_TABLE()}
+\DoxyCodeLine{00018\ \};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
