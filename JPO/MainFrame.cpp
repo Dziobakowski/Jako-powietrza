@@ -91,8 +91,8 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title, 
     wxBoxSizer* timeRangeSizer = new wxBoxSizer(wxHORIZONTAL);
 
     // Etykiety dla rozwijanych list
-    wxStaticText* startDateLabel = new wxStaticText(panel, wxID_ANY, "Górna granica:");
-    wxStaticText* endDateLabel = new wxStaticText(panel, wxID_ANY, "Dolna granica:");
+    wxStaticText* startDateLabel = new wxStaticText(panel, wxID_ANY, "Dolna granica:");
+    wxStaticText* endDateLabel = new wxStaticText(panel, wxID_ANY, "Górnica granica:");
 
     // Inicjalizacja list rozwijanych
     startDateChoice = new wxChoice(panel, wxID_ANY, wxDefaultPosition, wxSize(200, -1));
@@ -371,34 +371,46 @@ void MainFrame::PotwierdzZakres(wxCommandEvent& event) {
         return;
     }
 
-    // Pamiêtaj, ¿e dla danych czasowych czêsto wczeœniejsza data (górna granica)
-    // ma ni¿szy indeks w tablicy ni¿ póŸniejsza data (dolna granica)
-    if (startIdx > endIdx) {
-        // Mo¿emy zamieniæ indeksy, jeœli u¿ytkownik wybra³ je w odwrotnej kolejnoœci
-        std::swap(startIdx, endIdx);
+    // Pobieramy faktyczne znaczniki czasowe (a nie tylko indeksy)
+    wxString startTimestamp = startDateChoice->GetString(startIdx);
+    wxString endTimestamp = endDateChoice->GetString(endIdx);
+
+    // Sprawdzamy, czy wybrany zakres czasowy jest poprawny
+    if (startTimestamp > endTimestamp) {
+        wxMessageBox("Dolna granica czasu nie mo¿e byæ póŸniejsza ni¿ górna granica.", "B³¹d", wxOK | wxICON_ERROR);
+        return;
     }
 
-    wxString startTimestamp = timestamps[startIdx];
-    wxString endTimestamp = timestamps[endIdx];
+    if (startTimestamp == endTimestamp) {
+        wxMessageBox("Dolna granica czasu nie mo¿e byæ równa górnej granicy.", "B³¹d", wxOK | wxICON_ERROR);
+        return;
+    }
 
+    // Filtrujemy dane na podstawie wybranych znaczników czasowych
     std::vector<std::pair<wxString, double>> filteredValues;
 
     for (const auto& entry : values) {
-        // SprawdŸ czy wartoœæ mieœci siê w zakresie czasowym
-        // Uwaga: format daty mo¿e wymagaæ odpowiedniego porównania
+        // Sprawdzamy czy wartoœæ mieœci siê w zakresie czasowym
         if (entry.first >= startTimestamp && entry.first <= endTimestamp) {
             filteredValues.push_back(entry);
         }
     }
 
     if (filteredValues.empty()) {
+        wxMessageBox("Brak danych w wybranym zakresie czasu.", "B³¹d", wxOK | wxICON_ERROR);
         resultBox->SetValue("Brak danych w wybranym zakresie czasu.");
         plotPanel->SetData({});
+        plotPanel->Refresh(); // Wymuszamy odœwie¿enie panelu
         return;
     }
 
-    // Zaktualizuj wyœwietlane dane
+    // Sortujemy dane chronologicznie (opcjonalnie, jeœli to konieczne)
+    std::sort(filteredValues.begin(), filteredValues.end(),
+        [](const auto& a, const auto& b) { return a.first < b.first; });
+
+    // Aktualizujemy wyœwietlane dane
     plotPanel->SetData(filteredValues);
+    plotPanel->Refresh(); // Wymuszamy odœwie¿enie panelu
 
     // Aktualizacja informacji o zakresie w resultBox
     double minVal = DBL_MAX, maxVal = DBL_MIN, sum = 0;
@@ -431,4 +443,7 @@ void MainFrame::PotwierdzZakres(wxCommandEvent& event) {
         << "Trend: " << trend;
 
     resultBox->SetValue(result);
+
+    // Wymuszamy odœwie¿enie interfejsu
+    this->Update();
 }
