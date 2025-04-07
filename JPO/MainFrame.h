@@ -5,6 +5,7 @@
 #include <vector>
 #include <string>
 #include <map>
+#include <fstream>
 #include "Curl.h"
 #include "PlotPanel.h"  // Na pocz¹tku pliku
 
@@ -33,6 +34,8 @@ private:
     wxChoice* choice; ///< Lista rozwijana zawieraj¹ca stacje.
     wxTextCtrl* cityInput; ///< Pole tekstowe do wpisania miasta.
     wxButton* filterButton; ///< Przycisk do filtrowania stacji.
+    wxButton* saveButton; ///< Przycisk do zapisywania danych do pliku JSON.
+    wxButton* loadButton; ///< Przycisk do ³adowania danych z pliku JSON.
     wxStaticText* label; ///< Etykieta nad list¹ rozwijan¹.
     wxStaticText* infoLabel; ///< Etykieta wyœwietlaj¹ca dodatkowe informacje.
     wxListBox* sensorList; ///< Lista stanowisk pomiarowych.
@@ -47,12 +50,14 @@ private:
     std::map<wxString, int> sensorMap; ///< Mapa stanowisk pomiarowych i ich identyfikatorów.
     std::vector<wxString> timestamps; ///< Przechowywanie wszystkich dostêpnych znaczników czasu.
     std::vector<std::pair<wxString, double>> values; ///< Wszystkie dane pomiarowe przed filtrowaniem.
+    Json::Value currentSensorData; ///< Aktualne dane pomiarowe w formacie JSON.
 
     /**
      * @brief Pobiera dane o jakoœci powietrza z serwera.
      *
      * Ta metoda wykonuje ¿¹danie HTTP do serwera, aby pobraæ dane o jakoœci powietrza.
      * Po pobraniu danych uruchamiana jest analiza danych i ich wyœwietlenie.
+     * W przypadku braku dostêpu do internetu, próbuje za³adowaæ dane z pliku lokalnego.
      */
     void PobierzDane();
 
@@ -108,6 +113,33 @@ private:
      * @param event Zdarzenie klikniêcia przycisku "PotwierdŸ".
      */
     void PotwierdzZakres(wxCommandEvent& event);
+
+    /**
+     * @brief Zapisuje dane pomiarowe do pliku JSON.
+     *
+     * Ta metoda zapisuje aktualne dane pomiarowe do pliku JSON w katalogu aplikacji.
+     * Nazwa pliku zawiera datê i czas pobrania danych.
+     *
+     * @param event Zdarzenie klikniêcia przycisku "Zapisz".
+     */
+    void ZapiszDane(wxCommandEvent& event);
+
+    /**
+     * @brief £aduje dane pomiarowe z pliku JSON.
+     *
+     * Ta metoda ³aduje historyczne dane pomiarowe z pliku JSON i wyœwietla je
+     * w aplikacji.
+     *
+     * @param event Zdarzenie klikniêcia przycisku "Za³aduj".
+     */
+    void ZaladujDane(wxCommandEvent& event);
+
+    /**
+     * @brief Generuje nazwê pliku JSON na podstawie aktualnej daty i czasu.
+     *
+     * @return wxString Nazwa pliku z rozszerzeniem JSON.
+     */
+    wxString GenerujNazwePliku();
 };
 
 #endif

@@ -13,6 +13,9 @@
 #include "Curl.h"
 #include <json/json.h>
 #include <map>
+#include <fstream>
+#include <wx/datetime.h>
+#include <wx/filedlg.h>
 
  /**
   * @brief Konstruktor klasy MainFrame
@@ -60,6 +63,24 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title, 
     leftSizer->Add(label, 0, wxALL, 5);
     leftSizer->Add(choice, 0, wxALL | wxEXPAND, 5);
     leftSizer->Add(filterSizer, 0, wxALL, 5);
+
+    // Tworzymy sizer poziomy dla przycisków zapisu i ³adowania danych
+    wxBoxSizer* dataButtonsSizer = new wxBoxSizer(wxHORIZONTAL);
+
+    // Przycisk do zapisywania danych do pliku JSON
+    saveButton = new wxButton(panel, wxID_ANY, "Zapisz dane", wxDefaultPosition, wxSize(120, -1));
+    saveButton->Bind(wxEVT_BUTTON, &MainFrame::ZapiszDane, this);
+
+    // Przycisk do ³adowania danych z pliku JSON
+    loadButton = new wxButton(panel, wxID_ANY, "Za³aduj dane", wxDefaultPosition, wxSize(120, -1));
+    loadButton->Bind(wxEVT_BUTTON, &MainFrame::ZaladujDane, this);
+
+    // Dodanie przycisków do sizera
+    dataButtonsSizer->Add(saveButton, 0, wxALL, 5);
+    dataButtonsSizer->Add(loadButton, 0, wxALL, 5);
+
+    // Dodanie sizera przycisków do lewego sizera
+    leftSizer->Add(dataButtonsSizer, 0, wxALL, 5);
 
     // Tworzymy prawy pionowy sizer dla wyboru zanieczyszczeñ
     wxBoxSizer* rightSizer = new wxBoxSizer(wxVERTICAL);
@@ -262,17 +283,16 @@ void MainFrame::WyswietlDanePomiarowe(wxCommandEvent& event) {
     std::string response;
 
     if (!performCurlRequest(url, response)) {
-        wxMessageBox("Nie uda³o siê pobraæ danych pomiarowych!", "B³¹d", wxOK | wxICON_ERROR);
+        wxMessageBox("Nie uda³o siê pobraæ danych pomiarowych! SprawdŸ po³¹czenie internetowe lub za³aduj dane z pliku.", "B³¹d", wxOK | wxICON_ERROR);
         return;
     }
 
-    Json::Value root;
-    if (!parseJsonResponse(response, root)) {
-        wxMessageBox("Brak danych pomiarowych!", "B³¹d", wxOK | wxICON_ERROR);
+    if (!parseJsonResponse(response, currentSensorData)) {
+        wxMessageBox("Brak danych pomiarowych lub b³¹d parsowania JSON!", "B³¹d", wxOK | wxICON_ERROR);
         return;
     }
 
-    AnalizujDane(root);
+    AnalizujDane(currentSensorData);
 }
 
 /**
@@ -446,4 +466,141 @@ void MainFrame::PotwierdzZakres(wxCommandEvent& event) {
 
     // Wymuszamy odœwie¿enie interfejsu
     this->Update();
+}
+
+/**
+ * @brief Zapisuje dane pomiarowe do pliku JSON.
+ *
+ * Ta metoda zapisuje aktualne dane pomiarowe do pliku JSON w katalogu aplikacji.
+ * Nazwa pliku zawiera datê i czas pobrania danych.
+ *
+ * @param event Zdarzenie klikniêcia przycisku "Zapisz".
+ */
+void MainFrame::ZapiszDane(wxCommandEvent& event) {
+    // Sprawdzamy, czy s¹ jakieœ dane do zapisania
+    if (currentSensorData.empty() || !currentSensorData.isMember("values")) {
+        wxMessageBox("Brak danych do zapisania. Najpierw wybierz stacjê i rodzaj zanieczyszczenia.",
+            "B³¹d", wxOK | wxICON_ERROR);
+        return;
+    }
+
+    // Generujemy nazwê pliku
+    wxString fileName = GenerujNazwePliku();
+
+    // Otwieramy plik do zapisu
+    std::ofstream file(fileName.ToStdString());
+    if (!file.is_open()) {
+        wxMessageBox("Nie mo¿na utworzyæ pliku " + fileName, "B³¹d", wxOK | wxICON_ERROR);
+        return;
+    }
+
+    // Tworzymy strukturê JSON do zapisu
+    Json::Value saveData;
+
+    // Zapisujemy dane z aktualnie wybranej stacji i sensora
+    int stationIdx = choice->GetSelection();
+    int sensorIdx = sensorList->GetSelection();
+
+    if (stationIdx != wxNOT_FOUND && sensorIdx != wxNOT_FOUND) {
+        wxString stationName = choice->GetString(stationIdx);
+        wxString sensorName = sensorList->GetString(sensorIdx);
+
+        saveData["stationName"] = stationName.ToStdString();
+        saveData["sensorName"] = sensorName.ToStdString();
+        saveData["data"] = currentSensorData;
+
+        // Zapisujemy dane do pliku
+        Json::StreamWriterBuilder writer;
+        writer["indentation"] = "    "; // £adne formatowanie
+        std::string jsonData = Json::writeString(writer, saveData);
+        file << jsonData;
+        file.close();
+
+        wxMessageBox("Dane zosta³y zapisane do pliku:\n" + fileName, "Zapisano dane", wxOK | wxICON_INFORMATION);
+    }
+    else {
+        wxMessageBox("Nie wybrano stacji lub rodzaju zanieczyszczenia.", "B³¹d", wxOK | wxICON_ERROR);
+    }
+}
+
+/**
+ * @brief £aduje dane pomiarowe z pliku JSON.
+ *
+ * Ta metoda ³aduje historyczne dane pomiarowe z pliku JSON i wyœwietla je
+ * w aplikacji.
+ *
+ * @param event Zdarzenie klikniêcia przycisku "Za³aduj".
+ */
+void MainFrame::ZaladujDane(wxCommandEvent& event) {
+    // Otwórz okno dialogowe wyboru pliku
+    wxFileDialog openFileDialog(this, "Wybierz plik z danymi", "", "", "Pliki JSON (*.json)|*.json",
+        wxFD_OPEN | wxFD_FILE_MUST_EXIST);
+
+    if (openFileDialog.ShowModal() == wxID_CANCEL)
+        return;
+
+    // Otwieramy plik do odczytu
+    std::ifstream file(openFileDialog.GetPath().ToStdString());
+    if (!file.is_open()) {
+        wxMessageBox("Nie mo¿na otworzyæ pliku " + openFileDialog.GetPath(), "B³¹d", wxOK | wxICON_ERROR);
+        return;
+    }
+
+    // Wczytujemy dane z pliku JSON
+    Json::Value loadedData;
+    Json::CharReaderBuilder reader;
+    std::string errors;
+
+    bool parsingSuccessful = Json::parseFromStream(reader, file, &loadedData, &errors);
+    file.close();
+
+    if (!parsingSuccessful) {
+        wxMessageBox("B³¹d podczas parsowania pliku JSON:\n" + wxString(errors), "B³¹d", wxOK | wxICON_ERROR);
+        return;
+    }
+
+    // Sprawdzamy strukturê pliku
+    if (!loadedData.isMember("stationName") || !loadedData.isMember("sensorName") || !loadedData.isMember("data")) {
+        wxMessageBox("Nieprawid³owy format pliku. Brak wymaganych pól.", "B³¹d", wxOK | wxICON_ERROR);
+        return;
+    }
+
+    // Aktualizujemy interfejs
+    wxString stationName = wxString::FromUTF8(loadedData["stationName"].asString());
+    wxString sensorName = wxString::FromUTF8(loadedData["sensorName"].asString());
+
+    // Aktualizujemy pole wyboru stacji (je¿eli istnieje w aktualnej liœcie)
+    bool stationFound = false;
+    for (unsigned int i = 0; i < choice->GetCount(); i++) {
+        if (choice->GetString(i) == stationName) {
+            choice->SetSelection(i);
+            stationFound = true;
+            break;
+        }
+    }
+
+    if (!stationFound && choice->GetCount() > 0) {
+        choice->SetSelection(0); // Wybieramy pierwsz¹ stacjê, jeœli nie znaleziono dopasowania
+    }
+
+    // Ustawiamy dane sensora
+    currentSensorData = loadedData["data"];
+
+    // Wyœwietlamy nazwê za³adowanej stacji i sensora
+    wxString infoText = "Za³adowano dane z pliku:\nStacja: " + stationName + "\nSensor: " + sensorName;
+    wxMessageBox(infoText, "Dane za³adowane", wxOK | wxICON_INFORMATION);
+
+    // Analizujemy i wyœwietlamy dane
+    AnalizujDane(currentSensorData);
+}
+
+/**
+ * @brief Generuje nazwê pliku JSON na podstawie aktualnej daty i czasu.
+ *
+ * @return wxString Nazwa pliku z rozszerzeniem JSON.
+ */
+wxString MainFrame::GenerujNazwePliku() {
+    wxDateTime now = wxDateTime::Now();
+    wxString fileName = now.Format("dane_pomiarowe_%Y%m%d_%H%M%S.json");
+    return fileName;
 }
