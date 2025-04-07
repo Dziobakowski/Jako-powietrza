@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Jakość powietrza w Polsce: Dokumentacja pliku JPO/Curl.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Jakość powietrza w Polsce
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_curl_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funkcje</a>  </div>
+  <div class="headertitle"><div class="title">Dokumentacja pliku Curl.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Deklaracja funkcji do obsługi zapytań HTTP oraz parsowania odpowiedzi w formacie JSON.  
+<a href="#details">Więcej...</a></p>
+<div class="textblock"><code>#include &lt;string&gt;</code><br />
+<code>#include &lt;json/json.h&gt;</code><br />
+</div>
+<p><a href="_curl_8h_source.html">Idź do kodu źródłowego tego pliku.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funkcje</h2></td></tr>
+<tr class="memitem:ae153a754f69f7d45753cc3ddb01c2379" id="r_ae153a754f69f7d45753cc3ddb01c2379"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae153a754f69f7d45753cc3ddb01c2379">performCurlRequest</a> (const std::string &amp;url, std::string &amp;response)</td></tr>
+<tr class="memdesc:ae153a754f69f7d45753cc3ddb01c2379"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wykonuje zapytanie HTTP do podanego URL.  <br /></td></tr>
+<tr class="separator:ae153a754f69f7d45753cc3ddb01c2379"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d098418988357a4bd8a5664ada1b047" id="r_a0d098418988357a4bd8a5664ada1b047"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0d098418988357a4bd8a5664ada1b047">parseJsonResponse</a> (const std::string &amp;response, Json::Value &amp;root)</td></tr>
+<tr class="memdesc:a0d098418988357a4bd8a5664ada1b047"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parsuje odpowiedź w formacie JSON.  <br /></td></tr>
+<tr class="separator:a0d098418988357a4bd8a5664ada1b047"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p>Deklaracja funkcji do obsługi zapytań HTTP oraz parsowania odpowiedzi w formacie JSON. </p>
+<p>Plik nagłówkowy zawiera deklaracje funkcji wykorzystywanych do wykonywania zapytań HTTP z wykorzystaniem biblioteki CURL oraz parsowania odpowiedzi w formacie JSON. </p>
+</div><h2 class="groupheader">Dokumentacja funkcji</h2>
+<a id="a0d098418988357a4bd8a5664ada1b047" name="a0d098418988357a4bd8a5664ada1b047"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d098418988357a4bd8a5664ada1b047">&#9670;&#160;</a></span>parseJsonResponse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool parseJsonResponse </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>response</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Json::Value &amp;</td>          <td class="paramname"><span class="paramname"><em>root</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parsuje odpowiedź w formacie JSON. </p>
+<p>Funkcja ta przyjmuje odpowiedź serwera w formie ciągu znaków i parsuje ją do obiektu typu <code>Json::Value</code>. Biblioteka JsonCpp jest wykorzystywana do konwersji odpowiedzi w format JSON.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">response</td><td>Odpowiedź serwera w formacie JSON w postaci ciągu znaków. </td></tr>
+    <tr><td class="paramname">root</td><td>Obiekt typu <code>Json::Value</code>, do którego zapisane zostaną dane z odpowiedzi. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>Zwraca <code>true</code>, jeśli odpowiedź została poprawnie sparsowana, w przeciwnym razie <code>false</code>.</dd></dl>
+<p>Parsuje odpowiedź w formacie JSON.</p>
+<p>Funkcja ta konwertuje odpowiedź w postaci ciągu znaków (response) do obiektu typu Json::Value przy użyciu biblioteki JsonCpp. W przypadku błędu zwraca false.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">response</td><td>Odpowiedź w formie ciągu znaków, która ma być sparsowana. </td></tr>
+    <tr><td class="paramname">root</td><td>Obiekt typu Json::Value, do którego zapisane zostaną dane. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>Zwraca true, jeśli odpowiedź JSON została poprawnie sparsowana, w przeciwnym razie zwraca false. </dd></dl>
+
+</div>
+</div>
+<a id="ae153a754f69f7d45753cc3ddb01c2379" name="ae153a754f69f7d45753cc3ddb01c2379"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae153a754f69f7d45753cc3ddb01c2379">&#9670;&#160;</a></span>performCurlRequest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool performCurlRequest </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>url</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>response</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wykonuje zapytanie HTTP do podanego URL. </p>
+<p>Funkcja ta wykorzystuje bibliotekę CURL do wysyłania zapytań HTTP na określony adres URL. Odpowiedź serwera jest przechowywana w zmiennej przekazanej jako argument. Funkcja wyłącza weryfikację SSL.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">url</td><td>Adres URL, do którego wysyłane jest zapytanie HTTP. </td></tr>
+    <tr><td class="paramname">response</td><td>Zmienna, do której zostaną zapisane dane zwrócone przez serwer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>Zwraca <code>true</code>, jeśli zapytanie zakończyło się sukcesem, w przeciwnym razie <code>false</code>.</dd></dl>
+<p>Wykonuje zapytanie HTTP do podanego URL.</p>
+<p>Funkcja ta inicjuje sesję CURL, ustawia odpowiednie opcje (URL, funkcję callback do zapisu danych, wyłącza weryfikację SSL) i wykonuje zapytanie HTTP. Odpowiedź serwera jest zapisywana w zmiennej response.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">url</td><td>Adres URL, do którego zostanie wysłane zapytanie. </td></tr>
+    <tr><td class="paramname">response</td><td>Referencja do zmiennej std::string, w której zostanie zapisany wynik zapytania. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>Zwraca true, jeśli zapytanie zostało wykonane pomyślnie, w przeciwnym razie zwraca false. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_58cf2b504a234e7fee52051576183a3d.html">JPO</a></li><li class="navelem"><a class="el" href="_curl_8h.html">Curl.h</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

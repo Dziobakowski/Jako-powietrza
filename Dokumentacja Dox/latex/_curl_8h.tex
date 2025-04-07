@@ -1,0 +1,96 @@
+\doxysection{Dokumentacja pliku JPO/\+Curl.h}
+\hypertarget{_curl_8h}{}\label{_curl_8h}\index{JPO/Curl.h@{JPO/Curl.h}}
+
+
+Deklaracja funkcji do obsługi zapytań HTTP oraz parsowania odpowiedzi w formacie JSON.  
+
+
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$json/json.\+h$>$}\newline
+\doxysubsubsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{_curl_8h_ae153a754f69f7d45753cc3ddb01c2379}{perform\+Curl\+Request}} (const std\+::string \&url, std\+::string \&response)
+\begin{DoxyCompactList}\small\item\em Wykonuje zapytanie HTTP do podanego URL. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_curl_8h_a0d098418988357a4bd8a5664ada1b047}{parse\+Json\+Response}} (const std\+::string \&response, Json\+::\+Value \&root)
+\begin{DoxyCompactList}\small\item\em Parsuje odpowiedź w formacie JSON. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Deklaracja funkcji do obsługi zapytań HTTP oraz parsowania odpowiedzi w formacie JSON. 
+
+Plik nagłówkowy zawiera deklaracje funkcji wykorzystywanych do wykonywania zapytań HTTP z wykorzystaniem biblioteki CURL oraz parsowania odpowiedzi w formacie JSON. 
+
+\doxysubsection{Dokumentacja funkcji}
+\Hypertarget{_curl_8h_a0d098418988357a4bd8a5664ada1b047}\index{Curl.h@{Curl.h}!parseJsonResponse@{parseJsonResponse}}
+\index{parseJsonResponse@{parseJsonResponse}!Curl.h@{Curl.h}}
+\doxysubsubsection{\texorpdfstring{parseJsonResponse()}{parseJsonResponse()}}
+{\footnotesize\ttfamily \label{_curl_8h_a0d098418988357a4bd8a5664ada1b047} 
+bool parse\+Json\+Response (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{response}{, }\item[{Json\+::\+Value \&}]{root}{}\end{DoxyParamCaption})}
+
+
+
+Parsuje odpowiedź w formacie JSON. 
+
+Funkcja ta przyjmuje odpowiedź serwera w formie ciągu znaków i parsuje ją do obiektu typu {\ttfamily Json\+::\+Value}. Biblioteka Json\+Cpp jest wykorzystywana do konwersji odpowiedzi w format JSON.
+
+
+\begin{DoxyParams}{Parametry}
+{\em response} & Odpowiedź serwera w formacie JSON w postaci ciągu znaków. \\
+\hline
+{\em root} & Obiekt typu {\ttfamily Json\+::\+Value}, do którego zapisane zostaną dane z odpowiedzi. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+Zwraca {\ttfamily true}, jeśli odpowiedź została poprawnie sparsowana, w przeciwnym razie {\ttfamily false}.
+\end{DoxyReturn}
+Parsuje odpowiedź w formacie JSON.
+
+Funkcja ta konwertuje odpowiedź w postaci ciągu znaków (response) do obiektu typu Json\+::\+Value przy użyciu biblioteki Json\+Cpp. W przypadku błędu zwraca false.
+
+
+\begin{DoxyParams}{Parametry}
+{\em response} & Odpowiedź w formie ciągu znaków, która ma być sparsowana. \\
+\hline
+{\em root} & Obiekt typu Json\+::\+Value, do którego zapisane zostaną dane. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+Zwraca true, jeśli odpowiedź JSON została poprawnie sparsowana, w przeciwnym razie zwraca false. 
+\end{DoxyReturn}
+\Hypertarget{_curl_8h_ae153a754f69f7d45753cc3ddb01c2379}\index{Curl.h@{Curl.h}!performCurlRequest@{performCurlRequest}}
+\index{performCurlRequest@{performCurlRequest}!Curl.h@{Curl.h}}
+\doxysubsubsection{\texorpdfstring{performCurlRequest()}{performCurlRequest()}}
+{\footnotesize\ttfamily \label{_curl_8h_ae153a754f69f7d45753cc3ddb01c2379} 
+bool perform\+Curl\+Request (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{url}{, }\item[{std\+::string \&}]{response}{}\end{DoxyParamCaption})}
+
+
+
+Wykonuje zapytanie HTTP do podanego URL. 
+
+Funkcja ta wykorzystuje bibliotekę CURL do wysyłania zapytań HTTP na określony adres URL. Odpowiedź serwera jest przechowywana w zmiennej przekazanej jako argument. Funkcja wyłącza weryfikację SSL.
+
+
+\begin{DoxyParams}{Parametry}
+{\em url} & Adres URL, do którego wysyłane jest zapytanie HTTP. \\
+\hline
+{\em response} & Zmienna, do której zostaną zapisane dane zwrócone przez serwer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+Zwraca {\ttfamily true}, jeśli zapytanie zakończyło się sukcesem, w przeciwnym razie {\ttfamily false}.
+\end{DoxyReturn}
+Wykonuje zapytanie HTTP do podanego URL.
+
+Funkcja ta inicjuje sesję CURL, ustawia odpowiednie opcje (URL, funkcję callback do zapisu danych, wyłącza weryfikację SSL) i wykonuje zapytanie HTTP. Odpowiedź serwera jest zapisywana w zmiennej response.
+
+
+\begin{DoxyParams}{Parametry}
+{\em url} & Adres URL, do którego zostanie wysłane zapytanie. \\
+\hline
+{\em response} & Referencja do zmiennej std\+::string, w której zostanie zapisany wynik zapytania. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+Zwraca true, jeśli zapytanie zostało wykonane pomyślnie, w przeciwnym razie zwraca false. 
+\end{DoxyReturn}

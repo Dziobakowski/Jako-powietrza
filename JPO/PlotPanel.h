@@ -6,19 +6,19 @@
 
 /**
  * @file PlotPanel.h
- * @brief Nag³ówek panelu do wyœwietlania wykresu.
+ * @brief NagÅ‚Ã³wek panelu do wyÅ›wietlania wykresu.
  *
- * Plik zawiera deklaracjê klasy `PlotPanel`, która dziedziczy po klasie `wxPanel`
- * i jest odpowiedzialna za wyœwietlanie wykresu na panelu w aplikacji wxWidgets.
+ * Plik zawiera deklaracjÄ™ klasy `PlotPanel`, ktÃ³ra dziedziczy po klasie `wxPanel`
+ * i jest odpowiedzialna za wyÅ›wietlanie wykresu na panelu w aplikacji wxWidgets.
  */
 
  /**
   * @class PlotPanel
-  * @brief Klasa reprezentuj¹ca panel wykresu.
+  * @brief Klasa reprezentujÄ…ca panel wykresu.
   *
   * Klasa `PlotPanel` dziedziczy po klasie `wxPanel` i odpowiada za rysowanie wykresu
-  * na panelu. Zawiera metody umo¿liwiaj¹ce ustawianie danych wykresu oraz jego rysowanie
-  * w odpowiedzi na zdarzenia zwi¹zane z malowaniem.
+  * na panelu. Zawiera metody umoÅ¼liwiajÄ…ce ustawianie danych wykresu oraz jego rysowanie
+  * w odpowiedzi na zdarzenia zwiÄ…zane z malowaniem.
   */
 class PlotPanel : public wxPanel {
 public:
@@ -28,36 +28,36 @@ public:
      * Tworzy panel wykresu w aplikacji. Inicjalizuje komponenty panelu, w tym
      * rejestruje zdarzenia rysowania wykresu.
      *
-     * @param parent Okno, w którym panel bêdzie osadzony.
+     * @param parent Okno, w ktÃ³rym panel bÄ™dzie osadzony.
      */
     PlotPanel(wxWindow* parent);
 
     /**
      * @brief Ustawia dane wykresu.
      *
-     * Funkcja ta ustawia dane wykresu na podstawie podanych par czas-wartoœæ.
-     * Dane s¹ przechowywane w wektorze i u¿ywane do rysowania wykresu.
+     * Funkcja ta ustawia dane wykresu na podstawie podanych par czas-wartoÅ›Ä‡.
+     * Dane sÄ… przechowywane w wektorze i uÅ¼ywane do rysowania wykresu.
      *
-     * @param newData Dane wykresu w postaci wektora par (czas, wartoœæ).
+     * @param newData Dane wykresu w postaci wektora par (czas, wartoÅ›Ä‡).
      */
     void SetData(const std::vector<std::pair<wxString, double>>& newData);
 
     /**
-     * @brief Funkcja maluj¹ca wykres.
+     * @brief Funkcja malujÄ…ca wykres.
      *
-     * Funkcja ta jest wywo³ywana przy ka¿dym zdarzeniu malowania. Odpowiada
+     * Funkcja ta jest wywoÅ‚ywana przy kaÅ¼dym zdarzeniu malowania. Odpowiada
      * za renderowanie wykresu na panelu na podstawie danych dostarczonych przez
-     * metodê `SetData`.
+     * metodÄ™ `SetData`.
      *
      * @param event Zdarzenie malowania (dostarczane przez wxWidgets).
      */
     void OnPaint(wxPaintEvent& event);
 
 private:
-    /// Przechowuje dane wykresu w postaci par czas-wartoœæ.
+    /// Przechowuje dane wykresu w postaci par czas-wartoÅ›Ä‡.
     std::vector<std::pair<wxString, double>> data;
 
-    /// Deklaracja tabeli zdarzeñ dla tej klasy.
+    /// Deklaracja tabeli zdarzeÅ„ dla tej klasy.
     DECLARE_EVENT_TABLE()
 };
 

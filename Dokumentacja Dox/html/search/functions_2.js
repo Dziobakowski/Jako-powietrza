@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mainframe_0',['MainFrame',['../class_main_frame.html#a00c85521dad6b24000967206bcc53688',1,'MainFrame::MainFrame(const wxString &amp;title)'],['../class_main_frame.html#a00c85521dad6b24000967206bcc53688',1,'MainFrame::MainFrame(const wxString &amp;title)'],['../class_main_frame.html#a00c85521dad6b24000967206bcc53688',1,'MainFrame::MainFrame(const wxString &amp;title)']]]
+  ['generujnazwepliku_0',['GenerujNazwePliku',['../class_main_frame.html#a0e7f98fcb096bc7648020c35d28b74a7',1,'MainFrame']]]
 ];

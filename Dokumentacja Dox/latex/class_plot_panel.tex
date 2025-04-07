@@ -1,32 +1,42 @@
-\doxysection{Plot\+Panel Class Reference}
+\doxysection{Dokumentacja klasy Plot\+Panel}
 \hypertarget{class_plot_panel}{}\label{class_plot_panel}\index{PlotPanel@{PlotPanel}}
+
+
+Klasa reprezentująca panel wykresu.  
+
+
 
 
 {\ttfamily \#include $<$Plot\+Panel.\+h$>$}
 
-Inheritance diagram for Plot\+Panel\+:\begin{figure}[H]
+Diagram dziedziczenia dla Plot\+Panel\begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[height=2.000000cm]{class_plot_panel}
 \end{center}
 \end{figure}
-\doxysubsubsection*{Public Member Functions}
+\doxysubsubsection*{Metody publiczne}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_plot_panel_aad1b3ca2844e9e5c4fdeb6a423b17f30}{Plot\+Panel}} (wx\+Window \texorpdfstring{$\ast$}{*}parent)
-\item 
+\begin{DoxyCompactList}\small\item\em Konstruktor klasy {\ttfamily \doxylink{class_plot_panel}{Plot\+Panel}}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_plot_panel_afad1c71375d54806ef8308fa24d19dfc}{Set\+Data}} (const std\+::vector$<$ std\+::pair$<$ wx\+String, double $>$ $>$ \&new\+Data)
-\item 
+\begin{DoxyCompactList}\small\item\em Ustawia dane wykresu. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_plot_panel_a72ee37d726eb276bf9aca7f3b50c7b85}{On\+Paint}} (wx\+Paint\+Event \&event)
-\end{DoxyCompactItemize}
-\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactList}\small\item\em Funkcja malująca wykres. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atrybuty prywatne}
 \begin{DoxyCompactItemize}
 \item 
 std\+::vector$<$ std\+::pair$<$ wx\+String, double $>$ $>$ \mbox{\hyperlink{class_plot_panel_a8871bc9c7b2c88147027834b9b8e4696}{data}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Przechowuje dane wykresu w postaci par czas-\/wartość. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\doxysubsection{Constructor \& Destructor Documentation}
+\doxysubsection{Opis szczegółowy}
+Klasa reprezentująca panel wykresu. 
+
+Klasa {\ttfamily \doxylink{class_plot_panel}{Plot\+Panel}} dziedziczy po klasie {\ttfamily wx\+Panel} i odpowiada za rysowanie wykresu na panelu. Zawiera metody umożliwiające ustawianie danych wykresu oraz jego rysowanie w odpowiedzi na zdarzenia związane z malowaniem. 
+
+\doxysubsection{Dokumentacja konstruktora i destruktora}
 \Hypertarget{class_plot_panel_aad1b3ca2844e9e5c4fdeb6a423b17f30}\index{PlotPanel@{PlotPanel}!PlotPanel@{PlotPanel}}
 \index{PlotPanel@{PlotPanel}!PlotPanel@{PlotPanel}}
 \doxysubsubsection{\texorpdfstring{PlotPanel()}{PlotPanel()}}
@@ -35,14 +45,90 @@ Plot\+Panel\+::\+Plot\+Panel (\begin{DoxyParamCaption}\item[{wx\+Window \texorpd
 
 
 
-\doxysubsection{Member Function Documentation}
+Konstruktor klasy {\ttfamily \doxylink{class_plot_panel}{Plot\+Panel}}. 
+
+\texorpdfstring{$<$}{<} Rejestruje zdarzenie malowania, wywołuje metodę {\ttfamily On\+Paint}.
+
+Tworzy panel wykresu w aplikacji. Inicjalizuje komponenty panelu, w tym rejestruje zdarzenia rysowania wykresu.
+
+
+\begin{DoxyParams}{Parametry}
+{\em parent} & Okno, w którym panel będzie osadzony.\\
+\hline
+\end{DoxyParams}
+Konstruktor klasy {\ttfamily \doxylink{class_plot_panel}{Plot\+Panel}}.
+
+Inicjalizuje panel wykresu w aplikacji, ustawiając jego wymiary i pozycję.
+
+
+\begin{DoxyParams}{Parametry}
+{\em parent} & Okno, w którym panel będzie osadzony. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Dokumentacja funkcji składowych}
 \Hypertarget{class_plot_panel_a72ee37d726eb276bf9aca7f3b50c7b85}\index{PlotPanel@{PlotPanel}!OnPaint@{OnPaint}}
 \index{OnPaint@{OnPaint}!PlotPanel@{PlotPanel}}
 \doxysubsubsection{\texorpdfstring{OnPaint()}{OnPaint()}}
 {\footnotesize\ttfamily \label{class_plot_panel_a72ee37d726eb276bf9aca7f3b50c7b85} 
 void Plot\+Panel\+::\+On\+Paint (\begin{DoxyParamCaption}\item[{wx\+Paint\+Event \&}]{event}{}\end{DoxyParamCaption})}
 
-\Hypertarget{class_plot_panel_afad1c71375d54806ef8308fa24d19dfc}\index{PlotPanel@{PlotPanel}!SetData@{SetData}}
+
+
+Funkcja malująca wykres. 
+
+Funkcja ta jest wywoływana przy każdym zdarzeniu malowania. Odpowiada za renderowanie wykresu na panelu na podstawie danych dostarczonych przez metodę {\ttfamily Set\+Data}.
+
+
+\begin{DoxyParams}{Parametry}
+{\em event} & Zdarzenie malowania (dostarczane przez wx\+Widgets).\\
+\hline
+\end{DoxyParams}
+Funkcja ta jest wywoływana przy każdym zdarzeniu malowania. Rysuje wykres na panelu na podstawie danych dostarczonych przez metodę {\ttfamily Set\+Data}. Jeśli brak jest danych, wyświetla komunikat "{}\+Brak danych"{}.
+
+
+\begin{DoxyParams}{Parametry}
+{\em event} & Zdarzenie malowania, dostarczane przez wx\+Widgets. Używane do tworzenia obiektu {\ttfamily wx\+Paint\+DC} do malowania na panelu. \\
+\hline
+\end{DoxyParams}
+\texorpdfstring{$<$}{<} Obiekt odpowiedzialny za malowanie na panelu.
+
+\texorpdfstring{$<$}{<} Ustawia kolor tła na biały.
+
+\texorpdfstring{$<$}{<} Wyczyść panel przed narysowaniem nowego wykresu.
+
+\texorpdfstring{$<$}{<} Wyświetla komunikat, gdy brak danych.
+
+\texorpdfstring{$<$}{<} Pobiera wymiary panelu.
+
+\texorpdfstring{$<$}{<} Marginesy wokół wykresu.
+
+\texorpdfstring{$<$}{<} Szerokość wykresu.
+
+\texorpdfstring{$<$}{<} Wysokość wykresu.
+
+\texorpdfstring{$<$}{<} Zapobiega dzieleniu przez 0, jeśli wszystkie wartości są równe.
+
+\texorpdfstring{$<$}{<} Ustawia kolor rysowania osi na czarny.
+
+\texorpdfstring{$<$}{<} Oś X.
+
+\texorpdfstring{$<$}{<} Oś Y.
+
+\texorpdfstring{$<$}{<} Ustawia kolor rysowania punktów na niebieski.
+
+\texorpdfstring{$<$}{<} Oblicza współrzędną X punktu.
+
+\texorpdfstring{$<$}{<} Oblicza współrzędną Y punktu.
+
+\texorpdfstring{$<$}{<} Rysuje punkt na wykresie.
+
+\texorpdfstring{$<$}{<} Oblicza współrzędną X poprzedniego punktu.
+
+\texorpdfstring{$<$}{<} Oblicza współrzędną Y poprzedniego punktu.
+
+\texorpdfstring{$<$}{<} Łączy punkt z poprzednim punktem na wykresie.\Hypertarget{class_plot_panel_afad1c71375d54806ef8308fa24d19dfc}\index{PlotPanel@{PlotPanel}!SetData@{SetData}}
 \index{SetData@{SetData}!PlotPanel@{PlotPanel}}
 \doxysubsubsection{\texorpdfstring{SetData()}{SetData()}}
 {\footnotesize\ttfamily \label{class_plot_panel_afad1c71375d54806ef8308fa24d19dfc} 
@@ -50,7 +136,25 @@ void Plot\+Panel\+::\+Set\+Data (\begin{DoxyParamCaption}\item[{const std\+::vec
 
 
 
-\doxysubsection{Member Data Documentation}
+Ustawia dane wykresu. 
+
+Funkcja ta ustawia dane wykresu na podstawie podanych par czas-\/wartość. Dane są przechowywane w wektorze i używane do rysowania wykresu.
+
+
+\begin{DoxyParams}{Parametry}
+{\em new\+Data} & Dane wykresu w postaci wektora par (czas, wartość).\\
+\hline
+\end{DoxyParams}
+Metoda ta ustawia dane wykresu na podstawie podanych par (czas, wartość) oraz odświeża panel, aby wyświetlić nowy wykres.
+
+
+\begin{DoxyParams}{Parametry}
+{\em new\+Data} & Wektor par (czas, wartość), które będą użyte do narysowania wykresu. \\
+\hline
+\end{DoxyParams}
+\texorpdfstring{$<$}{<} Odświeżenie panelu, aby zaktualizować wykres.
+
+\doxysubsection{Dokumentacja atrybutów składowych}
 \Hypertarget{class_plot_panel_a8871bc9c7b2c88147027834b9b8e4696}\index{PlotPanel@{PlotPanel}!data@{data}}
 \index{data@{data}!PlotPanel@{PlotPanel}}
 \doxysubsubsection{\texorpdfstring{data}{data}}
@@ -59,7 +163,11 @@ std\+::vector$<$std\+::pair$<$wx\+String, double$>$ $>$ Plot\+Panel\+::data\hspa
 
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+Przechowuje dane wykresu w postaci par czas-\/wartość. 
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/\+Dziobakowski/source/repos/\+JPO/\+JPO/\mbox{\hyperlink{_plot_panel_8h}{Plot\+Panel.\+h}}\item 
-C\+:/\+Users/\+Dziobakowski/source/repos/\+JPO/\+JPO/\mbox{\hyperlink{_plot_panel_8cpp}{Plot\+Panel.\+cpp}}\end{DoxyCompactItemize}
+JPO/\mbox{\hyperlink{_plot_panel_8h}{Plot\+Panel.\+h}}\item 
+JPO/\mbox{\hyperlink{_plot_panel_8cpp}{Plot\+Panel.\+cpp}}\end{DoxyCompactItemize}

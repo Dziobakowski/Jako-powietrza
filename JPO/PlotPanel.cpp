@@ -1,15 +1,15 @@
 #include "PlotPanel.h"
 
 BEGIN_EVENT_TABLE(PlotPanel, wxPanel)
-EVT_PAINT(PlotPanel::OnPaint) ///< Rejestruje zdarzenie malowania, wywo≥uje metodÍ `OnPaint`.
+EVT_PAINT(PlotPanel::OnPaint) ///< Rejestruje zdarzenie malowania, wywo≈Çuje metodƒô `OnPaint`.
 END_EVENT_TABLE()
 
 /**
  * @brief Konstruktor klasy `PlotPanel`.
  *
- * Inicjalizuje panel wykresu w aplikacji, ustawiajπc jego wymiary i pozycjÍ.
+ * Inicjalizuje panel wykresu w aplikacji, ustawiajƒÖc jego wymiary i pozycjƒô.
  *
- * @param parent Okno, w ktÛrym panel bÍdzie osadzony.
+ * @param parent Okno, w kt√≥rym panel bƒôdzie osadzony.
  */
     PlotPanel::PlotPanel(wxWindow* parent)
     : wxPanel(parent, wxID_ANY, wxDefaultPosition, wxSize(400, 300)) {
@@ -18,74 +18,74 @@ END_EVENT_TABLE()
 /**
  * @brief Ustawia dane wykresu.
  *
- * Metoda ta ustawia dane wykresu na podstawie podanych par (czas, wartoúÊ) oraz
- * odúwieøa panel, aby wyúwietliÊ nowy wykres.
+ * Metoda ta ustawia dane wykresu na podstawie podanych par (czas, warto≈õƒá) oraz
+ * od≈õwie≈ºa panel, aby wy≈õwietliƒá nowy wykres.
  *
- * @param newData Wektor par (czas, wartoúÊ), ktÛre bÍdπ uøyte do narysowania wykresu.
+ * @param newData Wektor par (czas, warto≈õƒá), kt√≥re bƒôdƒÖ u≈ºyte do narysowania wykresu.
  */
 void PlotPanel::SetData(const std::vector<std::pair<wxString, double>>& newData) {
     data = newData;
-    Refresh(); ///< Odúwieøenie panelu, aby zaktualizowaÊ wykres.
+    Refresh(); ///< Od≈õwie≈ºenie panelu, aby zaktualizowaƒá wykres.
 }
 
 /**
- * @brief Funkcja malujπca wykres.
+ * @brief Funkcja malujƒÖca wykres.
  *
- * Funkcja ta jest wywo≥ywana przy kaødym zdarzeniu malowania. Rysuje wykres na
- * panelu na podstawie danych dostarczonych przez metodÍ `SetData`.
- * Jeúli brak jest danych, wyúwietla komunikat "Brak danych".
+ * Funkcja ta jest wywo≈Çywana przy ka≈ºdym zdarzeniu malowania. Rysuje wykres na
+ * panelu na podstawie danych dostarczonych przez metodƒô `SetData`.
+ * Je≈õli brak jest danych, wy≈õwietla komunikat "Brak danych".
  *
- * @param event Zdarzenie malowania, dostarczane przez wxWidgets. Uøywane do
+ * @param event Zdarzenie malowania, dostarczane przez wxWidgets. U≈ºywane do
  *              tworzenia obiektu `wxPaintDC` do malowania na panelu.
  */
 void PlotPanel::OnPaint(wxPaintEvent& event) {
     wxPaintDC dc(this); ///< Obiekt odpowiedzialny za malowanie na panelu.
-    dc.SetBrush(*wxWHITE_BRUSH); ///< Ustawia kolor t≥a na bia≥y.
-    dc.Clear(); ///< WyczyúÊ panel przed narysowaniem nowego wykresu.
+    dc.SetBrush(*wxWHITE_BRUSH); ///< Ustawia kolor t≈Ça na bia≈Çy.
+    dc.Clear(); ///< Wyczy≈õƒá panel przed narysowaniem nowego wykresu.
 
     if (data.empty()) {
-        dc.DrawText("Brak danych", 10, 10); ///< Wyúwietla komunikat, gdy brak danych.
+        dc.DrawText("Brak danych", 10, 10); ///< Wy≈õwietla komunikat, gdy brak danych.
         return;
     }
 
     int width, height;
     GetClientSize(&width, &height); ///< Pobiera wymiary panelu.
 
-    int margin = 40; ///< Marginesy wokÛ≥ wykresu.
-    int graphWidth = width - 2 * margin; ///< SzerokoúÊ wykresu.
-    int graphHeight = height - 2 * margin; ///< WysokoúÊ wykresu.
+    int margin = 40; ///< Marginesy wok√≥≈Ç wykresu.
+    int graphWidth = width - 2 * margin; ///< Szeroko≈õƒá wykresu.
+    int graphHeight = height - 2 * margin; ///< Wysoko≈õƒá wykresu.
 
-    // Znalezienie min i max wartoúci
+    // Znalezienie min i max warto≈õci
     double minValue = DBL_MAX, maxValue = DBL_MIN;
     for (const auto& entry : data) {
         if (entry.second < minValue) minValue = entry.second;
         if (entry.second > maxValue) maxValue = entry.second;
     }
 
-    // Oú X (czas)
+    // O≈õ X (czas)
     int numPoints = data.size();
     double stepX = static_cast<double>(graphWidth) / (numPoints - 1);
 
-    // Oú Y (wartoúci)
+    // O≈õ Y (warto≈õci)
     double range = maxValue - minValue;
-    if (range == 0) range = 1; ///< Zapobiega dzieleniu przez 0, jeúli wszystkie wartoúci sπ rÛwne.
+    if (range == 0) range = 1; ///< Zapobiega dzieleniu przez 0, je≈õli wszystkie warto≈õci sƒÖ r√≥wne.
 
     // Rysowanie osi
     dc.SetPen(*wxBLACK_PEN); ///< Ustawia kolor rysowania osi na czarny.
-    dc.DrawLine(margin, height - margin, width - margin, height - margin); ///< Oú X.
-    dc.DrawLine(margin, margin, margin, height - margin); ///< Oú Y.
+    dc.DrawLine(margin, height - margin, width - margin, height - margin); ///< O≈õ X.
+    dc.DrawLine(margin, margin, margin, height - margin); ///< O≈õ Y.
 
-    // Rysowanie punktÛw na wykresie
-    dc.SetPen(*wxBLUE_PEN); ///< Ustawia kolor rysowania punktÛw na niebieski.
+    // Rysowanie punkt√≥w na wykresie
+    dc.SetPen(*wxBLUE_PEN); ///< Ustawia kolor rysowania punkt√≥w na niebieski.
     for (size_t i = 0; i < data.size(); i++) {
-        int x = margin + i * stepX; ///< Oblicza wspÛ≥rzÍdnπ X punktu.
-        int y = height - margin - ((data[i].second - minValue) / range) * graphHeight; ///< Oblicza wspÛ≥rzÍdnπ Y punktu.
+        int x = margin + i * stepX; ///< Oblicza wsp√≥≈ÇrzƒôdnƒÖ X punktu.
+        int y = height - margin - ((data[i].second - minValue) / range) * graphHeight; ///< Oblicza wsp√≥≈ÇrzƒôdnƒÖ Y punktu.
 
         dc.DrawCircle(x, y, 3); ///< Rysuje punkt na wykresie.
         if (i > 0) {
-            int prevX = margin + (i - 1) * stepX; ///< Oblicza wspÛ≥rzÍdnπ X poprzedniego punktu.
-            int prevY = height - margin - ((data[i - 1].second - minValue) / range) * graphHeight; ///< Oblicza wspÛ≥rzÍdnπ Y poprzedniego punktu.
-            dc.DrawLine(prevX, prevY, x, y); ///< £πczy punkt z poprzednim punktem na wykresie.
+            int prevX = margin + (i - 1) * stepX; ///< Oblicza wsp√≥≈ÇrzƒôdnƒÖ X poprzedniego punktu.
+            int prevY = height - margin - ((data[i - 1].second - minValue) / range) * graphHeight; ///< Oblicza wsp√≥≈ÇrzƒôdnƒÖ Y poprzedniego punktu.
+            dc.DrawLine(prevX, prevY, x, y); ///< ≈ÅƒÖczy punkt z poprzednim punktem na wykresie.
         }
     }
 }

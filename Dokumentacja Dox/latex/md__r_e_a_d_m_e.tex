@@ -1,0 +1,51 @@
+\chapter{Jakość-\/powietrza-\/w-\/\+Polsce}
+\hypertarget{md__r_e_a_d_m_e}{}\label{md__r_e_a_d_m_e}\index{Jakość-\/powietrza-\/w-\/Polsce@{Jakość-\/powietrza-\/w-\/Polsce}}
+\label{md__r_e_a_d_m_e_autotoc_md0}%
+\Hypertarget{md__r_e_a_d_m_e_autotoc_md0}%
+
+
+Projekt\+: Aplikacja do analizy danych o jakości powietrza
+
+Opis\+: Aplikacja służy do analizy danych o jakości powietrza, pobieranych z API Głównego Inspektoratu Ochrony Środowiska (GIOŚ). Umożliwia filtrowanie stacji pomiarowych po nazwie miasta, wyświetlanie danych pomiarowych, analizowanie wyników (min, max, średnia, trend) oraz generowanie wykresów w zadanych okresach czasu.
+
+Wymagania do edycji\+:
+\begin{DoxyItemize}
+\item wx\+Widgets (do tworzenia GUI)
+\item C++11 lub wyższy
+\item Biblioteka c\+URL (do pobierania danych z API)
+\item Kompilator obsługujący C++11 lub nowszy (np. GCC, MSVC)
+\end{DoxyItemize}
+
+Wykorzystanie\+:
+\begin{DoxyEnumerate}
+\item Pobierz projekt z repozytorium Git\+Hub\+: \href{https://github.com/Dziobakowski/Jako-powietrza}{\texttt{ https\+://github.\+com/\+Dziobakowski/\+Jako-\/powietrza}}
+\item Zainstaluj wymagane biblioteki\+:
+\begin{DoxyItemize}
+\item wx\+Widgets (instrukcja na \href{https://www.wxwidgets.org}{\texttt{ https\+://www.\+wxwidgets.\+org}})
+\item c\+URL (instrukcja na \href{https://curl.se/libcurl/}{\texttt{ https\+://curl.\+se/libcurl/}})
+\end{DoxyItemize}
+\item Skompiluj projekt, używając wybranego kompilatora\+:
+\begin{DoxyItemize}
+\item Dla GCC\+: g++ -\/o air\+\_\+quality\+\_\+analysis main.\+cpp -\/lwxgtk3.\+0 -\/lcurl
+\end{DoxyItemize}
+\item Uruchom aplikację\+:
+\begin{DoxyItemize}
+\item Dla systemów Linux\+: ./air\+\_\+quality\+\_\+analysis
+\item Dla systemów Windows\+: air\+\_\+quality\+\_\+analysis.\+exe
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+
+Funkcje\+:
+\begin{DoxyItemize}
+\item Pobieranie danych o jakości powietrza z API GIOŚ.
+\item Filtrowanie stacji pomiarowych po nazwie miasta.
+\item Wyświetlanie danych pomiarowych w postaci tekstowej oraz na wykresie.
+\item Analiza danych (minimum, maksimum, średnia, trend).
+\item Możliwość filtrowania danych według zakresu czasowego.
+\end{DoxyItemize}
+
+W razie problemów lub pytań, skontaktuj się z autorem projektu (proszę, nie \texorpdfstring{$\sim$}{\string~}\+Autor).
+
+Autor\+: Tymon Wolniewicz
+
+Licencja\+: MIT License 

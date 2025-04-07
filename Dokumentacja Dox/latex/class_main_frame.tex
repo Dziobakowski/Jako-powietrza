@@ -1,192 +1,442 @@
-\doxysection{Main\+Frame Class Reference}
+\doxysection{Dokumentacja klasy Main\+Frame}
 \hypertarget{class_main_frame}{}\label{class_main_frame}\index{MainFrame@{MainFrame}}
+
+
+Główna klasa okna aplikacji, dziedziczy po {\ttfamily wx\+Frame}.  
+
+
 
 
 {\ttfamily \#include $<$Main\+Frame.\+h$>$}
 
-Inheritance diagram for Main\+Frame\+:\begin{figure}[H]
+Diagram dziedziczenia dla Main\+Frame\begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[height=2.000000cm]{class_main_frame}
 \end{center}
 \end{figure}
-\doxysubsubsection*{Public Member Functions}
+\doxysubsubsection*{Metody publiczne}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_main_frame_a00c85521dad6b24000967206bcc53688}{Main\+Frame}} (const wx\+String \&title)
-\item 
-\mbox{\hyperlink{class_main_frame_a00c85521dad6b24000967206bcc53688}{Main\+Frame}} (const wx\+String \&title)
-\item 
-\mbox{\hyperlink{class_main_frame_a00c85521dad6b24000967206bcc53688}{Main\+Frame}} (const wx\+String \&title)
-\end{DoxyCompactItemize}
-\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactList}\small\item\em Konstruktor klasy {\ttfamily \doxylink{class_main_frame}{Main\+Frame}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Metody prywatne}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_main_frame_a242c8190443f5149e2d277f263bba99b}{Pobierz\+Dane}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Pobiera dane o jakości powietrza z serwera. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_main_frame_ab57830e125abe1d6299a9eb5eb7092dc}{Filtruj\+Stacje}} (wx\+Command\+Event \&event)
-\item 
+\begin{DoxyCompactList}\small\item\em Obsługuje zdarzenie kliknięcia przycisku do filtrowania stacji. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_main_frame_aacc88f4a5f97cbd0e84f1ff2550cdf77}{Wyswietl\+Stanowiska}} (wx\+Command\+Event \&event)
-\item 
+\begin{DoxyCompactList}\small\item\em Wyświetla listę stanowisk pomiarowych dla wybranej stacji. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_main_frame_a1c35270fa8b48c39e00632a40e913076}{Wyswietl\+Dane\+Pomiarowe}} (wx\+Command\+Event \&event)
-\item 
+\begin{DoxyCompactList}\small\item\em Pobiera dane pomiarowe dla wybranej stacji i analizuje je. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_main_frame_abedf1166fbb744e1f2d835d42055b118}{Analizuj\+Dane}} (const Json\+::\+Value \&data)
-\item 
-void \mbox{\hyperlink{class_main_frame_a242c8190443f5149e2d277f263bba99b}{Pobierz\+Dane}} ()
-\item 
-void \mbox{\hyperlink{class_main_frame_ab57830e125abe1d6299a9eb5eb7092dc}{Filtruj\+Stacje}} (wx\+Command\+Event \&event)
-\item 
-void \mbox{\hyperlink{class_main_frame_aacc88f4a5f97cbd0e84f1ff2550cdf77}{Wyswietl\+Stanowiska}} (wx\+Command\+Event \&event)
-\item 
-void \mbox{\hyperlink{class_main_frame_a242c8190443f5149e2d277f263bba99b}{Pobierz\+Dane}} ()
-\item 
-void \mbox{\hyperlink{class_main_frame_ab57830e125abe1d6299a9eb5eb7092dc}{Filtruj\+Stacje}} (wx\+Command\+Event \&event)
-\item 
-void \mbox{\hyperlink{class_main_frame_aacc88f4a5f97cbd0e84f1ff2550cdf77}{Wyswietl\+Stanowiska}} (wx\+Command\+Event \&event)
-\end{DoxyCompactItemize}
-\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactList}\small\item\em Analizuje dane pomiarowe (min, max, średnia, trend). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_frame_aef3d76628efa0328cbdc4b25ade1bd19}{Potwierdz\+Zakres}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Obsługuje zdarzenie kliknięcia przycisku "{}\+Potwierdź"{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_frame_a290cd87cd021d0d05f21d50191355a6d}{Zapisz\+Dane}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Zapisuje dane pomiarowe do pliku JSON. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_frame_a97006013de74404bd13b5de71fbf0852}{Zaladuj\+Dane}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Ładuje dane pomiarowe z pliku JSON. \end{DoxyCompactList}\item 
+wx\+String \mbox{\hyperlink{class_main_frame_a0e7f98fcb096bc7648020c35d28b74a7}{Generuj\+Nazwe\+Pliku}} ()
+\begin{DoxyCompactList}\small\item\em Generuje nazwę pliku JSON na podstawie aktualnej daty i czasu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atrybuty prywatne}
 \begin{DoxyCompactItemize}
 \item 
-wx\+Choice \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_frame_a33ec667d5929c1b391b3c25c7850ffd4}{choice}}
-\item 
-wx\+Text\+Ctrl \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_frame_a2d671ef944f75e81a77556343ec32e18}{city\+Input}}
-\item 
-wx\+Button \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_frame_a11b8bfb723bcf0788c906a603f10350b}{filter\+Button}}
-\item 
-wx\+Static\+Text \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_frame_adf3b83a5662c6cca04a25372cc0a0218}{label}}
-\item 
-wx\+Static\+Text \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_frame_a49e0e387530e18560d115639ff7cb439}{info\+Label}}
-\item 
-wx\+List\+Box \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_frame_a9e83413fff6cf29bd56f30f48de5037b}{sensor\+List}}
-\item 
+wx\+Choice \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_frame_a77607bb92a1e283614409b281a696c80}{choice}}
+\begin{DoxyCompactList}\small\item\em Lista rozwijana zawierająca stacje. \end{DoxyCompactList}\item 
+wx\+Text\+Ctrl \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_frame_af326ad58f65d28189b0ea7420b0c6359}{city\+Input}}
+\begin{DoxyCompactList}\small\item\em Pole tekstowe do wpisania miasta. \end{DoxyCompactList}\item 
+wx\+Button \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_frame_aa6ca97ed7a114ee8ffd21065c7dc1d32}{filter\+Button}}
+\begin{DoxyCompactList}\small\item\em Przycisk do filtrowania stacji. \end{DoxyCompactList}\item 
+wx\+Button \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_frame_ae2ce5702537a12682084892b73a8d345}{save\+Button}}
+\begin{DoxyCompactList}\small\item\em Przycisk do zapisywania danych do pliku JSON. \end{DoxyCompactList}\item 
+wx\+Button \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_frame_a70d19d3fd0d0fb777bd7648e35ecb999}{load\+Button}}
+\begin{DoxyCompactList}\small\item\em Przycisk do ładowania danych z pliku JSON. \end{DoxyCompactList}\item 
+wx\+Static\+Text \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_frame_a345b666a2367b5ebeac8493d0d345876}{label}}
+\begin{DoxyCompactList}\small\item\em Etykieta nad listą rozwijaną. \end{DoxyCompactList}\item 
+wx\+Static\+Text \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_frame_a285ddc1a8a1482516c303fe811d76162}{info\+Label}}
+\begin{DoxyCompactList}\small\item\em Etykieta wyświetlająca dodatkowe informacje. \end{DoxyCompactList}\item 
+wx\+List\+Box \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_frame_a77be53bd313d9e229b14eb1604166624}{sensor\+List}}
+\begin{DoxyCompactList}\small\item\em Lista stanowisk pomiarowych. \end{DoxyCompactList}\item 
 wx\+Text\+Ctrl \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_frame_aceb88674d7fb1ffce7777a09ea9dca5f}{result\+Box}}
-\item 
-std\+::map$<$ wx\+String, int $>$ \mbox{\hyperlink{class_main_frame_abe311cf67898c8944ae25cac94758c66}{station\+Map}}
-\item 
+\begin{DoxyCompactList}\small\item\em Pole tekstowe do wyświetlania wyników analizy danych. \end{DoxyCompactList}\item 
+wx\+Choice \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_frame_a429a57f3997d93308f51bc34a45401be}{start\+Date\+Choice}}
+\begin{DoxyCompactList}\small\item\em Lista rozwijana do wyboru dolnej granicy czasowej. \end{DoxyCompactList}\item 
+wx\+Choice \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_frame_a8c24e670755718af2f2b70c609ab8323}{end\+Date\+Choice}}
+\begin{DoxyCompactList}\small\item\em Lista rozwijana do wyboru górnej granicy czasowej. \end{DoxyCompactList}\item 
+wx\+Button \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_frame_aaf0fbb7fd8dacbd5f7093642f330823b}{confirm\+Button}}
+\begin{DoxyCompactList}\small\item\em Przycisk do potwierdzenia wyboru zakresu czasowego. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_plot_panel}{Plot\+Panel}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_frame_a0f25063c86baa81b7c794becd64dfc68}{plot\+Panel}}
+\begin{DoxyCompactList}\small\item\em Panel wykresu, na którym rysowane są dane pomiarowe. \end{DoxyCompactList}\item 
+std\+::map$<$ wx\+String, int $>$ \mbox{\hyperlink{class_main_frame_a5921b3af835624a4400173566b5d5f81}{station\+Map}}
+\begin{DoxyCompactList}\small\item\em Mapa stacji i ich identyfikatorów. \end{DoxyCompactList}\item 
 std\+::map$<$ wx\+String, int $>$ \mbox{\hyperlink{class_main_frame_ae22267277a727ee4907ba04d7e58f20b}{sensor\+Map}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Mapa stanowisk pomiarowych i ich identyfikatorów. \end{DoxyCompactList}\item 
+std\+::vector$<$ wx\+String $>$ \mbox{\hyperlink{class_main_frame_a575cc3c411185b59e507467a371e92c0}{timestamps}}
+\begin{DoxyCompactList}\small\item\em Przechowywanie wszystkich dostępnych znaczników czasu. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::pair$<$ wx\+String, double $>$ $>$ \mbox{\hyperlink{class_main_frame_ab585105ec6f2382aded506db7a5cd9b2}{values}}
+\begin{DoxyCompactList}\small\item\em Wszystkie dane pomiarowe przed filtrowaniem. \end{DoxyCompactList}\item 
+Json\+::\+Value \mbox{\hyperlink{class_main_frame_aaa6b509df52bb177db6cf1051068c067}{current\+Sensor\+Data}}
+\begin{DoxyCompactList}\small\item\em Aktualne dane pomiarowe w formacie JSON. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\doxysubsection{Constructor \& Destructor Documentation}
+\doxysubsection{Opis szczegółowy}
+Główna klasa okna aplikacji, dziedziczy po {\ttfamily wx\+Frame}. 
+
+Klasa {\ttfamily \doxylink{class_main_frame}{Main\+Frame}} reprezentuje główne okno aplikacji, które umożliwia użytkownikowi interakcję z aplikacją do analizy danych o jakości powietrza. Zawiera wszystkie interfejsy użytkownika, takie jak pola tekstowe, listy, przyciski, oraz odpowiednie metody do obsługi zdarzeń. 
+
+\doxysubsection{Dokumentacja konstruktora i destruktora}
 \Hypertarget{class_main_frame_a00c85521dad6b24000967206bcc53688}\index{MainFrame@{MainFrame}!MainFrame@{MainFrame}}
 \index{MainFrame@{MainFrame}!MainFrame@{MainFrame}}
-\doxysubsubsection{\texorpdfstring{MainFrame()}{MainFrame()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+\doxysubsubsection{\texorpdfstring{MainFrame()}{MainFrame()}}
 {\footnotesize\ttfamily \label{class_main_frame_a00c85521dad6b24000967206bcc53688} 
 Main\+Frame\+::\+Main\+Frame (\begin{DoxyParamCaption}\item[{const wx\+String \&}]{title}{}\end{DoxyParamCaption})}
 
-\Hypertarget{class_main_frame_a00c85521dad6b24000967206bcc53688}\index{MainFrame@{MainFrame}!MainFrame@{MainFrame}}
-\index{MainFrame@{MainFrame}!MainFrame@{MainFrame}}
-\doxysubsubsection{\texorpdfstring{MainFrame()}{MainFrame()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily \label{class_main_frame_a00c85521dad6b24000967206bcc53688} 
-Main\+Frame\+::\+Main\+Frame (\begin{DoxyParamCaption}\item[{const wx\+String \&}]{title}{}\end{DoxyParamCaption})}
-
-\Hypertarget{class_main_frame_a00c85521dad6b24000967206bcc53688}\index{MainFrame@{MainFrame}!MainFrame@{MainFrame}}
-\index{MainFrame@{MainFrame}!MainFrame@{MainFrame}}
-\doxysubsubsection{\texorpdfstring{MainFrame()}{MainFrame()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily \label{class_main_frame_a00c85521dad6b24000967206bcc53688} 
-Main\+Frame\+::\+Main\+Frame (\begin{DoxyParamCaption}\item[{const wx\+String \&}]{title}{}\end{DoxyParamCaption})}
 
 
+Konstruktor klasy {\ttfamily \doxylink{class_main_frame}{Main\+Frame}}. 
 
-\doxysubsection{Member Function Documentation}
+Konstruktor klasy \doxylink{class_main_frame}{Main\+Frame}.
+
+Inicjalizuje główne okno aplikacji, ustawia tytuł okna oraz inicjalizuje wszystkie kontrolki (przyciski, pola tekstowe, listy itp.).
+
+
+\begin{DoxyParams}{Parametry}
+{\em title} & Tytuł głównego okna aplikacji.\\
+\hline
+\end{DoxyParams}
+Tworzy główne okno aplikacji, inicjalizuje wszystkie komponenty interfejsu użytkownika i ustawia je w odpowiednich sizerach. Pobiera również dane ze stacji pomiarowych z serwisu GIOŚ oraz aktualizuje listę stacji pomiarowych.
+
+
+\begin{DoxyParams}{Parametry}
+{\em title} & Tytuł okna aplikacji. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Dokumentacja funkcji składowych}
 \Hypertarget{class_main_frame_abedf1166fbb744e1f2d835d42055b118}\index{MainFrame@{MainFrame}!AnalizujDane@{AnalizujDane}}
 \index{AnalizujDane@{AnalizujDane}!MainFrame@{MainFrame}}
 \doxysubsubsection{\texorpdfstring{AnalizujDane()}{AnalizujDane()}}
 {\footnotesize\ttfamily \label{class_main_frame_abedf1166fbb744e1f2d835d42055b118} 
 void Main\+Frame\+::\+Analizuj\+Dane (\begin{DoxyParamCaption}\item[{const Json\+::\+Value \&}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Analizuje dane pomiarowe (min, max, średnia, trend). 
+
+Analizuje dane pomiarowe.
+
+Funkcja ta analizuje dane JSON zawierające informacje o jakości powietrza, oblicza wartości minimalne, maksymalne, średnie oraz trend w danych, a następnie wyświetla je w odpowiednich polach.
+
+
+\begin{DoxyParams}{Parametry}
+{\em data} & Dane pomiarowe w formacie JSON. Analiza wartości min, max, średnia, trend.\\
+\hline
+\end{DoxyParams}
+Funkcja analizuje dane pomiarowe, wylicza wartości minimalne, maksymalne, średnie oraz określa trend (wzrostowy/malejący). Wyniki są wyświetlane w polu tekstowym oraz na wykresie.
+
+
+\begin{DoxyParams}{Parametry}
+{\em data} & Dane pomiarowe w formacie JSON. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{Zobacz również}
+\doxylink{class_main_frame_a1c35270fa8b48c39e00632a40e913076}{Wyswietl\+Dane\+Pomiarowe} 
+\end{DoxySeeAlso}
 \Hypertarget{class_main_frame_ab57830e125abe1d6299a9eb5eb7092dc}\index{MainFrame@{MainFrame}!FiltrujStacje@{FiltrujStacje}}
 \index{FiltrujStacje@{FiltrujStacje}!MainFrame@{MainFrame}}
-\doxysubsubsection{\texorpdfstring{FiltrujStacje()}{FiltrujStacje()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+\doxysubsubsection{\texorpdfstring{FiltrujStacje()}{FiltrujStacje()}}
 {\footnotesize\ttfamily \label{class_main_frame_ab57830e125abe1d6299a9eb5eb7092dc} 
 void Main\+Frame\+::\+Filtruj\+Stacje (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-\Hypertarget{class_main_frame_ab57830e125abe1d6299a9eb5eb7092dc}\index{MainFrame@{MainFrame}!FiltrujStacje@{FiltrujStacje}}
-\index{FiltrujStacje@{FiltrujStacje}!MainFrame@{MainFrame}}
-\doxysubsubsection{\texorpdfstring{FiltrujStacje()}{FiltrujStacje()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily \label{class_main_frame_ab57830e125abe1d6299a9eb5eb7092dc} 
-void Main\+Frame\+::\+Filtruj\+Stacje (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-\Hypertarget{class_main_frame_ab57830e125abe1d6299a9eb5eb7092dc}\index{MainFrame@{MainFrame}!FiltrujStacje@{FiltrujStacje}}
-\index{FiltrujStacje@{FiltrujStacje}!MainFrame@{MainFrame}}
-\doxysubsubsection{\texorpdfstring{FiltrujStacje()}{FiltrujStacje()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily \label{class_main_frame_ab57830e125abe1d6299a9eb5eb7092dc} 
-void Main\+Frame\+::\+Filtruj\+Stacje (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
+Obsługuje zdarzenie kliknięcia przycisku do filtrowania stacji. 
+
+Filtrowanie stacji na podstawie miejscowości.
+
+Ta metoda filtruje dostępne stacje na podstawie wprowadzonego miasta i wyświetla je w liście rozwijanej.
+
+
+\begin{DoxyParams}{Parametry}
+{\em event} & Zdarzenie kliknięcia przycisku.\\
+\hline
+\end{DoxyParams}
+Funkcja przeszukuje wprowadzone przez użytkownika miasto w celu filtrowania dostępnych stacji pomiarowych. Listę stacji wyświetla się na podstawie wprowadzonego filtru.
+
+
+\begin{DoxyParams}{Parametry}
+{\em event} & Wydarzenie związane z przyciskiem "{}\+Filtruj"{}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{Zobacz również}
+\doxylink{class_main_frame_a242c8190443f5149e2d277f263bba99b}{Pobierz\+Dane} 
+\end{DoxySeeAlso}
+\Hypertarget{class_main_frame_a0e7f98fcb096bc7648020c35d28b74a7}\index{MainFrame@{MainFrame}!GenerujNazwePliku@{GenerujNazwePliku}}
+\index{GenerujNazwePliku@{GenerujNazwePliku}!MainFrame@{MainFrame}}
+\doxysubsubsection{\texorpdfstring{GenerujNazwePliku()}{GenerujNazwePliku()}}
+{\footnotesize\ttfamily \label{class_main_frame_a0e7f98fcb096bc7648020c35d28b74a7} 
+wx\+String Main\+Frame\+::\+Generuj\+Nazwe\+Pliku (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Generuje nazwę pliku JSON na podstawie aktualnej daty i czasu. 
+
+\begin{DoxyReturn}{Zwraca}
+wx\+String Nazwa pliku z rozszerzeniem JSON. 
+\end{DoxyReturn}
 \Hypertarget{class_main_frame_a242c8190443f5149e2d277f263bba99b}\index{MainFrame@{MainFrame}!PobierzDane@{PobierzDane}}
 \index{PobierzDane@{PobierzDane}!MainFrame@{MainFrame}}
-\doxysubsubsection{\texorpdfstring{PobierzDane()}{PobierzDane()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+\doxysubsubsection{\texorpdfstring{PobierzDane()}{PobierzDane()}}
 {\footnotesize\ttfamily \label{class_main_frame_a242c8190443f5149e2d277f263bba99b} 
 void Main\+Frame\+::\+Pobierz\+Dane (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-\Hypertarget{class_main_frame_a242c8190443f5149e2d277f263bba99b}\index{MainFrame@{MainFrame}!PobierzDane@{PobierzDane}}
-\index{PobierzDane@{PobierzDane}!MainFrame@{MainFrame}}
-\doxysubsubsection{\texorpdfstring{PobierzDane()}{PobierzDane()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily \label{class_main_frame_a242c8190443f5149e2d277f263bba99b} 
-void Main\+Frame\+::\+Pobierz\+Dane (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-\Hypertarget{class_main_frame_a242c8190443f5149e2d277f263bba99b}\index{MainFrame@{MainFrame}!PobierzDane@{PobierzDane}}
-\index{PobierzDane@{PobierzDane}!MainFrame@{MainFrame}}
-\doxysubsubsection{\texorpdfstring{PobierzDane()}{PobierzDane()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily \label{class_main_frame_a242c8190443f5149e2d277f263bba99b} 
-void Main\+Frame\+::\+Pobierz\+Dane (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
+Pobiera dane o jakości powietrza z serwera. 
+
+Pobiera dane stacji pomiarowych z API GIOŚ.
+
+Ta metoda wykonuje żądanie HTTP do serwera, aby pobrać dane o jakości powietrza. Po pobraniu danych uruchamiana jest analiza danych i ich wyświetlenie. W przypadku braku dostępu do internetu, próbuje załadować dane z pliku lokalnego.
+
+Funkcja wykonuje zapytanie do serwisu GIOŚ w celu pobrania listy dostępnych stacji pomiarowych, które następnie są dodawane do rozwijanej listy stacji. W przypadku błędu wyświetlana jest odpowiednia informacja.
+
+\begin{DoxyNote}{Nota}
+W przypadku braku połączenia z serwerem GIOŚ lub problemu z przetwarzaniem danych wyświetlana jest wiadomość o błędzie. 
+\end{DoxyNote}
+\Hypertarget{class_main_frame_aef3d76628efa0328cbdc4b25ade1bd19}\index{MainFrame@{MainFrame}!PotwierdzZakres@{PotwierdzZakres}}
+\index{PotwierdzZakres@{PotwierdzZakres}!MainFrame@{MainFrame}}
+\doxysubsubsection{\texorpdfstring{PotwierdzZakres()}{PotwierdzZakres()}}
+{\footnotesize\ttfamily \label{class_main_frame_aef3d76628efa0328cbdc4b25ade1bd19} 
+void Main\+Frame\+::\+Potwierdz\+Zakres (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Obsługuje zdarzenie kliknięcia przycisku "{}\+Potwierdź"{}. 
+
+Obsługuje zdarzenie kliknięcia przycisku "{}\+Potwierdź"{} i filtruje dane pomiarowe na podstawie wybranego zakresu czasowego.
+
+Ta metoda filtruje dane pomiarowe na podstawie wybranego zakresu czasowego i aktualizuje wyświetlane dane na wykresie oraz w polu tekstowym. Jeśli nie znaleziono żadnych danych w podanym zakresie, wyświetlany jest komunikat o braku danych, a wykres jest resetowany.
+
+
+\begin{DoxyParams}{Parametry}
+{\em event} & Zdarzenie kliknięcia przycisku "{}\+Potwierdź"{}.\\
+\hline
+\end{DoxyParams}
+Funkcja pobiera wybrane indeksy dat z kontrolek start\+Date\+Choice i end\+Date\+Choice, a następnie filtruje dane pomiarowe, uwzględniając jedynie te próbki, których znaczniki czasowe mieszczą się w określonym przedziale. Jeżeli nie zostanie wybrany prawidłowy zakres lub brak jest danych w danym zakresie, użytkownik otrzymuje odpowiedni komunikat.
+
+
+\begin{DoxyParams}{Parametry}
+{\em event} & Referencja do obiektu wx\+Command\+Event reprezentującego zdarzenie kliknięcia przycisku.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyRemark}{Spostrzeżenia}
+Funkcja aktualizuje dane wyświetlane na wykresie za pomocą plot\+Panel-\/\texorpdfstring{$>$}{>}Set\+Data().
+\end{DoxyRemark}
+\begin{DoxySeeAlso}{Zobacz również}
+\doxylink{class_main_frame_a429a57f3997d93308f51bc34a45401be}{Main\+Frame\+::start\+Date\+Choice} 
+
+\doxylink{class_main_frame_a8c24e670755718af2f2b70c609ab8323}{Main\+Frame\+::end\+Date\+Choice} 
+
+\doxylink{class_main_frame_a0f25063c86baa81b7c794becd64dfc68}{Main\+Frame\+::plot\+Panel} 
+\end{DoxySeeAlso}
 \Hypertarget{class_main_frame_a1c35270fa8b48c39e00632a40e913076}\index{MainFrame@{MainFrame}!WyswietlDanePomiarowe@{WyswietlDanePomiarowe}}
 \index{WyswietlDanePomiarowe@{WyswietlDanePomiarowe}!MainFrame@{MainFrame}}
 \doxysubsubsection{\texorpdfstring{WyswietlDanePomiarowe()}{WyswietlDanePomiarowe()}}
 {\footnotesize\ttfamily \label{class_main_frame_a1c35270fa8b48c39e00632a40e913076} 
 void Main\+Frame\+::\+Wyswietl\+Dane\+Pomiarowe (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Pobiera dane pomiarowe dla wybranej stacji i analizuje je. 
+
+Wyświetlanie danych pomiarowych dla wybranego stanowiska.
+
+Metoda ta pobiera dane o jakości powietrza dla wybranej stacji, a następnie wyświetla wyniki analizy w polu tekstowym oraz rysuje wykres w panelu wykresu.
+
+
+\begin{DoxyParams}{Parametry}
+{\em event} & Zdarzenie kliknięcia przycisku wywołującego metodę.\\
+\hline
+\end{DoxyParams}
+Funkcja pobiera dane pomiarowe dla wybranego stanowiska i analizuje je, wyświetlając odpowiednie wyniki w polu tekstowym oraz na wykresie.
+
+
+\begin{DoxyParams}{Parametry}
+{\em event} & Wydarzenie związane z wyborem stanowiska pomiarowego. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{Zobacz również}
+\doxylink{class_main_frame_aacc88f4a5f97cbd0e84f1ff2550cdf77}{Wyswietl\+Stanowiska} 
+\end{DoxySeeAlso}
 \Hypertarget{class_main_frame_aacc88f4a5f97cbd0e84f1ff2550cdf77}\index{MainFrame@{MainFrame}!WyswietlStanowiska@{WyswietlStanowiska}}
 \index{WyswietlStanowiska@{WyswietlStanowiska}!MainFrame@{MainFrame}}
-\doxysubsubsection{\texorpdfstring{WyswietlStanowiska()}{WyswietlStanowiska()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+\doxysubsubsection{\texorpdfstring{WyswietlStanowiska()}{WyswietlStanowiska()}}
 {\footnotesize\ttfamily \label{class_main_frame_aacc88f4a5f97cbd0e84f1ff2550cdf77} 
 void Main\+Frame\+::\+Wyswietl\+Stanowiska (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-\Hypertarget{class_main_frame_aacc88f4a5f97cbd0e84f1ff2550cdf77}\index{MainFrame@{MainFrame}!WyswietlStanowiska@{WyswietlStanowiska}}
-\index{WyswietlStanowiska@{WyswietlStanowiska}!MainFrame@{MainFrame}}
-\doxysubsubsection{\texorpdfstring{WyswietlStanowiska()}{WyswietlStanowiska()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily \label{class_main_frame_aacc88f4a5f97cbd0e84f1ff2550cdf77} 
-void Main\+Frame\+::\+Wyswietl\+Stanowiska (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-\Hypertarget{class_main_frame_aacc88f4a5f97cbd0e84f1ff2550cdf77}\index{MainFrame@{MainFrame}!WyswietlStanowiska@{WyswietlStanowiska}}
-\index{WyswietlStanowiska@{WyswietlStanowiska}!MainFrame@{MainFrame}}
-\doxysubsubsection{\texorpdfstring{WyswietlStanowiska()}{WyswietlStanowiska()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily \label{class_main_frame_aacc88f4a5f97cbd0e84f1ff2550cdf77} 
-void Main\+Frame\+::\+Wyswietl\+Stanowiska (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
+Wyświetla listę stanowisk pomiarowych dla wybranej stacji. 
 
-\doxysubsection{Member Data Documentation}
-\Hypertarget{class_main_frame_a33ec667d5929c1b391b3c25c7850ffd4}\index{MainFrame@{MainFrame}!choice@{choice}}
+Wyświetlanie stanowisk pomiarowych dla wybranej stacji.
+
+Ta metoda generuje i wyświetla listę stanowisk pomiarowych (czujników) dla wybranej stacji.
+
+
+\begin{DoxyParams}{Parametry}
+{\em event} & Zdarzenie kliknięcia przycisku wywołującego metodę.\\
+\hline
+\end{DoxyParams}
+Funkcja pobiera dostępne stanowiska pomiarowe dla wybranej stacji i wyświetla je w odpowiedniej liście. Pobieranie danych odbywa się za pomocą API GIOŚ.
+
+
+\begin{DoxyParams}{Parametry}
+{\em event} & Wydarzenie związane z wyborem stacji pomiarowej. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{Zobacz również}
+\doxylink{class_main_frame_a242c8190443f5149e2d277f263bba99b}{Pobierz\+Dane} 
+\end{DoxySeeAlso}
+\Hypertarget{class_main_frame_a97006013de74404bd13b5de71fbf0852}\index{MainFrame@{MainFrame}!ZaladujDane@{ZaladujDane}}
+\index{ZaladujDane@{ZaladujDane}!MainFrame@{MainFrame}}
+\doxysubsubsection{\texorpdfstring{ZaladujDane()}{ZaladujDane()}}
+{\footnotesize\ttfamily \label{class_main_frame_a97006013de74404bd13b5de71fbf0852} 
+void Main\+Frame\+::\+Zaladuj\+Dane (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Ładuje dane pomiarowe z pliku JSON. 
+
+Ta metoda ładuje historyczne dane pomiarowe z pliku JSON i wyświetla je w aplikacji.
+
+
+\begin{DoxyParams}{Parametry}
+{\em event} & Zdarzenie kliknięcia przycisku "{}\+Załaduj"{}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_main_frame_a290cd87cd021d0d05f21d50191355a6d}\index{MainFrame@{MainFrame}!ZapiszDane@{ZapiszDane}}
+\index{ZapiszDane@{ZapiszDane}!MainFrame@{MainFrame}}
+\doxysubsubsection{\texorpdfstring{ZapiszDane()}{ZapiszDane()}}
+{\footnotesize\ttfamily \label{class_main_frame_a290cd87cd021d0d05f21d50191355a6d} 
+void Main\+Frame\+::\+Zapisz\+Dane (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Zapisuje dane pomiarowe do pliku JSON. 
+
+Ta metoda zapisuje aktualne dane pomiarowe do pliku JSON w katalogu aplikacji. Nazwa pliku zawiera datę i czas pobrania danych.
+
+
+\begin{DoxyParams}{Parametry}
+{\em event} & Zdarzenie kliknięcia przycisku "{}\+Zapisz"{}. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Dokumentacja atrybutów składowych}
+\Hypertarget{class_main_frame_a77607bb92a1e283614409b281a696c80}\index{MainFrame@{MainFrame}!choice@{choice}}
 \index{choice@{choice}!MainFrame@{MainFrame}}
 \doxysubsubsection{\texorpdfstring{choice}{choice}}
-{\footnotesize\ttfamily \label{class_main_frame_a33ec667d5929c1b391b3c25c7850ffd4} 
-wx\+Choice \texorpdfstring{$\ast$}{*} Main\+Frame\+::choice\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \label{class_main_frame_a77607bb92a1e283614409b281a696c80} 
+wx\+Choice\texorpdfstring{$\ast$}{*} Main\+Frame\+::choice\hspace{0.3cm}{\ttfamily [private]}}
 
-\Hypertarget{class_main_frame_a2d671ef944f75e81a77556343ec32e18}\index{MainFrame@{MainFrame}!cityInput@{cityInput}}
+
+
+Lista rozwijana zawierająca stacje. 
+
+\Hypertarget{class_main_frame_af326ad58f65d28189b0ea7420b0c6359}\index{MainFrame@{MainFrame}!cityInput@{cityInput}}
 \index{cityInput@{cityInput}!MainFrame@{MainFrame}}
 \doxysubsubsection{\texorpdfstring{cityInput}{cityInput}}
-{\footnotesize\ttfamily \label{class_main_frame_a2d671ef944f75e81a77556343ec32e18} 
-wx\+Text\+Ctrl \texorpdfstring{$\ast$}{*} Main\+Frame\+::city\+Input\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \label{class_main_frame_af326ad58f65d28189b0ea7420b0c6359} 
+wx\+Text\+Ctrl\texorpdfstring{$\ast$}{*} Main\+Frame\+::city\+Input\hspace{0.3cm}{\ttfamily [private]}}
 
-\Hypertarget{class_main_frame_a11b8bfb723bcf0788c906a603f10350b}\index{MainFrame@{MainFrame}!filterButton@{filterButton}}
+
+
+Pole tekstowe do wpisania miasta. 
+
+\Hypertarget{class_main_frame_aaf0fbb7fd8dacbd5f7093642f330823b}\index{MainFrame@{MainFrame}!confirmButton@{confirmButton}}
+\index{confirmButton@{confirmButton}!MainFrame@{MainFrame}}
+\doxysubsubsection{\texorpdfstring{confirmButton}{confirmButton}}
+{\footnotesize\ttfamily \label{class_main_frame_aaf0fbb7fd8dacbd5f7093642f330823b} 
+wx\+Button\texorpdfstring{$\ast$}{*} Main\+Frame\+::confirm\+Button\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Przycisk do potwierdzenia wyboru zakresu czasowego. 
+
+\Hypertarget{class_main_frame_aaa6b509df52bb177db6cf1051068c067}\index{MainFrame@{MainFrame}!currentSensorData@{currentSensorData}}
+\index{currentSensorData@{currentSensorData}!MainFrame@{MainFrame}}
+\doxysubsubsection{\texorpdfstring{currentSensorData}{currentSensorData}}
+{\footnotesize\ttfamily \label{class_main_frame_aaa6b509df52bb177db6cf1051068c067} 
+Json\+::\+Value Main\+Frame\+::current\+Sensor\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Aktualne dane pomiarowe w formacie JSON. 
+
+\Hypertarget{class_main_frame_a8c24e670755718af2f2b70c609ab8323}\index{MainFrame@{MainFrame}!endDateChoice@{endDateChoice}}
+\index{endDateChoice@{endDateChoice}!MainFrame@{MainFrame}}
+\doxysubsubsection{\texorpdfstring{endDateChoice}{endDateChoice}}
+{\footnotesize\ttfamily \label{class_main_frame_a8c24e670755718af2f2b70c609ab8323} 
+wx\+Choice\texorpdfstring{$\ast$}{*} Main\+Frame\+::end\+Date\+Choice\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Lista rozwijana do wyboru górnej granicy czasowej. 
+
+\Hypertarget{class_main_frame_aa6ca97ed7a114ee8ffd21065c7dc1d32}\index{MainFrame@{MainFrame}!filterButton@{filterButton}}
 \index{filterButton@{filterButton}!MainFrame@{MainFrame}}
 \doxysubsubsection{\texorpdfstring{filterButton}{filterButton}}
-{\footnotesize\ttfamily \label{class_main_frame_a11b8bfb723bcf0788c906a603f10350b} 
-wx\+Button \texorpdfstring{$\ast$}{*} Main\+Frame\+::filter\+Button\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \label{class_main_frame_aa6ca97ed7a114ee8ffd21065c7dc1d32} 
+wx\+Button\texorpdfstring{$\ast$}{*} Main\+Frame\+::filter\+Button\hspace{0.3cm}{\ttfamily [private]}}
 
-\Hypertarget{class_main_frame_a49e0e387530e18560d115639ff7cb439}\index{MainFrame@{MainFrame}!infoLabel@{infoLabel}}
+
+
+Przycisk do filtrowania stacji. 
+
+\Hypertarget{class_main_frame_a285ddc1a8a1482516c303fe811d76162}\index{MainFrame@{MainFrame}!infoLabel@{infoLabel}}
 \index{infoLabel@{infoLabel}!MainFrame@{MainFrame}}
 \doxysubsubsection{\texorpdfstring{infoLabel}{infoLabel}}
-{\footnotesize\ttfamily \label{class_main_frame_a49e0e387530e18560d115639ff7cb439} 
-wx\+Static\+Text \texorpdfstring{$\ast$}{*} Main\+Frame\+::info\+Label\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \label{class_main_frame_a285ddc1a8a1482516c303fe811d76162} 
+wx\+Static\+Text\texorpdfstring{$\ast$}{*} Main\+Frame\+::info\+Label\hspace{0.3cm}{\ttfamily [private]}}
 
-\Hypertarget{class_main_frame_adf3b83a5662c6cca04a25372cc0a0218}\index{MainFrame@{MainFrame}!label@{label}}
+
+
+Etykieta wyświetlająca dodatkowe informacje. 
+
+\Hypertarget{class_main_frame_a345b666a2367b5ebeac8493d0d345876}\index{MainFrame@{MainFrame}!label@{label}}
 \index{label@{label}!MainFrame@{MainFrame}}
 \doxysubsubsection{\texorpdfstring{label}{label}}
-{\footnotesize\ttfamily \label{class_main_frame_adf3b83a5662c6cca04a25372cc0a0218} 
-wx\+Static\+Text \texorpdfstring{$\ast$}{*} Main\+Frame\+::label\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \label{class_main_frame_a345b666a2367b5ebeac8493d0d345876} 
+wx\+Static\+Text\texorpdfstring{$\ast$}{*} Main\+Frame\+::label\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Etykieta nad listą rozwijaną. 
+
+\Hypertarget{class_main_frame_a70d19d3fd0d0fb777bd7648e35ecb999}\index{MainFrame@{MainFrame}!loadButton@{loadButton}}
+\index{loadButton@{loadButton}!MainFrame@{MainFrame}}
+\doxysubsubsection{\texorpdfstring{loadButton}{loadButton}}
+{\footnotesize\ttfamily \label{class_main_frame_a70d19d3fd0d0fb777bd7648e35ecb999} 
+wx\+Button\texorpdfstring{$\ast$}{*} Main\+Frame\+::load\+Button\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Przycisk do ładowania danych z pliku JSON. 
+
+\Hypertarget{class_main_frame_a0f25063c86baa81b7c794becd64dfc68}\index{MainFrame@{MainFrame}!plotPanel@{plotPanel}}
+\index{plotPanel@{plotPanel}!MainFrame@{MainFrame}}
+\doxysubsubsection{\texorpdfstring{plotPanel}{plotPanel}}
+{\footnotesize\ttfamily \label{class_main_frame_a0f25063c86baa81b7c794becd64dfc68} 
+\mbox{\hyperlink{class_plot_panel}{Plot\+Panel}}\texorpdfstring{$\ast$}{*} Main\+Frame\+::plot\+Panel\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Panel wykresu, na którym rysowane są dane pomiarowe. 
 
 \Hypertarget{class_main_frame_aceb88674d7fb1ffce7777a09ea9dca5f}\index{MainFrame@{MainFrame}!resultBox@{resultBox}}
 \index{resultBox@{resultBox}!MainFrame@{MainFrame}}
@@ -194,11 +444,29 @@ wx\+Static\+Text \texorpdfstring{$\ast$}{*} Main\+Frame\+::label\hspace{0.3cm}{\
 {\footnotesize\ttfamily \label{class_main_frame_aceb88674d7fb1ffce7777a09ea9dca5f} 
 wx\+Text\+Ctrl\texorpdfstring{$\ast$}{*} Main\+Frame\+::result\+Box\hspace{0.3cm}{\ttfamily [private]}}
 
-\Hypertarget{class_main_frame_a9e83413fff6cf29bd56f30f48de5037b}\index{MainFrame@{MainFrame}!sensorList@{sensorList}}
+
+
+Pole tekstowe do wyświetlania wyników analizy danych. 
+
+\Hypertarget{class_main_frame_ae2ce5702537a12682084892b73a8d345}\index{MainFrame@{MainFrame}!saveButton@{saveButton}}
+\index{saveButton@{saveButton}!MainFrame@{MainFrame}}
+\doxysubsubsection{\texorpdfstring{saveButton}{saveButton}}
+{\footnotesize\ttfamily \label{class_main_frame_ae2ce5702537a12682084892b73a8d345} 
+wx\+Button\texorpdfstring{$\ast$}{*} Main\+Frame\+::save\+Button\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Przycisk do zapisywania danych do pliku JSON. 
+
+\Hypertarget{class_main_frame_a77be53bd313d9e229b14eb1604166624}\index{MainFrame@{MainFrame}!sensorList@{sensorList}}
 \index{sensorList@{sensorList}!MainFrame@{MainFrame}}
 \doxysubsubsection{\texorpdfstring{sensorList}{sensorList}}
-{\footnotesize\ttfamily \label{class_main_frame_a9e83413fff6cf29bd56f30f48de5037b} 
-wx\+List\+Box \texorpdfstring{$\ast$}{*} Main\+Frame\+::sensor\+List\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \label{class_main_frame_a77be53bd313d9e229b14eb1604166624} 
+wx\+List\+Box\texorpdfstring{$\ast$}{*} Main\+Frame\+::sensor\+List\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Lista stanowisk pomiarowych. 
 
 \Hypertarget{class_main_frame_ae22267277a727ee4907ba04d7e58f20b}\index{MainFrame@{MainFrame}!sensorMap@{sensorMap}}
 \index{sensorMap@{sensorMap}!MainFrame@{MainFrame}}
@@ -206,19 +474,53 @@ wx\+List\+Box \texorpdfstring{$\ast$}{*} Main\+Frame\+::sensor\+List\hspace{0.3c
 {\footnotesize\ttfamily \label{class_main_frame_ae22267277a727ee4907ba04d7e58f20b} 
 std\+::map$<$wx\+String, int$>$ Main\+Frame\+::sensor\+Map\hspace{0.3cm}{\ttfamily [private]}}
 
-\Hypertarget{class_main_frame_abe311cf67898c8944ae25cac94758c66}\index{MainFrame@{MainFrame}!stationMap@{stationMap}}
+
+
+Mapa stanowisk pomiarowych i ich identyfikatorów. 
+
+\Hypertarget{class_main_frame_a429a57f3997d93308f51bc34a45401be}\index{MainFrame@{MainFrame}!startDateChoice@{startDateChoice}}
+\index{startDateChoice@{startDateChoice}!MainFrame@{MainFrame}}
+\doxysubsubsection{\texorpdfstring{startDateChoice}{startDateChoice}}
+{\footnotesize\ttfamily \label{class_main_frame_a429a57f3997d93308f51bc34a45401be} 
+wx\+Choice\texorpdfstring{$\ast$}{*} Main\+Frame\+::start\+Date\+Choice\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Lista rozwijana do wyboru dolnej granicy czasowej. 
+
+\Hypertarget{class_main_frame_a5921b3af835624a4400173566b5d5f81}\index{MainFrame@{MainFrame}!stationMap@{stationMap}}
 \index{stationMap@{stationMap}!MainFrame@{MainFrame}}
 \doxysubsubsection{\texorpdfstring{stationMap}{stationMap}}
-{\footnotesize\ttfamily \label{class_main_frame_abe311cf67898c8944ae25cac94758c66} 
-std\+::map$<$ wx\+String, int $>$ Main\+Frame\+::station\+Map\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \label{class_main_frame_a5921b3af835624a4400173566b5d5f81} 
+std\+::map$<$wx\+String, int$>$ Main\+Frame\+::station\+Map\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+Mapa stacji i ich identyfikatorów. 
+
+\Hypertarget{class_main_frame_a575cc3c411185b59e507467a371e92c0}\index{MainFrame@{MainFrame}!timestamps@{timestamps}}
+\index{timestamps@{timestamps}!MainFrame@{MainFrame}}
+\doxysubsubsection{\texorpdfstring{timestamps}{timestamps}}
+{\footnotesize\ttfamily \label{class_main_frame_a575cc3c411185b59e507467a371e92c0} 
+std\+::vector$<$wx\+String$>$ Main\+Frame\+::timestamps\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Przechowywanie wszystkich dostępnych znaczników czasu. 
+
+\Hypertarget{class_main_frame_ab585105ec6f2382aded506db7a5cd9b2}\index{MainFrame@{MainFrame}!values@{values}}
+\index{values@{values}!MainFrame@{MainFrame}}
+\doxysubsubsection{\texorpdfstring{values}{values}}
+{\footnotesize\ttfamily \label{class_main_frame_ab585105ec6f2382aded506db7a5cd9b2} 
+std\+::vector$<$std\+::pair$<$wx\+String, double$>$ $>$ Main\+Frame\+::values\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Wszystkie dane pomiarowe przed filtrowaniem. 
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/\+Dziobakowski/source/repos/\+JPO/\+JPO/\mbox{\hyperlink{_j_p_o_2_main_frame_8h}{Main\+Frame.\+h}}\item 
-C\+:/\+Users/\+Dziobakowski/source/repos/\+JPO/x64/\+JPO/\mbox{\hyperlink{x64_2_j_p_o_2_main_frame_8h}{Main\+Frame.\+h}}\item 
-C\+:/\+Users/\+Dziobakowski/source/repos/\+JPO/x64/x64/\+JPO/\mbox{\hyperlink{x64_2x64_2_j_p_o_2_main_frame_8h}{Main\+Frame.\+h}}\item 
-C\+:/\+Users/\+Dziobakowski/source/repos/\+JPO/\+JPO/\mbox{\hyperlink{_j_p_o_2_main_frame_8cpp}{Main\+Frame.\+cpp}}\item 
-C\+:/\+Users/\+Dziobakowski/source/repos/\+JPO/x64/\+JPO/\mbox{\hyperlink{x64_2_j_p_o_2_main_frame_8cpp}{Main\+Frame.\+cpp}}\item 
-C\+:/\+Users/\+Dziobakowski/source/repos/\+JPO/x64/x64/\+JPO/\mbox{\hyperlink{x64_2x64_2_j_p_o_2_main_frame_8cpp}{Main\+Frame.\+cpp}}\end{DoxyCompactItemize}
+JPO/\mbox{\hyperlink{_main_frame_8h}{Main\+Frame.\+h}}\item 
+JPO/\mbox{\hyperlink{_main_frame_8cpp}{Main\+Frame.\+cpp}}\end{DoxyCompactItemize}

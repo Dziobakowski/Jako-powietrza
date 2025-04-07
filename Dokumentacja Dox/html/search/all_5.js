@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['label_0',['label',['../class_main_frame.html#adf3b83a5662c6cca04a25372cc0a0218',1,'MainFrame']]]
+  ['generujnazwepliku_0',['GenerujNazwePliku',['../class_main_frame.html#a0e7f98fcb096bc7648020c35d28b74a7',1,'MainFrame']]]
 ];

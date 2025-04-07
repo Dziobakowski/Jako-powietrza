@@ -25,21 +25,22 @@
 var NAVTREE =
 [
   [ "Jakość powietrza w Polsce", "index.html", [
-    [ "Classes", "annotated.html", [
-      [ "Class List", "annotated.html", "annotated_dup" ],
-      [ "Class Index", "classes.html", null ],
-      [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
-      [ "Class Members", "functions.html", [
-        [ "All", "functions.html", null ],
-        [ "Functions", "functions_func.html", null ],
-        [ "Variables", "functions_vars.html", null ]
+    [ "Jakość-powietrza-w-Polsce", "md__r_e_a_d_m_e.html", null ],
+    [ "Klasy", "annotated.html", [
+      [ "Lista klas", "annotated.html", "annotated_dup" ],
+      [ "Indeks klas", "classes.html", null ],
+      [ "Hierarchia klas", "hierarchy.html", "hierarchy" ],
+      [ "Składowe klas", "functions.html", [
+        [ "Wszystko", "functions.html", null ],
+        [ "Funkcje", "functions_func.html", null ],
+        [ "Zmienne", "functions_vars.html", null ]
       ] ]
     ] ],
-    [ "Files", "files.html", [
-      [ "File List", "files.html", "files_dup" ],
-      [ "File Members", "globals.html", [
-        [ "All", "globals.html", null ],
-        [ "Functions", "globals_func.html", null ]
+    [ "Pliki", "files.html", [
+      [ "Lista plików", "files.html", "files_dup" ],
+      [ "Składowe plików", "globals.html", [
+        [ "Wszystko", "globals.html", null ],
+        [ "Funkcje", "globals_func.html", null ]
       ] ]
     ] ]
   ] ]
@@ -47,8 +48,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_j_p_o_2_app_8cpp.html"
+"_app_8cpp.html"
 ];
 
-var SYNCONMSG = 'click to disable panel synchronization';
-var SYNCOFFMSG = 'click to enable panel synchronization';
+var SYNCONMSG = 'kliknij żeby wyłączyć pokazywanie otwartego elementu w drzewie zawartości';
+var SYNCOFFMSG = 'kliknij żeby włączyć pokazywanie otwartego elementu w drzewie zawartości';

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['filterbutton_0',['filterButton',['../class_main_frame.html#a11b8bfb723bcf0788c906a603f10350b',1,'MainFrame']]]
+  ['enddatechoice_0',['endDateChoice',['../class_main_frame.html#a8c24e670755718af2f2b70c609ab8323',1,'MainFrame']]]
 ];

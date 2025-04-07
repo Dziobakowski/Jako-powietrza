@@ -16,6 +16,7 @@
 #include <fstream>
 #include <wx/datetime.h>
 #include <wx/filedlg.h>
+#include <wx/icon.h>
 
  /**
   * @brief Konstruktor klasy MainFrame
@@ -141,6 +142,12 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title, 
 
     // Pobranie danych z API i aktualizacja listy
     PobierzDane();
+
+    // Tworzymy obiekt ikony
+    wxIcon myIcon("C:\\Users\\Dziobakowski\\source\\repos\\JPO z chujowym wykresem\\JPO\\cloud.ico", wxBITMAP_TYPE_ICO);
+
+    // Ustawiamy ikonê aplikacji
+    SetIcon(myIcon);
 }
 
 /**

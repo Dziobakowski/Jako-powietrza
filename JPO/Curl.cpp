@@ -3,16 +3,16 @@
 #include <iostream>
 
 /**
- * @brief Funkcja callback do zapisu danych zwróconych przez CURL.
+ * @brief Funkcja callback do zapisu danych zwrÃ³conych przez CURL.
  *
- * Funkcja ta jest wywo³ywana przez bibliotekê libcurl, aby zapisaæ
- * dane odpowiedzi w postaci ci¹gu znaków do zmiennej typu std::string.
+ * Funkcja ta jest wywoÅ‚ywana przez bibliotekÄ™ libcurl, aby zapisaÄ‡
+ * dane odpowiedzi w postaci ciÄ…gu znakÃ³w do zmiennej typu std::string.
  *
- * @param contents WskaŸnik do danych, które maj¹ zostaæ zapisane.
+ * @param contents WskaÅºnik do danych, ktÃ³re majÄ… zostaÄ‡ zapisane.
  * @param size Rozmiar pojedynczego elementu danych.
- * @param nmemb Liczba elementów danych.
- * @param output WskaŸnik do zmiennej std::string, do której bêd¹ zapisywane dane.
- * @return Zwraca ca³kowity rozmiar zapisanych danych (size * nmemb).
+ * @param nmemb Liczba elementÃ³w danych.
+ * @param output WskaÅºnik do zmiennej std::string, do ktÃ³rej bÄ™dÄ… zapisywane dane.
+ * @return Zwraca caÅ‚kowity rozmiar zapisanych danych (size * nmemb).
  */
 static size_t WriteCallback(void* contents, size_t size, size_t nmemb, std::string* output) {
     size_t totalSize = size * nmemb;
@@ -21,16 +21,16 @@ static size_t WriteCallback(void* contents, size_t size, size_t nmemb, std::stri
 }
 
 /**
- * @brief Funkcja wykonuj¹ca zapytanie HTTP za pomoc¹ biblioteki CURL.
+ * @brief Funkcja wykonujÄ…ca zapytanie HTTP za pomocÄ… biblioteki CURL.
  *
- * Funkcja ta inicjuje sesjê CURL, ustawia odpowiednie opcje (URL, funkcjê
- * callback do zapisu danych, wy³¹cza weryfikacjê SSL) i wykonuje zapytanie HTTP.
- * OdpowiedŸ serwera jest zapisywana w zmiennej response.
+ * Funkcja ta inicjuje sesjÄ™ CURL, ustawia odpowiednie opcje (URL, funkcjÄ™
+ * callback do zapisu danych, wyÅ‚Ä…cza weryfikacjÄ™ SSL) i wykonuje zapytanie HTTP.
+ * OdpowiedÅº serwera jest zapisywana w zmiennej response.
  *
- * @param url Adres URL, do którego zostanie wys³ane zapytanie.
- * @param response Referencja do zmiennej std::string, w której zostanie zapisany
+ * @param url Adres URL, do ktÃ³rego zostanie wysÅ‚ane zapytanie.
+ * @param response Referencja do zmiennej std::string, w ktÃ³rej zostanie zapisany
  *                 wynik zapytania.
- * @return Zwraca true, jeœli zapytanie zosta³o wykonane pomyœlnie, w przeciwnym
+ * @return Zwraca true, jeÅ›li zapytanie zostaÅ‚o wykonane pomyÅ›lnie, w przeciwnym
  *         razie zwraca false.
  */
 bool performCurlRequest(const std::string& url, std::string& response) {
@@ -52,12 +52,12 @@ bool performCurlRequest(const std::string& url, std::string& response) {
 /**
  * @brief Funkcja do parsowania odpowiedzi w formacie JSON.
  *
- * Funkcja ta konwertuje odpowiedŸ w postaci ci¹gu znaków (response) do obiektu
- * typu Json::Value przy u¿yciu biblioteki JsonCpp. W przypadku b³êdu zwraca false.
+ * Funkcja ta konwertuje odpowiedÅº w postaci ciÄ…gu znakÃ³w (response) do obiektu
+ * typu Json::Value przy uÅ¼yciu biblioteki JsonCpp. W przypadku bÅ‚Ä™du zwraca false.
  *
- * @param response OdpowiedŸ w formie ci¹gu znaków, która ma byæ sparsowana.
- * @param root Obiekt typu Json::Value, do którego zapisane zostan¹ dane.
- * @return Zwraca true, jeœli odpowiedŸ JSON zosta³a poprawnie sparsowana, w
+ * @param response OdpowiedÅº w formie ciÄ…gu znakÃ³w, ktÃ³ra ma byÄ‡ sparsowana.
+ * @param root Obiekt typu Json::Value, do ktÃ³rego zapisane zostanÄ… dane.
+ * @return Zwraca true, jeÅ›li odpowiedÅº JSON zostaÅ‚a poprawnie sparsowana, w
  *         przeciwnym razie zwraca false.
  */
 bool parseJsonResponse(const std::string& response, Json::Value& root) {

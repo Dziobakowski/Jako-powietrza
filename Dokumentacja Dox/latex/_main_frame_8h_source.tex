@@ -1,0 +1,64 @@
+\doxysection{Main\+Frame.\+h}
+\hypertarget{_main_frame_8h_source}{}\label{_main_frame_8h_source}\index{JPO/MainFrame.h@{JPO/MainFrame.h}}
+\mbox{\hyperlink{_main_frame_8h}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MAINFRAME\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MAINFRAME\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <wx/wx.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_curl_8h}{Curl.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_plot_panel_8h}{PlotPanel.h}}"{}}\ \ \textcolor{comment}{//\ Na\ początku\ pliku}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_main_frame_a00c85521dad6b24000967206bcc53688}{MainFrame}}\ :\ \textcolor{keyword}{public}\ wxFrame\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_main_frame_a00c85521dad6b24000967206bcc53688}{MainFrame}}(\textcolor{keyword}{const}\ wxString\&\ title);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{//\ Kontrolki\ UI}}
+\DoxyCodeLine{00034\ \ \ \ \ wxChoice*\ \mbox{\hyperlink{class_main_frame_a77607bb92a1e283614409b281a696c80}{choice}};\ }
+\DoxyCodeLine{00035\ \ \ \ \ wxTextCtrl*\ \mbox{\hyperlink{class_main_frame_af326ad58f65d28189b0ea7420b0c6359}{cityInput}};\ }
+\DoxyCodeLine{00036\ \ \ \ \ wxButton*\ \mbox{\hyperlink{class_main_frame_aa6ca97ed7a114ee8ffd21065c7dc1d32}{filterButton}};\ }
+\DoxyCodeLine{00037\ \ \ \ \ wxButton*\ \mbox{\hyperlink{class_main_frame_ae2ce5702537a12682084892b73a8d345}{saveButton}};\ }
+\DoxyCodeLine{00038\ \ \ \ \ wxButton*\ \mbox{\hyperlink{class_main_frame_a70d19d3fd0d0fb777bd7648e35ecb999}{loadButton}};\ }
+\DoxyCodeLine{00039\ \ \ \ \ wxStaticText*\ \mbox{\hyperlink{class_main_frame_a345b666a2367b5ebeac8493d0d345876}{label}};\ }
+\DoxyCodeLine{00040\ \ \ \ \ wxStaticText*\ \mbox{\hyperlink{class_main_frame_a285ddc1a8a1482516c303fe811d76162}{infoLabel}};\ }
+\DoxyCodeLine{00041\ \ \ \ \ wxListBox*\ \mbox{\hyperlink{class_main_frame_a77be53bd313d9e229b14eb1604166624}{sensorList}};\ }
+\DoxyCodeLine{00042\ \ \ \ \ wxTextCtrl*\ \mbox{\hyperlink{class_main_frame_aceb88674d7fb1ffce7777a09ea9dca5f}{resultBox}};\ }
+\DoxyCodeLine{00043\ \ \ \ \ wxChoice*\ \mbox{\hyperlink{class_main_frame_a429a57f3997d93308f51bc34a45401be}{startDateChoice}};\ }
+\DoxyCodeLine{00044\ \ \ \ \ wxChoice*\ \mbox{\hyperlink{class_main_frame_a8c24e670755718af2f2b70c609ab8323}{endDateChoice}};\ }
+\DoxyCodeLine{00045\ \ \ \ \ wxButton*\ \mbox{\hyperlink{class_main_frame_aaf0fbb7fd8dacbd5f7093642f330823b}{confirmButton}};\ }
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_plot_panel}{PlotPanel}}*\ \mbox{\hyperlink{class_main_frame_a0f25063c86baa81b7c794becd64dfc68}{plotPanel}};\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{//\ Struktury\ danych}}
+\DoxyCodeLine{00049\ \ \ \ \ std::map<wxString,\ int>\ \mbox{\hyperlink{class_main_frame_a5921b3af835624a4400173566b5d5f81}{stationMap}};\ }
+\DoxyCodeLine{00050\ \ \ \ \ std::map<wxString,\ int>\ \mbox{\hyperlink{class_main_frame_ae22267277a727ee4907ba04d7e58f20b}{sensorMap}};\ }
+\DoxyCodeLine{00051\ \ \ \ \ std::vector<wxString>\ \mbox{\hyperlink{class_main_frame_a575cc3c411185b59e507467a371e92c0}{timestamps}};\ }
+\DoxyCodeLine{00052\ \ \ \ \ std::vector<std::pair<wxString,\ double>>\ \mbox{\hyperlink{class_main_frame_ab585105ec6f2382aded506db7a5cd9b2}{values}};\ }
+\DoxyCodeLine{00053\ \ \ \ \ Json::Value\ \mbox{\hyperlink{class_main_frame_aaa6b509df52bb177db6cf1051068c067}{currentSensorData}};\ }
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_frame_a242c8190443f5149e2d277f263bba99b}{PobierzDane}}();}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_frame_ab57830e125abe1d6299a9eb5eb7092dc}{FiltrujStacje}}(wxCommandEvent\&\ event);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_frame_aacc88f4a5f97cbd0e84f1ff2550cdf77}{WyswietlStanowiska}}(wxCommandEvent\&\ event);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_frame_a1c35270fa8b48c39e00632a40e913076}{WyswietlDanePomiarowe}}(wxCommandEvent\&\ event);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_frame_abedf1166fbb744e1f2d835d42055b118}{AnalizujDane}}(\textcolor{keyword}{const}\ Json::Value\&\ data);\ }
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_frame_aef3d76628efa0328cbdc4b25ade1bd19}{PotwierdzZakres}}(wxCommandEvent\&\ event);}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_frame_a290cd87cd021d0d05f21d50191355a6d}{ZapiszDane}}(wxCommandEvent\&\ event);}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_frame_a97006013de74404bd13b5de71fbf0852}{ZaladujDane}}(wxCommandEvent\&\ event);}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00142\ \ \ \ \ wxString\ \mbox{\hyperlink{class_main_frame_a0e7f98fcb096bc7648020c35d28b74a7}{GenerujNazwePliku}}();}
+\DoxyCodeLine{00143\ \};}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
