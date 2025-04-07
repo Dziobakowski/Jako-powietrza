@@ -1,2 +1,2 @@
 Aplikacja działa w postaci pliku .exe umieszczonego na serwisie GitHub. Należy pobrać folder zatytułowany "Działająca aplikacja", a następnie uruchomić plik "Jakość powietrza w Polsce.exe" znajdujący się wewnątrz.
-Do działania aplikacji wymagany jest zainstalowany pakiet redystrybucyjny programu Visual C++ 2022 od Microsoftu.
+Do działania aplikacji wymagany jest zainstalowany pakiet redystrybucyjny programu Visual C++ 2022 od Microsoftu (w przypadku problemów pomaga też instalacja Visual Studio 2022 Community).
