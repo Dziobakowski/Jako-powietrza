@@ -1,0 +1,117 @@
+\doxysection{Dokumentacja szablonu klasy doctest\+::detail\+::Multi\+Lane\+Atomic\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}}
+\hypertarget{classdoctest_1_1detail_1_1_multi_lane_atomic}{}\label{classdoctest_1_1detail_1_1_multi_lane_atomic}\index{doctest::detail::MultiLaneAtomic$<$ T $>$@{doctest::detail::MultiLaneAtomic$<$ T $>$}}
+\doxysubsubsection*{Komponenty}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structdoctest_1_1detail_1_1_multi_lane_atomic_1_1_cache_line_aligned_atomic}{Cache\+Line\+Aligned\+Atomic}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+T \mbox{\hyperlink{classdoctest_1_1detail_1_1_multi_lane_atomic_ad7f36871e6533820756eccfad723d86e}{operator++}} () \mbox{\hyperlink{doctest_2doctest_8h_a0a3c492342c533baad7b21af7903e6b4}{DOCTEST\+\_\+\+NOEXCEPT}}
+\item 
+T \mbox{\hyperlink{classdoctest_1_1detail_1_1_multi_lane_atomic_a07399aa6b118547e2f8950922a217f72}{operator++}} (int) \mbox{\hyperlink{doctest_2doctest_8h_a0a3c492342c533baad7b21af7903e6b4}{DOCTEST\+\_\+\+NOEXCEPT}}
+\item 
+T \mbox{\hyperlink{classdoctest_1_1detail_1_1_multi_lane_atomic_a1987a7ad91ff5814fb3056fb65c2651a}{fetch\+\_\+add}} (T arg, std\+::memory\+\_\+order order=std\+::memory\+\_\+order\+\_\+seq\+\_\+cst) \mbox{\hyperlink{doctest_2doctest_8h_a0a3c492342c533baad7b21af7903e6b4}{DOCTEST\+\_\+\+NOEXCEPT}}
+\item 
+T \mbox{\hyperlink{classdoctest_1_1detail_1_1_multi_lane_atomic_a920f791854899b7b1e1dcaea5389a1d8}{fetch\+\_\+sub}} (T arg, std\+::memory\+\_\+order order=std\+::memory\+\_\+order\+\_\+seq\+\_\+cst) \mbox{\hyperlink{doctest_2doctest_8h_a0a3c492342c533baad7b21af7903e6b4}{DOCTEST\+\_\+\+NOEXCEPT}}
+\item 
+\mbox{\hyperlink{classdoctest_1_1detail_1_1_multi_lane_atomic_a476df93f73e988f1357224b5c8cba5eb}{operator T}} () const \mbox{\hyperlink{doctest_2doctest_8h_a0a3c492342c533baad7b21af7903e6b4}{DOCTEST\+\_\+\+NOEXCEPT}}
+\item 
+T \mbox{\hyperlink{classdoctest_1_1detail_1_1_multi_lane_atomic_a19bd1b6e01dbc9aa65258076aa4e3677}{load}} (std\+::memory\+\_\+order order=std\+::memory\+\_\+order\+\_\+seq\+\_\+cst) const \mbox{\hyperlink{doctest_2doctest_8h_a0a3c492342c533baad7b21af7903e6b4}{DOCTEST\+\_\+\+NOEXCEPT}}
+\item 
+T \mbox{\hyperlink{classdoctest_1_1detail_1_1_multi_lane_atomic_a583be7e459fcbb5b34d5e0e38268a4c5}{operator=}} (T desired) \mbox{\hyperlink{doctest_2doctest_8h_a0a3c492342c533baad7b21af7903e6b4}{DOCTEST\+\_\+\+NOEXCEPT}}
+\item 
+void \mbox{\hyperlink{classdoctest_1_1detail_1_1_multi_lane_atomic_a9923ea004be0404e802c4903b0057e1d}{store}} (T desired, std\+::memory\+\_\+order order=std\+::memory\+\_\+order\+\_\+seq\+\_\+cst) \mbox{\hyperlink{doctest_2doctest_8h_a0a3c492342c533baad7b21af7903e6b4}{DOCTEST\+\_\+\+NOEXCEPT}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Metody prywatne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacedoctest_1_1detail_a8a45b1575e5dec18c678277153bb491c}{Atomic}}$<$ T $>$ \& \mbox{\hyperlink{classdoctest_1_1detail_1_1_multi_lane_atomic_a4f121e8ef7682250469dca4a0438539a}{my\+Atomic}} () \mbox{\hyperlink{doctest_2doctest_8h_a0a3c492342c533baad7b21af7903e6b4}{DOCTEST\+\_\+\+NOEXCEPT}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atrybuty prywatne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structdoctest_1_1detail_1_1_multi_lane_atomic_1_1_cache_line_aligned_atomic}{Cache\+Line\+Aligned\+Atomic}} \mbox{\hyperlink{classdoctest_1_1detail_1_1_multi_lane_atomic_aec57a6403dffd992e650e564444ce828}{m\+\_\+atomics}} \mbox{[}\mbox{\hyperlink{doctest_8cpp_a9287b3dcfc1184fca554e6e1674fee4c}{DOCTEST\+\_\+\+MULTI\+\_\+\+LANE\+\_\+\+ATOMICS\+\_\+\+THREAD\+\_\+\+LANES}}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Dokumentacja funkcji składowych}
+\Hypertarget{classdoctest_1_1detail_1_1_multi_lane_atomic_a1987a7ad91ff5814fb3056fb65c2651a}\index{doctest::detail::MultiLaneAtomic$<$ T $>$@{doctest::detail::MultiLaneAtomic$<$ T $>$}!fetch\_add@{fetch\_add}}
+\index{fetch\_add@{fetch\_add}!doctest::detail::MultiLaneAtomic$<$ T $>$@{doctest::detail::MultiLaneAtomic$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{fetch\_add()}{fetch\_add()}}
+{\footnotesize\ttfamily \label{classdoctest_1_1detail_1_1_multi_lane_atomic_a1987a7ad91ff5814fb3056fb65c2651a} 
+template$<$typename T$>$ \\
+T \mbox{\hyperlink{classdoctest_1_1detail_1_1_multi_lane_atomic}{doctest\+::detail\+::\+Multi\+Lane\+Atomic}}$<$ T $>$\+::fetch\+\_\+add (\begin{DoxyParamCaption}\item[{T}]{arg}{, }\item[{std\+::memory\+\_\+order}]{order}{ = {\ttfamily std\+:\+:memory\+\_\+order\+\_\+seq\+\_\+cst}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classdoctest_1_1detail_1_1_multi_lane_atomic_a920f791854899b7b1e1dcaea5389a1d8}\index{doctest::detail::MultiLaneAtomic$<$ T $>$@{doctest::detail::MultiLaneAtomic$<$ T $>$}!fetch\_sub@{fetch\_sub}}
+\index{fetch\_sub@{fetch\_sub}!doctest::detail::MultiLaneAtomic$<$ T $>$@{doctest::detail::MultiLaneAtomic$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{fetch\_sub()}{fetch\_sub()}}
+{\footnotesize\ttfamily \label{classdoctest_1_1detail_1_1_multi_lane_atomic_a920f791854899b7b1e1dcaea5389a1d8} 
+template$<$typename T$>$ \\
+T \mbox{\hyperlink{classdoctest_1_1detail_1_1_multi_lane_atomic}{doctest\+::detail\+::\+Multi\+Lane\+Atomic}}$<$ T $>$\+::fetch\+\_\+sub (\begin{DoxyParamCaption}\item[{T}]{arg}{, }\item[{std\+::memory\+\_\+order}]{order}{ = {\ttfamily std\+:\+:memory\+\_\+order\+\_\+seq\+\_\+cst}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classdoctest_1_1detail_1_1_multi_lane_atomic_a19bd1b6e01dbc9aa65258076aa4e3677}\index{doctest::detail::MultiLaneAtomic$<$ T $>$@{doctest::detail::MultiLaneAtomic$<$ T $>$}!load@{load}}
+\index{load@{load}!doctest::detail::MultiLaneAtomic$<$ T $>$@{doctest::detail::MultiLaneAtomic$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily \label{classdoctest_1_1detail_1_1_multi_lane_atomic_a19bd1b6e01dbc9aa65258076aa4e3677} 
+template$<$typename T$>$ \\
+T \mbox{\hyperlink{classdoctest_1_1detail_1_1_multi_lane_atomic}{doctest\+::detail\+::\+Multi\+Lane\+Atomic}}$<$ T $>$\+::load (\begin{DoxyParamCaption}\item[{std\+::memory\+\_\+order}]{order}{ = {\ttfamily std\+:\+:memory\+\_\+order\+\_\+seq\+\_\+cst}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classdoctest_1_1detail_1_1_multi_lane_atomic_a4f121e8ef7682250469dca4a0438539a}\index{doctest::detail::MultiLaneAtomic$<$ T $>$@{doctest::detail::MultiLaneAtomic$<$ T $>$}!myAtomic@{myAtomic}}
+\index{myAtomic@{myAtomic}!doctest::detail::MultiLaneAtomic$<$ T $>$@{doctest::detail::MultiLaneAtomic$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{myAtomic()}{myAtomic()}}
+{\footnotesize\ttfamily \label{classdoctest_1_1detail_1_1_multi_lane_atomic_a4f121e8ef7682250469dca4a0438539a} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{namespacedoctest_1_1detail_a8a45b1575e5dec18c678277153bb491c}{Atomic}}$<$ T $>$ \& \mbox{\hyperlink{classdoctest_1_1detail_1_1_multi_lane_atomic}{doctest\+::detail\+::\+Multi\+Lane\+Atomic}}$<$ T $>$\+::my\+Atomic (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{classdoctest_1_1detail_1_1_multi_lane_atomic_a476df93f73e988f1357224b5c8cba5eb}\index{doctest::detail::MultiLaneAtomic$<$ T $>$@{doctest::detail::MultiLaneAtomic$<$ T $>$}!operator T@{operator T}}
+\index{operator T@{operator T}!doctest::detail::MultiLaneAtomic$<$ T $>$@{doctest::detail::MultiLaneAtomic$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator T()}{operator T()}}
+{\footnotesize\ttfamily \label{classdoctest_1_1detail_1_1_multi_lane_atomic_a476df93f73e988f1357224b5c8cba5eb} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{classdoctest_1_1detail_1_1_multi_lane_atomic}{doctest\+::detail\+::\+Multi\+Lane\+Atomic}}$<$ T $>$\+::operator T (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classdoctest_1_1detail_1_1_multi_lane_atomic_ad7f36871e6533820756eccfad723d86e}\index{doctest::detail::MultiLaneAtomic$<$ T $>$@{doctest::detail::MultiLaneAtomic$<$ T $>$}!operator++@{operator++}}
+\index{operator++@{operator++}!doctest::detail::MultiLaneAtomic$<$ T $>$@{doctest::detail::MultiLaneAtomic$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classdoctest_1_1detail_1_1_multi_lane_atomic_ad7f36871e6533820756eccfad723d86e} 
+template$<$typename T$>$ \\
+T \mbox{\hyperlink{classdoctest_1_1detail_1_1_multi_lane_atomic}{doctest\+::detail\+::\+Multi\+Lane\+Atomic}}$<$ T $>$\+::operator++ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classdoctest_1_1detail_1_1_multi_lane_atomic_a07399aa6b118547e2f8950922a217f72}\index{doctest::detail::MultiLaneAtomic$<$ T $>$@{doctest::detail::MultiLaneAtomic$<$ T $>$}!operator++@{operator++}}
+\index{operator++@{operator++}!doctest::detail::MultiLaneAtomic$<$ T $>$@{doctest::detail::MultiLaneAtomic$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classdoctest_1_1detail_1_1_multi_lane_atomic_a07399aa6b118547e2f8950922a217f72} 
+template$<$typename T$>$ \\
+T \mbox{\hyperlink{classdoctest_1_1detail_1_1_multi_lane_atomic}{doctest\+::detail\+::\+Multi\+Lane\+Atomic}}$<$ T $>$\+::operator++ (\begin{DoxyParamCaption}\item[{int}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classdoctest_1_1detail_1_1_multi_lane_atomic_a583be7e459fcbb5b34d5e0e38268a4c5}\index{doctest::detail::MultiLaneAtomic$<$ T $>$@{doctest::detail::MultiLaneAtomic$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!doctest::detail::MultiLaneAtomic$<$ T $>$@{doctest::detail::MultiLaneAtomic$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{classdoctest_1_1detail_1_1_multi_lane_atomic_a583be7e459fcbb5b34d5e0e38268a4c5} 
+template$<$typename T$>$ \\
+T \mbox{\hyperlink{classdoctest_1_1detail_1_1_multi_lane_atomic}{doctest\+::detail\+::\+Multi\+Lane\+Atomic}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{T}]{desired}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classdoctest_1_1detail_1_1_multi_lane_atomic_a9923ea004be0404e802c4903b0057e1d}\index{doctest::detail::MultiLaneAtomic$<$ T $>$@{doctest::detail::MultiLaneAtomic$<$ T $>$}!store@{store}}
+\index{store@{store}!doctest::detail::MultiLaneAtomic$<$ T $>$@{doctest::detail::MultiLaneAtomic$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{store()}{store()}}
+{\footnotesize\ttfamily \label{classdoctest_1_1detail_1_1_multi_lane_atomic_a9923ea004be0404e802c4903b0057e1d} 
+template$<$typename T$>$ \\
+void \mbox{\hyperlink{classdoctest_1_1detail_1_1_multi_lane_atomic}{doctest\+::detail\+::\+Multi\+Lane\+Atomic}}$<$ T $>$\+::store (\begin{DoxyParamCaption}\item[{T}]{desired}{, }\item[{std\+::memory\+\_\+order}]{order}{ = {\ttfamily std\+:\+:memory\+\_\+order\+\_\+seq\+\_\+cst}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Dokumentacja atrybutów składowych}
+\Hypertarget{classdoctest_1_1detail_1_1_multi_lane_atomic_aec57a6403dffd992e650e564444ce828}\index{doctest::detail::MultiLaneAtomic$<$ T $>$@{doctest::detail::MultiLaneAtomic$<$ T $>$}!m\_atomics@{m\_atomics}}
+\index{m\_atomics@{m\_atomics}!doctest::detail::MultiLaneAtomic$<$ T $>$@{doctest::detail::MultiLaneAtomic$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{m\_atomics}{m\_atomics}}
+{\footnotesize\ttfamily \label{classdoctest_1_1detail_1_1_multi_lane_atomic_aec57a6403dffd992e650e564444ce828} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{structdoctest_1_1detail_1_1_multi_lane_atomic_1_1_cache_line_aligned_atomic}{Cache\+Line\+Aligned\+Atomic}} \mbox{\hyperlink{classdoctest_1_1detail_1_1_multi_lane_atomic}{doctest\+::detail\+::\+Multi\+Lane\+Atomic}}$<$ T $>$\+::m\+\_\+atomics\mbox{[}\mbox{\hyperlink{doctest_8cpp_a9287b3dcfc1184fca554e6e1674fee4c}{DOCTEST\+\_\+\+MULTI\+\_\+\+LANE\+\_\+\+ATOMICS\+\_\+\+THREAD\+\_\+\+LANES}}\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z pliku\+:\begin{DoxyCompactItemize}
+\item 
+doctest/doctest/parts/\mbox{\hyperlink{doctest_8cpp}{doctest.\+cpp}}\end{DoxyCompactItemize}

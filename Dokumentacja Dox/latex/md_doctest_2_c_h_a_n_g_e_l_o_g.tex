@@ -1,0 +1,1025 @@
+\chapter{Change Log}
+\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g}{}\label{md_doctest_2_c_h_a_n_g_e_l_o_g}\index{Change Log@{Change Log}}
+\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md0}%
+\Hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md0}%
+\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md1}{}\doxysection{\texorpdfstring{\href{https://github.com/doctest/doctest/tree/v2.4.11}{\texttt{ v2.\+4.\+11}} (2023-\/03-\/15)}{\href{https://github.com/doctest/doctest/tree/v2.4.11}{\texttt{ v2.\+4.\+11}} (2023-\/03-\/15)}}\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md1}
+\href{https://github.com/doctest/doctest/compare/v2.4.10...v2.4.11}{\texttt{ Full Changelog}}\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md2}{}\doxysection{\texorpdfstring{\href{https://github.com/doctest/doctest/tree/v2.4.10}{\texttt{ v2.\+4.\+10}} (2023-\/02-\/27)}{\href{https://github.com/doctest/doctest/tree/v2.4.10}{\texttt{ v2.\+4.\+10}} (2023-\/02-\/27)}}\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md2}
+\href{https://github.com/doctest/doctest/compare/v2.4.9...v2.4.10}{\texttt{ Full Changelog}}\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md3}{}\doxysection{\texorpdfstring{\href{https://github.com/doctest/doctest/tree/v2.4.9}{\texttt{ v2.\+4.\+9}} (2022-\/06-\/18)}{\href{https://github.com/doctest/doctest/tree/v2.4.9}{\texttt{ v2.\+4.\+9}} (2022-\/06-\/18)}}\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md3}
+\href{https://github.com/doctest/doctest/compare/v2.4.8...v2.4.9}{\texttt{ Full Changelog}}
+
+{\bfseries{Closed issues\+:}}
+\begin{DoxyItemize}
+\item Visual Studio\textquotesingle{}s Test Explorer and Resharper C++\textquotesingle{}s Unit Test Explorer don\textquotesingle{}t see Doctest\textquotesingle{}s tests \#661 (\href{https://github.com/KulaGGin}{\texttt{ Kula\+GGin}})
+\item How to get detailed information about testcases failing due to thrown exceptions? \#660 (\href{https://github.com/NiklasKappel}{\texttt{ Niklas\+Kappel}})
+\item Add clang-\/tidy integration and fix all warnings \#659 (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item Avoid static init problem in insufficient\+\_\+procs() (MPI) \#657 (\href{https://github.com/starintheuniverse}{\texttt{ starintheuniverse}})
+\item Use MPI\+\_\+\+Isend in Mpi\+Console\+Reporter to avoid deadlock \#656 (\href{https://github.com/starintheuniverse}{\texttt{ starintheuniverse}})
+\item Deadlock in Mpi\+Console\+Reporter when root rank fails assert \#655 (\href{https://github.com/starintheuniverse}{\texttt{ starintheuniverse}})
+\item Cleanup of DOCTEST\+\_\+\+DO\+\_\+\+BINARY\+\_\+\+EXPRESSION\+\_\+\+COMPARISON. Fixes \#651 \#652 (\href{https://github.com/iboB}{\texttt{ iboB}})
+\item Comparison with implicit cast from non-\/const value can\textquotesingle{}t be decomposed \#651 (\href{https://github.com/iboB}{\texttt{ iboB}})
+\item Local structured bindings cannot be used in CHECK macros (since 2.4.8) \#647 (\href{https://github.com/pragmaxwell}{\texttt{ pragmaxwell}})
+\item Add tests for DOCTEST\+\_\+\+CONFIG\+\_\+\+USE\+\_\+\+STD\+\_\+\+HEADERS \#643 (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item Stringification amendments \#642 (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item Clean up defines a bit; Implement \#439 \#641 (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item Fix \#508 \#640 (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item Fix \#508 \#639 (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item New doctest version gives me an error\+: reference to local binding \textquotesingle{}...\textquotesingle{} declared in enclosing function \textquotesingle{}DOCTEST\+\_\+\+ANON\+\_\+\+FUNC\+\_\+16\textquotesingle{} \#638 (\href{https://github.com/a4z}{\texttt{ a4z}})
+\item The tutorial example does not work (linker errors) with clang 10 \#637 (\href{https://github.com/sixcy}{\texttt{ sixcy}})
+\item Implementing \`{}\+DOCTEST\+\_\+\+ASSERT\+\_\+\+IMPLEMENT\+\_\+1\`{} as lambda prevents testing structured bindings \#636 (\href{https://github.com/ChrisThrasher}{\texttt{ Chris\+Thrasher}})
+\item re-\/re-\/remove overly restrictive minimum version of meson \#635 (\href{https://github.com/eli-schwartz}{\texttt{ eli-\/schwartz}})
+\item Fix move-\/only types failing to decompose correctly \#634 (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item Weird compilation error when using CHECK\+\_\+\+THROWS/\+CHECK\+\_\+\+THROWS\+\_\+\+AS on Visual Studio 2019 with no exceptions \#633 (\href{https://github.com/yeputons}{\texttt{ yeputons}})
+\item Error triggered by comparing typeid with new doctest 2.4.8 \#632 (\href{https://github.com/JazzSuite}{\texttt{ Jazz\+Suite}})
+\item Improve Mac Power\+PC support \#631 (\href{https://github.com/ryandesign}{\texttt{ ryandesign}})
+\item issue introduced in 2.4.7 \#630 (\href{https://github.com/onqtam}{\texttt{ onqtam}})
+\item Decompose expressions containing the spaceship operator \#629 (\href{https://github.com/falbrechtskirchinger}{\texttt{ falbrechtskirchinger}})
+\item added nolint for cert-\/err58 \#628 (\href{https://github.com/serguei-k}{\texttt{ serguei-\/k}})
+\item Fix properties not being passed in doctest\+\_\+discover\+\_\+tests \#626 (\href{https://github.com/quantumsteve}{\texttt{ quantumsteve}})
+\item Config no multithreading \#625 (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item wasm\texorpdfstring{$\ast$}{*}-\/support? \#624 (\href{https://github.com/FrozenSource}{\texttt{ Frozen\+Source}})
+\item Fix MPI extension to work with no parallel tests \#623 (\href{https://github.com/BerengerBerthoul}{\texttt{ Berenger\+Berthoul}})
+\item string comparison leads to gotting stuck \#622 (\href{https://github.com/laoshaw}{\texttt{ laoshaw}})
+\item doctest\+\_\+discover\+\_\+tests no longer sets ENVIRONMENT variables for discovered tests. \#621 (\href{https://github.com/quantumsteve}{\texttt{ quantumsteve}})
+\item Add contains option to checks. \#620 (\href{https://github.com/MFraters}{\texttt{ MFraters}})
+\item Feature request\+: CHECK\+\_\+\+THROWS\+\_\+\+WITH with contains option \#619 (\href{https://github.com/MFraters}{\texttt{ MFraters}})
+\item Add alias target for doctest\+\_\+with\+\_\+main \#617 (\href{https://github.com/jessestricker}{\texttt{ jessestricker}})
+\item Allow escaping backslash with backslash in filters (\#614) \#616 (\href{https://github.com/yeputons}{\texttt{ yeputons}})
+\item Fix operator\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} \#615 (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item Correct minor typos \#613 (\href{https://github.com/utilForever}{\texttt{ util\+Forever}})
+\item Fix MPI extension to work if launched without mpirun/mpiexec \#612 (\href{https://github.com/BerengerBerthoul}{\texttt{ Berenger\+Berthoul}})
+\item Fix mpi subcase \#611 (\href{https://github.com/BerengerBerthoul}{\texttt{ Berenger\+Berthoul}})
+\item compilation error with custom operator== defined in namespace \#610 (\href{https://github.com/zvyagin1}{\texttt{ zvyagin1}})
+\item Regression\+: Clang-\/Tidy warnings in 2.4.8 \#607 (\href{https://github.com/nlohmann}{\texttt{ nlohmann}})
+\item Internal compiler error with GCC 7.5 \#606 (\href{https://github.com/foonathan}{\texttt{ foonathan}})
+\item tagging convension has changed? \#605 (\href{https://github.com/kloczek}{\texttt{ kloczek}})
+\item Update Doctest in vcpkg to 2.4.8 \#604 (\href{https://github.com/gc435}{\texttt{ gc435}})
+\item Add Is\+NaN operator! \#603 (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item Ignored generated files from CMake, OSX, Xcode, and VS \#602 (\href{https://github.com/LeonBrands}{\texttt{ Leon\+Brands}})
+\item Move roadmap and wipe it clean \#601 (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item removes a duplicate word \textquotesingle{}most\textquotesingle{} in configuration.md \#599 (\href{https://github.com/krishnakumarg1984}{\texttt{ krishnakumarg1984}})
+\item Fix subcase reentry \#598 (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item Loop-\/generated \`{}\+SUBCASE\`{}s are not run \#597 (\href{https://github.com/yeputons}{\texttt{ yeputons}})
+\item Void \#596 (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item Add flag that forces custom stringification methods to be provided \#595 (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item Fix coverage \#594 (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item TEST CODECOV PR BEHAVIOR \#593 (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item Ignore CMake and Mac\+OS generated files \#592 (\href{https://github.com/LeonBrands}{\texttt{ Leon\+Brands}})
+\item Feature request\+: option to disable fallback "{}\textbackslash{}\{?\textbackslash{}\}"{} stringifier \#591 (\href{https://github.com/YarikTH}{\texttt{ Yarik\+TH}})
+\item Add tests for default stringification result of doctest \#590 (\href{https://github.com/YarikTH}{\texttt{ Yarik\+TH}})
+\item Feature config ret vals \#589 (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item DOCTEST\+\_\+\+CONFIG\+\_\+\+ASSERT\+\_\+\+RETURN\+\_\+\+VALUES \#588 (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item Support pretty printing of container based on heuristics \#587 (\href{https://github.com/YarikTH}{\texttt{ Yarik\+TH}})
+\item Refactor stringification \#585 (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item Feature\+: Better NaN \#584 (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item Nan check \#582 (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item Update roadmap following maintainer change \#581 (\href{https://github.com/eyalroz}{\texttt{ eyalroz}})
+\item Regression between 2.4.6 and 2.4.7 \#571 (\href{https://github.com/YarikTH}{\texttt{ Yarik\+TH}})
+\item build failure with gcc-\/11.2 when using user declared operator$<$$<$(ostream, vector) \#551 (\href{https://github.com/nlitsme}{\texttt{ nlitsme}})
+\item variable maximum is assigned 6206517616395625 instead of the actual return value which is 5.0 \#530 (\href{https://github.com/kk723}{\texttt{ kk723}})
+\item to\+String can call existing user-\/defined to\+String through ADL incorrectly \#508 (\href{https://github.com/zeux}{\texttt{ zeux}})
+\item \mbox{[}Coverity\mbox{]} Concurrent data access violations (MISSING\+\_\+\+LOCK) doctest.h\+: 5838 in doctest\+:\+:$<$unnamed$>$\+::\+Console\+Reporter\+::test\+\_\+case\+\_\+start(const doctest\+::\+Test\+Case\+Data \&)() \#486 (\href{https://github.com/jiridanek}{\texttt{ jiridanek}})
+\item Provide an error message if REQUIRE (or other disabled assertion macros) are used when exceptions are disabled \#439 (\href{https://github.com/alexeyr}{\texttt{ alexeyr}})
+\item Conflict with templated to\+String function \#420 (\href{https://github.com/TillHeinzel}{\texttt{ Till\+Heinzel}})
+\item -\/tc does not work with comma in names \#398 (\href{https://github.com/martinus}{\texttt{ martinus}})
+\item Compile error on MSVC2019 with any macro which involves stringification of std\+::string (asserts, INFO, etc.) when $<$ostream$>$ isn\textquotesingle{}t included \#381 (\href{https://github.com/nyanpasu64}{\texttt{ nyanpasu64}})
+\item the dll example doesn\textquotesingle{}t run correctly on Windows with Min\+GW \#375 (\href{https://github.com/GregKon}{\texttt{ Greg\+Kon}})
+\item add basic conan recipe \#354 (\href{https://github.com/trondhe}{\texttt{ trondhe}})
+\item \doxylink{doctest_2doctest_8h_a73e7aad74289b7337329539f44cd9a97}{CHECK\+\_\+\+MESSAGE()} should accept temporaries \#337 (\href{https://github.com/eyalroz}{\texttt{ eyalroz}})
+\item stringify of cstring literals doesn\textquotesingle{}t work out of the box with separate test\+\_\+driver.cpp \#329 (\href{https://github.com/teichert}{\texttt{ teichert}})
+\item warning \+: function declared \textquotesingle{}noreturn\textquotesingle{} should not return \mbox{[}-\/Winvalid-\/noreturn\mbox{]} \#307 (\href{https://github.com/Vexthil}{\texttt{ Vexthil}})
+\item Test cases containing a comma cannot be run individually \#297 (\href{https://github.com/Tradias}{\texttt{ Tradias}})
+\item \mbox{[}bug\mbox{]} Can\textquotesingle{}t compile the tests because of mutex, that is declared in the doctest \#242 (\href{https://github.com/BrunaoW}{\texttt{ BrunaoW}})
+\item The \`{}\+CHECK\`{} macro conflicts with Boost.Beast (and surely others) \#234 (\href{https://github.com/reddwarf69}{\texttt{ reddwarf69}})
+\item Feature request\+: check if a \`{}float\`{} or \`{}double\`{} is NaN \#105 (\href{https://github.com/iamthad}{\texttt{ iamthad}})
+\end{DoxyItemize}
+
+{\bfseries{Merged pull requests\+:}}
+\begin{DoxyItemize}
+\item Add clang-\/tidy integration and fix all warnings \#659 (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item Avoid static init problem in insufficient\+\_\+procs() (MPI) \#657 (\href{https://github.com/starintheuniverse}{\texttt{ starintheuniverse}})
+\item Use MPI\+\_\+\+Isend in Mpi\+Console\+Reporter to avoid deadlock \#656 (\href{https://github.com/starintheuniverse}{\texttt{ starintheuniverse}})
+\item Cleanup of DOCTEST\+\_\+\+DO\+\_\+\+BINARY\+\_\+\+EXPRESSION\+\_\+\+COMPARISON. Fixes \#651 \#652 (\href{https://github.com/iboB}{\texttt{ iboB}})
+\item Add tests for DOCTEST\+\_\+\+CONFIG\+\_\+\+USE\+\_\+\+STD\+\_\+\+HEADERS \#643 (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item Stringification amendments \#642 (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item Clean up defines a bit; Implement \#439 \#641 (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item Fix \#508 \#640 (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item re-\/re-\/remove overly restrictive minimum version of meson \#635 (\href{https://github.com/eli-schwartz}{\texttt{ eli-\/schwartz}})
+\item Fix move-\/only types failing to decompose correctly \#634 (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item Improve Mac Power\+PC support \#631 (\href{https://github.com/ryandesign}{\texttt{ ryandesign}})
+\item added nolint for cert-\/err58 \#628 (\href{https://github.com/serguei-k}{\texttt{ serguei-\/k}})
+\item Fix properties not being passed in doctest\+\_\+discover\+\_\+tests \#626 (\href{https://github.com/quantumsteve}{\texttt{ quantumsteve}})
+\item Config no multithreading \#625 (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item Fix MPI extension to work with no parallel tests \#623 (\href{https://github.com/BerengerBerthoul}{\texttt{ Berenger\+Berthoul}})
+\item Add contains option to checks. \#620 (\href{https://github.com/MFraters}{\texttt{ MFraters}})
+\item Add alias target for doctest\+\_\+with\+\_\+main \#617 (\href{https://github.com/jessestricker}{\texttt{ jessestricker}})
+\item Allow escaping backslash with backslash in filters (\#614) \#616 (\href{https://github.com/yeputons}{\texttt{ yeputons}})
+\item Fix operator\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} \#615 (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item Fix MPI extension to work if launched without mpirun/mpiexec \#612 (\href{https://github.com/BerengerBerthoul}{\texttt{ Berenger\+Berthoul}})
+\item Fix mpi subcase \#611 (\href{https://github.com/BerengerBerthoul}{\texttt{ Berenger\+Berthoul}})
+\item Add Is\+NaN operator! \#603 (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item Move roadmap and wipe it clean \#601 (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item removes a duplicate word \textquotesingle{}most\textquotesingle{} in configuration.md \#599 (\href{https://github.com/krishnakumarg1984}{\texttt{ krishnakumarg1984}})
+\item Fix subcase reentry \#598 (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item Add flag that forces custom stringification methods to be provided \#595 (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item Fix coverage \#594 (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item Ignore CMake and Mac\+OS generated files \#592 (\href{https://github.com/LeonBrands}{\texttt{ Leon\+Brands}})
+\item Feature config ret vals \#589 (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item Refactor stringification \#585 (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item Feature\+: Better NaN \#584 (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item Nan check \#582 (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\end{DoxyItemize}\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md4}{}\doxysection{\texorpdfstring{\href{https://github.com/doctest/doctest/tree/v2.4.8}{\texttt{ v2.\+4.\+8}} (2022-\/01-\/10)}{\href{https://github.com/doctest/doctest/tree/v2.4.8}{\texttt{ v2.\+4.\+8}} (2022-\/01-\/10)}}\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md4}
+\href{https://github.com/doctest/doctest/compare/2.4.7...v2.4.8}{\texttt{ Full Changelog}}
+
+{\bfseries{Closed issues\+:}}
+
+
+\begin{DoxyItemize}
+\item \mbox{[}meta\mbox{]} Change git tagging pattern \href{https://github.com/doctest/doctest/issues/579}{\texttt{ \#579}}
+\item TEST\+\_\+\+CASE\+\_\+\+TEMPLATE causes "{}-\/\+Wunused-\/local-\/typedef"{} warning on Clang \href{https://github.com/doctest/doctest/issues/577}{\texttt{ \#577}}
+\item Regression between 2.\+4.\+6 and 2.\+4.\+7 with Visual Studio 2015 \href{https://github.com/doctest/doctest/issues/573}{\texttt{ \#573}}
+\item Regression between 2.\+4.\+6 and 2.\+4.\+7 \href{https://github.com/doctest/doctest/issues/571}{\texttt{ \#571}}
+\item Compilation error on MSVS2019 with Clang\+CL \href{https://github.com/doctest/doctest/issues/570}{\texttt{ \#570}}
+\item Compilation errors on MSVC 2015 after doctest update to 2.\+4.\+7 \href{https://github.com/doctest/doctest/issues/568}{\texttt{ \#568}}
+\item {\ttfamily g\textbackslash{}\+\_\+oss} is causing incorrect stringification results \href{https://github.com/doctest/doctest/issues/567}{\texttt{ \#567}}
+\item MSVC warnings leak through when using the library as a single header with /\+Wall \href{https://github.com/doctest/doctest/issues/565}{\texttt{ \#565}}
+\item \mbox{[}PROJECT ANNOUNCEMENT\mbox{]} Looking for maintainers for Doctest \href{https://github.com/doctest/doctest/issues/554}{\texttt{ \#554}}
+\item Is this still maintained? \href{https://github.com/doctest/doctest/issues/537}{\texttt{ \#537}}
+\item \mbox{[}Feature request\mbox{]} CHECK could return the value of expression \href{https://github.com/doctest/doctest/issues/496}{\texttt{ \#496}}
+\item Feature\+: check or return false \href{https://github.com/doctest/doctest/issues/426}{\texttt{ \#426}}
+\item Undefined reference of {\ttfamily operator\textbackslash{}\texorpdfstring{$<$}{<}\textbackslash{}\texorpdfstring{$<$}{<}\textbackslash{}(ostream\&, const string\&\textbackslash{})} when compiling with clang 10 and libc++ 10 on Ubuntu 16.\+04.\+6 LTS \href{https://github.com/doctest/doctest/issues/356}{\texttt{ \#356}}
+\item Doctest is not able to compile on OSX \href{https://github.com/doctest/doctest/issues/126}{\texttt{ \#126}}
+\end{DoxyItemize}
+
+{\bfseries{Merged pull requests\+:}}
+
+
+\begin{DoxyItemize}
+\item Continuous Integration Refactor \href{https://github.com/doctest/doctest/pull/580}{\texttt{ \#580}} (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item Fix semicolon enforcement \href{https://github.com/doctest/doctest/pull/578}{\texttt{ \#578}} (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item Fix unused variable 2 \href{https://github.com/doctest/doctest/pull/576}{\texttt{ \#576}} (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item Alternative approach to Windows color initialization \href{https://github.com/doctest/doctest/pull/575}{\texttt{ \#575}} (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item Assertions returning booleans \href{https://github.com/doctest/doctest/pull/574}{\texttt{ \#574}} (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item Fix the thread-\/local string-\/stream \href{https://github.com/doctest/doctest/pull/569}{\texttt{ \#569}} (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item Clean up warning suppression a bit; Fixes \#565 \href{https://github.com/doctest/doctest/pull/566}{\texttt{ \#566}} (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item Add Universal Windows Platform support \href{https://github.com/doctest/doctest/pull/558}{\texttt{ \#558}} (\href{https://github.com/isaevil}{\texttt{ isaevil}})
+\end{DoxyItemize}\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md5}{}\doxysection{\texorpdfstring{\href{https://github.com/doctest/doctest/tree/2.4.7}{\texttt{ 2.\+4.\+7}} (2021-\/12-\/10)}{\href{https://github.com/doctest/doctest/tree/2.4.7}{\texttt{ 2.\+4.\+7}} (2021-\/12-\/10)}}\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md5}
+\href{https://github.com/doctest/doctest/compare/2.4.6...2.4.7}{\texttt{ Full Changelog}}
+
+{\bfseries{Implemented enhancements\+:}}
+
+
+\begin{DoxyItemize}
+\item Add a default Bazel BUILD file \href{https://github.com/doctest/doctest/issues/433}{\texttt{ \#433}}
+\end{DoxyItemize}
+
+{\bfseries{Fixed bugs\+:}}
+
+
+\begin{DoxyItemize}
+\item Stack-\/buffer-\/overflow probably because char array is viewed as NULL terminated string \href{https://github.com/doctest/doctest/issues/476}{\texttt{ \#476}}
+\end{DoxyItemize}
+
+{\bfseries{Closed issues\+:}}
+
+
+\begin{DoxyItemize}
+\item "{}\+C4834\+: discarding return value"{} with REQUIRE\+\_\+\+THROWS \href{https://github.com/doctest/doctest/issues/549}{\texttt{ \#549}}
+\item Xcode 11.\+3 is gone from mac\+OS-\/latest (=mac\+OS-\/11) \href{https://github.com/doctest/doctest/issues/547}{\texttt{ \#547}}
+\item is it possible to define dependency for CHECKs \href{https://github.com/doctest/doctest/issues/545}{\texttt{ \#545}}
+\item Output summary explanation \href{https://github.com/doctest/doctest/issues/541}{\texttt{ \#541}}
+\item compiler errors in doctest.\+h using cmake in CLion \href{https://github.com/doctest/doctest/issues/540}{\texttt{ \#540}}
+\item Fails to build in VS2013 because of constexpr \href{https://github.com/doctest/doctest/issues/539}{\texttt{ \#539}}
+\item -\/Wreserved-\/identifier warnings with Clang 13.\+0.\+0 \href{https://github.com/doctest/doctest/issues/536}{\texttt{ \#536}}
+\item Build fails with latest MSVC 2019 (v16.\+11) due to /\+WX \href{https://github.com/doctest/doctest/issues/535}{\texttt{ \#535}}
+\item VS 16.\+11 warning about unreferenced function with internal linkage \href{https://github.com/doctest/doctest/issues/533}{\texttt{ \#533}}
+\item Faq googletest mocking dead link \href{https://github.com/doctest/doctest/issues/532}{\texttt{ \#532}}
+\item FR\+: Documentation\+: FAQ\+: Add sectoin \textquotesingle{}multiple files\textquotesingle{} \href{https://github.com/doctest/doctest/issues/526}{\texttt{ \#526}}
+\item CMAKE\+: doctest\+\_\+discover\+\_\+tests() error when ADD\+\_\+\+LABELS is not specified \href{https://github.com/doctest/doctest/issues/524}{\texttt{ \#524}}
+\item Register tests based on test data available \href{https://github.com/doctest/doctest/issues/521}{\texttt{ \#521}}
+\item naming override in different testcase files \href{https://github.com/doctest/doctest/issues/517}{\texttt{ \#517}}
+\item Segmentation fault during the compilation without the copy elision optimization \href{https://github.com/doctest/doctest/issues/515}{\texttt{ \#515}}
+\item Compiler warnings on Xcode 12.\+5 \href{https://github.com/doctest/doctest/issues/514}{\texttt{ \#514}}
+\item Using filter {\ttfamily -\/sc} does not work properly? \href{https://github.com/doctest/doctest/issues/513}{\texttt{ \#513}}
+\item \mbox{[}question\mbox{]} Example of tests in production code \& DLLs \& shared libraries? \href{https://github.com/doctest/doctest/issues/511}{\texttt{ \#511}}
+\item Dumping fixture state to disk on error \href{https://github.com/doctest/doctest/issues/509}{\texttt{ \#509}}
+\item Macros construct reserved identifiers \href{https://github.com/doctest/doctest/issues/507}{\texttt{ \#507}}
+\item Running doctest on embedded ARM Cortex µ\+Cs \href{https://github.com/doctest/doctest/issues/506}{\texttt{ \#506}}
+\item Asserts Outside of Tests Example Does Not Link \href{https://github.com/doctest/doctest/issues/504}{\texttt{ \#504}}
+\item \mbox{[}FEATURE REQUEST\mbox{]} Quiet flag \href{https://github.com/doctest/doctest/issues/503}{\texttt{ \#503}}
+\item Compile error on Intel C++ Classic Compilers \href{https://github.com/doctest/doctest/issues/502}{\texttt{ \#502}}
+\item compiling doctest in 32-\/bit with \+\_\+\+\_\+stdcall calling convention fails \href{https://github.com/doctest/doctest/issues/500}{\texttt{ \#500}}
+\item Duplicate \textquotesingle{}const\textquotesingle{} compilation error from TEST\+\_\+\+CASE\+\_\+\+CLASS macro \href{https://github.com/doctest/doctest/issues/498}{\texttt{ \#498}}
+\item Packed fields can\textquotesingle{}t be accessed in 2.\+4.\+6 \href{https://github.com/doctest/doctest/issues/495}{\texttt{ \#495}}
+\item Dangling pointers with .str().c\+\_\+str() \href{https://github.com/doctest/doctest/issues/494}{\texttt{ \#494}}
+\item Automatic adding of TEST\+\_\+\+SUITE labels to discovered tests fails if ADD\+\_\+\+LABELS not set \href{https://github.com/doctest/doctest/issues/489}{\texttt{ \#489}}
+\item Adding a bunch of REQUIRE/\+CHECK utilities \href{https://github.com/doctest/doctest/issues/487}{\texttt{ \#487}}
+\item Warning C4114 in MSVC \href{https://github.com/doctest/doctest/issues/485}{\texttt{ \#485}}
+\item Own repository \href{https://github.com/doctest/doctest/issues/410}{\texttt{ \#410}}
+\item Linking problem with Clang 10 on Windows \href{https://github.com/doctest/doctest/issues/362}{\texttt{ \#362}}
+\item Add option not to print the intro text \href{https://github.com/doctest/doctest/issues/342}{\texttt{ \#342}}
+\item \mbox{[}Feature\mbox{]} Better integration with tools (VS Code Test Adapter Extension) \href{https://github.com/doctest/doctest/issues/320}{\texttt{ \#320}}
+\item vscode test explorer \href{https://github.com/doctest/doctest/issues/303}{\texttt{ \#303}}
+\item Want an option not to print any intro \href{https://github.com/doctest/doctest/issues/245}{\texttt{ \#245}}
+\item Add way to disable printing of intro \href{https://github.com/doctest/doctest/issues/181}{\texttt{ \#181}}
+\end{DoxyItemize}
+
+{\bfseries{Merged pull requests\+:}}
+
+
+\begin{DoxyItemize}
+\item Make String\+::operator+ non-\/member \href{https://github.com/doctest/doctest/pull/564}{\texttt{ \#564}} (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item Add -\/minimal flag \href{https://github.com/doctest/doctest/pull/562}{\texttt{ \#562}} (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item Quiet flag \href{https://github.com/doctest/doctest/pull/561}{\texttt{ \#561}} (\href{https://github.com/Saalvage}{\texttt{ Saalvage}})
+\item Fix redefinition error while using double time \doxylink{doctest_2doctest_8h_ac2799231daab4b10ca221f997ef94981}{DOCTEST\+\_\+\+ANONYMOUS(\+DOCTEST\+\_\+\+CAPTURE\+\_\+)} \href{https://github.com/doctest/doctest/pull/557}{\texttt{ \#557}} (\href{https://github.com/isaevil}{\texttt{ isaevil}})
+\item Fix error\+: missing initializer for member \doxylink{structdoctest_1_1detail_1_1_test_suite}{doctest\+::detail\+::\+Test\+Suite} \href{https://github.com/doctest/doctest/pull/556}{\texttt{ \#556}} (\href{https://github.com/isaevil}{\texttt{ isaevil}})
+\item Xcode 11.\+3 with macos 10.\+15 \href{https://github.com/doctest/doctest/pull/548}{\texttt{ \#548}} (\href{https://github.com/jsoref}{\texttt{ jsoref}})
+\item Spelling \href{https://github.com/doctest/doctest/pull/546}{\texttt{ \#546}} (\href{https://github.com/jsoref}{\texttt{ jsoref}})
+\item Fix build with -\/Wunused-\/but-\/set-\/variable \href{https://github.com/doctest/doctest/pull/543}{\texttt{ \#543}} (\href{https://github.com/jktjkt}{\texttt{ jktjkt}})
+\item build(meson)\+: use {\ttfamily override\textbackslash{}\+\_\+dependency} if supported \href{https://github.com/doctest/doctest/pull/538}{\texttt{ \#538}} (\href{https://github.com/Tachi107}{\texttt{ Tachi107}})
+\item Fix google death test URL \href{https://github.com/doctest/doctest/pull/528}{\texttt{ \#528}} (\href{https://github.com/emrecil}{\texttt{ emrecil}})
+\item Fixing issue with doctest\+Add\+Tests.\+cmake \href{https://github.com/doctest/doctest/pull/527}{\texttt{ \#527}} (\href{https://github.com/jharmer95}{\texttt{ jharmer95}})
+\item Replace gendered pronouns \href{https://github.com/doctest/doctest/pull/525}{\texttt{ \#525}} (\href{https://github.com/mletterle}{\texttt{ mletterle}})
+\item Fixed intel compiler parser bug. Should fix \#502 \href{https://github.com/doctest/doctest/pull/523}{\texttt{ \#523}} (\href{https://github.com/BerengerBerthoul}{\texttt{ Berenger\+Berthoul}})
+\item specifying working directory for execute\+\_\+process in doctest\+\_\+discover\+\_\+tests \href{https://github.com/doctest/doctest/pull/518}{\texttt{ \#518}} (\href{https://github.com/philbucher}{\texttt{ philbucher}})
+\item Fix the logic that depends on optional copy elision optimization \href{https://github.com/doctest/doctest/pull/516}{\texttt{ \#516}} (\href{https://github.com/ivankochin}{\texttt{ ivankochin}})
+\item Fix reserved identifiers \href{https://github.com/doctest/doctest/pull/510}{\texttt{ \#510}} (\href{https://github.com/ts826848}{\texttt{ ts826848}})
+\item Fix build with GCC 11 \href{https://github.com/doctest/doctest/pull/505}{\texttt{ \#505}} (\href{https://github.com/jktjkt}{\texttt{ jktjkt}})
+\item minor fixes in MPI docs \href{https://github.com/doctest/doctest/pull/499}{\texttt{ \#499}} (\href{https://github.com/philbucher}{\texttt{ philbucher}})
+\item Add a minimal bazel config \href{https://github.com/doctest/doctest/pull/497}{\texttt{ \#497}} (\href{https://github.com/elliottt}{\texttt{ elliottt}})
+\item Handle escaped commas in parsed arguments \href{https://github.com/doctest/doctest/pull/493}{\texttt{ \#493}} (\href{https://github.com/friendlyanon}{\texttt{ friendlyanon}})
+\item Fixes Issue 476 . When running executables with "{}-\/s"{} stringify\+Binary\+E… \href{https://github.com/doctest/doctest/pull/491}{\texttt{ \#491}} (\href{https://github.com/navinp0304}{\texttt{ navinp0304}})
+\item Set variable to 0 if not set \href{https://github.com/doctest/doctest/pull/490}{\texttt{ \#490}} (\href{https://github.com/shivupa}{\texttt{ shivupa}})
+\end{DoxyItemize}\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md6}{}\doxysection{\texorpdfstring{\href{https://github.com/doctest/doctest/tree/2.4.6}{\texttt{ 2.\+4.\+6}} (2021-\/03-\/22)}{\href{https://github.com/doctest/doctest/tree/2.4.6}{\texttt{ 2.\+4.\+6}} (2021-\/03-\/22)}}\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md6}
+\href{https://github.com/doctest/doctest/compare/2.4.5...2.4.6}{\texttt{ Full Changelog}}
+
+{\bfseries{Fixed bugs\+:}}
+
+
+\begin{DoxyItemize}
+\item REQUIRE does not compile when operator== in different namespace \href{https://github.com/doctest/doctest/issues/443}{\texttt{ \#443}}
+\item Using templated operator== inside TEST\+\_\+\+CASE changes deduced types of forwarding references \href{https://github.com/doctest/doctest/issues/399}{\texttt{ \#399}}
+\end{DoxyItemize}
+
+{\bfseries{Closed issues\+:}}
+
+
+\begin{DoxyItemize}
+\item CMake doesn\textquotesingle{}t link package \href{https://github.com/doctest/doctest/issues/483}{\texttt{ \#483}}
+\item Assertions are slow when running on Windows with a debugger attached \href{https://github.com/doctest/doctest/issues/481}{\texttt{ \#481}}
+\item Get list of registered test-\/case names \href{https://github.com/doctest/doctest/issues/479}{\texttt{ \#479}}
+\item Can\textquotesingle{}t compile with glibc master (future 2.\+34)\+: SIGSTKSZ is no longer a constant \href{https://github.com/doctest/doctest/issues/473}{\texttt{ \#473}}
+\item How to use Doctest with Github Actions \href{https://github.com/doctest/doctest/issues/472}{\texttt{ \#472}}
+\item Link error (multiple definition...) in simple project \href{https://github.com/doctest/doctest/issues/470}{\texttt{ \#470}}
+\item INFO does not compile when used like a function call \href{https://github.com/doctest/doctest/issues/469}{\texttt{ \#469}}
+\item std\+::uncaught\+\_\+exceptions is only available if compiling for mac\+OS 10.\+12 or above \href{https://github.com/doctest/doctest/issues/466}{\texttt{ \#466}}
+\item Compile failure with Win\+RT on 2.\+4.\+5 \href{https://github.com/doctest/doctest/issues/465}{\texttt{ \#465}}
+\end{DoxyItemize}
+
+{\bfseries{Merged pull requests\+:}}
+
+
+\begin{DoxyItemize}
+\item Improve speed with attached debugger (Windows) \href{https://github.com/doctest/doctest/pull/482}{\texttt{ \#482}} (\href{https://github.com/pgroke}{\texttt{ pgroke}})
+\item Convert to bool by casting, rather than double negation \href{https://github.com/doctest/doctest/pull/480}{\texttt{ \#480}} (\href{https://github.com/kitegi}{\texttt{ kitegi}})
+\item Fix compile error when targeting mac\+OS version earlier and mac\+OS 10.\+12 \href{https://github.com/doctest/doctest/pull/478}{\texttt{ \#478}} (\href{https://github.com/SamWindell}{\texttt{ Sam\+Windell}})
+\item Fix MSVC linter warning about uninitialized Test\+Suite variables \href{https://github.com/doctest/doctest/pull/471}{\texttt{ \#471}} (\href{https://github.com/Reedbeta}{\texttt{ Reedbeta}})
+\item REQUIRE does not compile when operator== in different namespace \#443 . \href{https://github.com/doctest/doctest/pull/468}{\texttt{ \#468}} (\href{https://github.com/navinp0304}{\texttt{ navinp0304}})
+\item Automatically add TEST\+\_\+\+SUITE labels to discovered tests \href{https://github.com/doctest/doctest/pull/464}{\texttt{ \#464}} (\href{https://github.com/shivupa}{\texttt{ shivupa}})
+\end{DoxyItemize}\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md7}{}\doxysection{\texorpdfstring{\href{https://github.com/doctest/doctest/tree/2.4.5}{\texttt{ 2.\+4.\+5}} (2021-\/02-\/02)}{\href{https://github.com/doctest/doctest/tree/2.4.5}{\texttt{ 2.\+4.\+5}} (2021-\/02-\/02)}}\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md7}
+\href{https://github.com/doctest/doctest/compare/2.4.4...2.4.5}{\texttt{ Full Changelog}}
+
+{\bfseries{Closed issues\+:}}
+
+
+\begin{DoxyItemize}
+\item Stack buffer overflow in {\ttfamily String} constructor \href{https://github.com/doctest/doctest/issues/460}{\texttt{ \#460}}
+\item Suppress warnings from clang-\/tidy \href{https://github.com/doctest/doctest/issues/459}{\texttt{ \#459}}
+\item compilation issue in MSVC when defining DOCTEST\+\_\+\+THREAD\+\_\+\+LOCAL to static \href{https://github.com/doctest/doctest/issues/458}{\texttt{ \#458}}
+\item nvcc compiler warning; doctest.\+h(4138)\+: warning \+: expression has no effect \href{https://github.com/doctest/doctest/issues/454}{\texttt{ \#454}}
+\item Use of std\+::atomic can slow down multithreaded tests \href{https://github.com/doctest/doctest/issues/452}{\texttt{ \#452}}
+\end{DoxyItemize}
+
+{\bfseries{Merged pull requests\+:}}
+
+
+\begin{DoxyItemize}
+\item Fix compilation on case-\/sensitive filesystems \href{https://github.com/doctest/doctest/pull/463}{\texttt{ \#463}} (\href{https://github.com/jhasse}{\texttt{ jhasse}})
+\item Use function-\/like macros for prefixless macro names \href{https://github.com/doctest/doctest/pull/462}{\texttt{ \#462}} (\href{https://github.com/tbleher}{\texttt{ tbleher}})
+\item Implement a multi lane atomic for assertion counts \href{https://github.com/doctest/doctest/pull/453}{\texttt{ \#453}} (\href{https://github.com/martinus}{\texttt{ martinus}})
+\end{DoxyItemize}\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md8}{}\doxysection{\texorpdfstring{\href{https://github.com/doctest/doctest/tree/2.4.4}{\texttt{ 2.\+4.\+4}} (2020-\/12-\/25)}{\href{https://github.com/doctest/doctest/tree/2.4.4}{\texttt{ 2.\+4.\+4}} (2020-\/12-\/25)}}\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md8}
+\href{https://github.com/doctest/doctest/compare/2.4.3...2.4.4}{\texttt{ Full Changelog}}
+
+{\bfseries{Closed issues\+:}}
+
+
+\begin{DoxyItemize}
+\item 2.\+4.\+2\+: build fails \href{https://github.com/doctest/doctest/issues/450}{\texttt{ \#450}}
+\item combine the same tests for different build configurations from multiple shared objects without having symbol clashes \href{https://github.com/doctest/doctest/issues/436}{\texttt{ \#436}}
+\item Issue with Git\+Hub Security Scanning\+: gmtime \href{https://github.com/doctest/doctest/issues/423}{\texttt{ \#423}}
+\end{DoxyItemize}\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md9}{}\doxysection{\texorpdfstring{\href{https://github.com/doctest/doctest/tree/2.4.3}{\texttt{ 2.\+4.\+3}} (2020-\/12-\/16)}{\href{https://github.com/doctest/doctest/tree/2.4.3}{\texttt{ 2.\+4.\+3}} (2020-\/12-\/16)}}\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md9}
+\href{https://github.com/doctest/doctest/compare/2.4.2...2.4.3}{\texttt{ Full Changelog}}\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md10}{}\doxysection{\texorpdfstring{\href{https://github.com/doctest/doctest/tree/2.4.2}{\texttt{ 2.\+4.\+2}} (2020-\/12-\/15)}{\href{https://github.com/doctest/doctest/tree/2.4.2}{\texttt{ 2.\+4.\+2}} (2020-\/12-\/15)}}\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md10}
+\href{https://github.com/doctest/doctest/compare/2.4.1...2.4.2}{\texttt{ Full Changelog}}
+
+{\bfseries{Closed issues\+:}}
+
+
+\begin{DoxyItemize}
+\item DOCTEST\+\_\+\+CHECK\+\_\+\+THROWS\+\_\+\+WITH\+\_\+\+AS fails to work with dependant exception type \href{https://github.com/doctest/doctest/issues/447}{\texttt{ \#447}}
+\item MSVC warnings\+: narrowing conversion, signed/unsigned mismatch \href{https://github.com/doctest/doctest/issues/446}{\texttt{ \#446}}
+\item log contexts for failures in JUnit reporter \href{https://github.com/doctest/doctest/issues/441}{\texttt{ \#441}}
+\item Min\+GW "{}\textquotesingle{}mutex\textquotesingle{} in namespace \textquotesingle{}std\textquotesingle{} does not name a type"{} error. \href{https://github.com/doctest/doctest/issues/438}{\texttt{ \#438}}
+\item Test runner thread initialization \href{https://github.com/doctest/doctest/issues/435}{\texttt{ \#435}}
+\item PLATFORM is misdetected on Mac\+OSX Big Sur \href{https://github.com/doctest/doctest/issues/415}{\texttt{ \#415}}
+\item CHECK\+\_\+\+EQ with enum values \href{https://github.com/doctest/doctest/issues/276}{\texttt{ \#276}}
+\end{DoxyItemize}
+
+{\bfseries{Merged pull requests\+:}}
+
+
+\begin{DoxyItemize}
+\item Squash MSVC warnings when including ntstatus.\+h \href{https://github.com/doctest/doctest/pull/449}{\texttt{ \#449}} (\href{https://github.com/nickhutchinson}{\texttt{ nickhutchinson}})
+\item Add MAIN\+\_\+\+PROJECT check for test option \href{https://github.com/doctest/doctest/pull/445}{\texttt{ \#445}} (\href{https://github.com/globberwops}{\texttt{ globberwops}})
+\item Suppress clang-\/analyzer-\/cplusplus.\+New\+Delete\+Leaks \href{https://github.com/doctest/doctest/pull/444}{\texttt{ \#444}} (\href{https://github.com/ncihnegn}{\texttt{ ncihnegn}})
+\item log contexts for failures in JUnit reporter \href{https://github.com/doctest/doctest/pull/442}{\texttt{ \#442}} (\href{https://github.com/runave}{\texttt{ runave}})
+\item Fix 32bit support on mac\+OS \href{https://github.com/doctest/doctest/pull/440}{\texttt{ \#440}} (\href{https://github.com/AlexanderLanin}{\texttt{ Alexander\+Lanin}})
+\end{DoxyItemize}\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md11}{}\doxysection{\texorpdfstring{\href{https://github.com/doctest/doctest/tree/2.4.1}{\texttt{ 2.\+4.\+1}} (2020-\/11-\/04)}{\href{https://github.com/doctest/doctest/tree/2.4.1}{\texttt{ 2.\+4.\+1}} (2020-\/11-\/04)}}\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md11}
+\href{https://github.com/doctest/doctest/compare/2.4.0...2.4.1}{\texttt{ Full Changelog}}
+
+{\bfseries{Closed issues\+:}}
+
+
+\begin{DoxyItemize}
+\item Avoid old C-\/style casts \href{https://github.com/doctest/doctest/issues/424}{\texttt{ \#424}}
+\item Segfault in unwind \href{https://github.com/doctest/doctest/issues/422}{\texttt{ \#422}}
+\item Inspect exception with gdb \href{https://github.com/doctest/doctest/issues/421}{\texttt{ \#421}}
+\item use-\/of-\/uninitialized-\/value \href{https://github.com/doctest/doctest/issues/414}{\texttt{ \#414}}
+\item Support unit tests with MPI \href{https://github.com/doctest/doctest/issues/413}{\texttt{ \#413}}
+\item Break into debugger support is missing for Linux \href{https://github.com/doctest/doctest/issues/411}{\texttt{ \#411}}
+\item What if built doctest as static library instead of header-\/only \href{https://github.com/doctest/doctest/issues/408}{\texttt{ \#408}}
+\item \mbox{[}Question\mbox{]} How to get test case name \href{https://github.com/doctest/doctest/issues/407}{\texttt{ \#407}}
+\item create extensions header for optional features requiring more std includes or newer C++ features \href{https://github.com/doctest/doctest/issues/405}{\texttt{ \#405}}
+\item tests/asserts summary lines are misaligned when counts exceed 999999 \href{https://github.com/doctest/doctest/issues/402}{\texttt{ \#402}}
+\item Call to \textquotesingle{}ne\textquotesingle{} is ambiguous -- with solution \href{https://github.com/doctest/doctest/issues/395}{\texttt{ \#395}}
+\item Intermittent Segfaults \href{https://github.com/doctest/doctest/issues/391}{\texttt{ \#391}}
+\item Junit classname \href{https://github.com/doctest/doctest/issues/390}{\texttt{ \#390}}
+\item Add default printers for enums \href{https://github.com/doctest/doctest/issues/121}{\texttt{ \#121}}
+\end{DoxyItemize}
+
+{\bfseries{Merged pull requests\+:}}
+
+
+\begin{DoxyItemize}
+\item Enum support (fix for Issue \#121) \href{https://github.com/doctest/doctest/pull/429}{\texttt{ \#429}} (\href{https://github.com/jkriegshauser}{\texttt{ jkriegshauser}})
+\item Support Clang 3.\+4 \href{https://github.com/doctest/doctest/pull/428}{\texttt{ \#428}} (\href{https://github.com/AlexanderLanin}{\texttt{ Alexander\+Lanin}})
+\item Silence remarks on old C-\/style casts \href{https://github.com/doctest/doctest/pull/425}{\texttt{ \#425}} (\href{https://github.com/UnePierre}{\texttt{ Une\+Pierre}})
+\item Initial MPI unit tests implementation \href{https://github.com/doctest/doctest/pull/418}{\texttt{ \#418}} (\href{https://github.com/BerengerBerthoul}{\texttt{ Berenger\+Berthoul}})
+\item Add JUNIT\+\_\+\+OUTPUT\+\_\+\+DIR option to doctest\+\_\+discover\+\_\+tests \href{https://github.com/doctest/doctest/pull/417}{\texttt{ \#417}} (\href{https://github.com/Tradias}{\texttt{ Tradias}})
+\item Add option to build with std headers. \href{https://github.com/doctest/doctest/pull/416}{\texttt{ \#416}} (\href{https://github.com/avostrik}{\texttt{ avostrik}})
+\item Port Catch2 break into debugger for Linux. closes \#411 \href{https://github.com/doctest/doctest/pull/412}{\texttt{ \#412}} (\href{https://github.com/mikezackles}{\texttt{ mikezackles}})
+\item summary\+: align even large values \#402 \href{https://github.com/doctest/doctest/pull/403}{\texttt{ \#403}} (\href{https://github.com/dankamongmen}{\texttt{ dankamongmen}})
+\item Add breakpoint inline assembly for the Apple Silicon mac\+OS. \href{https://github.com/doctest/doctest/pull/400}{\texttt{ \#400}} (\href{https://github.com/bruvzg}{\texttt{ bruvzg}})
+\item fix google\textquotesingle{}s death test URI in roadmap \href{https://github.com/doctest/doctest/pull/393}{\texttt{ \#393}} (\href{https://github.com/ashutosh108}{\texttt{ ashutosh108}})
+\end{DoxyItemize}\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md12}{}\doxysection{\texorpdfstring{\href{https://github.com/doctest/doctest/tree/2.4.0}{\texttt{ 2.\+4.\+0}} (2020-\/06-\/27)}{\href{https://github.com/doctest/doctest/tree/2.4.0}{\texttt{ 2.\+4.\+0}} (2020-\/06-\/27)}}\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md12}
+\href{https://github.com/doctest/doctest/compare/2.3.8...2.4.0}{\texttt{ Full Changelog}}
+
+{\bfseries{Closed issues\+:}}
+
+
+\begin{DoxyItemize}
+\item Count points based on the number of passed/failed cases? \href{https://github.com/doctest/doctest/issues/386}{\texttt{ \#386}}
+\item How to understand "{}\textbackslash{}\#data\textbackslash{}\+\_\+array"{} in std\+::string? \href{https://github.com/doctest/doctest/issues/383}{\texttt{ \#383}}
+\item crash\+: doctest with custom allocator \href{https://github.com/doctest/doctest/issues/382}{\texttt{ \#382}}
+\item Feature Request\+: format PRIVATE/\+PUBLIC/\+INTERFACE entries with constant indentation \href{https://github.com/doctest/doctest/issues/378}{\texttt{ \#378}}
+\item JUnit Reporter for Doctest \href{https://github.com/doctest/doctest/issues/376}{\texttt{ \#376}}
+\item Avoiding Feature Bloat \href{https://github.com/doctest/doctest/issues/374}{\texttt{ \#374}}
+\item String\+Maker\texorpdfstring{$<$}{<}wchar\+\_\+t\texorpdfstring{$>$}{>} fail to compile with C++20 enabled (GCC) \href{https://github.com/doctest/doctest/issues/357}{\texttt{ \#357}}
+\item doctest\+\_\+discover\+\_\+tests and Fetch\+Content\+\_\+\+Declare \href{https://github.com/doctest/doctest/issues/351}{\texttt{ \#351}}
+\item Junit reporter \href{https://github.com/doctest/doctest/issues/318}{\texttt{ \#318}}
+\end{DoxyItemize}
+
+{\bfseries{Merged pull requests\+:}}
+
+
+\begin{DoxyItemize}
+\item Add a note that doctest can be installed through Homebrew \href{https://github.com/doctest/doctest/pull/388}{\texttt{ \#388}} (\href{https://github.com/cameronwhite}{\texttt{ cameronwhite}})
+\item provide alternative implementation of has\+\_\+insertion\+\_\+operator for C++20 \href{https://github.com/doctest/doctest/pull/387}{\texttt{ \#387}} (\href{https://github.com/lukaszgemborowski}{\texttt{ lukaszgemborowski}})
+\item Fix issue template to mention doctest \href{https://github.com/doctest/doctest/pull/380}{\texttt{ \#380}} (\href{https://github.com/nyanpasu64}{\texttt{ nyanpasu64}})
+\end{DoxyItemize}\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md13}{}\doxysection{\texorpdfstring{\href{https://github.com/doctest/doctest/tree/2.3.8}{\texttt{ 2.\+3.\+8}} (2020-\/05-\/17)}{\href{https://github.com/doctest/doctest/tree/2.3.8}{\texttt{ 2.\+3.\+8}} (2020-\/05-\/17)}}\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md13}
+\href{https://github.com/doctest/doctest/compare/2.3.7...2.3.8}{\texttt{ Full Changelog}}
+
+{\bfseries{Closed issues\+:}}
+
+
+\begin{DoxyItemize}
+\item Scenario name can not be passed to -\/tc to execute single scenario \href{https://github.com/doctest/doctest/issues/373}{\texttt{ \#373}}
+\item Compile Error with CHECK\+\_\+\+NOTHROW when using 2 Template Arguments \href{https://github.com/doctest/doctest/issues/372}{\texttt{ \#372}}
+\item dll example won\textquotesingle{}t compile \href{https://github.com/doctest/doctest/issues/371}{\texttt{ \#371}}
+\item Build error with Min\+GW (Mingw-\/w64) due to missing Windows.\+h (with capital W) \href{https://github.com/doctest/doctest/issues/370}{\texttt{ \#370}}
+\item How to override file\+\_\+line\+\_\+to\+\_\+stream? \href{https://github.com/doctest/doctest/issues/369}{\texttt{ \#369}}
+\item Memory sanitizer fails. \href{https://github.com/doctest/doctest/issues/365}{\texttt{ \#365}}
+\item Warning c6319 in Visual Studio \href{https://github.com/doctest/doctest/issues/359}{\texttt{ \#359}}
+\item Any option to show each test case\textquotesingle{}s execute time? \href{https://github.com/doctest/doctest/issues/358}{\texttt{ \#358}}
+\item doctest in embedded \href{https://github.com/doctest/doctest/issues/355}{\texttt{ \#355}}
+\item Reloading a plugin with test cases leads to a segmentation fault \href{https://github.com/doctest/doctest/issues/350}{\texttt{ \#350}}
+\item Compiling with DOCTEST\+\_\+\+CONFIG\+\_\+\+COLORS\+\_\+\+ANSI fails on Windows \href{https://github.com/doctest/doctest/issues/348}{\texttt{ \#348}}
+\item Can I inherit Console\+Reporter? \href{https://github.com/doctest/doctest/issues/344}{\texttt{ \#344}}
+\item Noreturn and noexcept defines for Visual Studio 2013 support \href{https://github.com/doctest/doctest/issues/327}{\texttt{ \#327}}
+\item Data-\/driven testing -- print out the deepest DOCTEST\+\_\+\+SUBCASE \href{https://github.com/doctest/doctest/issues/215}{\texttt{ \#215}}
+\item Print the SUBCASE path when an assert fails in the TEST\+\_\+\+CASE body \href{https://github.com/doctest/doctest/issues/125}{\texttt{ \#125}}
+\end{DoxyItemize}
+
+{\bfseries{Merged pull requests\+:}}
+
+
+\begin{DoxyItemize}
+\item fix\+: possible UB with nullptr increment \href{https://github.com/doctest/doctest/pull/368}{\texttt{ \#368}} (\href{https://github.com/oktonion}{\texttt{ oktonion}})
+\item Use CMake\textquotesingle{}s CMP0077 policy if available \href{https://github.com/doctest/doctest/pull/363}{\texttt{ \#363}} (\href{https://github.com/thelink2012}{\texttt{ thelink2012}})
+\item Fix warning c6319 in Visual Studio 16.\+5 \href{https://github.com/doctest/doctest/pull/361}{\texttt{ \#361}} (\href{https://github.com/Cvelth}{\texttt{ Cvelth}})
+\end{DoxyItemize}\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md14}{}\doxysection{\texorpdfstring{\href{https://github.com/doctest/doctest/tree/2.3.7}{\texttt{ 2.\+3.\+7}} (2020-\/02-\/24)}{\href{https://github.com/doctest/doctest/tree/2.3.7}{\texttt{ 2.\+3.\+7}} (2020-\/02-\/24)}}\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md14}
+\href{https://github.com/doctest/doctest/compare/2.3.6...2.3.7}{\texttt{ Full Changelog}}
+
+{\bfseries{Closed issues\+:}}
+
+
+\begin{DoxyItemize}
+\item Some of the Git\+Hub CI builds are failing \href{https://github.com/doctest/doctest/issues/334}{\texttt{ \#334}}
+\item C++20 removed std\+::uncaught\+\_\+exception \href{https://github.com/doctest/doctest/issues/333}{\texttt{ \#333}}
+\item Doctest SEH handlers are called before \+\_\+\+\_\+except handlers \href{https://github.com/doctest/doctest/issues/324}{\texttt{ \#324}}
+\end{DoxyItemize}
+
+{\bfseries{Merged pull requests\+:}}
+
+
+\begin{DoxyItemize}
+\item using std namespace where necessary and timer ticks fix \href{https://github.com/doctest/doctest/pull/341}{\texttt{ \#341}} (\href{https://github.com/oktonion}{\texttt{ oktonion}})
+\item fix std\+::uncaught\+\_\+exceptions \href{https://github.com/doctest/doctest/pull/340}{\texttt{ \#340}} (\href{https://github.com/cyyever}{\texttt{ cyyever}})
+\item Fix Git\+Hub CI and add Git\+Hub build badges \href{https://github.com/doctest/doctest/pull/336}{\texttt{ \#336}} (\href{https://github.com/claremacrae}{\texttt{ claremacrae}})
+\item http -\/\texorpdfstring{$>$}{>} https \href{https://github.com/doctest/doctest/pull/331}{\texttt{ \#331}} (\href{https://github.com/Coeur}{\texttt{ Coeur}})
+\item Switch to catching unhandled exceptions on Windows Closes \#324 \href{https://github.com/doctest/doctest/pull/325}{\texttt{ \#325}} (\href{https://github.com/jkriegshauser}{\texttt{ jkriegshauser}})
+\end{DoxyItemize}\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md15}{}\doxysection{\texorpdfstring{\href{https://github.com/doctest/doctest/tree/2.3.6}{\texttt{ 2.\+3.\+6}} (2019-\/12-\/16)}{\href{https://github.com/doctest/doctest/tree/2.3.6}{\texttt{ 2.\+3.\+6}} (2019-\/12-\/16)}}\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md15}
+\href{https://github.com/doctest/doctest/compare/2.3.5...2.3.6}{\texttt{ Full Changelog}}
+
+{\bfseries{Closed issues\+:}}
+
+
+\begin{DoxyItemize}
+\item Link problem w/ BUILD=Release if \doxylink{doctest_2doctest_8h_ad655b38a678a6c69f4555b7737d4b7d3}{MESSAGE()} with std\+::string/ostream-\/operator is used \href{https://github.com/doctest/doctest/issues/316}{\texttt{ \#316}}
+\item the FAQ about difference to Catch2 is missing tags \href{https://github.com/doctest/doctest/issues/315}{\texttt{ \#315}}
+\item include Windows.\+h in small caps to silence clang warnings \href{https://github.com/doctest/doctest/issues/312}{\texttt{ \#312}}
+\item Mistake in generator with lgtm error \href{https://github.com/doctest/doctest/issues/311}{\texttt{ \#311}}
+\item CMake\+: cannot install target doctest\+\_\+with\+\_\+main \href{https://github.com/doctest/doctest/issues/310}{\texttt{ \#310}}
+\item \mbox{[}bug\mbox{]} \doxylink{doctest_2doctest_8h_aedf01192151e10a6620567952711ff69}{INFO()} and \doxylink{doctest_2doctest_8h_a0cd84d289552018d72489c085df0a9ca}{CAPTURE()} cannot compile using MSVC when used with DOCTEST\+\_\+\+CONFIG\+\_\+\+IMPLEMENTATION\+\_\+\+IN\+\_\+\+DLL \href{https://github.com/doctest/doctest/issues/306}{\texttt{ \#306}}
+\item Skip subcase \href{https://github.com/doctest/doctest/issues/304}{\texttt{ \#304}}
+\item Does some equivalent features from google test exist here? \href{https://github.com/doctest/doctest/issues/300}{\texttt{ \#300}}
+\item How to use doctest in dll only(without main.\+cpp and .exe) \href{https://github.com/doctest/doctest/issues/299}{\texttt{ \#299}}
+\item Warning\+: C26812\+: The enum type \textquotesingle{}\doxylink{namespacedoctest_1_1assert_type_ae1bb5bed722f34f1c38b83cb19d326d3}{doctest\+::assert\+Type\+::\+Enum}\textquotesingle{} is unscoped. Prefer \textquotesingle{}enum class\textquotesingle{} over \textquotesingle{}enum\textquotesingle{} (Enum.\+3). \href{https://github.com/doctest/doctest/issues/298}{\texttt{ \#298}}
+\item test executable\+\_\+dll\+\_\+and\+\_\+plugin fails on Linux, GCC 8.\+1.\+0, -\/fsanitize=address \href{https://github.com/doctest/doctest/issues/201}{\texttt{ \#201}}
+\end{DoxyItemize}
+
+{\bfseries{Merged pull requests\+:}}
+
+
+\begin{DoxyItemize}
+\item Fixed missing ostream include for Mac\+OS when defining DOCTEST\+\_\+\+CONFIG\+\_\+… \href{https://github.com/doctest/doctest/pull/314}{\texttt{ \#314}} (\href{https://github.com/NKTomHaygarth}{\texttt{ NKTom\+Haygarth}})
+\item include windows.\+h in cmall caps to silence clang nonportable warnings \href{https://github.com/doctest/doctest/pull/313}{\texttt{ \#313}} (\href{https://github.com/suoniq}{\texttt{ suoniq}})
+\item Add .editorconfig file. \href{https://github.com/doctest/doctest/pull/301}{\texttt{ \#301}} (\href{https://github.com/DaanDeMeyer}{\texttt{ Daan\+De\+Meyer}})
+\item Add Github Actions CI \href{https://github.com/doctest/doctest/pull/285}{\texttt{ \#285}} (\href{https://github.com/DaanDeMeyer}{\texttt{ Daan\+De\+Meyer}})
+\end{DoxyItemize}\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md16}{}\doxysection{\texorpdfstring{\href{https://github.com/doctest/doctest/tree/2.3.5}{\texttt{ 2.\+3.\+5}} (2019-\/09-\/22)}{\href{https://github.com/doctest/doctest/tree/2.3.5}{\texttt{ 2.\+3.\+5}} (2019-\/09-\/22)}}\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md16}
+\href{https://github.com/doctest/doctest/compare/2.3.4...2.3.5}{\texttt{ Full Changelog}}
+
+{\bfseries{Closed issues\+:}}
+
+
+\begin{DoxyItemize}
+\item \mbox{[}feature request\mbox{]} Assertion macros for throwing exception of a specific type with message -\/ \texorpdfstring{$<$}{<}LEVEL\texorpdfstring{$>$}{>}\+\_\+\+THROWS\+\_\+\+WITH\+\_\+\+AS(expr, string, ex\+\_\+type) \href{https://github.com/doctest/doctest/issues/295}{\texttt{ \#295}}
+\item CHECK\+\_\+\+THROWS\+\_\+\+AS of non-\/default constructor wants to call default constructor \href{https://github.com/doctest/doctest/issues/293}{\texttt{ \#293}}
+\item Typos and spelling errors in source, documentation and scripts \href{https://github.com/doctest/doctest/issues/291}{\texttt{ \#291}}
+\item Customize test names / variable substitution \href{https://github.com/doctest/doctest/issues/284}{\texttt{ \#284}}
+\item SUBCASE in function not behaving as expected \href{https://github.com/doctest/doctest/issues/282}{\texttt{ \#282}}
+\item SUPER\+\_\+\+FAST\+\_\+\+ASSERTS fails to compile CHECK\+\_\+\+MESSAGE \href{https://github.com/doctest/doctest/issues/281}{\texttt{ \#281}}
+\item CHECK\+\_\+\+MESSAGE no longer works with DOCTEST\+\_\+\+CONFIG\+\_\+\+SUPER\+\_\+\+FAST\+\_\+\+ASSERTS \href{https://github.com/doctest/doctest/issues/280}{\texttt{ \#280}}
+\item CAPTURE of structured binding element no longer works \href{https://github.com/doctest/doctest/issues/279}{\texttt{ \#279}}
+\item Reporter\+: {\ttfamily test\textbackslash{}\+\_\+case\textbackslash{}\+\_\+end} no longer fired after test case restart \href{https://github.com/doctest/doctest/issues/278}{\texttt{ \#278}}
+\item Add debug break override support \href{https://github.com/doctest/doctest/issues/277}{\texttt{ \#277}}
+\item Running tests from within Visual Studio in a static lib project \href{https://github.com/doctest/doctest/issues/275}{\texttt{ \#275}}
+\item Compile-\/time error when using a raw string literal inside of REQUIRE (MSVC 2017) \href{https://github.com/doctest/doctest/issues/274}{\texttt{ \#274}}
+\item Give example for having tests in production code \href{https://github.com/doctest/doctest/issues/252}{\texttt{ \#252}}
+\item Memory leaks just by including doctest.\+h \href{https://github.com/doctest/doctest/issues/205}{\texttt{ \#205}}
+\item Feature request\+: print subcase when an exception is thrown inside one \href{https://github.com/doctest/doctest/issues/136}{\texttt{ \#136}}
+\end{DoxyItemize}
+
+{\bfseries{Merged pull requests\+:}}
+
+
+\begin{DoxyItemize}
+\item Fix typos and misspellings found by codespell. \href{https://github.com/doctest/doctest/pull/292}{\texttt{ \#292}} (\href{https://github.com/warmsocks}{\texttt{ warmsocks}})
+\item Document order by issue correctly \href{https://github.com/doctest/doctest/pull/290}{\texttt{ \#290}} (\href{https://github.com/DaanDeMeyer}{\texttt{ Daan\+De\+Meyer}})
+\item Document that -\/order-\/by=file is compiler-\/dependent \href{https://github.com/doctest/doctest/pull/289}{\texttt{ \#289}} (\href{https://github.com/DaanDeMeyer}{\texttt{ Daan\+De\+Meyer}})
+\item Add -\/order-\/by=name to filter\+\_\+2 test \href{https://github.com/doctest/doctest/pull/288}{\texttt{ \#288}} (\href{https://github.com/DaanDeMeyer}{\texttt{ Daan\+De\+Meyer}})
+\item Add support for compiling with clang-\/cl \href{https://github.com/doctest/doctest/pull/286}{\texttt{ \#286}} (\href{https://github.com/DaanDeMeyer}{\texttt{ Daan\+De\+Meyer}})
+\item No minimum version limitation of Meson \href{https://github.com/doctest/doctest/pull/283}{\texttt{ \#283}} (\href{https://github.com/ydm}{\texttt{ ydm}})
+\end{DoxyItemize}\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md17}{}\doxysection{\texorpdfstring{\href{https://github.com/doctest/doctest/tree/2.3.4}{\texttt{ 2.\+3.\+4}} (2019-\/08-\/12)}{\href{https://github.com/doctest/doctest/tree/2.3.4}{\texttt{ 2.\+3.\+4}} (2019-\/08-\/12)}}\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md17}
+\href{https://github.com/doctest/doctest/compare/2.3.3...2.3.4}{\texttt{ Full Changelog}}
+
+{\bfseries{Closed issues\+:}}
+
+
+\begin{DoxyItemize}
+\item Remove \doxylink{doctest_2doctest_8h_aedf01192151e10a6620567952711ff69}{INFO()} limitation for using only lvalues and no rvalues \href{https://github.com/doctest/doctest/issues/269}{\texttt{ \#269}}
+\item Compile error on MAC OS with Apple\+Clang 8.\+0.\+0.\+8000042 \href{https://github.com/doctest/doctest/issues/266}{\texttt{ \#266}}
+\item Throwing exception in a mocked method \href{https://github.com/doctest/doctest/issues/265}{\texttt{ \#265}}
+\item Illegal syntax for decorators compiles and runs without warning, but has no effect \href{https://github.com/doctest/doctest/issues/264}{\texttt{ \#264}}
+\item Support conditional expressions in REQUIRE \href{https://github.com/doctest/doctest/issues/262}{\texttt{ \#262}}
+\item Register a listener(reporter) that always listens \href{https://github.com/doctest/doctest/issues/257}{\texttt{ \#257}}
+\item Memory sanitizer complaint \href{https://github.com/doctest/doctest/issues/255}{\texttt{ \#255}}
+\item Windows Clang GNU command line warnings \href{https://github.com/doctest/doctest/issues/253}{\texttt{ \#253}}
+\item The build writes into the source directory \href{https://github.com/doctest/doctest/issues/249}{\texttt{ \#249}}
+\item How to enable tests inside another exe \href{https://github.com/doctest/doctest/issues/246}{\texttt{ \#246}}
+\item Testing multiple headers. \href{https://github.com/doctest/doctest/issues/244}{\texttt{ \#244}}
+\item CMake\+Lists.\+txt\+: Needs CMAKE\+\_\+\+CXX\+\_\+\+STANDARD=11 \href{https://github.com/doctest/doctest/issues/243}{\texttt{ \#243}}
+\item \mbox{[}bug\mbox{]} Can\textquotesingle{}t compile the tests because of mutex, that is declared in the doctest \href{https://github.com/doctest/doctest/issues/242}{\texttt{ \#242}}
+\end{DoxyItemize}
+
+{\bfseries{Merged pull requests\+:}}
+
+
+\begin{DoxyItemize}
+\item Improve Listener docs \href{https://github.com/doctest/doctest/pull/273}{\texttt{ \#273}} (\href{https://github.com/claremacrae}{\texttt{ claremacrae}})
+\item Rework {\ttfamily INFO} lazy evaluation to use lambdas. \href{https://github.com/doctest/doctest/pull/270}{\texttt{ \#270}} (\href{https://github.com/DaanDeMeyer}{\texttt{ Daan\+De\+Meyer}})
+\item Prevent compile errors with Apple\+Clang compiler \href{https://github.com/doctest/doctest/pull/268}{\texttt{ \#268}} (\href{https://github.com/ClausKlein}{\texttt{ Claus\+Klein}})
+\item Revert "{}fix \+: including windows.\+h header cause error"{} \href{https://github.com/doctest/doctest/pull/263}{\texttt{ \#263}} (\href{https://github.com/onqtam}{\texttt{ onqtam}})
+\item Fix static analyzer URLs \href{https://github.com/doctest/doctest/pull/259}{\texttt{ \#259}} (\href{https://github.com/godbyk}{\texttt{ godbyk}})
+\item fix \+: including windows.\+h header cause error \href{https://github.com/doctest/doctest/pull/258}{\texttt{ \#258}} (\href{https://github.com/rinechran}{\texttt{ rinechran}})
+\item only look for C++ compiler with CMake \href{https://github.com/doctest/doctest/pull/256}{\texttt{ \#256}} (\href{https://github.com/zhihaoy}{\texttt{ zhihaoy}})
+\item Fix \#253 \href{https://github.com/doctest/doctest/pull/254}{\texttt{ \#254}} (\href{https://github.com/DaanDeMeyer}{\texttt{ Daan\+De\+Meyer}})
+\item add alias target for doctest for use in build tree \href{https://github.com/doctest/doctest/pull/247}{\texttt{ \#247}} (\href{https://github.com/trondhe}{\texttt{ trondhe}})
+\end{DoxyItemize}\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md18}{}\doxysection{\texorpdfstring{\href{https://github.com/doctest/doctest/tree/2.3.3}{\texttt{ 2.\+3.\+3}} (2019-\/06-\/02)}{\href{https://github.com/doctest/doctest/tree/2.3.3}{\texttt{ 2.\+3.\+3}} (2019-\/06-\/02)}}\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md18}
+\href{https://github.com/doctest/doctest/compare/2.3.2...2.3.3}{\texttt{ Full Changelog}}
+
+{\bfseries{Closed issues\+:}}
+
+
+\begin{DoxyItemize}
+\item Build fails with gcc9 because of -\/Wstrict-\/overflow=5 which is too high \href{https://github.com/doctest/doctest/issues/241}{\texttt{ \#241}}
+\item doctest given defined with short macro name \href{https://github.com/doctest/doctest/issues/239}{\texttt{ \#239}}
+\item Splitting templated test across different translation units \href{https://github.com/doctest/doctest/issues/238}{\texttt{ \#238}}
+\item Compile errors with iosfwd.\+h and Visual Studio 2019 Preview \href{https://github.com/doctest/doctest/issues/183}{\texttt{ \#183}}
+\item Add CMake test support as catch\+\_\+discover\+\_\+tests() in Catch2 \href{https://github.com/doctest/doctest/issues/171}{\texttt{ \#171}}
+\end{DoxyItemize}
+
+{\bfseries{Merged pull requests\+:}}
+
+
+\begin{DoxyItemize}
+\item fix \#239 -\/ use long macro name \href{https://github.com/doctest/doctest/pull/240}{\texttt{ \#240}} (\href{https://github.com/m-bd}{\texttt{ m-\/bd}})
+\item Add doctest\+\_\+discover\+\_\+tests() \href{https://github.com/doctest/doctest/pull/236}{\texttt{ \#236}} (\href{https://github.com/reddwarf69}{\texttt{ reddwarf69}})
+\item Ignore redundant-\/decls warning on Min\+GW \href{https://github.com/doctest/doctest/pull/235}{\texttt{ \#235}} (\href{https://github.com/AMS21}{\texttt{ AMS21}})
+\item Fixed meson build file dependency declaration \href{https://github.com/doctest/doctest/pull/233}{\texttt{ \#233}} (\href{https://github.com/jormundgand}{\texttt{ jormundgand}})
+\end{DoxyItemize}\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md19}{}\doxysection{\texorpdfstring{\href{https://github.com/doctest/doctest/tree/2.3.2}{\texttt{ 2.\+3.\+2}} (2019-\/05-\/06)}{\href{https://github.com/doctest/doctest/tree/2.3.2}{\texttt{ 2.\+3.\+2}} (2019-\/05-\/06)}}\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md19}
+\href{https://github.com/doctest/doctest/compare/2.3.1...2.3.2}{\texttt{ Full Changelog}}
+
+{\bfseries{Closed issues\+:}}
+
+
+\begin{DoxyItemize}
+\item \doxylink{run__all_8py}{scripts/bench/run\+\_\+all.\+py} \+: module \textquotesingle{}urllib\textquotesingle{} has no attribute \textquotesingle{}urlretrieve\textquotesingle{} \href{https://github.com/doctest/doctest/issues/230}{\texttt{ \#230}}
+\item wrong set of tests registered with TEST\+\_\+\+CASE\+\_\+\+TEMPLATE get executed \href{https://github.com/doctest/doctest/issues/228}{\texttt{ \#228}}
+\item Logging not Working for me \href{https://github.com/doctest/doctest/issues/227}{\texttt{ \#227}}
+\item Link test runner executable into dll? \href{https://github.com/doctest/doctest/issues/226}{\texttt{ \#226}}
+\item Linking issue for executables after including doctest in library \href{https://github.com/doctest/doctest/issues/224}{\texttt{ \#224}}
+\item Strange REQUIRE\+\_\+\+THROWS behaviour \href{https://github.com/doctest/doctest/issues/223}{\texttt{ \#223}}
+\item Windows clang-\/cl -\/Wunused-\/variable warning \href{https://github.com/doctest/doctest/issues/221}{\texttt{ \#221}}
+\item Update doctest 2.\+3.\+1 in bincrafters \href{https://github.com/doctest/doctest/issues/220}{\texttt{ \#220}}
+\item make install, on 64 bit, installs cmake files into lib instead of lib64 folder \href{https://github.com/doctest/doctest/issues/218}{\texttt{ \#218}}
+\item TSAN\+: data race related to has\+Logged\+Current\+Test\+Start \href{https://github.com/doctest/doctest/issues/217}{\texttt{ \#217}}
+\item REQUIRE\+\_\+\+THROWS\+\_\+\+AS does not support class constructors \href{https://github.com/doctest/doctest/issues/216}{\texttt{ \#216}}
+\item Build failure on clang 7.\+0.\+1 on Fedora 29 \href{https://github.com/doctest/doctest/issues/214}{\texttt{ \#214}}
+\item add example compatible with -\/\texorpdfstring{$>$}{>} \href{https://github.com/report-ci/}{\texttt{ https\+://github.\+com/report-\/ci/}} \href{https://github.com/doctest/doctest/issues/212}{\texttt{ \#212}}
+\item No DOCTEST\+\_\+\+WITH\+\_\+\+TESTS? \href{https://github.com/doctest/doctest/issues/211}{\texttt{ \#211}}
+\end{DoxyItemize}
+
+{\bfseries{Merged pull requests\+:}}
+
+
+\begin{DoxyItemize}
+\item Added meson file, to declare a dependency. \href{https://github.com/doctest/doctest/pull/232}{\texttt{ \#232}} (\href{https://github.com/jormundgand}{\texttt{ jormundgand}})
+\item Explicitly specify the doctest\+\_\+with\+\_\+main C++ standard in CMake. \href{https://github.com/doctest/doctest/pull/231}{\texttt{ \#231}} (\href{https://github.com/DaanDeMeyer}{\texttt{ Daan\+De\+Meyer}})
+\item Remove architecture check from CMake package \href{https://github.com/doctest/doctest/pull/225}{\texttt{ \#225}} (\href{https://github.com/mmha}{\texttt{ mmha}})
+\item add default install prefix \href{https://github.com/doctest/doctest/pull/219}{\texttt{ \#219}} (\href{https://github.com/a4z}{\texttt{ a4z}})
+\item \mbox{[}regression\mbox{]} Workaround MSVC preprocessor issue triggered by REQUIRE\+\_\+\+THROWS \href{https://github.com/doctest/doctest/pull/213}{\texttt{ \#213}} (\href{https://github.com/zhihaoy}{\texttt{ zhihaoy}})
+\end{DoxyItemize}\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md20}{}\doxysection{\texorpdfstring{\href{https://github.com/doctest/doctest/tree/2.3.1}{\texttt{ 2.\+3.\+1}} (2019-\/03-\/24)}{\href{https://github.com/doctest/doctest/tree/2.3.1}{\texttt{ 2.\+3.\+1}} (2019-\/03-\/24)}}\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md20}
+\href{https://github.com/doctest/doctest/compare/2.3.0...2.3.1}{\texttt{ Full Changelog}}
+
+{\bfseries{Merged pull requests\+:}}
+
+
+\begin{DoxyItemize}
+\item Add two very simple examples of using doctest with CMake \href{https://github.com/doctest/doctest/pull/209}{\texttt{ \#209}} (\href{https://github.com/pr0g}{\texttt{ pr0g}})
+\end{DoxyItemize}\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md21}{}\doxysection{\texorpdfstring{\href{https://github.com/doctest/doctest/tree/2.3.0}{\texttt{ 2.\+3.\+0}} (2019-\/03-\/23)}{\href{https://github.com/doctest/doctest/tree/2.3.0}{\texttt{ 2.\+3.\+0}} (2019-\/03-\/23)}}\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md21}
+\href{https://github.com/doctest/doctest/compare/2.2.3...2.3.0}{\texttt{ Full Changelog}}
+
+{\bfseries{Closed issues\+:}}
+
+
+\begin{DoxyItemize}
+\item Compilation with emscripten fails by default because of signal handling \href{https://github.com/doctest/doctest/issues/207}{\texttt{ \#207}}
+\item Compilation fails with cl.\+exe /\+Zc\+:wchar\+\_\+t-\/ \href{https://github.com/doctest/doctest/issues/206}{\texttt{ \#206}}
+\item Parallel invocation of doctest\textquotesingle{}s own testsuite via CTest fails \href{https://github.com/doctest/doctest/issues/202}{\texttt{ \#202}}
+\item Get the number of passed/failed tests in the code \href{https://github.com/doctest/doctest/issues/200}{\texttt{ \#200}}
+\item Tests alongside code with multiple executables \href{https://github.com/doctest/doctest/issues/199}{\texttt{ \#199}}
+\item Cppcheck 1.\+86 warnings \href{https://github.com/doctest/doctest/issues/198}{\texttt{ \#198}}
+\item Compiling as Dll maybe is wrong \href{https://github.com/doctest/doctest/issues/196}{\texttt{ \#196}}
+\item Forward-\/declaring identifiers in std\+:\+: is UB -\/ consider including some of the cheaper C/\+C++ stdlib headers \href{https://github.com/doctest/doctest/issues/194}{\texttt{ \#194}}
+\item Qt\+Creator + clang warning about operator \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} precedence \href{https://github.com/doctest/doctest/issues/191}{\texttt{ \#191}}
+\item run test fixture from cli \href{https://github.com/doctest/doctest/issues/190}{\texttt{ \#190}}
+\item Installing doctest using cmake and make fails on Ubuntu 16.\+04 (C++11 is not used) \href{https://github.com/doctest/doctest/issues/189}{\texttt{ \#189}}
+\item c++17 requirement for testing private members \href{https://github.com/doctest/doctest/issues/188}{\texttt{ \#188}}
+\item \mbox{[}feature request\mbox{]} implement a user-\/extendable reporter system \href{https://github.com/doctest/doctest/issues/138}{\texttt{ \#138}}
+\item Same test runs multiple times when written in a header and included with different unnormalized paths \href{https://github.com/doctest/doctest/issues/45}{\texttt{ \#45}}
+\end{DoxyItemize}
+
+{\bfseries{Merged pull requests\+:}}
+
+
+\begin{DoxyItemize}
+\item Fix unmatched bracket in DOCTEST\+\_\+\+TEST\+\_\+\+CASE\+\_\+\+CLASS \href{https://github.com/doctest/doctest/pull/204}{\texttt{ \#204}} (\href{https://github.com/patstew}{\texttt{ patstew}})
+\item Template apply \href{https://github.com/doctest/doctest/pull/203}{\texttt{ \#203}} (\href{https://github.com/zhihaoy}{\texttt{ zhihaoy}})
+\item No undefined behavior per C++ standard in detecting endianness. \href{https://github.com/doctest/doctest/pull/195}{\texttt{ \#195}} (\href{https://github.com/dimztimz}{\texttt{ dimztimz}})
+\item Fix propagating include directories of target doctest\+\_\+with\+\_\+main \href{https://github.com/doctest/doctest/pull/193}{\texttt{ \#193}} (\href{https://github.com/dimztimz}{\texttt{ dimztimz}})
+\item Move single header to a separate folder \href{https://github.com/doctest/doctest/pull/187}{\texttt{ \#187}} (\href{https://github.com/dimztimz}{\texttt{ dimztimz}})
+\item Fix Clang format to handle C++11 \href{https://github.com/doctest/doctest/pull/186}{\texttt{ \#186}} (\href{https://github.com/dimztimz}{\texttt{ dimztimz}})
+\item Rename doctest\+\_\+impl.\+h to \doxylink{doctest_8cpp}{doctest.\+cpp} for less confusion. \href{https://github.com/doctest/doctest/pull/185}{\texttt{ \#185}} (\href{https://github.com/dimztimz}{\texttt{ dimztimz}})
+\end{DoxyItemize}\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md22}{}\doxysection{\texorpdfstring{\href{https://github.com/doctest/doctest/tree/2.2.3}{\texttt{ 2.\+2.\+3}} (2019-\/02-\/10)}{\href{https://github.com/doctest/doctest/tree/2.2.3}{\texttt{ 2.\+2.\+3}} (2019-\/02-\/10)}}\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md22}
+\href{https://github.com/doctest/doctest/compare/2.2.2...2.2.3}{\texttt{ Full Changelog}}
+
+{\bfseries{Closed issues\+:}}
+
+
+\begin{DoxyItemize}
+\item Calling convention needed on a few functions \href{https://github.com/doctest/doctest/issues/182}{\texttt{ \#182}}
+\item Terminal color is not reset when a test fails with some signal \href{https://github.com/doctest/doctest/issues/122}{\texttt{ \#122}}
+\end{DoxyItemize}\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md23}{}\doxysection{\texorpdfstring{\href{https://github.com/doctest/doctest/tree/2.2.2}{\texttt{ 2.\+2.\+2}} (2019-\/01-\/28)}{\href{https://github.com/doctest/doctest/tree/2.2.2}{\texttt{ 2.\+2.\+2}} (2019-\/01-\/28)}}\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md23}
+\href{https://github.com/doctest/doctest/compare/2.2.1...2.2.2}{\texttt{ Full Changelog}}
+
+{\bfseries{Closed issues\+:}}
+
+
+\begin{DoxyItemize}
+\item Add way to override get\+Current\+Ticks() implementation \href{https://github.com/doctest/doctest/issues/178}{\texttt{ \#178}}
+\item Wrap \texorpdfstring{$<$}{<}csignal\texorpdfstring{$>$}{>} include with ifdef \href{https://github.com/doctest/doctest/issues/177}{\texttt{ \#177}}
+\item How to stop doctest hijack unhandled exceptions? \href{https://github.com/doctest/doctest/issues/176}{\texttt{ \#176}}
+\item Change the include path of the {\ttfamily doctest} CMake interface target so users need to specify the folder as well \href{https://github.com/doctest/doctest/issues/175}{\texttt{ \#175}}
+\item Reduce scope of Debug\+Output\+Window\+Reporter instance \href{https://github.com/doctest/doctest/issues/174}{\texttt{ \#174}}
+\item Can logging (INFO) be used in helper class outside of TEST\+\_\+\+CASE? \href{https://github.com/doctest/doctest/issues/169}{\texttt{ \#169}}
+\end{DoxyItemize}
+
+{\bfseries{Merged pull requests\+:}}
+
+
+\begin{DoxyItemize}
+\item Change the include path in examples as \#175 \href{https://github.com/doctest/doctest/pull/180}{\texttt{ \#180}} (\href{https://github.com/ncihnegn}{\texttt{ ncihnegn}})
+\item Fix CMake include path \#175 \href{https://github.com/doctest/doctest/pull/179}{\texttt{ \#179}} (\href{https://github.com/ncihnegn}{\texttt{ ncihnegn}})
+\end{DoxyItemize}\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md24}{}\doxysection{\texorpdfstring{\href{https://github.com/doctest/doctest/tree/2.2.1}{\texttt{ 2.\+2.\+1}} (2019-\/01-\/15)}{\href{https://github.com/doctest/doctest/tree/2.2.1}{\texttt{ 2.\+2.\+1}} (2019-\/01-\/15)}}\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md24}
+\href{https://github.com/doctest/doctest/compare/2.2.0...2.2.1}{\texttt{ Full Changelog}}
+
+{\bfseries{Closed issues\+:}}
+
+
+\begin{DoxyItemize}
+\item the {\ttfamily -\/-\/no-\/throw} option shouldn\textquotesingle{}t affect {\ttfamily \textbackslash{}\texorpdfstring{$<$}{<}LEVEL\textbackslash{}\texorpdfstring{$>$}{>}\textbackslash{}\+\_\+\+NOTHROW} asserts \href{https://github.com/doctest/doctest/issues/173}{\texttt{ \#173}}
+\item Make doctest work with XCode 6 and 7 (no support for C++11 thread\+\_\+local) \href{https://github.com/doctest/doctest/issues/172}{\texttt{ \#172}}
+\item Print vector content. \href{https://github.com/doctest/doctest/issues/170}{\texttt{ \#170}}
+\item Conan package \href{https://github.com/doctest/doctest/issues/103}{\texttt{ \#103}}
+\item \mbox{[}feature request\mbox{]} Thread-\/safety for asserts and logging facilities \href{https://github.com/doctest/doctest/issues/4}{\texttt{ \#4}}
+\end{DoxyItemize}\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md25}{}\doxysection{\texorpdfstring{\href{https://github.com/doctest/doctest/tree/2.2.0}{\texttt{ 2.\+2.\+0}} (2018-\/12-\/05)}{\href{https://github.com/doctest/doctest/tree/2.2.0}{\texttt{ 2.\+2.\+0}} (2018-\/12-\/05)}}\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md25}
+\href{https://github.com/doctest/doctest/compare/2.1.0...2.2.0}{\texttt{ Full Changelog}}
+
+{\bfseries{Closed issues\+:}}
+
+
+\begin{DoxyItemize}
+\item remove the FAST\+\_\+ versions of the binary asserts (not a breaking change!) \href{https://github.com/doctest/doctest/issues/167}{\texttt{ \#167}}
+\item \mbox{[}compile times\mbox{]} make the DOCTEST\+\_\+\+CONFIG\+\_\+\+SUPER\+\_\+\+FAST\+\_\+\+ASSERTS identifier affect normal asserts too \href{https://github.com/doctest/doctest/issues/166}{\texttt{ \#166}}
+\end{DoxyItemize}\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md26}{}\doxysection{\texorpdfstring{\href{https://github.com/doctest/doctest/tree/2.1.0}{\texttt{ 2.\+1.\+0}} (2018-\/11-\/30)}{\href{https://github.com/doctest/doctest/tree/2.1.0}{\texttt{ 2.\+1.\+0}} (2018-\/11-\/30)}}\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md26}
+\href{https://github.com/doctest/doctest/compare/2.0.1...2.1.0}{\texttt{ Full Changelog}}
+
+{\bfseries{Closed issues\+:}}
+
+
+\begin{DoxyItemize}
+\item \doxylink{classdoctest_1_1_string}{doctest\+::\+String} ctor with non-\/zero terminated string \href{https://github.com/doctest/doctest/issues/165}{\texttt{ \#165}}
+\item thread\+\_\+local is not supported on i\+OS 9.\+0 \href{https://github.com/doctest/doctest/issues/164}{\texttt{ \#164}}
+\item Compiler error on Android NDK r18 \href{https://github.com/doctest/doctest/issues/163}{\texttt{ \#163}}
+\item \mbox{[}question\mbox{]} One setup for multiple tests \href{https://github.com/doctest/doctest/issues/160}{\texttt{ \#160}}
+\item clang unwanted warning in user code \href{https://github.com/doctest/doctest/issues/156}{\texttt{ \#156}}
+\item Unsigned integer overflow in file\+Order\+Comparator \href{https://github.com/doctest/doctest/issues/151}{\texttt{ \#151}}
+\item Thread\+Sanitizer\+: signal-\/unsafe call inside of a signal \href{https://github.com/doctest/doctest/issues/147}{\texttt{ \#147}}
+\item Feature request\+: check for exception string (like Catch\textquotesingle{}s CHECK\+\_\+\+THROWS\+\_\+\+WITH) \href{https://github.com/doctest/doctest/issues/97}{\texttt{ \#97}}
+\end{DoxyItemize}
+
+{\bfseries{Merged pull requests\+:}}
+
+
+\begin{DoxyItemize}
+\item Fixed build error under Android NDK \href{https://github.com/doctest/doctest/pull/162}{\texttt{ \#162}} (\href{https://github.com/tals}{\texttt{ tals}})
+\item Added clang-\/7 to travis build \href{https://github.com/doctest/doctest/pull/161}{\texttt{ \#161}} (\href{https://github.com/AMS21}{\texttt{ AMS21}})
+\item Remove clang-\/tidy warnings for static fields created by doctest \href{https://github.com/doctest/doctest/pull/159}{\texttt{ \#159}} (\href{https://github.com/rantasub}{\texttt{ rantasub}})
+\item Make it possible to change the command line options prefix \href{https://github.com/doctest/doctest/pull/158}{\texttt{ \#158}} (\href{https://github.com/tbleher}{\texttt{ tbleher}})
+\end{DoxyItemize}\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md27}{}\doxysection{\texorpdfstring{\href{https://github.com/doctest/doctest/tree/2.0.1}{\texttt{ 2.\+0.\+1}} (2018-\/10-\/24)}{\href{https://github.com/doctest/doctest/tree/2.0.1}{\texttt{ 2.\+0.\+1}} (2018-\/10-\/24)}}\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md27}
+\href{https://github.com/doctest/doctest/compare/2.0.0...2.0.1}{\texttt{ Full Changelog}}
+
+{\bfseries{Closed issues\+:}}
+
+
+\begin{DoxyItemize}
+\item macro name collision with google log \href{https://github.com/doctest/doctest/issues/157}{\texttt{ \#157}}
+\item Add \#define to not run tests by default \href{https://github.com/doctest/doctest/issues/152}{\texttt{ \#152}}
+\item REQUIRE\+\_\+\+THROWS\+\_\+\+MESSAGE not checking message correctly \href{https://github.com/doctest/doctest/issues/150}{\texttt{ \#150}}
+\item Test case passes even though subcase failed \href{https://github.com/doctest/doctest/issues/149}{\texttt{ \#149}}
+\end{DoxyItemize}
+
+{\bfseries{Merged pull requests\+:}}
+
+
+\begin{DoxyItemize}
+\item Correctly document when a \doxylink{how__exception__translators__work_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main()} entry point will be created \href{https://github.com/doctest/doctest/pull/155}{\texttt{ \#155}} (\href{https://github.com/tbleher}{\texttt{ tbleher}})
+\item Correct format string for unsigned char \href{https://github.com/doctest/doctest/pull/154}{\texttt{ \#154}} (\href{https://github.com/tbleher}{\texttt{ tbleher}})
+\end{DoxyItemize}\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md28}{}\doxysection{\texorpdfstring{\href{https://github.com/doctest/doctest/tree/2.0.0}{\texttt{ 2.\+0.\+0}} (2018-\/08-\/23)}{\href{https://github.com/doctest/doctest/tree/2.0.0}{\texttt{ 2.\+0.\+0}} (2018-\/08-\/23)}}\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md28}
+\href{https://github.com/doctest/doctest/compare/1.2.9...2.0.0}{\texttt{ Full Changelog}}
+
+{\bfseries{Closed issues\+:}}
+
+
+\begin{DoxyItemize}
+\item MSVC 2017 15.\+8.\+1, New Warnings as Errors \href{https://github.com/doctest/doctest/issues/144}{\texttt{ \#144}}
+\item Windows clang-\/cl -\/Wdeprecated-\/declarations warnings \href{https://github.com/doctest/doctest/issues/143}{\texttt{ \#143}}
+\item Logo Proposal for Doctest \href{https://github.com/doctest/doctest/issues/141}{\texttt{ \#141}}
+\item PCH Support \href{https://github.com/doctest/doctest/issues/140}{\texttt{ \#140}}
+\item improve compile times even further \href{https://github.com/doctest/doctest/issues/139}{\texttt{ \#139}}
+\item !!! BREAKING CHANGE !!! -\/ Move to C++11 for next version of the library \href{https://github.com/doctest/doctest/issues/137}{\texttt{ \#137}}
+\item get\+Current\+Ticks producing warning on Min\+GW \href{https://github.com/doctest/doctest/issues/133}{\texttt{ \#133}}
+\item \mbox{[}enhancement\mbox{]} Add support for "{}stand-\/alone assertions"{}. \href{https://github.com/doctest/doctest/issues/114}{\texttt{ \#114}}
+\end{DoxyItemize}
+
+{\bfseries{Merged pull requests\+:}}
+
+
+\begin{DoxyItemize}
+\item Suppress compiler warning on Min\+GW \href{https://github.com/doctest/doctest/pull/134}{\texttt{ \#134}} (\href{https://github.com/AMS21}{\texttt{ AMS21}})
+\end{DoxyItemize}\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md29}{}\doxysection{\texorpdfstring{\href{https://github.com/doctest/doctest/tree/1.2.9}{\texttt{ 1.\+2.\+9}} (2018-\/05-\/10)}{\href{https://github.com/doctest/doctest/tree/1.2.9}{\texttt{ 1.\+2.\+9}} (2018-\/05-\/10)}}\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md29}
+\href{https://github.com/doctest/doctest/compare/1.2.8...1.2.9}{\texttt{ Full Changelog}}
+
+{\bfseries{Closed issues\+:}}
+
+
+\begin{DoxyItemize}
+\item GCC 8.\+0 std\+::uncaught\+\_\+exception() is deprecated \href{https://github.com/doctest/doctest/issues/130}{\texttt{ \#130}}
+\item Signal stack size too small on Linux \href{https://github.com/doctest/doctest/issues/129}{\texttt{ \#129}}
+\item Support Intel Compiler \href{https://github.com/doctest/doctest/issues/128}{\texttt{ \#128}}
+\item Please add support for MSVC 2005 \href{https://github.com/doctest/doctest/issues/127}{\texttt{ \#127}}
+\item scan-\/build report "{}\+Dereference of null pointer"{} for function wildcmp \href{https://github.com/doctest/doctest/issues/124}{\texttt{ \#124}}
+\item !!! BREAKING CHANGE (console output only) !!! -\/ Emulate the error/warning format emitted by native compiler gcc/clang/msvc when printing test failures in the log \href{https://github.com/doctest/doctest/issues/123}{\texttt{ \#123}}
+\item ARM builds\+: FTBFS on armhf -\/ error\+: cast from \textquotesingle{}const char\texorpdfstring{$\ast$}{*}\textquotesingle{} to \textquotesingle{}const \href{https://github.com/doctest/doctest/issues/118}{\texttt{ \#118}}
+\end{DoxyItemize}
+
+{\bfseries{Merged pull requests\+:}}
+
+
+\begin{DoxyItemize}
+\item Exclude Intel from GCC compiler check \href{https://github.com/doctest/doctest/pull/132}{\texttt{ \#132}} (\href{https://github.com/smcallis}{\texttt{ smcallis}})
+\item Fix deprecated-\/declarations warning with GCC-\/8.\+0 \href{https://github.com/doctest/doctest/pull/131}{\texttt{ \#131}} (\href{https://github.com/AMS21}{\texttt{ AMS21}})
+\end{DoxyItemize}\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md30}{}\doxysection{\texorpdfstring{\href{https://github.com/doctest/doctest/tree/1.2.8}{\texttt{ 1.\+2.\+8}} (2018-\/03-\/10)}{\href{https://github.com/doctest/doctest/tree/1.2.8}{\texttt{ 1.\+2.\+8}} (2018-\/03-\/10)}}\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md30}
+\href{https://github.com/doctest/doctest/compare/1.2.7...1.2.8}{\texttt{ Full Changelog}}
+
+{\bfseries{Closed issues\+:}}
+
+
+\begin{DoxyItemize}
+\item ARM64 builds\+: \doxylink{templated__test__cases_8cpp}{templated\+\_\+test\+\_\+cases.\+cpp} test fails \href{https://github.com/doctest/doctest/issues/119}{\texttt{ \#119}}
+\end{DoxyItemize}\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md31}{}\doxysection{\texorpdfstring{\href{https://github.com/doctest/doctest/tree/1.2.7}{\texttt{ 1.\+2.\+7}} (2018-\/02-\/06)}{\href{https://github.com/doctest/doctest/tree/1.2.7}{\texttt{ 1.\+2.\+7}} (2018-\/02-\/06)}}\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md31}
+\href{https://github.com/doctest/doctest/compare/1.2.6...1.2.7}{\texttt{ Full Changelog}}
+
+{\bfseries{Closed issues\+:}}
+
+
+\begin{DoxyItemize}
+\item MSan has runtime error\+: unsigned integer overflow \href{https://github.com/doctest/doctest/issues/116}{\texttt{ \#116}}
+\item clang-\/tidy warning about cert-\/err58-\/cpp \href{https://github.com/doctest/doctest/issues/115}{\texttt{ \#115}}
+\item Linking errors \href{https://github.com/doctest/doctest/issues/113}{\texttt{ \#113}}
+\item inlining function defs \href{https://github.com/doctest/doctest/issues/111}{\texttt{ \#111}}
+\item Nullptr issue. \href{https://github.com/doctest/doctest/issues/110}{\texttt{ \#110}}
+\item Memory\+Sanitizer\+: use-\/of-\/uninitialized-\/value \href{https://github.com/doctest/doctest/issues/109}{\texttt{ \#109}}
+\item Potential memory leak through scan-\/build \href{https://github.com/doctest/doctest/issues/108}{\texttt{ \#108}}
+\item Warnings raised to error with latest MSVC version \href{https://github.com/doctest/doctest/issues/107}{\texttt{ \#107}}
+\item New solution for tests in static libraries ! (MSVC) \href{https://github.com/doctest/doctest/issues/106}{\texttt{ \#106}}
+\item Command line flags do not work after code formatter/beautifier \href{https://github.com/doctest/doctest/issues/104}{\texttt{ \#104}}
+\item Cppcheck 1.\+81 warnings \href{https://github.com/doctest/doctest/issues/102}{\texttt{ \#102}}
+\end{DoxyItemize}
+
+{\bfseries{Merged pull requests\+:}}
+
+
+\begin{DoxyItemize}
+\item Fix macros WIN32\+\_\+\+LEAN\+\_\+\+AND\+\_\+\+MEAN typo \href{https://github.com/doctest/doctest/pull/112}{\texttt{ \#112}} (\href{https://github.com/vladimirgamalyan}{\texttt{ vladimirgamalyan}})
+\item Correct DOCTEST\+\_\+\+NO\+\_\+\+INSTALL logic; do install unless it is set (\#99) \href{https://github.com/doctest/doctest/pull/100}{\texttt{ \#100}} (\href{https://github.com/onqtam}{\texttt{ onqtam}})
+\item Correct DOCTEST\+\_\+\+NO\+\_\+\+INSTALL logic; do install unless it is set \href{https://github.com/doctest/doctest/pull/99}{\texttt{ \#99}} (\href{https://github.com/OdyX}{\texttt{ OdyX}})
+\end{DoxyItemize}\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md32}{}\doxysection{\texorpdfstring{\href{https://github.com/doctest/doctest/tree/1.2.6}{\texttt{ 1.\+2.\+6}} (2017-\/10-\/29)}{\href{https://github.com/doctest/doctest/tree/1.2.6}{\texttt{ 1.\+2.\+6}} (2017-\/10-\/29)}}\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md32}
+\href{https://github.com/doctest/doctest/compare/1.2.5...1.2.6}{\texttt{ Full Changelog}}
+
+{\bfseries{Closed issues\+:}}
+
+
+\begin{DoxyItemize}
+\item \mbox{[}bug\mbox{]} writing an exception translator in a header file results in it being registered multiple times which is suboptimal \href{https://github.com/doctest/doctest/issues/98}{\texttt{ \#98}}
+\item Warnings when using something more than /\+W4 for Visual Studio \href{https://github.com/doctest/doctest/issues/95}{\texttt{ \#95}}
+\end{DoxyItemize}
+
+{\bfseries{Merged pull requests\+:}}
+
+
+\begin{DoxyItemize}
+\item Added an option to not install Doctest in the CMake scripts \href{https://github.com/doctest/doctest/pull/96}{\texttt{ \#96}} (\href{https://github.com/nm17}{\texttt{ nm17}})
+\item Adding a defensive check against a null pointer for the current test suite \href{https://github.com/doctest/doctest/pull/94}{\texttt{ \#94}} (\href{https://github.com/Lectem}{\texttt{ Lectem}})
+\item Remove incomplete copy ctor \href{https://github.com/doctest/doctest/pull/93}{\texttt{ \#93}} (\href{https://github.com/McMartin}{\texttt{ Mc\+Martin}})
+\end{DoxyItemize}\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md33}{}\doxysection{\texorpdfstring{\href{https://github.com/doctest/doctest/tree/1.2.5}{\texttt{ 1.\+2.\+5}} (2017-\/10-\/06)}{\href{https://github.com/doctest/doctest/tree/1.2.5}{\texttt{ 1.\+2.\+5}} (2017-\/10-\/06)}}\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md33}
+\href{https://github.com/doctest/doctest/compare/1.2.4...1.2.5}{\texttt{ Full Changelog}}
+
+{\bfseries{Closed issues\+:}}
+
+
+\begin{DoxyItemize}
+\item Xcode 9 / clang -\/ unknown warning group \href{https://github.com/doctest/doctest/issues/92}{\texttt{ \#92}}
+\end{DoxyItemize}\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md34}{}\doxysection{\texorpdfstring{\href{https://github.com/doctest/doctest/tree/1.2.4}{\texttt{ 1.\+2.\+4}} (2017-\/09-\/20)}{\href{https://github.com/doctest/doctest/tree/1.2.4}{\texttt{ 1.\+2.\+4}} (2017-\/09-\/20)}}\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md34}
+\href{https://github.com/doctest/doctest/compare/1.2.3...1.2.4}{\texttt{ Full Changelog}}
+
+{\bfseries{Closed issues\+:}}
+
+
+\begin{DoxyItemize}
+\item \mbox{[}bug\mbox{]} test cases can end up in the wrong test suite \href{https://github.com/doctest/doctest/issues/91}{\texttt{ \#91}}
+\end{DoxyItemize}\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md35}{}\doxysection{\texorpdfstring{\href{https://github.com/doctest/doctest/tree/1.2.3}{\texttt{ 1.\+2.\+3}} (2017-\/09-\/11)}{\href{https://github.com/doctest/doctest/tree/1.2.3}{\texttt{ 1.\+2.\+3}} (2017-\/09-\/11)}}\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md35}
+\href{https://github.com/doctest/doctest/compare/1.2.2...1.2.3}{\texttt{ Full Changelog}}
+
+{\bfseries{Closed issues\+:}}
+
+
+\begin{DoxyItemize}
+\item \mbox{[}bug\mbox{]} Defining a variable T inside a test with DOCTEST\+\_\+\+CONFIG\+\_\+\+DISABLE defined does not compile \href{https://github.com/doctest/doctest/issues/90}{\texttt{ \#90}}
+\item \mbox{[}support\mbox{]} Using {\ttfamily DOCTEST\textbackslash{}\+\_\+\+CONFIG\textbackslash{}\+\_\+\+NO\textbackslash{}\+\_\+\+SHORT\textbackslash{}\+\_\+\+MACRO\textbackslash{}\+\_\+\+NAMES} does not compile using g++ 6.\+3.\+0 \href{https://github.com/doctest/doctest/issues/89}{\texttt{ \#89}}
+\item \mbox{[}question\mbox{]} Why are SUBCASEs executed only once when within a function called multiple times? \href{https://github.com/doctest/doctest/issues/88}{\texttt{ \#88}}
+\end{DoxyItemize}\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md36}{}\doxysection{\texorpdfstring{\href{https://github.com/doctest/doctest/tree/1.2.2}{\texttt{ 1.\+2.\+2}} (2017-\/09-\/05)}{\href{https://github.com/doctest/doctest/tree/1.2.2}{\texttt{ 1.\+2.\+2}} (2017-\/09-\/05)}}\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md36}
+\href{https://github.com/doctest/doctest/compare/1.2.1...1.2.2}{\texttt{ Full Changelog}}
+
+{\bfseries{Closed issues\+:}}
+
+
+\begin{DoxyItemize}
+\item \mbox{[}question\mbox{]} Differences between doctest and googletest (gtest) for uninitialised local variables in test cases \href{https://github.com/doctest/doctest/issues/86}{\texttt{ \#86}}
+\item !!! BREAKING CHANGE !!! -\/ remove the custom implementation of std\+::is\+\_\+constructible and optionally use the \texorpdfstring{$<$}{<}type\+\_\+traits\texorpdfstring{$>$}{>} header because of infinite template recursion issues with GCC \href{https://github.com/doctest/doctest/issues/85}{\texttt{ \#85}}
+\item Static Analysis results of doctest \href{https://github.com/doctest/doctest/issues/83}{\texttt{ \#83}}
+\item !!! BREAKING CHANGE !!! -\/ catch exceptions as const reference in \texorpdfstring{$<$}{<}LEVEL\texorpdfstring{$>$}{>}\+\_\+\+THROWS\+\_\+\+AS \href{https://github.com/doctest/doctest/issues/81}{\texttt{ \#81}}
+\item doctest implementation as static library \href{https://github.com/doctest/doctest/issues/77}{\texttt{ \#77}}
+\item Provide some easy way to compare structs containing float/doubles \href{https://github.com/doctest/doctest/issues/73}{\texttt{ \#73}}
+\end{DoxyItemize}
+
+{\bfseries{Merged pull requests\+:}}
+
+
+\begin{DoxyItemize}
+\item Add support for templated scenarios \href{https://github.com/doctest/doctest/pull/87}{\texttt{ \#87}} (\href{https://github.com/Lectem}{\texttt{ Lectem}})
+\item Prefer if(\+MSVC) in CMake\+Lists.\+txt. \href{https://github.com/doctest/doctest/pull/84}{\texttt{ \#84}} (\href{https://github.com/martinmoene}{\texttt{ martinmoene}})
+\item catch throw\+\_\+as exception as const reference \href{https://github.com/doctest/doctest/pull/82}{\texttt{ \#82}} (\href{https://github.com/a4z}{\texttt{ a4z}})
+\item Added doctest\+\_\+with\+\_\+main static lib \href{https://github.com/doctest/doctest/pull/78}{\texttt{ \#78}} (\href{https://github.com/ymadzhunkov}{\texttt{ ymadzhunkov}})
+\end{DoxyItemize}\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md37}{}\doxysection{\texorpdfstring{\href{https://github.com/doctest/doctest/tree/1.2.1}{\texttt{ 1.\+2.\+1}} (2017-\/05-\/24)}{\href{https://github.com/doctest/doctest/tree/1.2.1}{\texttt{ 1.\+2.\+1}} (2017-\/05-\/24)}}\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md37}
+\href{https://github.com/doctest/doctest/compare/1.2.0...1.2.1}{\texttt{ Full Changelog}}
+
+{\bfseries{Closed issues\+:}}
+
+
+\begin{DoxyItemize}
+\item Compile error under MSVC 2015/2017 if \texorpdfstring{$<$}{<}thread\texorpdfstring{$>$}{>} included in same file as "{}doctest.\+h"{} \href{https://github.com/doctest/doctest/issues/72}{\texttt{ \#72}}
+\end{DoxyItemize}
+
+{\bfseries{Merged pull requests\+:}}
+
+
+\begin{DoxyItemize}
+\item docs\+: TEST\+\_\+\+CASE\+\_\+\+METHOD -\/\texorpdfstring{$>$}{>} TEST\+\_\+\+CASE\+\_\+\+FIXTURE \href{https://github.com/doctest/doctest/pull/71}{\texttt{ \#71}} (\href{https://github.com/akrzemi1}{\texttt{ akrzemi1}})
+\end{DoxyItemize}\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md38}{}\doxysection{\texorpdfstring{\href{https://github.com/doctest/doctest/tree/1.2.0}{\texttt{ 1.\+2.\+0}} (2017-\/05-\/15)}{\href{https://github.com/doctest/doctest/tree/1.2.0}{\texttt{ 1.\+2.\+0}} (2017-\/05-\/15)}}\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md38}
+\href{https://github.com/doctest/doctest/compare/1.1.4...1.2.0}{\texttt{ Full Changelog}}
+
+{\bfseries{Closed issues\+:}}
+
+
+\begin{DoxyItemize}
+\item Further improvements on compile time -\/ disable inlining of functions used in asserts \href{https://github.com/doctest/doctest/issues/70}{\texttt{ \#70}}
+\item Improve runtime performance -\/ lazy stringification, more inlining, no statics on the hot path, move semantics for classes such as \doxylink{classdoctest_1_1_string}{doctest\+::\+String} which are used by value, etc. \href{https://github.com/doctest/doctest/issues/69}{\texttt{ \#69}}
+\item Add option to show duration of test case execution and add a timeout(seconds) decorator -\/ marking them as failed if they exceed it \href{https://github.com/doctest/doctest/issues/68}{\texttt{ \#68}}
+\item Add support for test case decorators -\/ label, description, skip, may\+\_\+fail, should\+\_\+fail, expected\+\_\+failures, etc. \href{https://github.com/doctest/doctest/issues/67}{\texttt{ \#67}}
+\item Integrate static analysis into the CI builds \href{https://github.com/doctest/doctest/issues/66}{\texttt{ \#66}}
+\item Print the test suite name on test case failure \href{https://github.com/doctest/doctest/issues/65}{\texttt{ \#65}}
+\item Add signal handlers to handle crashes (and use SEH under Windows) -\/ report which test case failed \href{https://github.com/doctest/doctest/issues/63}{\texttt{ \#63}}
+\item Add support to Approx for strong typedefs of double \href{https://github.com/doctest/doctest/issues/62}{\texttt{ \#62}}
+\item \mbox{[}question\mbox{]} Is there a way to always have 0 as the exit code regardless of test results? \href{https://github.com/doctest/doctest/issues/59}{\texttt{ \#59}}
+\item Add support for un-\/parenthesized expressions containing commas in asserts \href{https://github.com/doctest/doctest/issues/58}{\texttt{ \#58}}
+\item Add ability to filter subcases with filters \href{https://github.com/doctest/doctest/issues/57}{\texttt{ \#57}}
+\item Add option to query if code is being ran inside of a test -\/ \doxylink{namespacedoctest_a0b03060093b3894c976b6ae84e55f3f2}{doctest\+::is\+\_\+running\+\_\+in\+\_\+test} \href{https://github.com/doctest/doctest/issues/56}{\texttt{ \#56}}
+\item Ability for a binary (executable / shared object) to use the test runner implementation of another binary -\/ with exported symbols -\/ so tests end up in a single registry \href{https://github.com/doctest/doctest/issues/55}{\texttt{ \#55}}
+\item How to force the use of colors in the terminal? \href{https://github.com/doctest/doctest/issues/54}{\texttt{ \#54}}
+\item How can I mix production code with the Unit Tests? \href{https://github.com/doctest/doctest/issues/53}{\texttt{ \#53}}
+\item add \texorpdfstring{$<$}{<}= and \texorpdfstring{$>$}{>}= operators to Approx (and also maybe \texorpdfstring{$<$}{<} and \texorpdfstring{$>$}{>}) \href{https://github.com/doctest/doctest/issues/52}{\texttt{ \#52}}
+\item Add ability to capture variables from test scope \href{https://github.com/doctest/doctest/issues/48}{\texttt{ \#48}}
+\item !!! BREAKING CHANGE !!! -\/ Make TEST\+\_\+\+SUITE work with blocks and add TEST\+\_\+\+SUITE\+\_\+\+BEGIN \href{https://github.com/doctest/doctest/issues/41}{\texttt{ \#41}}
+\item Add option to print which test suites/cases are run \href{https://github.com/doctest/doctest/issues/39}{\texttt{ \#39}}
+\item Add support for templated test cases -\/ parameterized by type \href{https://github.com/doctest/doctest/issues/38}{\texttt{ \#38}}
+\item Add custom failure messages with lazy stringification \href{https://github.com/doctest/doctest/issues/23}{\texttt{ \#23}}
+\item Add an exception translation mechanism + the ability for users to extend it with custom exception types \href{https://github.com/doctest/doctest/issues/12}{\texttt{ \#12}}
+\item Add API for reporting failures \href{https://github.com/doctest/doctest/issues/9}{\texttt{ \#9}}
+\end{DoxyItemize}
+
+{\bfseries{Merged pull requests\+:}}
+
+
+\begin{DoxyItemize}
+\item Update doctest to work with ARM DS5-\/compiler \href{https://github.com/doctest/doctest/pull/64}{\texttt{ \#64}} (\href{https://github.com/tomasnilefrost}{\texttt{ tomasnilefrost}})
+\end{DoxyItemize}\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md39}{}\doxysection{\texorpdfstring{\href{https://github.com/doctest/doctest/tree/1.1.4}{\texttt{ 1.\+1.\+4}} (2017-\/02-\/18)}{\href{https://github.com/doctest/doctest/tree/1.1.4}{\texttt{ 1.\+1.\+4}} (2017-\/02-\/18)}}\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md39}
+\href{https://github.com/doctest/doctest/compare/1.1.3...1.1.4}{\texttt{ Full Changelog}}
+
+{\bfseries{Closed issues\+:}}
+
+
+\begin{DoxyItemize}
+\item Add option --force-\/colors -\/ for when a tty is not detected for stdout \href{https://github.com/doctest/doctest/issues/51}{\texttt{ \#51}}
+\item Issue with using lambdas in tests in gcc \href{https://github.com/doctest/doctest/issues/49}{\texttt{ \#49}}
+\item Add the include file to releases \href{https://github.com/doctest/doctest/issues/47}{\texttt{ \#47}}
+\end{DoxyItemize}
+
+{\bfseries{Merged pull requests\+:}}
+
+
+\begin{DoxyItemize}
+\item Add translation of std\+::exception for exceptions that terminate a test case \href{https://github.com/doctest/doctest/pull/46}{\texttt{ \#46}} (\href{https://github.com/eliaskosunen}{\texttt{ eliaskosunen}})
+\end{DoxyItemize}\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md40}{}\doxysection{\texorpdfstring{\href{https://github.com/doctest/doctest/tree/1.1.3}{\texttt{ 1.\+1.\+3}} (2016-\/11-\/15)}{\href{https://github.com/doctest/doctest/tree/1.1.3}{\texttt{ 1.\+1.\+3}} (2016-\/11-\/15)}}\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md40}
+\href{https://github.com/doctest/doctest/compare/1.1.2...1.1.3}{\texttt{ Full Changelog}}
+
+{\bfseries{Closed issues\+:}}
+
+
+\begin{DoxyItemize}
+\item Exception handlers cause warnings when exceptions are disabled \href{https://github.com/doctest/doctest/issues/44}{\texttt{ \#44}}
+\end{DoxyItemize}\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md41}{}\doxysection{\texorpdfstring{\href{https://github.com/doctest/doctest/tree/1.1.2}{\texttt{ 1.\+1.\+2}} (2016-\/10-\/10)}{\href{https://github.com/doctest/doctest/tree/1.1.2}{\texttt{ 1.\+1.\+2}} (2016-\/10-\/10)}}\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md41}
+\href{https://github.com/doctest/doctest/compare/1.1.1...1.1.2}{\texttt{ Full Changelog}}
+
+{\bfseries{Closed issues\+:}}
+
+
+\begin{DoxyItemize}
+\item clang warnings when using C++11 or newer \href{https://github.com/doctest/doctest/issues/42}{\texttt{ \#42}}
+\item \mbox{[}support\mbox{]} identical names for test suites? \href{https://github.com/doctest/doctest/issues/40}{\texttt{ \#40}}
+\end{DoxyItemize}\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md42}{}\doxysection{\texorpdfstring{\href{https://github.com/doctest/doctest/tree/1.1.1}{\texttt{ 1.\+1.\+1}} (2016-\/09-\/22)}{\href{https://github.com/doctest/doctest/tree/1.1.1}{\texttt{ 1.\+1.\+1}} (2016-\/09-\/22)}}\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md42}
+\href{https://github.com/doctest/doctest/compare/1.1.0...1.1.1}{\texttt{ Full Changelog}}\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md43}{}\doxysection{\texorpdfstring{\href{https://github.com/doctest/doctest/tree/1.1.0}{\texttt{ 1.\+1.\+0}} (2016-\/09-\/21)}{\href{https://github.com/doctest/doctest/tree/1.1.0}{\texttt{ 1.\+1.\+0}} (2016-\/09-\/21)}}\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md43}
+\href{https://github.com/doctest/doctest/compare/1.0.0...1.1.0}{\texttt{ Full Changelog}}
+
+{\bfseries{Closed issues\+:}}
+
+
+\begin{DoxyItemize}
+\item char\texorpdfstring{$\ast$}{*} comparison uses the contents, not the pointer \href{https://github.com/doctest/doctest/issues/36}{\texttt{ \#36}}
+\item add configuration preprocessor identifier for passing by value in assertions instead of by reference \href{https://github.com/doctest/doctest/issues/35}{\texttt{ \#35}}
+\item restrict expressions in assertion macros to binary comparisons at most with a static assert \href{https://github.com/doctest/doctest/issues/34}{\texttt{ \#34}}
+\item Add clear\+Filters() to \doxylink{classdoctest_1_1_context}{doctest\+::\+Context} \href{https://github.com/doctest/doctest/issues/33}{\texttt{ \#33}}
+\item A way to refrain from polluting “\#define” space for users of tested code? \href{https://github.com/doctest/doctest/issues/32}{\texttt{ \#32}}
+\item drop VC++6 support \href{https://github.com/doctest/doctest/issues/31}{\texttt{ \#31}}
+\item False positive test \href{https://github.com/doctest/doctest/issues/30}{\texttt{ \#30}}
+\item Turn off coloring after tests are finished? \href{https://github.com/doctest/doctest/issues/28}{\texttt{ \#28}}
+\item C++11 nullptr \href{https://github.com/doctest/doctest/issues/27}{\texttt{ \#27}}
+\item Only one SUBCASE per line is executed \href{https://github.com/doctest/doctest/issues/25}{\texttt{ \#25}}
+\item creative formatting of chars \href{https://github.com/doctest/doctest/issues/24}{\texttt{ \#24}}
+\item DOCTEST\+\_\+\+BREAK\+\_\+\+INTO\+\_\+\+DEBUGGER undefined under OSX \href{https://github.com/doctest/doctest/issues/22}{\texttt{ \#22}}
+\item Tests inside a static library \href{https://github.com/doctest/doctest/issues/21}{\texttt{ \#21}}
+\item Add example how to remove doctest options from the command line for the program after the tests run \href{https://github.com/doctest/doctest/issues/20}{\texttt{ \#20}}
+\item Single-\/letter options active even without leading \textquotesingle{}-\/\textquotesingle{} (dash) \href{https://github.com/doctest/doctest/issues/19}{\texttt{ \#19}}
+\item pointer stringification not working for compilers different from MSVC \href{https://github.com/doctest/doctest/issues/18}{\texttt{ \#18}}
+\item Tests that accompany code run and produce output at default \href{https://github.com/doctest/doctest/issues/17}{\texttt{ \#17}}
+\item GCC 5.\+3.\+1 Compiler warning\+: sign compare \href{https://github.com/doctest/doctest/issues/16}{\texttt{ \#16}}
+\item Slower than Catch in realistic test cases \href{https://github.com/doctest/doctest/issues/14}{\texttt{ \#14}}
+\item Rename \doxylink{structdoctest_1_1detail_1_1_result}{doctest\+::detail\+::\+Result} res; in DOCTEST\+\_\+\+ASSERT\+\_\+\+IMPLEMENT \href{https://github.com/doctest/doctest/issues/10}{\texttt{ \#10}}
+\item No red when all tests pass \href{https://github.com/doctest/doctest/issues/7}{\texttt{ \#7}}
+\item UNIX line feedings on Git\+Hub please \href{https://github.com/doctest/doctest/issues/6}{\texttt{ \#6}}
+\end{DoxyItemize}
+
+{\bfseries{Merged pull requests\+:}}
+
+
+\begin{DoxyItemize}
+\item don\textquotesingle{}t show green when tests fail \href{https://github.com/doctest/doctest/pull/26}{\texttt{ \#26}} (\href{https://github.com/ferkulat}{\texttt{ ferkulat}})
+\item Include "{}program code"{} in example \href{https://github.com/doctest/doctest/pull/15}{\texttt{ \#15}} (\href{https://github.com/martinmoene}{\texttt{ martinmoene}})
+\end{DoxyItemize}\hypertarget{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md44}{}\doxysection{\texorpdfstring{\href{https://github.com/doctest/doctest/tree/1.0.0}{\texttt{ 1.\+0.\+0}} (2016-\/05-\/22)}{\href{https://github.com/doctest/doctest/tree/1.0.0}{\texttt{ 1.\+0.\+0}} (2016-\/05-\/22)}}\label{md_doctest_2_c_h_a_n_g_e_l_o_g_autotoc_md44}
+{\bfseries{Merged pull requests\+:}}
+
+
+\begin{DoxyItemize}
+\item Reduce the header size for test users \href{https://github.com/doctest/doctest/pull/3}{\texttt{ \#3}} (\href{https://github.com/zah}{\texttt{ zah}})
+\item Add a Gitter chat badge to README.\+md \href{https://github.com/doctest/doctest/pull/1}{\texttt{ \#1}} (\href{https://github.com/gitter-badger}{\texttt{ gitter-\/badger}})
+\item {\itshape This Change Log was automatically generated by \href{https://github.com/skywinder/Github-Changelog-Generator}{\texttt{ github\+\_\+changelog\+\_\+generator}}} 
+\end{DoxyItemize}

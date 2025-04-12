@@ -1,0 +1,37 @@
+\doxysection{Dokumentacja pliku doctest/scripts/bench/run\+\_\+all.py}
+\hypertarget{run__all_8py}{}\label{run__all_8py}\index{doctest/scripts/bench/run\_all.py@{doctest/scripts/bench/run\_all.py}}
+\doxysubsubsection*{Przestrzenie nazw}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacerun__all}{run\+\_\+all}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacerun__all_a6b6b42f913c183ec79fb71642cafbf5c}{run\+\_\+all.\+run\+Bench}} (prog)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Zmienne}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{namespacerun__all_a209b2ed58fdea49e560b8ddb6769f763}{run\+\_\+all.\+average\+\_\+num\+\_\+times}} = 3
+\item 
+int \mbox{\hyperlink{namespacerun__all_a2ef8f7509bbeeeb066232444a360b2ca}{run\+\_\+all.\+max\+\_\+accum\+\_\+time}} = 60
+\item 
+\mbox{\hyperlink{namespacerun__all_a3fd14fd14513ee84f864168959046cc9}{run\+\_\+all.\+data}} = json.\+load(data\+\_\+file)
+\item 
+str \mbox{\hyperlink{namespacerun__all_a2ceda5c85eb96fcb74860147d357411b}{run\+\_\+all.\+call}} = \textquotesingle{}python ./bench.\+py\textquotesingle{}
+\item 
+str \mbox{\hyperlink{namespacerun__all_a81d7578a31c04cb44a9a4f09e3991507}{run\+\_\+all.\+the\+\_\+os}} = \textquotesingle{}linux\textquotesingle{}
+\item 
+\mbox{\hyperlink{namespacerun__all_a37ed7acf0c011a3aded699b8887933ff}{run\+\_\+all.\+f}} = open(\textquotesingle{}results.\+txt\textquotesingle{}, \textquotesingle{}w\textquotesingle{})
+\item 
+str \mbox{\hyperlink{namespacerun__all_a30f776a896560a48305f97324c5ff12b}{run\+\_\+all.\+command}} = \mbox{\hyperlink{namespacerun__all_a2ceda5c85eb96fcb74860147d357411b}{call}} + \mbox{\hyperlink{namespacerun__all_a3fd14fd14513ee84f864168959046cc9}{data}}\mbox{[}\mbox{\hyperlink{how__subcases__work_8cpp_ae1a3968e7947464bee7714f6d43b7002}{test}}\mbox{]}\mbox{[}0\mbox{]} + config + curr\mbox{[}1\mbox{]} + (\textquotesingle{} -\/-\/catch\textquotesingle{} if framework == \textquotesingle{}catch\textquotesingle{} else \textquotesingle{}\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespacerun__all_a4d47158e94ef9b44a21af401836249b1}{run\+\_\+all.\+accum}} = float(0)
+\item 
+int \mbox{\hyperlink{namespacerun__all_a70d8de1e38ecb44acb1beecdb2c3e1de}{run\+\_\+all.\+num\+\_\+times}} = 0
+\item 
+\mbox{\hyperlink{namespacerun__all_af31fbdb969bc0a83db558e58d480af82}{run\+\_\+all.\+res}} = float(\mbox{\hyperlink{namespacerun__all_a6b6b42f913c183ec79fb71642cafbf5c}{run\+Bench}}(\mbox{\hyperlink{namespacerun__all_a30f776a896560a48305f97324c5ff12b}{command}}))
+\item 
+str \mbox{\hyperlink{namespacerun__all_aee7d53634db95524534653961332a782}{run\+\_\+all.\+average}} = "{}\{\+:7.\+2f\}"{}.format(round(\mbox{\hyperlink{namespacerun__all_a4d47158e94ef9b44a21af401836249b1}{accum}} / \mbox{\hyperlink{namespacerun__all_a70d8de1e38ecb44acb1beecdb2c3e1de}{num\+\_\+times}}, 2))
+\end{DoxyCompactItemize}

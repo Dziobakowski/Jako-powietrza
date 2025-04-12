@@ -19,13 +19,20 @@ var class_main_frame =
     [ "infoLabel", "class_main_frame.html#a285ddc1a8a1482516c303fe811d76162", null ],
     [ "label", "class_main_frame.html#a345b666a2367b5ebeac8493d0d345876", null ],
     [ "loadButton", "class_main_frame.html#a70d19d3fd0d0fb777bd7648e35ecb999", null ],
+    [ "measurementsLoading", "class_main_frame.html#a757f7d6ca3a0e7fd6b9b5efcbd48f1c8", null ],
     [ "plotPanel", "class_main_frame.html#a0f25063c86baa81b7c794becd64dfc68", null ],
+    [ "progressGauge", "class_main_frame.html#ad9ca0fec9a6d63942551c5cbf2281d98", null ],
     [ "resultBox", "class_main_frame.html#aceb88674d7fb1ffce7777a09ea9dca5f", null ],
     [ "saveButton", "class_main_frame.html#ae2ce5702537a12682084892b73a8d345", null ],
     [ "sensorList", "class_main_frame.html#a77be53bd313d9e229b14eb1604166624", null ],
     [ "sensorMap", "class_main_frame.html#ae22267277a727ee4907ba04d7e58f20b", null ],
+    [ "sensorMapMutex", "class_main_frame.html#a694de269b67f4f3718974ffe820f189f", null ],
+    [ "sensorsLoading", "class_main_frame.html#aaecc422f4d1595f65607536a8e8dda21", null ],
     [ "startDateChoice", "class_main_frame.html#a429a57f3997d93308f51bc34a45401be", null ],
     [ "stationMap", "class_main_frame.html#a5921b3af835624a4400173566b5d5f81", null ],
+    [ "stationMapMutex", "class_main_frame.html#af7f4d6e0b6e1289e3cd2d7352062ae42", null ],
+    [ "stationsLoading", "class_main_frame.html#adb7a0ee628bd5b132542770bf26b9e73", null ],
     [ "timestamps", "class_main_frame.html#a575cc3c411185b59e507467a371e92c0", null ],
-    [ "values", "class_main_frame.html#ab585105ec6f2382aded506db7a5cd9b2", null ]
+    [ "values", "class_main_frame.html#ab585105ec6f2382aded506db7a5cd9b2", null ],
+    [ "valuesMutex", "class_main_frame.html#ac5858417a2850d1213d0450492bc9dc8", null ]
 ];

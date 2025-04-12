@@ -1,0 +1,251 @@
+\chapter{Configuration}
+\hypertarget{md_doctest_2doc_2markdown_2configuration}{}\label{md_doctest_2doc_2markdown_2configuration}\index{Configuration@{Configuration}}
+\label{md_doctest_2doc_2markdown_2configuration_autotoc_md78}%
+\Hypertarget{md_doctest_2doc_2markdown_2configuration_autotoc_md78}%
+
+
+{\bfseries{doctest}} is designed to "{}just work"{} as much as possible. It also allows configuring how it is built with a set of identifiers.
+
+The identifiers should be defined before the inclusion of the framework header.
+
+Defining something {\ttfamily globally} means for every source file of the binary (executable / shared object).
+
+
+\begin{DoxyItemize}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+IMPLEMENT\+\_\+\+WITH\+\_\+\+MAIN\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+IMPLEMENT\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+DISABLE\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+IMPLEMENTATION\+\_\+\+IN\+\_\+\+DLL\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+NO\+\_\+\+SHORT\+\_\+\+MACRO\+\_\+\+NAMES\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+TREAT\+\_\+\+CHAR\+\_\+\+STAR\+\_\+\+AS\+\_\+\+STRING\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+REQUIRE\+\_\+\+STRINGIFICATION\+\_\+\+FOR\+\_\+\+ALL\+\_\+\+USED\+\_\+\+TYPES\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+DOUBLE\+\_\+\+STRINGIFY\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+SUPER\+\_\+\+FAST\+\_\+\+ASSERTS\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+USE\+\_\+\+STD\+\_\+\+HEADERS\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+VOID\+\_\+\+CAST\+\_\+\+EXPRESSIONS\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+NO\+\_\+\+COMPARISON\+\_\+\+WARNING\+\_\+\+SUPPRESSION\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+OPTIONS\+\_\+\+PREFIX\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+NO\+\_\+\+UNPREFIXED\+\_\+\+OPTIONS\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+NO\+\_\+\+TRY\+\_\+\+CATCH\+\_\+\+IN\+\_\+\+ASSERTS\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+NO\+\_\+\+EXCEPTIONS\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+NO\+\_\+\+EXCEPTIONS\+\_\+\+BUT\+\_\+\+WITH\+\_\+\+ALL\+\_\+\+ASSERTS\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+ASSERTION\+\_\+\+PARAMETERS\+\_\+\+BY\+\_\+\+VALUE\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+COLORS\+\_\+\+NONE\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+COLORS\+\_\+\+WINDOWS\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+COLORS\+\_\+\+ANSI\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+WINDOWS\+\_\+\+SEH\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+NO\+\_\+\+WINDOWS\+\_\+\+SEH\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+POSIX\+\_\+\+SIGNALS\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+NO\+\_\+\+POSIX\+\_\+\+SIGNALS\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+INCLUDE\+\_\+\+TYPE\+\_\+\+TRAITS\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+NO\+\_\+\+MULTITHREADING\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+NO\+\_\+\+MULTI\+\_\+\+LANE\+\_\+\+ATOMICS\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+ASSERTS\+\_\+\+RETURN\+\_\+\+VALUES\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+EVALUATE\+\_\+\+ASSERTS\+\_\+\+EVEN\+\_\+\+WHEN\+\_\+\+DISABLED\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+NO\+\_\+\+CONTRADICTING\+\_\+\+INLINE\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+NO\+\_\+\+INCLUDE\+\_\+\+IOSTREAM\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+HANDLE\+\_\+\+EXCEPTION\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\end{DoxyItemize}
+
+For most people the only configuration needed is telling {\bfseries{doctest}} which source file should host all the implementation code\+:\hypertarget{md_doctest_2doc_2markdown_2configuration_autotoc_md79}{}\doxysubsection{\texorpdfstring{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+IMPLEMENT\+\_\+\+WITH\+\_\+\+MAIN}}}}{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+IMPLEMENT\+\_\+\+WITH\+\_\+\+MAIN}}}}}\label{md_doctest_2doc_2markdown_2configuration_autotoc_md79}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ DOCTEST\_CONFIG\_IMPLEMENT\_WITH\_MAIN}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}doctest.h"{}}}
+
+\end{DoxyCode}
+
+
+This should be defined only in the source file where the library is implemented. It also creates a {\ttfamily \doxylink{how__exception__translators__work_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main()}} entry point.\hypertarget{md_doctest_2doc_2markdown_2configuration_autotoc_md80}{}\doxysubsection{\texorpdfstring{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+IMPLEMENT}}}}{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+IMPLEMENT}}}}}\label{md_doctest_2doc_2markdown_2configuration_autotoc_md80}
+If the client wants to \doxysectlink{md_doctest_2doc_2markdown_2main}{{\bfseries{supply the {\ttfamily main()} function}}}{0} (either to set an option with some value from the code or to integrate the framework into their existing project codebase) this identifier should be used.
+
+This should be defined only in the source file where the library is implemented.\hypertarget{md_doctest_2doc_2markdown_2configuration_autotoc_md81}{}\doxysubsection{\texorpdfstring{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+DISABLE}}}}{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+DISABLE}}}}}\label{md_doctest_2doc_2markdown_2configuration_autotoc_md81}
+One of the most important configuration options -\/ everything testing-\/related is removed from the binary -\/ including most of the framework implementation and every test case written anywhere! This is one of the most unique features of {\bfseries{doctest}}.
+
+This should be defined globally.\hypertarget{md_doctest_2doc_2markdown_2configuration_autotoc_md82}{}\doxysubsection{\texorpdfstring{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+IMPLEMENTATION\+\_\+\+IN\+\_\+\+DLL}}}}{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+IMPLEMENTATION\+\_\+\+IN\+\_\+\+DLL}}}}}\label{md_doctest_2doc_2markdown_2configuration_autotoc_md82}
+This will affect the public interface of doctest -\/ all necessary forward declarations for writing tests will be turned into imported symbols. That way the test runner doesn\textquotesingle{}t have to be implemented in the binary (executable / shared object) and can be reused from another binary where it is built and exported.
+
+To export the test runner from a binary simply use \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+IMPLEMENTATION\+\_\+\+IN\+\_\+\+DLL\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} together with \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+IMPLEMENT\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} (or \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+IMPLEMENT\+\_\+\+WITH\+\_\+\+MAIN\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} but then the other binaries will have to link to the executable) in whatever source file the test runner gets implemented into. Note that this identifier should not be defined in the other source files of the binary which exports the doctest test runner -\/ or there will be linker conflicts -\/ having the same symbols as both imported and exported within the same binary.
+
+Checkout the \href{../../examples/executable_dll_and_plugin/}{\texttt{ {\bfseries{example}}}} -\/ it shows how to have the test runner implemented in a dll (and there are even tests in a plugin which is dynamically loaded).
+
+This should be defined globally in binaries that import the symbols.
+
+This should be defined only in the source file where the library is implemented for binaries that export the test runner.\hypertarget{md_doctest_2doc_2markdown_2configuration_autotoc_md83}{}\doxysubsection{\texorpdfstring{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+NO\+\_\+\+SHORT\+\_\+\+MACRO\+\_\+\+NAMES}}}}{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+NO\+\_\+\+SHORT\+\_\+\+MACRO\+\_\+\+NAMES}}}}}\label{md_doctest_2doc_2markdown_2configuration_autotoc_md83}
+This will remove all macros from {\bfseries{doctest}} that don\textquotesingle{}t have the {\bfseries{{\ttfamily DOCTEST\+\_\+}}} prefix -\/ like {\bfseries{{\ttfamily CHECK}}}, {\bfseries{{\ttfamily TEST\+\_\+\+CASE}}} and {\bfseries{{\ttfamily SUBCASE}}}. Then only the full macro names will be available -\/ {\bfseries{{\ttfamily DOCTEST\+\_\+\+CHECK}}}, {\bfseries{{\ttfamily DOCTEST\+\_\+\+TEST\+\_\+\+CASE}}} and {\bfseries{{\ttfamily DOCTEST\+\_\+\+SUBCASE}}}. The user is free to make their own short versions of these macros -\/ \href{../../examples/all_features/alternative_macros.cpp}{\texttt{ {\bfseries{example}}}}.
+
+This can be defined both globally and in specific source files only.\hypertarget{md_doctest_2doc_2markdown_2configuration_autotoc_md84}{}\doxysubsection{\texorpdfstring{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+TREAT\+\_\+\+CHAR\+\_\+\+STAR\+\_\+\+AS\+\_\+\+STRING}}}}{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+TREAT\+\_\+\+CHAR\+\_\+\+STAR\+\_\+\+AS\+\_\+\+STRING}}}}}\label{md_doctest_2doc_2markdown_2configuration_autotoc_md84}
+By default {\ttfamily char\texorpdfstring{$\ast$}{*}} is being treated as a pointer. With this option comparing {\ttfamily char\texorpdfstring{$\ast$}{*}} pointers will switch to using {\ttfamily strcmp()} for comparisons and when stringified the string will be printed instead of the pointer value.
+
+This should be defined globally.\hypertarget{md_doctest_2doc_2markdown_2configuration_autotoc_md85}{}\doxysubsection{\texorpdfstring{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+REQUIRE\+\_\+\+STRINGIFICATION\+\_\+\+FOR\+\_\+\+ALL\+\_\+\+USED\+\_\+\+TYPES}}}}{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+REQUIRE\+\_\+\+STRINGIFICATION\+\_\+\+FOR\+\_\+\+ALL\+\_\+\+USED\+\_\+\+TYPES}}}}}\label{md_doctest_2doc_2markdown_2configuration_autotoc_md85}
+By default if stringification is not available for a type, it is simply printed as {\ttfamily \{?\}}. By enabling this flag, whenever a type is used in an assert that does not provide stringification, the compilation is stopped.
+
+This can be defined both globally and in specific source files only.\hypertarget{md_doctest_2doc_2markdown_2configuration_autotoc_md86}{}\doxysubsection{\texorpdfstring{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+DOUBLE\+\_\+\+STRINGIFY}}}}{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+DOUBLE\+\_\+\+STRINGIFY}}}}}\label{md_doctest_2doc_2markdown_2configuration_autotoc_md86}
+If you define your own {\ttfamily to\+String} functions that return something, that\textquotesingle{}s different from {\ttfamily \doxylink{classdoctest_1_1_string}{doctest\+::\+String}}, but still stringifiable, you can enable this flag to stringify the result of internal stringification calls again.
+
+You can also define {\ttfamily DOCTEST\+\_\+\+STRINGIFY} yourself to override doctest\textquotesingle{}s stringification behavior.
+
+This can be defined both globally and in specific source files only.\hypertarget{md_doctest_2doc_2markdown_2configuration_autotoc_md87}{}\doxysubsection{\texorpdfstring{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+SUPER\+\_\+\+FAST\+\_\+\+ASSERTS}}}}{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+SUPER\+\_\+\+FAST\+\_\+\+ASSERTS}}}}}\label{md_doctest_2doc_2markdown_2configuration_autotoc_md87}
+This config option makes the assert macros (except for those dealing with exceptions) compile \href{benchmarks.md\#cost-of-an-assertion-macro}{\texttt{ {\bfseries{much faster}}}}! (31-\/91\% -\/ depending on the type -\/ \href{assertions.md\#expression-decomposing-asserts}{\texttt{ {\bfseries{normal}}}} or \href{assertions.md\#binary-and-unary-asserts}{\texttt{ {\bfseries{binary}}}})
+
+Each assert is turned into a single function call -\/ the only downside of this is\+: if an assert fails and a debugger is attached -\/ when it breaks it will be in an internal function -\/ the user will have to go 1 level up in the callstack to see the actual assert.
+
+It also implies \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+NO\+\_\+\+TRY\+\_\+\+CATCH\+\_\+\+IN\+\_\+\+ASSERTS\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} (so exceptions thrown during the evaluation of an assert are not caught by the assert itself but by the testing framework -\/ meaning that the test case is immediately aborted).
+
+This can be defined both globally and in specific source files only.\hypertarget{md_doctest_2doc_2markdown_2configuration_autotoc_md88}{}\doxysubsection{\texorpdfstring{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+USE\+\_\+\+STD\+\_\+\+HEADERS}}}}{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+USE\+\_\+\+STD\+\_\+\+HEADERS}}}}}\label{md_doctest_2doc_2markdown_2configuration_autotoc_md88}
+The library by default provides a forward declaration of {\ttfamily \doxylink{namespacestd_af1127a426e9584e1fc5e158ded14b7da}{std\+::ostream}} in order to support the {\ttfamily operator\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}} \doxysectlink{md_doctest_2doc_2markdown_2stringification}{{\bfseries{stringification}}}{0} mechanism (also {\ttfamily \doxylink{classstd_1_1tuple}{std\+::tuple}\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}} and {\ttfamily \doxylink{namespacestd_a147badd87f1e15108e8dbee257b60b84}{std\+::nullptr\+\_\+t}}). This is forbidden by the standard (even though it works everywhere on all tested compilers). However if the user wishes to be 100\% standards compliant -\/ then this configuration option can be used to force the inclusion of the relevant standard headers.
+
+Also it is possible that some STL implementation of a compiler with niche usage defines them differently -\/ then there will be compilation errors in STL headers and using this option should fix the problem.
+
+This should be defined globally.\hypertarget{md_doctest_2doc_2markdown_2configuration_autotoc_md89}{}\doxysubsection{\texorpdfstring{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+VOID\+\_\+\+CAST\+\_\+\+EXPRESSIONS}}}}{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+VOID\+\_\+\+CAST\+\_\+\+EXPRESSIONS}}}}}\label{md_doctest_2doc_2markdown_2configuration_autotoc_md89}
+This affects the \href{assertions.md\#exceptions}{\texttt{ asserts dealing with exceptions}} -\/ the expression is cast to void to avoid problems such as when functions with the {\ttfamily \mbox{[}\mbox{[}nodiscard\mbox{]}\mbox{]}} attribute are used but their result isn\textquotesingle{}t checked.
+
+This can be defined both globally and in specific source files only.\hypertarget{md_doctest_2doc_2markdown_2configuration_autotoc_md90}{}\doxysubsection{\texorpdfstring{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+NO\+\_\+\+COMPARISON\+\_\+\+WARNING\+\_\+\+SUPPRESSION}}}}{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+NO\+\_\+\+COMPARISON\+\_\+\+WARNING\+\_\+\+SUPPRESSION}}}}}\label{md_doctest_2doc_2markdown_2configuration_autotoc_md90}
+By default the library suppresses warnings about comparing signed and unsigned types, etc.
+
+
+\begin{DoxyItemize}
+\item g++/clang {\ttfamily -\/Wsign-\/conversion}
+\item g++/clang {\ttfamily -\/Wsign-\/compare}
+\item msvc {\ttfamily C4389} \textquotesingle{}operator\textquotesingle{} \+: signed/unsigned mismatch
+\item msvc {\ttfamily C4018} \textquotesingle{}expression\textquotesingle{} \+: signed/unsigned mismatch
+\end{DoxyItemize}
+
+You can checkout \href{https://github.com/doctest/doctest/issues/16\#issuecomment-246803303}{\texttt{ {\bfseries{this}}}} issue to better understand why I suppress these warnings by default.
+
+This can be defined both globally and in specific source files only.\hypertarget{md_doctest_2doc_2markdown_2configuration_autotoc_md91}{}\doxysubsection{\texorpdfstring{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+OPTIONS\+\_\+\+PREFIX}}}}{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+OPTIONS\+\_\+\+PREFIX}}}}}\label{md_doctest_2doc_2markdown_2configuration_autotoc_md91}
+Defining this as a string will change the prefix of the \doxysectlink{md_doctest_2doc_2markdown_2commandline}{{\bfseries{command line}}}{0} options to use the given prefix instead of the default {\ttfamily dt-\/} prefix. This can be useful for integrating the testing framework into a client codebase, where a command option prefix like {\ttfamily selftest-\/} might be more clear to users.
+
+This should be defined only in the source file where the library is implemented (it\textquotesingle{}s relevant only there).\hypertarget{md_doctest_2doc_2markdown_2configuration_autotoc_md92}{}\doxysubsection{\texorpdfstring{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+NO\+\_\+\+UNPREFIXED\+\_\+\+OPTIONS}}}}{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+NO\+\_\+\+UNPREFIXED\+\_\+\+OPTIONS}}}}}\label{md_doctest_2doc_2markdown_2configuration_autotoc_md92}
+This will disable the short versions of the \doxysectlink{md_doctest_2doc_2markdown_2commandline}{{\bfseries{command line}}}{0} options and only the versions with {\ttfamily -\/-\/dt-\/} prefix will be parsed by {\bfseries{doctest}} -\/ this is possible for easy interoperability with client command line option handling when the testing framework is integrated within a client codebase -\/ so there are no clashes and so that the user can exclude everything starting with {\ttfamily -\/-\/dt-\/} from their option parsing.
+
+This should be defined only in the source file where the library is implemented (it\textquotesingle{}s relevant only there).\hypertarget{md_doctest_2doc_2markdown_2configuration_autotoc_md93}{}\doxysubsection{\texorpdfstring{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+NO\+\_\+\+TRY\+\_\+\+CATCH\+\_\+\+IN\+\_\+\+ASSERTS}}}}{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+NO\+\_\+\+TRY\+\_\+\+CATCH\+\_\+\+IN\+\_\+\+ASSERTS}}}}}\label{md_doctest_2doc_2markdown_2configuration_autotoc_md93}
+This will remove all {\ttfamily try} / {\ttfamily catch} sections from\+:
+
+
+\begin{DoxyItemize}
+\item the \href{assertions.md\#expression-decomposing-asserts}{\texttt{ normal asserts}}
+\item the \href{assertions.md\#binary-and-unary-asserts}{\texttt{ binary and unary asserts}}
+\end{DoxyItemize}
+
+so exceptions thrown while evaluating the expression in an assert will terminate the current test case.
+
+This can be used for some mild compile time savings but for greater impact look into \href{configuration.md\#doctest_config_super_fast_asserts}{\texttt{ {\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+SUPER\+\_\+\+FAST\+\_\+\+ASSERTS}}}}}.
+
+This can be defined both globally and in specific source files only.\hypertarget{md_doctest_2doc_2markdown_2configuration_autotoc_md94}{}\doxysubsection{\texorpdfstring{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+NO\+\_\+\+EXCEPTIONS}}}}{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+NO\+\_\+\+EXCEPTIONS}}}}}\label{md_doctest_2doc_2markdown_2configuration_autotoc_md94}
+This will remove everything that uses exceptions from the framework -\/ it is also auto detectable if exceptions are disabled for compilers (like with {\ttfamily -\/fno-\/exceptions} for GCC/\+Clang).
+
+What gets changed\+:
+
+
+\begin{DoxyItemize}
+\item asserts that evaluate the expression in a {\ttfamily try} / {\ttfamily catch} section no longer evaluate in such a context
+\item {\ttfamily REQUIRE} macros are gone (undefined)
+\item \href{assertions.md\#exceptions}{\texttt{ exception macros}} are gone (undefined)
+\item the {\ttfamily abort-\/after} option won\textquotesingle{}t be fully working because an exception is used to terminate test cases
+\end{DoxyItemize}
+
+The {\ttfamily REQUIRE} family of asserts uses exceptions to terminate the current test case when they fail. An exception is used instead of a simple {\ttfamily return;} because asserts can be used not only in a test case but also in functions called by a test case.
+
+Also some of the \href{logging.md\#messages-which-can-optionally-fail-test-cases}{\texttt{ {\bfseries{logging macros}}}} which act like a {\ttfamily REQUIRE} assert (terminating the test case) -\/ like {\ttfamily \doxylink{doctest_2doctest_8h_ac8d1eaf65528f86b445cf6e45b2d72c9}{FAIL()}} -\/ start to work differently -\/ like a {\ttfamily \doxylink{doctest_2doctest_8h_a3c2341a3238242fdc02d33a1968bd1d2}{FAIL\+\_\+\+CHECK()}}.
+
+\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+NO\+\_\+\+EXCEPTIONS\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} implies \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+NO\+\_\+\+TRY\+\_\+\+CATCH\+\_\+\+IN\+\_\+\+ASSERTS\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+
+If you wish to use asserts that deal with exceptions and only sometimes build without exceptions -\/ check the \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+NO\+\_\+\+EXCEPTIONS\+\_\+\+BUT\+\_\+\+WITH\+\_\+\+ALL\+\_\+\+ASSERTS\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} config option.
+
+This should be defined globally.\hypertarget{md_doctest_2doc_2markdown_2configuration_autotoc_md95}{}\doxysubsection{\texorpdfstring{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+NO\+\_\+\+EXCEPTIONS\+\_\+\+BUT\+\_\+\+WITH\+\_\+\+ALL\+\_\+\+ASSERTS}}}}{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+NO\+\_\+\+EXCEPTIONS\+\_\+\+BUT\+\_\+\+WITH\+\_\+\+ALL\+\_\+\+ASSERTS}}}}}\label{md_doctest_2doc_2markdown_2configuration_autotoc_md95}
+When building with no exceptions (see \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+NO\+\_\+\+EXCEPTIONS\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}) {\ttfamily REQUIRE} asserts and the ones about dealing with exceptions are gone.
+
+If however you want your code to use these assertions and only sometimes build without exceptions -\/ then using this config will be of help. The effects of using it are the following\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily REQUIRE} asserts are not gone -\/ but they act like {\ttfamily CHECK} asserts -\/ when one of them fails the whole test case will be marked as failed but will not be exited immediately
+\item the \href{assertions.md\#exceptions}{\texttt{ asserts for dealing with exceptions}} are turned into a no-\/op (instead of being totally undefined)
+\end{DoxyItemize}
+
+This can be defined both globally and in specific source files only.\hypertarget{md_doctest_2doc_2markdown_2configuration_autotoc_md96}{}\doxysubsection{\texorpdfstring{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+ASSERTION\+\_\+\+PARAMETERS\+\_\+\+BY\+\_\+\+VALUE}}}}{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+ASSERTION\+\_\+\+PARAMETERS\+\_\+\+BY\+\_\+\+VALUE}}}}}\label{md_doctest_2doc_2markdown_2configuration_autotoc_md96}
+This option forces all doctest asserts to copy by value the expressions they are given instead of binding them to const references. This might be useful to avoid ODR-\/usage of static constants (which might lead to linker errors with g++/clang)\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{struct\ }type\_traits\ \{\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ value\ =\ \textcolor{keyword}{false};\ \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ unless\ DOCTEST\_CONFIG\_ASSERTION\_PARAMETERS\_BY\_VALUE\ is\ defined\ the\ following\ assertion}}
+\DoxyCodeLine{\textcolor{comment}{//\ will\ lead\ to\ a\ linker\ error\ if\ type\_traits<int>::value\ isn't\ defined\ in\ a\ translation\ unit}}
+\DoxyCodeLine{\mbox{\hyperlink{doctest_2doctest_8h_a836cca6b6ed3a1706353f6d1bca0935f}{CHECK}}(type\_traits<int>::value\ ==\ \textcolor{keyword}{false});}
+
+\end{DoxyCode}
+
+
+This can be defined both globally and in specific source files only.\hypertarget{md_doctest_2doc_2markdown_2configuration_autotoc_md97}{}\doxysubsection{\texorpdfstring{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+COLORS\+\_\+\+NONE}}}}{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+COLORS\+\_\+\+NONE}}}}}\label{md_doctest_2doc_2markdown_2configuration_autotoc_md97}
+This will remove support for colors in the console output of the framework.
+
+This should be defined only in the source file where the library is implemented (it\textquotesingle{}s relevant only there).\hypertarget{md_doctest_2doc_2markdown_2configuration_autotoc_md98}{}\doxysubsection{\texorpdfstring{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+COLORS\+\_\+\+WINDOWS}}}}{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+COLORS\+\_\+\+WINDOWS}}}}}\label{md_doctest_2doc_2markdown_2configuration_autotoc_md98}
+This will force the support for colors in the console output to use the Windows APIs and headers.
+
+This should be defined only in the source file where the library is implemented (it\textquotesingle{}s relevant only there).\hypertarget{md_doctest_2doc_2markdown_2configuration_autotoc_md99}{}\doxysubsection{\texorpdfstring{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+COLORS\+\_\+\+ANSI}}}}{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+COLORS\+\_\+\+ANSI}}}}}\label{md_doctest_2doc_2markdown_2configuration_autotoc_md99}
+This will force the support for colors in the console output to use ANSI escape codes.
+
+This should be defined only in the source file where the library is implemented (it\textquotesingle{}s relevant only there).\hypertarget{md_doctest_2doc_2markdown_2configuration_autotoc_md100}{}\doxysubsection{\texorpdfstring{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+WINDOWS\+\_\+\+SEH}}}}{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+WINDOWS\+\_\+\+SEH}}}}}\label{md_doctest_2doc_2markdown_2configuration_autotoc_md100}
+This will enable SEH handling on Windows. Currently enabled only when compiled with MSVC, because some versions of Min\+GW do not have the necessary Win32 API support. The user may choose to enable this explicitly -\/ it is known to work with the Min\+GW-\/w64 project.
+
+This should be defined only in the source file where the library is implemented (it\textquotesingle{}s relevant only there).\hypertarget{md_doctest_2doc_2markdown_2configuration_autotoc_md101}{}\doxysubsection{\texorpdfstring{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+NO\+\_\+\+WINDOWS\+\_\+\+SEH}}}}{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+NO\+\_\+\+WINDOWS\+\_\+\+SEH}}}}}\label{md_doctest_2doc_2markdown_2configuration_autotoc_md101}
+This can be used to disable \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+WINDOWS\+\_\+\+SEH\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} when it is auto-\/selected by the library.
+
+This should be defined only in the source file where the library is implemented (it\textquotesingle{}s relevant only there).\hypertarget{md_doctest_2doc_2markdown_2configuration_autotoc_md102}{}\doxysubsection{\texorpdfstring{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+POSIX\+\_\+\+SIGNALS}}}}{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+POSIX\+\_\+\+SIGNALS}}}}}\label{md_doctest_2doc_2markdown_2configuration_autotoc_md102}
+This will enable the use of signals under UNIX for handling crashes. On by default.
+
+This should be defined only in the source file where the library is implemented (it\textquotesingle{}s relevant only there).\hypertarget{md_doctest_2doc_2markdown_2configuration_autotoc_md103}{}\doxysubsection{\texorpdfstring{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+NO\+\_\+\+POSIX\+\_\+\+SIGNALS}}}}{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+NO\+\_\+\+POSIX\+\_\+\+SIGNALS}}}}}\label{md_doctest_2doc_2markdown_2configuration_autotoc_md103}
+This can be used to disable {\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+POSIX\+\_\+\+SIGNALS}}} when it is auto-\/selected by the library.
+
+This should be defined only in the source file where the library is implemented (it\textquotesingle{}s relevant only there).\hypertarget{md_doctest_2doc_2markdown_2configuration_autotoc_md104}{}\doxysubsection{\texorpdfstring{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+INCLUDE\+\_\+\+TYPE\+\_\+\+TRAITS}}}}{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+INCLUDE\+\_\+\+TYPE\+\_\+\+TRAITS}}}}}\label{md_doctest_2doc_2markdown_2configuration_autotoc_md104}
+This can be used to include the {\ttfamily \texorpdfstring{$<$}{<}type\+\_\+traits\texorpdfstring{$>$}{>}} C++11 header. That in turn will enable the ability for the {\ttfamily Approx} helper to be used with strong typedefs of {\ttfamily double} -\/ check \href{https://github.com/doctest/doctest/issues/62}{\texttt{ this}} or \href{https://github.com/doctest/doctest/issues/85}{\texttt{ this}} issue for more details on that.
+
+This can be defined both globally and in specific source files only.\hypertarget{md_doctest_2doc_2markdown_2configuration_autotoc_md105}{}\doxysubsection{\texorpdfstring{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+NO\+\_\+\+MULTITHREADING}}}}{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+NO\+\_\+\+MULTITHREADING}}}}}\label{md_doctest_2doc_2markdown_2configuration_autotoc_md105}
+This can be used to disable all multithreading support.
+
+Speeds up single threaded applications.
+
+Includes \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+NO\+\_\+\+MULTI\+\_\+\+LANE\+\_\+\+ATOMICS\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}.
+
+This should be defined only in the source file where the library is implemented (it\textquotesingle{}s relevant only there).\hypertarget{md_doctest_2doc_2markdown_2configuration_autotoc_md106}{}\doxysubsection{\texorpdfstring{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+NO\+\_\+\+MULTI\+\_\+\+LANE\+\_\+\+ATOMICS}}}}{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+NO\+\_\+\+MULTI\+\_\+\+LANE\+\_\+\+ATOMICS}}}}}\label{md_doctest_2doc_2markdown_2configuration_autotoc_md106}
+This can be used to disable multi lane atomics. Multi lane atomics can speed up highly parallel use of assert statements, but have a small overhead for single threaded applications.
+
+This should be defined only in the source file where the library is implemented (it\textquotesingle{}s relevant only there).\hypertarget{md_doctest_2doc_2markdown_2configuration_autotoc_md107}{}\doxysubsection{\texorpdfstring{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+ASSERTS\+\_\+\+RETURN\+\_\+\+VALUES}}}}{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+ASSERTS\+\_\+\+RETURN\+\_\+\+VALUES}}}}}\label{md_doctest_2doc_2markdown_2configuration_autotoc_md107}
+Makes all assertion macros return a boolean value, reporting whether the assertion succeeded. This can be used, for example, to have {\ttfamily nullptr} checks that don\textquotesingle{}t terminate the test case on failure.
+
+Example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (\mbox{\hyperlink{doctest_2doctest_8h_a836cca6b6ed3a1706353f6d1bca0935f}{CHECK}}(somePtr\ !=\ \textcolor{keyword}{nullptr}))}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{doctest_2doctest_8h_a836cca6b6ed3a1706353f6d1bca0935f}{CHECK}}(somePtr-\/>someMethod()\ ==\ 42);}
+
+\end{DoxyCode}
+
+
+This has a slight negative impact on performance as well as disabling some functionality inside assertions (e.\+g. {\ttfamily co\+\_\+return}).
+
+When \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+DISABLE\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} is defined, all macros return {\ttfamily false} by default.
+
+This can be defined both globally and in specific source files only.\hypertarget{md_doctest_2doc_2markdown_2configuration_autotoc_md108}{}\doxysubsection{\texorpdfstring{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+EVALUATE\+\_\+\+ASSERTS\+\_\+\+EVEN\+\_\+\+WHEN\+\_\+\+DISABLED}}}}{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+EVALUATE\+\_\+\+ASSERTS\+\_\+\+EVEN\+\_\+\+WHEN\+\_\+\+DISABLED}}}}}\label{md_doctest_2doc_2markdown_2configuration_autotoc_md108}
+When \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+ASSERTS\+\_\+\+RETURN\+\_\+\+VALUES\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} and \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+DISABLE\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} are defined, this macro will cause conditions from assertions to evaluate properly (instead of returning {\ttfamily false}), although all overhead and functionality from doctest is removed. This is useful when assertions are used in production code within if statements so that the condition continues to be evaluated.
+
+Since all {\ttfamily THROWS\+\_\+\+WITH} assertions depend on doctest functionality which is not available when \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+DISABLE\`{}\`{}\`{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} is defined (stringification), they will still unconditionally return {\ttfamily false}.
+
+This can be defined both globally and in specific source files only.\hypertarget{md_doctest_2doc_2markdown_2configuration_autotoc_md109}{}\doxysubsection{\texorpdfstring{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+NO\+\_\+\+CONTRADICTING\+\_\+\+INLINE}}}}{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+NO\+\_\+\+CONTRADICTING\+\_\+\+INLINE}}}}}\label{md_doctest_2doc_2markdown_2configuration_autotoc_md109}
+Some functions in doctest are marked with both {\ttfamily inline} and a compiler specific no-\/inline attribute. This is done because they need to be weak symbols (inline) so that they can be defined in multiple compilation units, but they should not actually be inlined as a compiler optimization as that would degrade compilation speed.
+
+However, this is known to cause some issues with a few compilers with hard to suppress warnings. This flag disables the use of the no-\/inline attribute in order to suppress the warning if your build requires that.\hypertarget{md_doctest_2doc_2markdown_2configuration_autotoc_md110}{}\doxysubsection{\texorpdfstring{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+NO\+\_\+\+INCLUDE\+\_\+\+IOSTREAM}}}}{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+NO\+\_\+\+INCLUDE\+\_\+\+IOSTREAM}}}}}\label{md_doctest_2doc_2markdown_2configuration_autotoc_md110}
+This option disables any inclusion of {\ttfamily \texorpdfstring{$<$}{<}iostream\texorpdfstring{$>$}{>}}, {\ttfamily std\+::cout} and {\ttfamily std\+::cerr}. This implies that the {\ttfamily cout} context field must be supplied. If 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\_CONFIG\_NO\_EXCEPTIONS}
+
+\end{DoxyCode}
+ is defined, then the unhandled exception is not printed to {\ttfamily std\+::cerr}. \`{}\`{}\`{}\+DOCTEST\+\_\+\+CONFIG\+\_\+\+HANDLE\+\_\+\+EXCEPTION\`{}\`{}\`{} can be defined to handle this case.\hypertarget{md_doctest_2doc_2markdown_2configuration_autotoc_md111}{}\doxysubsection{\texorpdfstring{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+HANDLE\+\_\+\+EXCEPTION}}}}{{\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+HANDLE\+\_\+\+EXCEPTION}}}}}\label{md_doctest_2doc_2markdown_2configuration_autotoc_md111}
+This macro function can be defined to handle exceptions instead of just printing them to {\ttfamily std\+::cerr}.
+
+\DoxyHorRuler{0}
+
+
+\href{readme.md\#reference}{\texttt{ Home}}
+

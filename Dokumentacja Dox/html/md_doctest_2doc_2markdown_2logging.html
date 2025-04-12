@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Jakość powietrza w Polsce: Logging macros</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Jakość powietrza w Polsce
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('md_doctest_2doc_2markdown_2logging.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">Logging macros</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="autotoc_md146"></a></p>
+<p>Additional messages can be logged during a test case (safely even in <a href="faq.md#is-doctest-thread-aware"><b>concurrent threads</b></a>).</p>
+<h1><a class="anchor" id="autotoc_md147"></a>
+INFO()</h1>
+<p>The <code><a class="el" href="doctest_2doctest_8h.html#aedf01192151e10a6620567952711ff69">INFO()</a></code> macro allows heterogeneous sequences of expressions to be captured by listing them with commas.</p>
+<div class="fragment"><div class="line"><a class="code hl_define" href="doctest_2doctest_8h.html#aedf01192151e10a6620567952711ff69">INFO</a>(<span class="stringliteral">&quot;The number is &quot;</span>, i);</div>
+<div class="ttc" id="adoctest_2doctest_8h_html_aedf01192151e10a6620567952711ff69"><div class="ttname"><a href="doctest_2doctest_8h.html#aedf01192151e10a6620567952711ff69">INFO</a></div><div class="ttdeci">#define INFO(...)</div><div class="ttdef"><b>Definicja</b> doctest.h:2952</div></div>
+</div><!-- fragment --><p>This message will be relevant to all asserts after it in the current scope or in scopes nested in the current one and will be printed later only if an assert fails.</p>
+<p>The expression is <b>NOT</b> evaluated right away - instead it gets lazily evaluated only when needed.</p>
+<p>Some notes:</p>
+<ul>
+<li>the lazy stringification means the expressions will be evaluated when an assert fails and not at the point of capture - so the value might have changed by then</li>
+<li>refer to the <a class="el" href="md_doctest_2doc_2markdown_2stringification.html"><b>stringification</b></a> page for information on how to teach doctest to stringify your types</li>
+</ul>
+<p>The lazy evaluation means that in the common case when no asserts fail the code runs super fast. This makes it suitable even in loops - perhaps to log the iteration.</p>
+<p>There is also the <b><code><a class="el" href="doctest_2doctest_8h.html#a0cd84d289552018d72489c085df0a9ca">CAPTURE()</a></code></b> macro which is a convenience wrapper of <b><code><a class="el" href="doctest_2doctest_8h.html#aedf01192151e10a6620567952711ff69">INFO()</a></code></b>:</p>
+<div class="fragment"><div class="line"><a class="code hl_define" href="doctest_2doctest_8h.html#a0cd84d289552018d72489c085df0a9ca">CAPTURE</a>(some_variable)</div>
+<div class="ttc" id="adoctest_2doctest_8h_html_a0cd84d289552018d72489c085df0a9ca"><div class="ttname"><a href="doctest_2doctest_8h.html#a0cd84d289552018d72489c085df0a9ca">CAPTURE</a></div><div class="ttdeci">#define CAPTURE(x)</div><div class="ttdef"><b>Definicja</b> doctest.h:2953</div></div>
+</div><!-- fragment --><p>This will handle the stringification of the variable name for you (actually it works with any expression, not just variables).</p>
+<p>This would log something like:</p>
+<div class="fragment"><div class="line">some_variable := 42</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md148"></a>
+Messages which can optionally fail test cases</h1>
+<p>There are a few other macros for logging information:</p>
+<ul>
+<li><code><a class="el" href="doctest_2doctest_8h.html#ad655b38a678a6c69f4555b7737d4b7d3">MESSAGE(message)</a></code></li>
+<li><code><a class="el" href="doctest_2doctest_8h.html#a3c2341a3238242fdc02d33a1968bd1d2">FAIL_CHECK(message)</a></code></li>
+<li><code><a class="el" href="doctest_2doctest_8h.html#ac8d1eaf65528f86b445cf6e45b2d72c9">FAIL(message)</a></code></li>
+</ul>
+<div class="fragment"><div class="line">()</div>
+</div><!-- fragment --><p> is like a <code>REQUIRE</code> assert - fails the test case and exits it. <code><a class="el" href="doctest_2doctest_8h.html#a3c2341a3238242fdc02d33a1968bd1d2">FAIL_CHECK()</a></code> acts like a <code>CHECK</code> assert - fails the test case but continues with the execution. <code><a class="el" href="doctest_2doctest_8h.html#ad655b38a678a6c69f4555b7737d4b7d3">MESSAGE()</a></code> just prints a message.</p>
+<div class="fragment"><div class="line"><a class="code hl_define" href="doctest_2doctest_8h.html#ac8d1eaf65528f86b445cf6e45b2d72c9">FAIL</a>(<span class="stringliteral">&quot;This is not supposed to happen! some var: &quot;</span>, var);</div>
+<div class="ttc" id="adoctest_2doctest_8h_html_ac8d1eaf65528f86b445cf6e45b2d72c9"><div class="ttname"><a href="doctest_2doctest_8h.html#ac8d1eaf65528f86b445cf6e45b2d72c9">FAIL</a></div><div class="ttdeci">#define FAIL(...)</div><div class="ttdef"><b>Definicja</b> doctest.h:2959</div></div>
+</div><!-- fragment --><p>Also there is no lazy stringification here - strings are always constructed and printed.</p>
+<p>There are also a few more intended for use by third party libraries such as mocking frameworks:</p>
+<ul>
+<li><code><a class="el" href="doctest_2doctest_8h.html#adb66a4c291609d4a1c554ad0a23f0662">ADD_MESSAGE_AT(file, line, message)</a></code></li>
+<li><code><a class="el" href="doctest_2doctest_8h.html#a4608a06d7117332c14b21b93f9655653">ADD_FAIL_CHECK_AT(file, line, message)</a></code></li>
+<li><code><a class="el" href="doctest_2doctest_8h.html#a1937649cc9503739c20b3c81b97b5e5d">ADD_FAIL_AT(file, line, message)</a></code></li>
+</ul>
+<p>They can be useful when integrating asserts from a different framework with doctest.</p>
+<hr  />
+<ul>
+<li>Check out the <a href="../../examples/all_features/logging.cpp"><b>example</b></a> which shows how all of these are used.</li>
+</ul>
+<hr  />
+<p><a href="readme.md#reference">Home</a></p>
+<p><img src="../../scripts/data/logo/icon_2.svg" alt="" style="pointer-events: none;" class="inline"/></p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

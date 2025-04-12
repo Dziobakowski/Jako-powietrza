@@ -1,0 +1,250 @@
+\doxysection{Dokumentacja struktury doctest\+::detail\+::Context\+State}
+\hypertarget{structdoctest_1_1detail_1_1_context_state}{}\label{structdoctest_1_1detail_1_1_context_state}\index{doctest::detail::ContextState@{doctest::detail::ContextState}}
+Diagram dziedziczenia dla doctest\+::detail\+::Context\+State\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.985816cm]{structdoctest_1_1detail_1_1_context_state}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{structdoctest_1_1detail_1_1_context_state_a6f87bc9e311ac473a7df07bbf2ea97ad}{reset\+Run\+Data}} ()
+\item 
+void \mbox{\hyperlink{structdoctest_1_1detail_1_1_context_state_a0c2bb085d9bee3bcf68fe732ce423028}{finalize\+Test\+Case\+Data}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atrybuty publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdoctest_1_1detail_1_1_multi_lane_atomic}{Multi\+Lane\+Atomic}}$<$ int $>$ \mbox{\hyperlink{structdoctest_1_1detail_1_1_context_state_ae62a6d093b3661ce10a79a59b410064a}{num\+Asserts\+Current\+Test\+\_\+atomic}}
+\item 
+\mbox{\hyperlink{classdoctest_1_1detail_1_1_multi_lane_atomic}{Multi\+Lane\+Atomic}}$<$ int $>$ \mbox{\hyperlink{structdoctest_1_1detail_1_1_context_state_abe5bc99c968c2435b2f5771fb51040d6}{num\+Asserts\+Failed\+Current\+Test\+\_\+atomic}}
+\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classdoctest_1_1_string}{String}} $>$ $>$ \mbox{\hyperlink{structdoctest_1_1detail_1_1_context_state_a08a290a45d2ab13051bc231888d49440}{filters}} = decltype(filters)(9)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structdoctest_1_1_i_reporter}{IReporter}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{structdoctest_1_1detail_1_1_context_state_aab775050ecad09436b1d9d99820b75a4}{reporters\+\_\+currently\+\_\+used}}
+\item 
+\mbox{\hyperlink{namespacedoctest_1_1detail_a1a4c58d64b3752ce20082111901728e2}{assert\+\_\+handler}} \mbox{\hyperlink{structdoctest_1_1detail_1_1_context_state_ad160f0c2462f6cab59b4d1aa8a3d2c0e}{ah}} = nullptr
+\item 
+\mbox{\hyperlink{structdoctest_1_1detail_1_1_timer}{Timer}} \mbox{\hyperlink{structdoctest_1_1detail_1_1_context_state_a6e25aafb0b333fcc8e8998956ea0c3df}{timer}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classdoctest_1_1_string}{String}} $>$ \mbox{\hyperlink{structdoctest_1_1detail_1_1_context_state_a6903bd9e2a5f3987ea030cc47c57f995}{stringified\+Contexts}}
+\item 
+bool \mbox{\hyperlink{structdoctest_1_1detail_1_1_context_state_a7347770046cf5dc755175d08c8a0396d}{reached\+Leaf}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structdoctest_1_1_subcase_signature}{Subcase\+Signature}} $>$ \mbox{\hyperlink{structdoctest_1_1detail_1_1_context_state_a4c990d0ca2b898a5fec5ee0c6030423d}{subcase\+Stack}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structdoctest_1_1_subcase_signature}{Subcase\+Signature}} $>$ \mbox{\hyperlink{structdoctest_1_1detail_1_1_context_state_ab2ec827a0a17b87d28637170487c3901}{next\+Subcase\+Stack}}
+\item 
+std\+::unordered\+\_\+set$<$ unsigned long long $>$ \mbox{\hyperlink{structdoctest_1_1detail_1_1_context_state_a086e5fad31df932973d16304898b4de7}{fully\+Traversed\+Subcases}}
+\item 
+\mbox{\hyperlink{namespacestd_a25d17c6c6e00988b019e030fe1754689}{size\+\_\+t}} \mbox{\hyperlink{structdoctest_1_1detail_1_1_context_state_ae0f6b7ffa68838ec6199e0230247d1d5}{current\+Subcase\+Depth}}
+\item 
+\mbox{\hyperlink{namespacedoctest_1_1detail_a8a45b1575e5dec18c678277153bb491c}{Atomic}}$<$ bool $>$ \mbox{\hyperlink{structdoctest_1_1detail_1_1_context_state_a8fe0c8af2917b0a80085c60628c7b1f9}{should\+Log\+Current\+Exception}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Atrybuty publiczne dziedziczone z \mbox{\hyperlink{structdoctest_1_1_context_options}{doctest\+::\+Context\+Options}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacestd_af1127a426e9584e1fc5e158ded14b7da}{std\+::ostream}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structdoctest_1_1_context_options_aa2928903c999fdeae122fd2b886e8f23}{cout}} = nullptr
+\item 
+\mbox{\hyperlink{classdoctest_1_1_string}{String}} \mbox{\hyperlink{structdoctest_1_1_context_options_a0590006b4d10296c9a697e32ff886f74}{binary\+\_\+name}}
+\item 
+const \mbox{\hyperlink{structdoctest_1_1detail_1_1_test_case}{detail\+::\+Test\+Case}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structdoctest_1_1_context_options_a079c79155e1178633aea80d6e7e20067}{current\+Test}} = nullptr
+\item 
+\mbox{\hyperlink{classdoctest_1_1_string}{String}} \mbox{\hyperlink{structdoctest_1_1_context_options_a51b278efd4662f92bb3f7eb6a57974ba}{out}}
+\item 
+\mbox{\hyperlink{classdoctest_1_1_string}{String}} \mbox{\hyperlink{structdoctest_1_1_context_options_a397c99d733e24fc87f8da6f6eda855da}{order\+\_\+by}}
+\item 
+unsigned \mbox{\hyperlink{structdoctest_1_1_context_options_ab312bdc6f3c16646f04f75742f87ce0a}{rand\+\_\+seed}}
+\item 
+unsigned \mbox{\hyperlink{structdoctest_1_1_context_options_a9f26ee60a5259e73f9f25ce3f4883a97}{first}}
+\item 
+unsigned \mbox{\hyperlink{structdoctest_1_1_context_options_a5aaf1b28f6a46d8acb40898a502b6bef}{last}}
+\item 
+int \mbox{\hyperlink{structdoctest_1_1_context_options_a8ba5bfec2229bc2da9ab917f4bdee5e7}{abort\+\_\+after}}
+\item 
+int \mbox{\hyperlink{structdoctest_1_1_context_options_a93281aa958eed5c2a1533d404b1ebeff}{subcase\+\_\+filter\+\_\+levels}}
+\item 
+bool \mbox{\hyperlink{structdoctest_1_1_context_options_a5c7bc4cf57fadf73e626666a0a548b92}{success}}
+\item 
+bool \mbox{\hyperlink{structdoctest_1_1_context_options_a08571475229452c2eb933da314a74dff}{case\+\_\+sensitive}}
+\item 
+bool \mbox{\hyperlink{structdoctest_1_1_context_options_a85d785559ea88e0bd61890f77f00a82f}{exit}}
+\item 
+bool \mbox{\hyperlink{structdoctest_1_1_context_options_a0fc3e0c1cf669cffd1f826c005fc4223}{duration}}
+\item 
+bool \mbox{\hyperlink{structdoctest_1_1_context_options_a8c6275483e0d57f1ec012b3ddceaec3a}{minimal}}
+\item 
+bool \mbox{\hyperlink{structdoctest_1_1_context_options_a2c1008b57ee51ad2c4917246b17b0ad6}{quiet}}
+\item 
+bool \mbox{\hyperlink{structdoctest_1_1_context_options_a642d847a76880d946bdd62b35eba3f63}{no\+\_\+throw}}
+\item 
+bool \mbox{\hyperlink{structdoctest_1_1_context_options_adcbcab2df10d87307a4754ac9588d35f}{no\+\_\+exitcode}}
+\item 
+bool \mbox{\hyperlink{structdoctest_1_1_context_options_aad35f517c65f792ddc72a672d9014222}{no\+\_\+run}}
+\item 
+bool \mbox{\hyperlink{structdoctest_1_1_context_options_a32b72d5158f3d58c97dfb32660ff1362}{no\+\_\+intro}}
+\item 
+bool \mbox{\hyperlink{structdoctest_1_1_context_options_ad7371979d5134b109dd00fba771b0271}{no\+\_\+version}}
+\item 
+bool \mbox{\hyperlink{structdoctest_1_1_context_options_a4fc9b6673b818b8cb5969725f16b59c3}{no\+\_\+colors}}
+\item 
+bool \mbox{\hyperlink{structdoctest_1_1_context_options_a8cd276e86a209f3d5486eb6c5a2a29bf}{force\+\_\+colors}}
+\item 
+bool \mbox{\hyperlink{structdoctest_1_1_context_options_af82a6fc802b8ed33a84ea96e85b0d911}{no\+\_\+breaks}}
+\item 
+bool \mbox{\hyperlink{structdoctest_1_1_context_options_a56344ffa781ee4da6cbf3f6c11da8564}{no\+\_\+skip}}
+\item 
+bool \mbox{\hyperlink{structdoctest_1_1_context_options_aab894e731a6fc86cf095288ec7d0c0f2}{gnu\+\_\+file\+\_\+line}}
+\item 
+bool \mbox{\hyperlink{structdoctest_1_1_context_options_a1e9a8bf8feba5cfe25558e5977c4bd7c}{no\+\_\+path\+\_\+in\+\_\+filenames}}
+\item 
+bool \mbox{\hyperlink{structdoctest_1_1_context_options_a880207c3b4cc98fc5c8d94998841e837}{no\+\_\+line\+\_\+numbers}}
+\item 
+bool \mbox{\hyperlink{structdoctest_1_1_context_options_adf3de2cd7c8a2be559a40b1ed7e80960}{no\+\_\+debug\+\_\+output}}
+\item 
+bool \mbox{\hyperlink{structdoctest_1_1_context_options_a4e22eec59e63ed4ff6ab4dfce2389c99}{no\+\_\+skipped\+\_\+summary}}
+\item 
+bool \mbox{\hyperlink{structdoctest_1_1_context_options_a7932d4aa0f360efec8cc201ec63c8366}{no\+\_\+time\+\_\+in\+\_\+output}}
+\item 
+bool \mbox{\hyperlink{structdoctest_1_1_context_options_a9d542a95ee03f61c233fff51e7461400}{help}}
+\item 
+bool \mbox{\hyperlink{structdoctest_1_1_context_options_a08931527a9e5e634e64a336e5493a7c1}{version}}
+\item 
+bool \mbox{\hyperlink{structdoctest_1_1_context_options_a4651b5efbaf2ffc03d60fb4140d21dd3}{count}}
+\item 
+bool \mbox{\hyperlink{structdoctest_1_1_context_options_a813e1543c358ab8a7a432b4ad2b32e56}{list\+\_\+test\+\_\+cases}}
+\item 
+bool \mbox{\hyperlink{structdoctest_1_1_context_options_a579399a66b278cbf96b6183d337f486b}{list\+\_\+test\+\_\+suites}}
+\item 
+bool \mbox{\hyperlink{structdoctest_1_1_context_options_ad3daf077ac3182db5175f8baff49fce0}{list\+\_\+reporters}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Atrybuty publiczne dziedziczone z \mbox{\hyperlink{structdoctest_1_1_test_run_stats}{doctest\+::\+Test\+Run\+Stats}}}
+\begin{DoxyCompactItemize}
+\item 
+unsigned \mbox{\hyperlink{structdoctest_1_1_test_run_stats_a2f4b38f2f6225b798029b64c1d425999}{num\+Test\+Cases}}
+\item 
+unsigned \mbox{\hyperlink{structdoctest_1_1_test_run_stats_afd49da305793d2c2622f0b33a63e87b6}{num\+Test\+Cases\+Passing\+Filters}}
+\item 
+unsigned \mbox{\hyperlink{structdoctest_1_1_test_run_stats_aecbf62d51a6c96875d72124c27096e1d}{num\+Test\+Suites\+Passing\+Filters}}
+\item 
+unsigned \mbox{\hyperlink{structdoctest_1_1_test_run_stats_adb4acfac3623bf752eff3f8d6ce2ffe7}{num\+Test\+Cases\+Failed}}
+\item 
+int \mbox{\hyperlink{structdoctest_1_1_test_run_stats_a58f52d165ab0af01acb7d69a7fc53c3a}{num\+Asserts}}
+\item 
+int \mbox{\hyperlink{structdoctest_1_1_test_run_stats_a27c7ff2c0190e4bad60555cdc68d8f30}{num\+Asserts\+Failed}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Atrybuty publiczne dziedziczone z \mbox{\hyperlink{structdoctest_1_1_current_test_case_stats}{doctest\+::\+Current\+Test\+Case\+Stats}}}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{structdoctest_1_1_current_test_case_stats_ac8731bc4e8e32b86cf2940f4dcb61dec}{num\+Asserts\+Current\+Test}}
+\item 
+int \mbox{\hyperlink{structdoctest_1_1_current_test_case_stats_a2fb52eed7bcef7322a816f418f0fb942}{num\+Asserts\+Failed\+Current\+Test}}
+\item 
+double \mbox{\hyperlink{structdoctest_1_1_current_test_case_stats_a29b1963f1d624d9f939f404726298f48}{seconds}}
+\item 
+int \mbox{\hyperlink{structdoctest_1_1_current_test_case_stats_aaa58c52fd07a20e6e4daf19eecb2e2ba}{failure\+\_\+flags}}
+\item 
+bool \mbox{\hyperlink{structdoctest_1_1_current_test_case_stats_a2c77d43c1fbab06710da7b5bbba4f3ab}{test\+Case\+Success}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Dokumentacja funkcji składowych}
+\Hypertarget{structdoctest_1_1detail_1_1_context_state_a0c2bb085d9bee3bcf68fe732ce423028}\index{doctest::detail::ContextState@{doctest::detail::ContextState}!finalizeTestCaseData@{finalizeTestCaseData}}
+\index{finalizeTestCaseData@{finalizeTestCaseData}!doctest::detail::ContextState@{doctest::detail::ContextState}}
+\doxysubsubsection{\texorpdfstring{finalizeTestCaseData()}{finalizeTestCaseData()}}
+{\footnotesize\ttfamily \label{structdoctest_1_1detail_1_1_context_state_a0c2bb085d9bee3bcf68fe732ce423028} 
+void doctest\+::detail\+::\+Context\+State\+::finalize\+Test\+Case\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structdoctest_1_1detail_1_1_context_state_a6f87bc9e311ac473a7df07bbf2ea97ad}\index{doctest::detail::ContextState@{doctest::detail::ContextState}!resetRunData@{resetRunData}}
+\index{resetRunData@{resetRunData}!doctest::detail::ContextState@{doctest::detail::ContextState}}
+\doxysubsubsection{\texorpdfstring{resetRunData()}{resetRunData()}}
+{\footnotesize\ttfamily \label{structdoctest_1_1detail_1_1_context_state_a6f87bc9e311ac473a7df07bbf2ea97ad} 
+void doctest\+::detail\+::\+Context\+State\+::reset\+Run\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Dokumentacja atrybutów składowych}
+\Hypertarget{structdoctest_1_1detail_1_1_context_state_ad160f0c2462f6cab59b4d1aa8a3d2c0e}\index{doctest::detail::ContextState@{doctest::detail::ContextState}!ah@{ah}}
+\index{ah@{ah}!doctest::detail::ContextState@{doctest::detail::ContextState}}
+\doxysubsubsection{\texorpdfstring{ah}{ah}}
+{\footnotesize\ttfamily \label{structdoctest_1_1detail_1_1_context_state_ad160f0c2462f6cab59b4d1aa8a3d2c0e} 
+\mbox{\hyperlink{namespacedoctest_1_1detail_a1a4c58d64b3752ce20082111901728e2}{assert\+\_\+handler}} doctest\+::detail\+::\+Context\+State\+::ah = nullptr}
+
+\Hypertarget{structdoctest_1_1detail_1_1_context_state_ae0f6b7ffa68838ec6199e0230247d1d5}\index{doctest::detail::ContextState@{doctest::detail::ContextState}!currentSubcaseDepth@{currentSubcaseDepth}}
+\index{currentSubcaseDepth@{currentSubcaseDepth}!doctest::detail::ContextState@{doctest::detail::ContextState}}
+\doxysubsubsection{\texorpdfstring{currentSubcaseDepth}{currentSubcaseDepth}}
+{\footnotesize\ttfamily \label{structdoctest_1_1detail_1_1_context_state_ae0f6b7ffa68838ec6199e0230247d1d5} 
+\mbox{\hyperlink{namespacestd_a25d17c6c6e00988b019e030fe1754689}{size\+\_\+t}} doctest\+::detail\+::\+Context\+State\+::current\+Subcase\+Depth}
+
+\Hypertarget{structdoctest_1_1detail_1_1_context_state_a08a290a45d2ab13051bc231888d49440}\index{doctest::detail::ContextState@{doctest::detail::ContextState}!filters@{filters}}
+\index{filters@{filters}!doctest::detail::ContextState@{doctest::detail::ContextState}}
+\doxysubsubsection{\texorpdfstring{filters}{filters}}
+{\footnotesize\ttfamily \label{structdoctest_1_1detail_1_1_context_state_a08a290a45d2ab13051bc231888d49440} 
+std\+::vector$<$std\+::vector$<$\mbox{\hyperlink{classdoctest_1_1_string}{String}}$>$ $>$ doctest\+::detail\+::\+Context\+State\+::filters = decltype(filters)(9)}
+
+\Hypertarget{structdoctest_1_1detail_1_1_context_state_a086e5fad31df932973d16304898b4de7}\index{doctest::detail::ContextState@{doctest::detail::ContextState}!fullyTraversedSubcases@{fullyTraversedSubcases}}
+\index{fullyTraversedSubcases@{fullyTraversedSubcases}!doctest::detail::ContextState@{doctest::detail::ContextState}}
+\doxysubsubsection{\texorpdfstring{fullyTraversedSubcases}{fullyTraversedSubcases}}
+{\footnotesize\ttfamily \label{structdoctest_1_1detail_1_1_context_state_a086e5fad31df932973d16304898b4de7} 
+std\+::unordered\+\_\+set$<$unsigned long long$>$ doctest\+::detail\+::\+Context\+State\+::fully\+Traversed\+Subcases}
+
+\Hypertarget{structdoctest_1_1detail_1_1_context_state_ab2ec827a0a17b87d28637170487c3901}\index{doctest::detail::ContextState@{doctest::detail::ContextState}!nextSubcaseStack@{nextSubcaseStack}}
+\index{nextSubcaseStack@{nextSubcaseStack}!doctest::detail::ContextState@{doctest::detail::ContextState}}
+\doxysubsubsection{\texorpdfstring{nextSubcaseStack}{nextSubcaseStack}}
+{\footnotesize\ttfamily \label{structdoctest_1_1detail_1_1_context_state_ab2ec827a0a17b87d28637170487c3901} 
+std\+::vector$<$\mbox{\hyperlink{structdoctest_1_1_subcase_signature}{Subcase\+Signature}}$>$ doctest\+::detail\+::\+Context\+State\+::next\+Subcase\+Stack}
+
+\Hypertarget{structdoctest_1_1detail_1_1_context_state_ae62a6d093b3661ce10a79a59b410064a}\index{doctest::detail::ContextState@{doctest::detail::ContextState}!numAssertsCurrentTest\_atomic@{numAssertsCurrentTest\_atomic}}
+\index{numAssertsCurrentTest\_atomic@{numAssertsCurrentTest\_atomic}!doctest::detail::ContextState@{doctest::detail::ContextState}}
+\doxysubsubsection{\texorpdfstring{numAssertsCurrentTest\_atomic}{numAssertsCurrentTest\_atomic}}
+{\footnotesize\ttfamily \label{structdoctest_1_1detail_1_1_context_state_ae62a6d093b3661ce10a79a59b410064a} 
+\mbox{\hyperlink{classdoctest_1_1detail_1_1_multi_lane_atomic}{Multi\+Lane\+Atomic}}$<$int$>$ doctest\+::detail\+::\+Context\+State\+::num\+Asserts\+Current\+Test\+\_\+atomic}
+
+\Hypertarget{structdoctest_1_1detail_1_1_context_state_abe5bc99c968c2435b2f5771fb51040d6}\index{doctest::detail::ContextState@{doctest::detail::ContextState}!numAssertsFailedCurrentTest\_atomic@{numAssertsFailedCurrentTest\_atomic}}
+\index{numAssertsFailedCurrentTest\_atomic@{numAssertsFailedCurrentTest\_atomic}!doctest::detail::ContextState@{doctest::detail::ContextState}}
+\doxysubsubsection{\texorpdfstring{numAssertsFailedCurrentTest\_atomic}{numAssertsFailedCurrentTest\_atomic}}
+{\footnotesize\ttfamily \label{structdoctest_1_1detail_1_1_context_state_abe5bc99c968c2435b2f5771fb51040d6} 
+\mbox{\hyperlink{classdoctest_1_1detail_1_1_multi_lane_atomic}{Multi\+Lane\+Atomic}}$<$int$>$ doctest\+::detail\+::\+Context\+State\+::num\+Asserts\+Failed\+Current\+Test\+\_\+atomic}
+
+\Hypertarget{structdoctest_1_1detail_1_1_context_state_a7347770046cf5dc755175d08c8a0396d}\index{doctest::detail::ContextState@{doctest::detail::ContextState}!reachedLeaf@{reachedLeaf}}
+\index{reachedLeaf@{reachedLeaf}!doctest::detail::ContextState@{doctest::detail::ContextState}}
+\doxysubsubsection{\texorpdfstring{reachedLeaf}{reachedLeaf}}
+{\footnotesize\ttfamily \label{structdoctest_1_1detail_1_1_context_state_a7347770046cf5dc755175d08c8a0396d} 
+bool doctest\+::detail\+::\+Context\+State\+::reached\+Leaf}
+
+\Hypertarget{structdoctest_1_1detail_1_1_context_state_aab775050ecad09436b1d9d99820b75a4}\index{doctest::detail::ContextState@{doctest::detail::ContextState}!reporters\_currently\_used@{reporters\_currently\_used}}
+\index{reporters\_currently\_used@{reporters\_currently\_used}!doctest::detail::ContextState@{doctest::detail::ContextState}}
+\doxysubsubsection{\texorpdfstring{reporters\_currently\_used}{reporters\_currently\_used}}
+{\footnotesize\ttfamily \label{structdoctest_1_1detail_1_1_context_state_aab775050ecad09436b1d9d99820b75a4} 
+std\+::vector$<$\mbox{\hyperlink{structdoctest_1_1_i_reporter}{IReporter}}\texorpdfstring{$\ast$}{*}$>$ doctest\+::detail\+::\+Context\+State\+::reporters\+\_\+currently\+\_\+used}
+
+\Hypertarget{structdoctest_1_1detail_1_1_context_state_a8fe0c8af2917b0a80085c60628c7b1f9}\index{doctest::detail::ContextState@{doctest::detail::ContextState}!shouldLogCurrentException@{shouldLogCurrentException}}
+\index{shouldLogCurrentException@{shouldLogCurrentException}!doctest::detail::ContextState@{doctest::detail::ContextState}}
+\doxysubsubsection{\texorpdfstring{shouldLogCurrentException}{shouldLogCurrentException}}
+{\footnotesize\ttfamily \label{structdoctest_1_1detail_1_1_context_state_a8fe0c8af2917b0a80085c60628c7b1f9} 
+\mbox{\hyperlink{namespacedoctest_1_1detail_a8a45b1575e5dec18c678277153bb491c}{Atomic}}$<$bool$>$ doctest\+::detail\+::\+Context\+State\+::should\+Log\+Current\+Exception}
+
+\Hypertarget{structdoctest_1_1detail_1_1_context_state_a6903bd9e2a5f3987ea030cc47c57f995}\index{doctest::detail::ContextState@{doctest::detail::ContextState}!stringifiedContexts@{stringifiedContexts}}
+\index{stringifiedContexts@{stringifiedContexts}!doctest::detail::ContextState@{doctest::detail::ContextState}}
+\doxysubsubsection{\texorpdfstring{stringifiedContexts}{stringifiedContexts}}
+{\footnotesize\ttfamily \label{structdoctest_1_1detail_1_1_context_state_a6903bd9e2a5f3987ea030cc47c57f995} 
+std\+::vector$<$\mbox{\hyperlink{classdoctest_1_1_string}{String}}$>$ doctest\+::detail\+::\+Context\+State\+::stringified\+Contexts}
+
+\Hypertarget{structdoctest_1_1detail_1_1_context_state_a4c990d0ca2b898a5fec5ee0c6030423d}\index{doctest::detail::ContextState@{doctest::detail::ContextState}!subcaseStack@{subcaseStack}}
+\index{subcaseStack@{subcaseStack}!doctest::detail::ContextState@{doctest::detail::ContextState}}
+\doxysubsubsection{\texorpdfstring{subcaseStack}{subcaseStack}}
+{\footnotesize\ttfamily \label{structdoctest_1_1detail_1_1_context_state_a4c990d0ca2b898a5fec5ee0c6030423d} 
+std\+::vector$<$\mbox{\hyperlink{structdoctest_1_1_subcase_signature}{Subcase\+Signature}}$>$ doctest\+::detail\+::\+Context\+State\+::subcase\+Stack}
+
+\Hypertarget{structdoctest_1_1detail_1_1_context_state_a6e25aafb0b333fcc8e8998956ea0c3df}\index{doctest::detail::ContextState@{doctest::detail::ContextState}!timer@{timer}}
+\index{timer@{timer}!doctest::detail::ContextState@{doctest::detail::ContextState}}
+\doxysubsubsection{\texorpdfstring{timer}{timer}}
+{\footnotesize\ttfamily \label{structdoctest_1_1detail_1_1_context_state_a6e25aafb0b333fcc8e8998956ea0c3df} 
+\mbox{\hyperlink{structdoctest_1_1detail_1_1_timer}{Timer}} doctest\+::detail\+::\+Context\+State\+::timer}
+
+
+
+Dokumentacja dla tej struktury została wygenerowana z pliku\+:\begin{DoxyCompactItemize}
+\item 
+doctest/doctest/parts/\mbox{\hyperlink{doctest_8cpp}{doctest.\+cpp}}\end{DoxyCompactItemize}

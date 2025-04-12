@@ -1,0 +1,77 @@
+\doxysection{doctest\+\_\+proxy.\+h}
+\hypertarget{doctest__proxy_8h_source}{}\label{doctest__proxy_8h_source}\index{doctest/examples/all\_features/doctest\_proxy.h@{doctest/examples/all\_features/doctest\_proxy.h}}
+\mbox{\hyperlink{doctest__proxy_8h}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DOCTEST\_CONFIG\_NO\_SHORT\_MACRO\_NAMES}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DOCTEST\_CONFIG\_NO\_SHORT\_MACRO\_NAMES}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DOCTEST\_CONFIG\_NO\_SHORT\_MACRO\_NAMES}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ no\ guard\ for\ including\ the\ doctest\ header\ itself\ because\ it\ should\ support\ multiple\ inclusion}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <doctest/doctest.h>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ MY\_PROXY\_MACROS}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ MY\_PROXY\_MACROS}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ my\_testcase\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DOCTEST\_TEST\_CASE}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ my\_testcase\_class\ \ \ \ \ \ \ \ \ \ \ DOCTEST\_TEST\_CASE\_CLASS}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ my\_testcase\_fixture\ \ \ \ \ \ \ \ \ DOCTEST\_TEST\_CASE\_FIXTURE}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ my\_subcase\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DOCTEST\_SUBCASE}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ my\_testsuite\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DOCTEST\_TEST\_SUITE}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ my\_testsuite\_begin\ \ \ \ \ \ \ \ \ \ DOCTEST\_TEST\_SUITE\_BEGIN}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ my\_testsuite\_end\ \ \ \ \ \ \ \ \ \ \ \ DOCTEST\_TEST\_SUITE\_END}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ my\_warn\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DOCTEST\_WARN}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ my\_warn\_false\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DOCTEST\_WARN\_FALSE}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ my\_warn\_throws\ \ \ \ \ \ \ \ \ \ \ \ \ \ DOCTEST\_WARN\_THROWS}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ my\_warn\_throws\_as\ \ \ \ \ \ \ \ \ \ \ DOCTEST\_WARN\_THROWS\_AS}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ my\_warn\_throws\_with\ \ \ \ \ \ \ \ \ DOCTEST\_WARN\_THROWS\_WITH}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ my\_warn\_throws\_with\_as\ \ \ \ \ \ DOCTEST\_WARN\_THROWS\_WITH\_AS}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ my\_warn\_nothrow\ \ \ \ \ \ \ \ \ \ \ \ \ DOCTEST\_WARN\_NOTHROW}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ my\_check\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DOCTEST\_CHECK}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ my\_check\_false\ \ \ \ \ \ \ \ \ \ \ \ \ \ DOCTEST\_CHECK\_FALSE}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ my\_check\_throws\ \ \ \ \ \ \ \ \ \ \ \ \ DOCTEST\_CHECK\_THROWS}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ my\_check\_throws\_as\ \ \ \ \ \ \ \ \ \ DOCTEST\_CHECK\_THROWS\_AS}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ my\_check\_throws\_with\ \ \ \ \ \ \ \ DOCTEST\_CHECK\_THROWS\_WITH}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ my\_check\_throws\_with\_as\ \ \ \ \ DOCTEST\_CHECK\_THROWS\_WITH\_AS}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ my\_check\_nothrow\ \ \ \ \ \ \ \ \ \ \ \ DOCTEST\_CHECK\_NOTHROW}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ my\_require\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DOCTEST\_REQUIRE}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ my\_require\_false\ \ \ \ \ \ \ \ \ \ \ \ DOCTEST\_REQUIRE\_FALSE}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ my\_require\_throws\ \ \ \ \ \ \ \ \ \ \ DOCTEST\_REQUIRE\_THROWS}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ my\_require\_throws\_as\ \ \ \ \ \ \ \ DOCTEST\_REQUIRE\_THROWS\_AS}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ my\_require\_throws\_with\_as\ \ \ DOCTEST\_REQUIRE\_THROWS\_WITH\_AS}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ my\_require\_nothrow\ \ \ \ \ \ \ \ \ \ DOCTEST\_REQUIRE\_NOTHROW}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ my\_scenario\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DOCTEST\_SCENARIO}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ my\_given\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DOCTEST\_GIVEN}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ my\_when\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DOCTEST\_WHEN}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ my\_and\_when\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DOCTEST\_AND\_WHEN}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ my\_then\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DOCTEST\_THEN}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ my\_and\_then\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DOCTEST\_AND\_THEN}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ my\_warn\_eq\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DOCTEST\_WARN\_EQ}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ my\_check\_eq\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DOCTEST\_CHECK\_EQ}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ my\_require\_eq\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DOCTEST\_REQUIRE\_EQ}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ my\_warn\_ne\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DOCTEST\_WARN\_NE}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ my\_check\_ne\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DOCTEST\_CHECK\_NE}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ my\_require\_ne\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DOCTEST\_REQUIRE\_NE}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ my\_warn\_gt\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DOCTEST\_WARN\_GT}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ my\_check\_gt\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DOCTEST\_CHECK\_GT}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ my\_require\_gt\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DOCTEST\_REQUIRE\_GT}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ my\_warn\_lt\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DOCTEST\_WARN\_LT}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ my\_check\_lt\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DOCTEST\_CHECK\_LT}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ my\_require\_lt\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DOCTEST\_REQUIRE\_LT}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ my\_warn\_ge\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DOCTEST\_WARN\_GE}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ my\_check\_ge\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DOCTEST\_CHECK\_GE}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ my\_require\_ge\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DOCTEST\_REQUIRE\_GE}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ my\_warn\_le\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DOCTEST\_WARN\_LE}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ my\_check\_le\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DOCTEST\_CHECK\_LE}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ my\_require\_le\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DOCTEST\_REQUIRE\_LE}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ my\_warn\_unary\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DOCTEST\_WARN\_UNARY}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ my\_check\_unary\ \ \ \ \ \ \ \ \ \ \ \ \ \ DOCTEST\_CHECK\_UNARY}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ my\_require\_unary\ \ \ \ \ \ \ \ \ \ \ \ DOCTEST\_REQUIRE\_UNARY}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ my\_warn\_unary\_false\ \ \ \ \ \ \ \ \ DOCTEST\_WARN\_UNARY\_FALSE}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ my\_check\_unary\_false\ \ \ \ \ \ \ \ DOCTEST\_CHECK\_UNARY\_FALSE}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ my\_require\_unary\_false\ \ \ \ \ \ DOCTEST\_REQUIRE\_UNARY\_FALSE}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MY\_PROXY\_MACROS}}
+
+\end{DoxyCode}

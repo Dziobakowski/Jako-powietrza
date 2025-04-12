@@ -1,0 +1,333 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Jakość powietrza w Polsce: Dokumentacja pliku doctest/scripts/how_stuff_works/how_subcases_work.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Jakość powietrza w Polsce
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('how__subcases__work_8cpp.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Komponenty</a> &#124;
+<a href="#define-members">Definicje</a> &#124;
+<a href="#func-members">Funkcje</a> &#124;
+<a href="#var-members">Zmienne</a>  </div>
+  <div class="headertitle"><div class="title">Dokumentacja pliku how_subcases_work.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;set&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Komponenty</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_subcase.html">Subcase</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Definicje</h2></td></tr>
+<tr class="memitem:a8e0ebf4e0f06e595b4a273dcfdc23db7" id="r_a8e0ebf4e0f06e595b4a273dcfdc23db7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e0ebf4e0f06e595b4a273dcfdc23db7">STR_CONCAT_IMPL</a>(s1,  s2)</td></tr>
+<tr class="separator:a8e0ebf4e0f06e595b4a273dcfdc23db7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a598e904839eba520e6bf6c3c11d8a7a7" id="r_a598e904839eba520e6bf6c3c11d8a7a7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a598e904839eba520e6bf6c3c11d8a7a7">STR_CONCAT</a>(s1,  s2)</td></tr>
+<tr class="separator:a598e904839eba520e6bf6c3c11d8a7a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73b12f7aafb4c385a80f3407b8987abe" id="r_a73b12f7aafb4c385a80f3407b8987abe"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73b12f7aafb4c385a80f3407b8987abe">ANON_VAR</a>&#160;&#160;&#160;<a class="el" href="#a598e904839eba520e6bf6c3c11d8a7a7">STR_CONCAT</a>(anon, __LINE__)</td></tr>
+<tr class="separator:a73b12f7aafb4c385a80f3407b8987abe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a233512ea2462b6cbda8d6c6598a88c10" id="r_a233512ea2462b6cbda8d6c6598a88c10"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a233512ea2462b6cbda8d6c6598a88c10">subcase</a>(title)</td></tr>
+<tr class="separator:a233512ea2462b6cbda8d6c6598a88c10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funkcje</h2></td></tr>
+<tr class="memitem:ae1a3968e7947464bee7714f6d43b7002" id="r_ae1a3968e7947464bee7714f6d43b7002"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae1a3968e7947464bee7714f6d43b7002">test</a> ()</td></tr>
+<tr class="separator:ae1a3968e7947464bee7714f6d43b7002"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4" id="r_ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
+<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Zmienne</h2></td></tr>
+<tr class="memitem:a783a67f7723de21f3d8118cfb0235622" id="r_a783a67f7723de21f3d8118cfb0235622"><td class="memItemLeft" align="right" valign="top">set&lt; pair&lt; const char *, int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a783a67f7723de21f3d8118cfb0235622">passed_subcases</a></td></tr>
+<tr class="separator:a783a67f7723de21f3d8118cfb0235622"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a566cade267d5dfdb49c9c244ed96be90" id="r_a566cade267d5dfdb49c9c244ed96be90"><td class="memItemLeft" align="right" valign="top">set&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a566cade267d5dfdb49c9c244ed96be90">entered_levels</a></td></tr>
+<tr class="separator:a566cade267d5dfdb49c9c244ed96be90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadd67ce7858be05c138c310167fcf663" id="r_aadd67ce7858be05c138c310167fcf663"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aadd67ce7858be05c138c310167fcf663">current_level</a></td></tr>
+<tr class="separator:aadd67ce7858be05c138c310167fcf663"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a619bd02064f3e460d6c0ff4e9e17bc0d" id="r_a619bd02064f3e460d6c0ff4e9e17bc0d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a619bd02064f3e460d6c0ff4e9e17bc0d">has_skipped</a></td></tr>
+<tr class="separator:a619bd02064f3e460d6c0ff4e9e17bc0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Dokumentacja definicji</h2>
+<a id="a73b12f7aafb4c385a80f3407b8987abe" name="a73b12f7aafb4c385a80f3407b8987abe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73b12f7aafb4c385a80f3407b8987abe">&#9670;&#160;</a></span>ANON_VAR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ANON_VAR&#160;&#160;&#160;<a class="el" href="#a598e904839eba520e6bf6c3c11d8a7a7">STR_CONCAT</a>(anon, __LINE__)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a598e904839eba520e6bf6c3c11d8a7a7" name="a598e904839eba520e6bf6c3c11d8a7a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a598e904839eba520e6bf6c3c11d8a7a7">&#9670;&#160;</a></span>STR_CONCAT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STR_CONCAT</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>s1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>s2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Wartość:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#a8e0ebf4e0f06e595b4a273dcfdc23db7">STR_CONCAT_IMPL</a>(s1, s2)</div>
+<div class="ttc" id="ahow__subcases__work_8cpp_html_a8e0ebf4e0f06e595b4a273dcfdc23db7"><div class="ttname"><a href="#a8e0ebf4e0f06e595b4a273dcfdc23db7">STR_CONCAT_IMPL</a></div><div class="ttdeci">#define STR_CONCAT_IMPL(s1, s2)</div><div class="ttdef"><b>Definicja</b> how_subcases_work.cpp:71</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8e0ebf4e0f06e595b4a273dcfdc23db7" name="a8e0ebf4e0f06e595b4a273dcfdc23db7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e0ebf4e0f06e595b4a273dcfdc23db7">&#9670;&#160;</a></span>STR_CONCAT_IMPL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STR_CONCAT_IMPL</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>s1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>s2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Wartość:</b><div class="fragment"><div class="line">s1##s2</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a233512ea2462b6cbda8d6c6598a88c10" name="a233512ea2462b6cbda8d6c6598a88c10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a233512ea2462b6cbda8d6c6598a88c10">&#9670;&#160;</a></span>subcase</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define subcase</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>title</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Wartość:</b><div class="fragment"><div class="line"><span class="keywordflow">if</span>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_subcase.html">Subcase</a>&amp; <a class="code hl_define" href="#a73b12f7aafb4c385a80f3407b8987abe">ANON_VAR</a> = <a class="code hl_struct" href="struct_subcase.html">Subcase</a>(__FILE__, __LINE__))</div>
+<div class="ttc" id="ahow__subcases__work_8cpp_html_a73b12f7aafb4c385a80f3407b8987abe"><div class="ttname"><a href="#a73b12f7aafb4c385a80f3407b8987abe">ANON_VAR</a></div><div class="ttdeci">#define ANON_VAR</div><div class="ttdef"><b>Definicja</b> how_subcases_work.cpp:73</div></div>
+<div class="ttc" id="astruct_subcase_html"><div class="ttname"><a href="struct_subcase.html">Subcase</a></div><div class="ttdef"><b>Definicja</b> how_subcases_work.cpp:32</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja funkcji</h2>
+<a id="ae66f6b31b5ad750f1fe042a706a4e3d4" name="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&#160;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae1a3968e7947464bee7714f6d43b7002" name="ae1a3968e7947464bee7714f6d43b7002"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1a3968e7947464bee7714f6d43b7002">&#9670;&#160;</a></span>test()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja zmiennych</h2>
+<a id="aadd67ce7858be05c138c310167fcf663" name="aadd67ce7858be05c138c310167fcf663"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadd67ce7858be05c138c310167fcf663">&#9670;&#160;</a></span>current_level</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int current_level</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a566cade267d5dfdb49c9c244ed96be90" name="a566cade267d5dfdb49c9c244ed96be90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a566cade267d5dfdb49c9c244ed96be90">&#9670;&#160;</a></span>entered_levels</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">set&lt;int&gt; entered_levels</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a619bd02064f3e460d6c0ff4e9e17bc0d" name="a619bd02064f3e460d6c0ff4e9e17bc0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a619bd02064f3e460d6c0ff4e9e17bc0d">&#9670;&#160;</a></span>has_skipped</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool has_skipped</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a783a67f7723de21f3d8118cfb0235622" name="a783a67f7723de21f3d8118cfb0235622"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a783a67f7723de21f3d8118cfb0235622">&#9670;&#160;</a></span>passed_subcases</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">set&lt;pair&lt;const char*, int&gt; &gt; passed_subcases</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_43da05b65ffbb65743beb36240116ac9.html">doctest</a></li><li class="navelem"><a class="el" href="dir_f060255ccb16877e838d213cd97c69ed.html">scripts</a></li><li class="navelem"><a class="el" href="dir_8e90f419b20ba997a85c7d4a7ed82e6c.html">how_stuff_works</a></li><li class="navelem"><a class="el" href="how__subcases__work_8cpp.html">how_subcases_work.cpp</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

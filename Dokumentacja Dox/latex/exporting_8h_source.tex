@@ -1,0 +1,21 @@
+\doxysection{exporting.\+h}
+\hypertarget{exporting_8h_source}{}\label{exporting_8h_source}\index{doctest/examples/installed\_doctest\_cmake/dll/exporting.h@{doctest/examples/installed\_doctest\_cmake/dll/exporting.h}}
+\mbox{\hyperlink{exporting_8h}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#ifdef\ \_EXPORT}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifdef\ \_MSC\_VER}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ DLL\_API\ \_\_declspec(dllexport)}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#elif\ defined\ \_\_GNUC\_\_}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ DLL\_API\ \_\_attribute\_\_((visibility("{}default"{})))}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifdef\ \_MSC\_VER}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ DLL\_API\ \_\_declspec(dllimport)}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#elif\ defined\ \_\_GNUC\_\_}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ DLL\_API\ \_\_attribute\_\_((visibility("{}hidden"{})))}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

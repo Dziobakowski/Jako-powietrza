@@ -1,0 +1,174 @@
+\chapter{Extensions}
+\hypertarget{md_doctest_2doc_2markdown_2extensions}{}\label{md_doctest_2doc_2markdown_2extensions}\index{Extensions@{Extensions}}
+\label{md_doctest_2doc_2markdown_2extensions_autotoc_md113}%
+\Hypertarget{md_doctest_2doc_2markdown_2extensions_autotoc_md113}%
+
+
+The doctest header doesn\textquotesingle{}t include any external or stdlib headers in its interface part in order to provide the most optimal build times but that means it is limited in what it can provide as functionality =\texorpdfstring{$>$}{>} that\textquotesingle{}s when extensions come into play. They are located as header files in \href{../../doctest/extensions}{\texttt{ {\ttfamily doctest/extensions}}} and each of them is documented in a section here.\hypertarget{md_doctest_2doc_2markdown_2extensions_autotoc_md114}{}\doxysection{\texorpdfstring{\href{../../doctest/extensions/doctest_util.h}{\texttt{ Utils}}}{\href{../../doctest/extensions/doctest_util.h}{\texttt{ Utils}}}}\label{md_doctest_2doc_2markdown_2extensions_autotoc_md114}
+nothing here yet...\hypertarget{md_doctest_2doc_2markdown_2extensions_autotoc_md115}{}\doxysection{\texorpdfstring{\href{../../doctest/extensions/doctest_mpi.h}{\texttt{ Distributed tests with MPI}}}{\href{../../doctest/extensions/doctest_mpi.h}{\texttt{ Distributed tests with MPI}}}}\label{md_doctest_2doc_2markdown_2extensions_autotoc_md115}
+\mbox{[}Bruno Maugars and Bérenger Berthoul, ONERA\mbox{]}
+
+Testing code over distributed processes requires support from the testing framework. {\bfseries{Doctest}} support for MPI parallel communication is provided in the {\ttfamily "{}doctest/extensions/doctest\+\_\+mpi.\+h"{}} header.\hypertarget{md_doctest_2doc_2markdown_2extensions_autotoc_md116}{}\doxysubsection{\texorpdfstring{Example}{Example}}\label{md_doctest_2doc_2markdown_2extensions_autotoc_md116}
+See \href{../../examples/mpi/mpi.cpp}{\texttt{ {\bfseries{the complete test}}}} and \href{../../examples/mpi/main.cpp}{\texttt{ {\bfseries{the configuration of main()}}}}\hypertarget{md_doctest_2doc_2markdown_2extensions_autotoc_md117}{}\doxysubsubsection{\texorpdfstring{MPI\+\_\+\+TEST\+\_\+\+CASE}{MPI\+\_\+\+TEST\+\_\+\+CASE}}\label{md_doctest_2doc_2markdown_2extensions_autotoc_md117}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{doctest__mpi_8h}{doctest/extensions/doctest\_mpi.h}}"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ my\_function\_to\_test(MPI\_Comm\ comm)\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{int}\ rank;}
+\DoxyCodeLine{\ \ MPI\_Comm\_rank(comm,\&rank);}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (rank\ ==\ 0)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ 10;}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ 11;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{doctest__mpi_8h_adeb675f0bdbca13fc774b131c5288200}{MPI\_TEST\_CASE}}(\textcolor{stringliteral}{"{}test\ over\ two\ processes"{}},2)\ \{\ \textcolor{comment}{//\ Parallel\ test\ on\ 2\ processes}}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{int}\ x\ =\ my\_function\_to\_test(test\_comm);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{doctest__mpi_8h_ad4c11f2e4f10a81ac76e5e24d5dad03f}{MPI\_CHECK}}(\ 0,\ \ x==10\ );\ \textcolor{comment}{//\ CHECK\ for\ rank\ 0,\ that\ x==10}}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{doctest__mpi_8h_ad4c11f2e4f10a81ac76e5e24d5dad03f}{MPI\_CHECK}}(\ 1,\ \ x==11\ );\ \textcolor{comment}{//\ CHECK\ for\ rank\ 1,\ that\ x==11}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+An {\ttfamily MPI\+\_\+\+TEST\+\_\+\+CASE} is like a regular {\ttfamily TEST\+\_\+\+CASE}, except it takes a second argument, which is the number of processes needed to run the test. If the number of processes is less than 2, the test will fail. If the number of processes is greater than or equal to 2, it will create a sub-\/communicator over 2 processes, called {\ttfamily test\+\_\+comm}, and execute the test over these processes. Three objects are provided by {\ttfamily MPI\+\_\+\+TEST\+\_\+\+CASE}\+:
+\begin{DoxyItemize}
+\item {\ttfamily test\+\_\+comm}, of type {\ttfamily MPI\+\_\+\+Comm}\+: the mpi communicator on which the test is running,
+\item {\ttfamily test\+\_\+rank} and {\ttfamily test\+\_\+nb\+\_\+procs}, two {\ttfamily int} giving respectively the rank of the current process and the size of the communicator for {\ttfamily test\+\_\+comm}. These last two are just here for convenience and could be retrieved from {\ttfamily test\+\_\+comm}.
+\end{DoxyItemize}
+
+We always have\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{doctest__mpi_8h_adeb675f0bdbca13fc774b131c5288200}{MPI\_TEST\_CASE}}(\textcolor{stringliteral}{"{}my\_test"{}},\mbox{\hyperlink{namespace_n}{N}})\ \{}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{doctest_2doctest_8h_a836cca6b6ed3a1706353f6d1bca0935f}{CHECK}}(\ test\_nb\_procs\ ==\ \mbox{\hyperlink{namespace_n}{N}}\ );}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{doctest__mpi_8h_ad4c11f2e4f10a81ac76e5e24d5dad03f}{MPI\_CHECK}}(\ i,\ test\_rank==i\ );\ \textcolor{comment}{//\ for\ any\ i<N}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_doctest_2doc_2markdown_2extensions_autotoc_md118}{}\doxysubsubsection{\texorpdfstring{Assertions}{Assertions}}\label{md_doctest_2doc_2markdown_2extensions_autotoc_md118}
+It is possible to use regular assertions in an {\ttfamily MPI\+\_\+\+TEST\+\_\+\+CASE}. MPI-\/specific assertions are also provided and are all prefixed with {\ttfamily MPI\+\_\+} ({\ttfamily MPI\+\_\+\+CHECK}, {\ttfamily MPI\+\_\+\+ASSERT}...). The first argument is the rank for which they are checked, and the second is the usual expression to check.\hypertarget{md_doctest_2doc_2markdown_2extensions_autotoc_md119}{}\doxysubsection{\texorpdfstring{The main entry points and mpi reporters}{The main entry points and mpi reporters}}\label{md_doctest_2doc_2markdown_2extensions_autotoc_md119}
+You need to launch the unit tests with an {\ttfamily mpirun} or {\ttfamily mpiexec} command\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{mpirun\ -\/np\ 2\ unit\_test\_executable.exe}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{::mpi\_init\_thread()}
+
+\end{DoxyCode}
+ must be called before running the unit tests, and {\ttfamily \doxylink{namespacedoctest_abe48bb917f3ad5bb3a129d6b11058bed}{doctest\+::mpi\+\_\+finalize()}} at the end of the program. Also, using the default console reporter will result in each process writing everything in the same place, which is not what we want. Two reporters are provided and can be enabled. A complete {\ttfamily \doxylink{how__exception__translators__work_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main()}} would be\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ DOCTEST\_CONFIG\_IMPLEMENT}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{doctest__mpi_8h}{doctest/extensions/doctest\_mpi.h}}"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{how__exception__translators__work_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}**\ argv)\ \{}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{namespacedoctest_a3cadc91a1955b20cb6b529b0dd0fc069}{doctest::mpi\_init\_thread}}(argc,argv,MPI\_THREAD\_MULTIPLE);\ \textcolor{comment}{//\ Or\ any\ MPI\ thread\ level}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{classdoctest_1_1_context}{doctest::Context}}\ ctx;}
+\DoxyCodeLine{\ \ ctx.\mbox{\hyperlink{classdoctest_1_1_context_a7f7735caa75c60cdf8c8d86a75ce1d81}{setOption}}(\textcolor{stringliteral}{"{}reporters"{}},\ \textcolor{stringliteral}{"{}MpiConsoleReporter"{}});}
+\DoxyCodeLine{\ \ ctx.\mbox{\hyperlink{classdoctest_1_1_context_a7f7735caa75c60cdf8c8d86a75ce1d81}{setOption}}(\textcolor{stringliteral}{"{}reporters"{}},\ \textcolor{stringliteral}{"{}MpiFileReporter"{}});}
+\DoxyCodeLine{\ \ ctx.\mbox{\hyperlink{classdoctest_1_1_context_a7f7735caa75c60cdf8c8d86a75ce1d81}{setOption}}(\textcolor{stringliteral}{"{}force-\/colors"{}},\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\ \ ctx.\mbox{\hyperlink{classdoctest_1_1_context_ad55229220bf9ca74e6e0c6323bf672e1}{applyCommandLine}}(argc,\ argv);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{int}\ test\_result\ =\ ctx.\mbox{\hyperlink{classdoctest_1_1_context_a8059b137ef41cbe6c5d8160806a3cc63}{run}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{namespacedoctest_abe48bb917f3ad5bb3a129d6b11058bed}{doctest::mpi\_finalize}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ test\_result;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_doctest_2doc_2markdown_2extensions_autotoc_md120}{}\doxysubsubsection{\texorpdfstring{Mpi\+Console\+Reporter}{Mpi\+Console\+Reporter}}\label{md_doctest_2doc_2markdown_2extensions_autotoc_md120}
+The {\ttfamily Mpi\+Console\+Reporter} should be substituted to the default reporter. It does the same as the default console reporter for regular assertions, but only outputs on process 0. For MPI test cases, if there is a failure it tells the process that failed
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{[doctest]\ doctest\ version\ is\ "{}2.4.0"{}}
+\DoxyCodeLine{[doctest]\ run\ with\ "{}-\/-\/help"{}\ for\ options}
+\DoxyCodeLine{===============================================================================}
+\DoxyCodeLine{[doctest]\ test\ cases:\ \ \ \ 171\ |\ \ \ \ 171\ passed\ |\ \ \ \ \ \ 0\ failed\ |\ \ \ \ \ \ 0\ skipped}
+\DoxyCodeLine{[doctest]\ assertions:\ \ \ \ 864\ |\ \ \ \ 864\ passed\ |\ \ \ \ \ \ 0\ failed\ |}
+\DoxyCodeLine{[doctest]\ Status:\ SUCCESS!}
+\DoxyCodeLine{std\_e\_mpi\_unit\_tests}
+\DoxyCodeLine{[doctest]\ doctest\ version\ is\ "{}2.4.0"{}}
+\DoxyCodeLine{[doctest]\ run\ with\ "{}-\/-\/help"{}\ for\ options}
+\DoxyCodeLine{===============================================================================}
+\DoxyCodeLine{path/to/test.cpp:30:}
+\DoxyCodeLine{TEST\ CASE:\ my\ test\ case}
+\DoxyCodeLine{}
+\DoxyCodeLine{On\ rank\ [2]\ :\ path/to/test.cpp:35:\ CHECK(\ x==-\/1\ )\ is\ NOT\ correct!}
+\DoxyCodeLine{\ \ values:\ CHECK(\ 0\ ==\ -\/1\ )}
+\DoxyCodeLine{}
+\DoxyCodeLine{===============================================================================}
+\DoxyCodeLine{[doctest]\ test\ cases:\ \ \ \ \ \ 2\ |\ \ \ \ \ \ 2\ passed\ |\ \ \ \ \ \ 0\ failed\ |\ \ \ \ \ \ 0\ skipped}
+\DoxyCodeLine{[doctest]\ assertions:\ \ \ \ \ \ 2\ |\ \ \ \ \ \ 2\ passed\ |\ \ \ \ \ \ 0\ failed\ |}
+\DoxyCodeLine{[doctest]\ Status:\ SUCCESS!}
+\DoxyCodeLine{===============================================================================}
+\DoxyCodeLine{[doctest]\ assertions\ on\ all\ processes:\ \ \ 5\ |\ \ \ 4\ passed\ |\ \ \ \ \ \ 1\ failed\ |}
+\DoxyCodeLine{===============================================================================}
+\DoxyCodeLine{[doctest]\ fail\ on\ rank:}
+\DoxyCodeLine{\ \ \ \ -\/>\ On\ rank\ [2]\ with\ 1\ test\ failed}
+\DoxyCodeLine{[doctest]\ Status:\ FAILURE!}
+
+\end{DoxyCode}
+
+
+If the test executable is launch with less processes than the number of processes required by one test, the test is skipped and marqued as such in the mpi console reporter\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{doctest__mpi_8h_adeb675f0bdbca13fc774b131c5288200}{MPI\_TEST\_CASE}}(\textcolor{stringliteral}{"{}my\_test"{}},3)\ \{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ ...}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{mpirun\ -\/np\ 2\ unit\_test\_executable.exe}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{===============================================================================}
+\DoxyCodeLine{[doctest]\ test\ cases:\ \ \ \ \ \ 1\ |\ \ \ \ \ \ 1\ passed\ |\ \ \ \ \ \ 0\ failed\ |\ \ \ \ \ \ 1\ skipped}
+\DoxyCodeLine{[doctest]\ assertions:\ \ \ \ \ \ 1\ |\ \ \ \ \ \ 1\ passed\ |\ \ \ \ \ \ 0\ failed\ |}
+\DoxyCodeLine{[doctest]\ Status:\ SUCCESS!}
+\DoxyCodeLine{===============================================================================}
+\DoxyCodeLine{[doctest]\ assertions\ on\ all\ processes:\ \ \ 1\ |\ \ \ 1\ passed\ |\ \ \ \ \ \ 0\ failed\ |}
+\DoxyCodeLine{[doctest]\ WARNING:\ Skipped\ 1\ test\ requiring\ more\ than\ 2\ MPI\ processes\ to\ run}
+\DoxyCodeLine{===============================================================================}
+
+\end{DoxyCode}
+\hypertarget{md_doctest_2doc_2markdown_2extensions_autotoc_md121}{}\doxysubsubsection{\texorpdfstring{Mpi\+File\+Reporter}{Mpi\+File\+Reporter}}\label{md_doctest_2doc_2markdown_2extensions_autotoc_md121}
+The {\ttfamily Mpi\+File\+Reporter} will just print the result of each process in its own file, named {\ttfamily doctest\+\_\+\mbox{[}rank\mbox{]}.log}. Only use this reporter as a debug facility if you want to know what is going on exactly when a parallel test case is failing.\hypertarget{md_doctest_2doc_2markdown_2extensions_autotoc_md122}{}\doxysubsubsection{\texorpdfstring{Other reporters}{Other reporters}}\label{md_doctest_2doc_2markdown_2extensions_autotoc_md122}
+Other reporters (j\+Unit, XML) are not supported directly, which mean that you can always print the result of each process to its own file, but there is (currently) no equivalent of the {\ttfamily Mpi\+Console\+Reporter} that will aggregate the results of all processes.\hypertarget{md_doctest_2doc_2markdown_2extensions_autotoc_md123}{}\doxysubsection{\texorpdfstring{Note}{Note}}\label{md_doctest_2doc_2markdown_2extensions_autotoc_md123}
+This feature is provided to unit-\/test mpi-\/distributed code. It is {\bfseries{not}} a way to parallelize many unit tests over several processes (for that, see \href{../../examples/range_based_execution.py}{\texttt{ {\bfseries{the example python script}}}}).\hypertarget{md_doctest_2doc_2markdown_2extensions_autotoc_md124}{}\doxysubsection{\texorpdfstring{TODO}{TODO}}\label{md_doctest_2doc_2markdown_2extensions_autotoc_md124}
+
+\begin{DoxyItemize}
+\item Pass {\ttfamily s} member variable of {\ttfamily Console\+Reporter} as an argument to member functions so we can use them with another object (would help to factorize {\ttfamily MPIConsole\+Reporter})
+\item Only MPI\+\_\+\+CHECK tested. MPI\+\_\+\+REQUIRE, exception handling\+: nothing tested
+\item More testing, automatic testing
+\item Packaging\+: create a new target {\ttfamily mpi\+\_\+doctest}? (probably cleaner to depend explicitly on MPI for mpi/doctest.\+h)
+\item Later, maybe\+: have a general mechanism to represent assertions so we can separate the report format (console, xml, junit...) from the reporting strategy (sequential vs. MPI)
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+
+
+\href{readme.md\#reference}{\texttt{ Home}}
+

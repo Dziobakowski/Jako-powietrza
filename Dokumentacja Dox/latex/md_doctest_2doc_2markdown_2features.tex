@@ -1,0 +1,92 @@
+\chapter{Features and design goals}
+\hypertarget{md_doctest_2doc_2markdown_2features}{}\label{md_doctest_2doc_2markdown_2features}\index{Features and design goals@{Features and design goals}}
+\label{md_doctest_2doc_2markdown_2features_autotoc_md141}%
+\Hypertarget{md_doctest_2doc_2markdown_2features_autotoc_md141}%
+
+
+{\bfseries{doctest}} has been designed from the start to be as {\bfseries{light}} and {\bfseries{unintrusive}} as possible. These key features should be kept.\hypertarget{md_doctest_2doc_2markdown_2features_autotoc_md142}{}\doxysection{\texorpdfstring{Unintrusive (transparent)\+:}{Unintrusive (transparent)\+:}}\label{md_doctest_2doc_2markdown_2features_autotoc_md142}
+
+\begin{DoxyItemize}
+\item everything testing-\/related can be removed from the binary executable by defining the \href{configuration.md\#doctest_config_disable}{\texttt{ {\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+DISABLE}}}}} identifier
+\item very small and easy to integrate -\/ single header
+\item {\bfseries{Extremely}} low footprint on compile times -\/ \href{benchmarks.md\#cost-of-including-the-header}{\texttt{ {\bfseries{around 25ms}}}} of compile time overhead for including the header in a file
+\item The \href{benchmarks.md\#cost-of-an-assertion-macro}{\texttt{ {\bfseries{fastest possible}}}} assertion macros -\/ 50k asserts can compile for under 30 seconds (even under 10 sec)
+\item doesn\textquotesingle{}t drag any headers when included (except for in the translation unit where the library gets implemented)
+\item everything is in the {\ttfamily doctest} namespace (and the implementation details are in a nested {\ttfamily detail} namespace)
+\item all macros have prefixes -\/ some by default have unprefixed versions as well but that is optional -\/ see \doxysectlink{md_doctest_2doc_2markdown_2configuration}{{\bfseries{configuration}}}{0}
+\item 0 warnings even with the most aggressive flags (on all tested compilers!!!)
+\begin{DoxyItemize}
+\item {\ttfamily -\/Weverything -\/pedantic} for {\bfseries{clang}}
+\item {\ttfamily -\/Wall -\/Wextra -\/pedantic} and {\bfseries{\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} over 35 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} other warnings \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}not}} covered by these flags for {\bfseries{GCC}}!!! -\/ see \href{../../scripts/cmake/common.cmake\#L84}{\texttt{ {\bfseries{here}}}}
+\item {\ttfamily /\+Wall} for {\bfseries{MSVC}}
+\end{DoxyItemize}
+\item doesn\textquotesingle{}t error on unrecognized \doxysectlink{md_doctest_2doc_2markdown_2commandline}{{\bfseries{command line}}}{0} options and supports prefixes for interop with client command line parsing
+\item can set options \doxysectlink{md_doctest_2doc_2markdown_2main}{{\bfseries{procedurally}}}{0} and not deal with passing {\ttfamily argc}/{\ttfamily argv} from the command line
+\item doesn\textquotesingle{}t leave warnings disabled after itself
+\end{DoxyItemize}\hypertarget{md_doctest_2doc_2markdown_2features_autotoc_md143}{}\doxysection{\texorpdfstring{Extremely portable\+:}{Extremely portable\+:}}\label{md_doctest_2doc_2markdown_2features_autotoc_md143}
+{\bfseries{SOME OF THIS IS OUTDATED}}
+
+
+\begin{DoxyItemize}
+\item Standards compliant {\bfseries{C++11}} code -\/ should work with any {\bfseries{C++11}} capable compiler (use tag \href{https://github.com/doctest/doctest/tree/1.2.9}{\texttt{ {\bfseries{1.\+2.\+9}}}} for C++98 and older compilers)
+\item tested with {\bfseries{GCC}}\+: {\bfseries{4.\+8}}, {\bfseries{4.\+9}}, {\bfseries{5}}, {\bfseries{6}}, {\bfseries{7}}, {\bfseries{8}}, {\bfseries{9}}, {\bfseries{10}}, {\bfseries{11}}, {\bfseries{12}}
+\item tested with {\bfseries{Clang}}\+: {\bfseries{3.\+5}}, {\bfseries{3.\+6}}, {\bfseries{3.\+7}}, {\bfseries{3.\+8}}, {\bfseries{3.\+9}}, {\bfseries{4}}, {\bfseries{5}}, {\bfseries{6}}, {\bfseries{7}}, {\bfseries{8}}, {\bfseries{9}}, {\bfseries{10}}, {\bfseries{11}}, {\bfseries{12}}, {\bfseries{13}}, {\bfseries{14}}, {\bfseries{15}} (XCode 10+)
+\item tested with {\bfseries{MSVC}}\+: {\bfseries{2015}}, {\bfseries{2017}}, {\bfseries{2019}}, {\bfseries{2022}} (also in 32 bit mode)
+\item per-\/commit tested on \href{https://github.com/doctest/doctest/actions}{\texttt{ {\bfseries{Git\+Hub Actions}}}}
+\begin{DoxyItemize}
+\item warnings as errors even on the most aggressive warning levels -\/ see \href{../../scripts/cmake/common.cmake\#L84}{\texttt{ {\bfseries{here}}}}
+\item statically analyzed on the CI -\/ \href{http://cppcheck.sourceforge.net/}{\texttt{ {\bfseries{Cppcheck}}}} / \href{https://clang.llvm.org/extra/clang-tidy/}{\texttt{ {\bfseries{Clang-\/\+Tidy}}}} / \href{https://scan.coverity.com/}{\texttt{ {\bfseries{Coverity Scan}}}} / \href{http://oclint.org/}{\texttt{ {\bfseries{OCLint}}}} / \href{https://docs.microsoft.com/en-us/visualstudio/code-quality/analyzing-c-cpp-code-quality-by-using-code-analysis}{\texttt{ {\bfseries{Visual Studio Analyzer}}}}
+\item all tests have their output compared to reference output of a previous known good run
+\item all tests built and run in {\bfseries{Debug}}/\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+Release\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} modes
+\item all tests ran through {\bfseries{valgrind}} under {\bfseries{Linux}} (sadly \href{https://github.com/doctest/doctest/issues/11}{\texttt{ not under OSX}})
+\item all tests ran through {\bfseries{address}}, {\bfseries{UB}} and {\bfseries{thread}} sanitizers under {\bfseries{Linux}}/\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+OSX\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item tests are run in more than {\bfseries{300}} different configurations on UNIX (Linux + OSX) \& Windows
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_doctest_2doc_2markdown_2features_autotoc_md144}{}\doxysection{\texorpdfstring{Other features\+:}{Other features\+:}}\label{md_doctest_2doc_2markdown_2features_autotoc_md144}
+
+\begin{DoxyItemize}
+\item really easy to get started -\/ it\textquotesingle{}s just 1 header file -\/ see the \doxysectlink{md_doctest_2doc_2markdown_2tutorial}{{\bfseries{tutorial}}}{0}
+\item {\bfseries{very}} light, unintrusive and portable -\/ see the sections above -\/ and also the \doxysectlink{md_doctest_2doc_2markdown_2benchmarks}{{\bfseries{benchmarks}}}{0}
+\item offers a way to remove {\bfseries{everything}} testing-\/related from the binary with the \href{configuration.md\#doctest_config_disable}{\texttt{ {\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+DISABLE}}}}} macro
+\item tests are registered automatically -\/ no need to add them to a collection manually
+\item \href{tutorial.md\#test-cases-and-subcases}{\texttt{ {\bfseries{Subcases}}}} -\/ an intuitive way to share common setup and teardown code for test cases (alternative to \href{testcases.md\#test-fixtures}{\texttt{ {\bfseries{test fixtures}}}} which are also supported)
+\item \href{parameterized-tests.md\#templated-test-cases---parameterized-by-type}{\texttt{ {\bfseries{templated test cases}}}} -\/ parameterized by type
+\item supports \doxysectlink{md_doctest_2doc_2markdown_2logging}{{\bfseries{logging macros}}}{0} for capturing local variables and strings -\/ as a message for when an assert fails -\/ with lazy stringification and no allocations when possible!
+\item crash handling support -\/ uses signals for UNIX and SEH for Windows
+\item \href{faq.md\#is-doctest-thread-aware}{\texttt{ {\bfseries{thread-\/safe}}}} -\/ asserts (and logging) can be used from multiple threads spawned from a single test case -\/ \href{../../examples/all_features/concurrency.cpp}{\texttt{ {\bfseries{example}}}}
+\item an extensible \doxysectlink{md_doctest_2doc_2markdown_2reporters}{{\bfseries{reporter system}}}{0} (can be also used for implementing event listeners)
+\item output from all compilers on all platforms is the same -\/ byte by byte
+\item binaries (exe/dll) can use the test runner of another binary -\/ so tests end up in a single registry -\/ \href{../../examples/executable_dll_and_plugin/}{\texttt{ {\bfseries{example}}}}
+\item supports \doxysectlink{md_doctest_2doc_2markdown_2testcases}{{\bfseries{BDD style}}}{0} tests
+\item one core \doxysectlink{md_doctest_2doc_2markdown_2assertions}{{\bfseries{assertion macro}}}{0} for comparisons -\/ standard C++ operators are used for the comparison (less than, equal, greater than...) -\/ yet the full expression is decomposed and left and right values of the expression are logged
+\item asserts can be used \href{assertions.md\#using-asserts-out-of-a-testing-context}{\texttt{ {\bfseries{outside of a testing context}}}} -\/ \href{../../examples/all_features/asserts_used_outside_of_tests.cpp}{\texttt{ {\bfseries{example}}}}
+\item assertion macros for \href{assertions.md\#exceptions}{\texttt{ {\bfseries{exceptions}}}} -\/ if something should or shouldn\textquotesingle{}t throw
+\item floating point comparison support -\/ see the \href{assertions.md\#floating-point-comparisons}{\texttt{ {\bfseries{{\ttfamily Approx()}}}}} helper
+\item powerful mechanism for \doxysectlink{md_doctest_2doc_2markdown_2stringification}{{\bfseries{stringification}}}{0} of user types -\/ including \href{stringification.md\#translating-exceptions}{\texttt{ {\bfseries{exceptions}}}}!
+\item tests can be grouped in \href{testcases.md\#test-suites}{\texttt{ {\bfseries{test suites}}}}
+\item test case \href{testcases.md\#decorators}{\texttt{ {\bfseries{decorators}}}} such as {\ttfamily description} / {\ttfamily skip} / {\ttfamily may\+\_\+fail} / {\ttfamily should\+\_\+fail} / {\ttfamily expected\+\_\+failures} / {\ttfamily timeout}
+\item can be used without exceptions and rtti -\/ checkout \href{configuration.md\#doctest_config_no_exceptions}{\texttt{ {\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+NO\+\_\+\+EXCEPTIONS}}}}}
+\item powerful \doxysectlink{md_doctest_2doc_2markdown_2commandline}{{\bfseries{command line}}}{0} with lots of options
+\item can report the duration of test cases
+\item tests can be \doxysectlink{md_doctest_2doc_2markdown_2commandline}{{\bfseries{filtered}}}{0} based on their name/file/test suite using wildcards
+\item can \doxysectlink{md_doctest_2doc_2markdown_2commandline}{{\bfseries{filter}}}{0} subcases using wildcards and by specifying the nesting levels for which those filters should work
+\item failures can (optionally) break into the debugger on Windows and Mac
+\item integration with the output window of Visual Studio for failing tests
+\item a {\ttfamily \doxylink{how__exception__translators__work_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main()}} can be provided when implementing the library with the \href{main.md\#doctest_config_implement_with_main}{\texttt{ {\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+IMPLEMENT\+\_\+\+WITH\+\_\+\+MAIN}}}}} identifier
+\item can write tests in headers -\/ they will still be registered only once in the executable/shared object
+\item \doxysectlink{md_doctest_2doc_2markdown_2commandline}{{\bfseries{range-\/based}}}{0} execution of tests within a binary -\/ see the \href{../../examples/range_based_execution.py}{\texttt{ {\bfseries{example python script}}}}
+\item \doxysectlink{md_doctest_2doc_2markdown_2extensions}{{\bfseries{extension headers}}}{0} for extra functionality which doesn\textquotesingle{}t need to go into the main {\ttfamily doctest.\+h} header
+\item colored output in the console
+\item controlling the order of test execution
+\item different {\ttfamily \doxylink{classdoctest_1_1_context}{doctest\+::\+Context}}s can be created and run many times within a single execution of the program
+\item ability to query if code is currently being run in a test -\/ {\ttfamily \doxylink{namespacedoctest_a0b03060093b3894c976b6ae84e55f3f2}{doctest\+::is\+\_\+running\+\_\+in\+\_\+test}}
+\item tests can be registered in CTest with the use of \href{../../scripts/cmake/doctest.cmake}{\texttt{ {\ttfamily doctest\+\_\+discover\+\_\+tests(\texorpdfstring{$<$}{<}target\texorpdfstring{$>$}{>})} from scripts/cmake/doctest.\+cmake}}
+\end{DoxyItemize}
+
+There is a list of planned features which are all important and big -\/ see the \href{https://github.com/doctest/doctest/issues/600}{\texttt{ {\bfseries{roadmap}}}}.
+
+\DoxyHorRuler{0}
+
+
+\href{readme.md\#reference}{\texttt{ Home}}
+

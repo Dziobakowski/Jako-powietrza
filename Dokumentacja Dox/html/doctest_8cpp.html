@@ -1,0 +1,833 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Jakość powietrza w Polsce: Dokumentacja pliku doctest/doctest/parts/doctest.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Jakość powietrza w Polsce
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('doctest_8cpp.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Komponenty</a> &#124;
+<a href="#namespaces">Przestrzenie nazw</a> &#124;
+<a href="#define-members">Definicje</a> &#124;
+<a href="#typedef-members">Definicje typów</a> &#124;
+<a href="#func-members">Funkcje</a> &#124;
+<a href="#var-members">Zmienne</a>  </div>
+  <div class="headertitle"><div class="title">Dokumentacja pliku doctest.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="doctest__fwd_8h_source.html">doctest_fwd.h</a>&quot;</code><br />
+<code>#include &lt;ctime&gt;</code><br />
+<code>#include &lt;cmath&gt;</code><br />
+<code>#include &lt;climits&gt;</code><br />
+<code>#include &lt;new&gt;</code><br />
+<code>#include &lt;cstdio&gt;</code><br />
+<code>#include &lt;cstdlib&gt;</code><br />
+<code>#include &lt;cstring&gt;</code><br />
+<code>#include &lt;limits&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;sstream&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;iomanip&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;atomic&gt;</code><br />
+<code>#include &lt;mutex&gt;</code><br />
+<code>#include &lt;set&gt;</code><br />
+<code>#include &lt;map&gt;</code><br />
+<code>#include &lt;unordered_set&gt;</code><br />
+<code>#include &lt;exception&gt;</code><br />
+<code>#include &lt;stdexcept&gt;</code><br />
+<code>#include &lt;csignal&gt;</code><br />
+<code>#include &lt;cfloat&gt;</code><br />
+<code>#include &lt;cctype&gt;</code><br />
+<code>#include &lt;cstdint&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;sys/time.h&gt;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
+</div>
+<p><a href="doctest_8cpp_source.html">Idź do kodu źródłowego tego pliku.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Komponenty</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdoctest_1_1detail_1_1_timer.html">doctest::detail::Timer</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdoctest_1_1detail_1_1_multi_lane_atomic.html">doctest::detail::MultiLaneAtomic&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdoctest_1_1detail_1_1_multi_lane_atomic_1_1_cache_line_aligned_atomic.html">doctest::detail::MultiLaneAtomic&lt; T &gt;::CacheLineAlignedAtomic</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdoctest_1_1detail_1_1_context_state.html">doctest::detail::ContextState</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdoctest_1_1detail_1_1_errno_guard.html">doctest::detail::ErrnoGuard</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><b>doctest::DiscardOStream</b></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Przestrzenie nazw</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html">doctest</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest_1_1detail.html">doctest::detail</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest_1_1detail_1_1timer__large__integer.html">doctest::detail::timer_large_integer</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest_1_1_color.html">doctest::Color</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest__detail__test__suite__ns.html">doctest_detail_test_suite_ns</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Definicje</h2></td></tr>
+<tr class="memitem:aab6dd1fdb95367987cb9be4f5d4ce2ab" id="r_aab6dd1fdb95367987cb9be4f5d4ce2ab"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab6dd1fdb95367987cb9be4f5d4ce2ab">DOCTEST_LIBRARY_IMPLEMENTATION</a></td></tr>
+<tr class="separator:aab6dd1fdb95367987cb9be4f5d4ce2ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5962860c69c4e8f270e8a4305b0b10c1" id="r_a5962860c69c4e8f270e8a4305b0b10c1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5962860c69c4e8f270e8a4305b0b10c1">DOCTEST_DECLARE_MUTEX</a>(name)</td></tr>
+<tr class="separator:a5962860c69c4e8f270e8a4305b0b10c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae423a042928382c76334d70b7f501c9f" id="r_ae423a042928382c76334d70b7f501c9f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae423a042928382c76334d70b7f501c9f">DOCTEST_DECLARE_STATIC_MUTEX</a>(name)</td></tr>
+<tr class="separator:ae423a042928382c76334d70b7f501c9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32807dcba98f24c61716160bff8025c7" id="r_a32807dcba98f24c61716160bff8025c7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32807dcba98f24c61716160bff8025c7">DOCTEST_LOCK_MUTEX</a>(name)</td></tr>
+<tr class="separator:a32807dcba98f24c61716160bff8025c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd165ee6474b5b75bf075842fff13a04" id="r_abd165ee6474b5b75bf075842fff13a04"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd165ee6474b5b75bf075842fff13a04">STDOUT_FILENO</a>&#160;&#160;&#160;fileno(stdout)</td></tr>
+<tr class="separator:abd165ee6474b5b75bf075842fff13a04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a613ab1d060fe3fb972c3b777744e7579" id="r_a613ab1d060fe3fb972c3b777744e7579"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a613ab1d060fe3fb972c3b777744e7579">DOCTEST_COUNTOF</a>(x)</td></tr>
+<tr class="separator:a613ab1d060fe3fb972c3b777744e7579"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad560d71151aef18edd4ca7a13e1c16ee" id="r_ad560d71151aef18edd4ca7a13e1c16ee"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad560d71151aef18edd4ca7a13e1c16ee">DOCTEST_BRANCH_ON_DISABLED</a>(if_disabled,  if_not_disabled)</td></tr>
+<tr class="separator:ad560d71151aef18edd4ca7a13e1c16ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a805231f664ebd4bab301e2443810f29b" id="r_a805231f664ebd4bab301e2443810f29b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a805231f664ebd4bab301e2443810f29b">DOCTEST_CONFIG_OPTIONS_PREFIX</a>&#160;&#160;&#160;&quot;dt-&quot;</td></tr>
+<tr class="separator:a805231f664ebd4bab301e2443810f29b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f3293f622cc7fbd71ddfeb73fb37340" id="r_a8f3293f622cc7fbd71ddfeb73fb37340"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8f3293f622cc7fbd71ddfeb73fb37340">DOCTEST_THREAD_LOCAL</a>&#160;&#160;&#160;thread_local</td></tr>
+<tr class="separator:a8f3293f622cc7fbd71ddfeb73fb37340"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9287b3dcfc1184fca554e6e1674fee4c" id="r_a9287b3dcfc1184fca554e6e1674fee4c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9287b3dcfc1184fca554e6e1674fee4c">DOCTEST_MULTI_LANE_ATOMICS_THREAD_LANES</a>&#160;&#160;&#160;32</td></tr>
+<tr class="separator:a9287b3dcfc1184fca554e6e1674fee4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace932f88ae6fa26ad3862e9abb187867" id="r_ace932f88ae6fa26ad3862e9abb187867"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace932f88ae6fa26ad3862e9abb187867">DOCTEST_MULTI_LANE_ATOMICS_CACHE_LINE_SIZE</a>&#160;&#160;&#160;64</td></tr>
+<tr class="separator:ace932f88ae6fa26ad3862e9abb187867"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac75ba8dd3658b27170c7f73f563422eb" id="r_ac75ba8dd3658b27170c7f73f563422eb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac75ba8dd3658b27170c7f73f563422eb">DOCTEST_OPTIONS_PREFIX_DISPLAY</a>&#160;&#160;&#160;&quot;&quot;</td></tr>
+<tr class="separator:ac75ba8dd3658b27170c7f73f563422eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f9f6fd57a2d5f380767593ae98a71e2" id="r_a6f9f6fd57a2d5f380767593ae98a71e2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f9f6fd57a2d5f380767593ae98a71e2">DOCTEST_CDECL</a>&#160;&#160;&#160;__cdecl</td></tr>
+<tr class="separator:a6f9f6fd57a2d5f380767593ae98a71e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec379da2959e1a4d6d1ca8b957f797d2" id="r_aec379da2959e1a4d6d1ca8b957f797d2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec379da2959e1a4d6d1ca8b957f797d2">DOCTEST_INTERNAL_ERROR</a>(msg)</td></tr>
+<tr class="separator:aec379da2959e1a4d6d1ca8b957f797d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba42908621508523ec252501abc0cc3d" id="r_aba42908621508523ec252501abc0cc3d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba42908621508523ec252501abc0cc3d">DOCTEST_GENERATE_ASSERT_TYPE_CASE</a>(assert_type)</td></tr>
+<tr class="separator:aba42908621508523ec252501abc0cc3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a810c50e9c5ae12c01eb1827d18c8c5d3" id="r_a810c50e9c5ae12c01eb1827d18c8c5d3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a810c50e9c5ae12c01eb1827d18c8c5d3">DOCTEST_GENERATE_ASSERT_TYPE_CASES</a>(assert_type)</td></tr>
+<tr class="separator:a810c50e9c5ae12c01eb1827d18c8c5d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2e6d774b3c2d41781192c176820bdf1" id="r_ae2e6d774b3c2d41781192c176820bdf1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae2e6d774b3c2d41781192c176820bdf1">DOCTEST_CONFIG_COLORS_ANSI</a></td></tr>
+<tr class="separator:ae2e6d774b3c2d41781192c176820bdf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a590edce32e9348c4b55365ef126426d7" id="r_a590edce32e9348c4b55365ef126426d7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a590edce32e9348c4b55365ef126426d7">DOCTEST_ITERATE_THROUGH_REPORTERS</a>(function, ...)</td></tr>
+<tr class="separator:a590edce32e9348c4b55365ef126426d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01ec2dbba7655d16a6a2b1fbf909ceb5" id="r_a01ec2dbba7655d16a6a2b1fbf909ceb5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01ec2dbba7655d16a6a2b1fbf909ceb5">DOCTEST_OUTPUT_DEBUG_STRING</a>(text)</td></tr>
+<tr class="separator:a01ec2dbba7655d16a6a2b1fbf909ceb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49a0d00014eeffb9b904cdaeaccc2870" id="r_a49a0d00014eeffb9b904cdaeaccc2870"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a49a0d00014eeffb9b904cdaeaccc2870">DOCTEST_PARSE_AS_BOOL_OR_FLAG</a>(name,  sname,  var,  default)</td></tr>
+<tr class="separator:a49a0d00014eeffb9b904cdaeaccc2870"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a608401f25679702de753228fbd05d992" id="r_a608401f25679702de753228fbd05d992"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a608401f25679702de753228fbd05d992">DOCTEST_PARSE_INT_OPTION</a>(name,  sname,  var,  default)</td></tr>
+<tr class="separator:a608401f25679702de753228fbd05d992"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad462dc1f6a4beee23671682dcf7d03dd" id="r_ad462dc1f6a4beee23671682dcf7d03dd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad462dc1f6a4beee23671682dcf7d03dd">DOCTEST_PARSE_STR_OPTION</a>(name,  sname,  var,  default)</td></tr>
+<tr class="separator:ad462dc1f6a4beee23671682dcf7d03dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Definicje typów</h2></td></tr>
+<tr class="memitem:ad79cfc81a7f0194f549614fc1b768c2f" id="r_ad79cfc81a7f0194f549614fc1b768c2f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest_1_1detail_1_1timer__large__integer.html#ad79cfc81a7f0194f549614fc1b768c2f">doctest::detail::timer_large_integer::type</a> = std::uint64_t</td></tr>
+<tr class="separator:ad79cfc81a7f0194f549614fc1b768c2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab32131886b6c220318ad34a3360d9cc0" id="r_ab32131886b6c220318ad34a3360d9cc0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest_1_1detail.html#ab32131886b6c220318ad34a3360d9cc0">doctest::detail::ticks_t</a> = <a class="el" href="namespacedoctest_1_1detail_1_1timer__large__integer.html#ad79cfc81a7f0194f549614fc1b768c2f">timer_large_integer::type</a></td></tr>
+<tr class="separator:ab32131886b6c220318ad34a3360d9cc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a45b1575e5dec18c678277153bb491c" id="r_a8a45b1575e5dec18c678277153bb491c"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a8a45b1575e5dec18c678277153bb491c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedoctest_1_1detail.html#a8a45b1575e5dec18c678277153bb491c">doctest::detail::Atomic</a> = std::atomic&lt;T&gt;</td></tr>
+<tr class="separator:a8a45b1575e5dec18c678277153bb491c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funkcje</h2></td></tr>
+<tr class="memitem:a064d4f06f82441946b5093bc4553b6aa" id="r_a064d4f06f82441946b5093bc4553b6aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> <a class="el" href="namespacestd.html#af1127a426e9584e1fc5e158ded14b7da">std::ostream</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest_1_1detail.html#a064d4f06f82441946b5093bc4553b6aa">doctest::detail::tlssPush</a> ()</td></tr>
+<tr class="separator:a064d4f06f82441946b5093bc4553b6aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8304147da6105e3359ba7ec124837669" id="r_a8304147da6105e3359ba7ec124837669"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> <a class="el" href="classdoctest_1_1_string.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest_1_1detail.html#a8304147da6105e3359ba7ec124837669">doctest::detail::tlssPop</a> ()</td></tr>
+<tr class="separator:a8304147da6105e3359ba7ec124837669"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89fa6f17e2ffaba9988d29c147aac357" id="r_a89fa6f17e2ffaba9988d29c147aac357"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacedoctest_1_1detail.html#ab32131886b6c220318ad34a3360d9cc0">ticks_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest_1_1detail.html#a89fa6f17e2ffaba9988d29c147aac357">doctest::detail::getCurrentTicks</a> ()</td></tr>
+<tr class="separator:a89fa6f17e2ffaba9988d29c147aac357"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e6e927e850a36fa569c08011fde2a49" id="r_a4e6e927e850a36fa569c08011fde2a49"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> <a class="el" href="classdoctest_1_1_string.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#a4e6e927e850a36fa569c08011fde2a49">doctest::operator+</a> (const <a class="el" href="classdoctest_1_1_string.html">String</a> &amp;lhs, const <a class="el" href="classdoctest_1_1_string.html">String</a> &amp;rhs)</td></tr>
+<tr class="separator:a4e6e927e850a36fa569c08011fde2a49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae332e5e775f83a532884303780f79f9f" id="r_ae332e5e775f83a532884303780f79f9f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#ae332e5e775f83a532884303780f79f9f">doctest::operator==</a> (const <a class="el" href="classdoctest_1_1_string.html">String</a> &amp;lhs, const <a class="el" href="classdoctest_1_1_string.html">String</a> &amp;rhs)</td></tr>
+<tr class="separator:ae332e5e775f83a532884303780f79f9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9a88e4c19857cd86a0f037d27bcad72" id="r_ab9a88e4c19857cd86a0f037d27bcad72"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#ab9a88e4c19857cd86a0f037d27bcad72">doctest::operator!=</a> (const <a class="el" href="classdoctest_1_1_string.html">String</a> &amp;lhs, const <a class="el" href="classdoctest_1_1_string.html">String</a> &amp;rhs)</td></tr>
+<tr class="separator:ab9a88e4c19857cd86a0f037d27bcad72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa15b277b9a277793b7adf129e0128d9" id="r_afa15b277b9a277793b7adf129e0128d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#afa15b277b9a277793b7adf129e0128d9">doctest::operator&lt;</a> (const <a class="el" href="classdoctest_1_1_string.html">String</a> &amp;lhs, const <a class="el" href="classdoctest_1_1_string.html">String</a> &amp;rhs)</td></tr>
+<tr class="separator:afa15b277b9a277793b7adf129e0128d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acef5990b03a973c74ff2dd6cfc112913" id="r_acef5990b03a973c74ff2dd6cfc112913"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#acef5990b03a973c74ff2dd6cfc112913">doctest::operator&gt;</a> (const <a class="el" href="classdoctest_1_1_string.html">String</a> &amp;lhs, const <a class="el" href="classdoctest_1_1_string.html">String</a> &amp;rhs)</td></tr>
+<tr class="separator:acef5990b03a973c74ff2dd6cfc112913"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27c6c308e814ad9384499bafc03f9e39" id="r_a27c6c308e814ad9384499bafc03f9e39"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#a27c6c308e814ad9384499bafc03f9e39">doctest::operator&lt;=</a> (const <a class="el" href="classdoctest_1_1_string.html">String</a> &amp;lhs, const <a class="el" href="classdoctest_1_1_string.html">String</a> &amp;rhs)</td></tr>
+<tr class="separator:a27c6c308e814ad9384499bafc03f9e39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac32accb42e937cf870de2f6865ea236a" id="r_ac32accb42e937cf870de2f6865ea236a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#ac32accb42e937cf870de2f6865ea236a">doctest::operator&gt;=</a> (const <a class="el" href="classdoctest_1_1_string.html">String</a> &amp;lhs, const <a class="el" href="classdoctest_1_1_string.html">String</a> &amp;rhs)</td></tr>
+<tr class="separator:ac32accb42e937cf870de2f6865ea236a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac8b26bbe53d30a9d81964b8be96d21c" id="r_aac8b26bbe53d30a9d81964b8be96d21c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacestd.html#af1127a426e9584e1fc5e158ded14b7da">std::ostream</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#aac8b26bbe53d30a9d81964b8be96d21c">doctest::operator&lt;&lt;</a> (<a class="el" href="namespacestd.html#af1127a426e9584e1fc5e158ded14b7da">std::ostream</a> &amp;s, const <a class="el" href="classdoctest_1_1_string.html">String</a> &amp;in)</td></tr>
+<tr class="separator:aac8b26bbe53d30a9d81964b8be96d21c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8d23a352e257456ffed49cb3ac11b4e" id="r_af8d23a352e257456ffed49cb3ac11b4e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> <a class="el" href="classdoctest_1_1_string.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#af8d23a352e257456ffed49cb3ac11b4e">doctest::toString</a> (const <a class="el" href="classdoctest_1_1_contains.html">Contains</a> &amp;in)</td></tr>
+<tr class="separator:af8d23a352e257456ffed49cb3ac11b4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab014e201f8c86823a763beaf8da5dbf1" id="r_ab014e201f8c86823a763beaf8da5dbf1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#ab014e201f8c86823a763beaf8da5dbf1">doctest::operator==</a> (const <a class="el" href="classdoctest_1_1_string.html">String</a> &amp;lhs, const <a class="el" href="classdoctest_1_1_contains.html">Contains</a> &amp;rhs)</td></tr>
+<tr class="separator:ab014e201f8c86823a763beaf8da5dbf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0607d91cd645129372a57329cdd0e4a8" id="r_a0607d91cd645129372a57329cdd0e4a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#a0607d91cd645129372a57329cdd0e4a8">doctest::operator==</a> (const <a class="el" href="classdoctest_1_1_contains.html">Contains</a> &amp;lhs, const <a class="el" href="classdoctest_1_1_string.html">String</a> &amp;rhs)</td></tr>
+<tr class="separator:a0607d91cd645129372a57329cdd0e4a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd38f81ff821b9296e768e834af13ae0" id="r_abd38f81ff821b9296e768e834af13ae0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#abd38f81ff821b9296e768e834af13ae0">doctest::operator!=</a> (const <a class="el" href="classdoctest_1_1_string.html">String</a> &amp;lhs, const <a class="el" href="classdoctest_1_1_contains.html">Contains</a> &amp;rhs)</td></tr>
+<tr class="separator:abd38f81ff821b9296e768e834af13ae0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a820c5e748e427ef3f5ccf48da73abf5c" id="r_a820c5e748e427ef3f5ccf48da73abf5c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#a820c5e748e427ef3f5ccf48da73abf5c">doctest::operator!=</a> (const <a class="el" href="classdoctest_1_1_contains.html">Contains</a> &amp;lhs, const <a class="el" href="classdoctest_1_1_string.html">String</a> &amp;rhs)</td></tr>
+<tr class="separator:a820c5e748e427ef3f5ccf48da73abf5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cc3f4bdda7bfd2e0e3faf7e678d3b98" id="r_a2cc3f4bdda7bfd2e0e3faf7e678d3b98"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> <a class="el" href="namespacestd.html#af1127a426e9584e1fc5e158ded14b7da">std::ostream</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest_1_1_color.html#a2cc3f4bdda7bfd2e0e3faf7e678d3b98">doctest::Color::operator&lt;&lt;</a> (<a class="el" href="namespacestd.html#af1127a426e9584e1fc5e158ded14b7da">std::ostream</a> &amp;s, <a class="el" href="namespacedoctest_1_1_color.html#a32e9eaf6013139846e848af6e6cf2b92">Color::Enum</a> code)</td></tr>
+<tr class="separator:a2cc3f4bdda7bfd2e0e3faf7e678d3b98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44bf1260a82383247d446170810493cf" id="r_a44bf1260a82383247d446170810493cf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#a44bf1260a82383247d446170810493cf">doctest::assertString</a> (<a class="el" href="namespacedoctest_1_1assert_type.html#ae1bb5bed722f34f1c38b83cb19d326d3">assertType::Enum</a> at)</td></tr>
+<tr class="separator:a44bf1260a82383247d446170810493cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fcfa9f7f479ad1b46d142e210c8ca75" id="r_a3fcfa9f7f479ad1b46d142e210c8ca75"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#a3fcfa9f7f479ad1b46d142e210c8ca75">doctest::failureString</a> (<a class="el" href="namespacedoctest_1_1assert_type.html#ae1bb5bed722f34f1c38b83cb19d326d3">assertType::Enum</a> at)</td></tr>
+<tr class="separator:a3fcfa9f7f479ad1b46d142e210c8ca75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31b19b71f2b30f77f84b6a8bb4943925" id="r_a31b19b71f2b30f77f84b6a8bb4943925"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#a31b19b71f2b30f77f84b6a8bb4943925">doctest::skipPathFromFilename</a> (const char *file)</td></tr>
+<tr class="separator:a31b19b71f2b30f77f84b6a8bb4943925"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e2bb743231d879f786400dee3351ad7" id="r_a5e2bb743231d879f786400dee3351ad7"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a5e2bb743231d879f786400dee3351ad7"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classdoctest_1_1_string.html">String</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedoctest_1_1detail.html#a5e2bb743231d879f786400dee3351ad7">doctest::detail::toStreamLit</a> (T t)</td></tr>
+<tr class="separator:a5e2bb743231d879f786400dee3351ad7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab501200c3c97a66dd592acafcc6f1a95" id="r_ab501200c3c97a66dd592acafcc6f1a95"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> <a class="el" href="classdoctest_1_1_string.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#ab501200c3c97a66dd592acafcc6f1a95">doctest::toString</a> (<a class="el" href="classdoctest_1_1_string.html">String</a> in)</td></tr>
+<tr class="separator:ab501200c3c97a66dd592acafcc6f1a95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70fd23e88074d38b9d61476005305df5" id="r_a70fd23e88074d38b9d61476005305df5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> <a class="el" href="classdoctest_1_1_string.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#a70fd23e88074d38b9d61476005305df5">doctest::toString</a> (bool in)</td></tr>
+<tr class="separator:a70fd23e88074d38b9d61476005305df5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68660ce630bd88a551ab3108709e6592" id="r_a68660ce630bd88a551ab3108709e6592"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> <a class="el" href="classdoctest_1_1_string.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#a68660ce630bd88a551ab3108709e6592">doctest::toString</a> (float in)</td></tr>
+<tr class="separator:a68660ce630bd88a551ab3108709e6592"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43b51978c9505f682cbff9462a02f8af" id="r_a43b51978c9505f682cbff9462a02f8af"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> <a class="el" href="classdoctest_1_1_string.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#a43b51978c9505f682cbff9462a02f8af">doctest::toString</a> (double in)</td></tr>
+<tr class="separator:a43b51978c9505f682cbff9462a02f8af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4e12dd9865bb31f417f9df0c41813cf" id="r_ae4e12dd9865bb31f417f9df0c41813cf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> <a class="el" href="classdoctest_1_1_string.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#ae4e12dd9865bb31f417f9df0c41813cf">doctest::toString</a> (double long in)</td></tr>
+<tr class="separator:ae4e12dd9865bb31f417f9df0c41813cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af106dff2a0c068d301349b754c466378" id="r_af106dff2a0c068d301349b754c466378"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> <a class="el" href="classdoctest_1_1_string.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#af106dff2a0c068d301349b754c466378">doctest::toString</a> (char in)</td></tr>
+<tr class="separator:af106dff2a0c068d301349b754c466378"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f910fdc13d84a538090b959a97a6fa5" id="r_a1f910fdc13d84a538090b959a97a6fa5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> <a class="el" href="classdoctest_1_1_string.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#a1f910fdc13d84a538090b959a97a6fa5">doctest::toString</a> (char signed in)</td></tr>
+<tr class="separator:a1f910fdc13d84a538090b959a97a6fa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2c3e60e3ee32da5d8fc4f778b7a225a" id="r_ae2c3e60e3ee32da5d8fc4f778b7a225a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> <a class="el" href="classdoctest_1_1_string.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#ae2c3e60e3ee32da5d8fc4f778b7a225a">doctest::toString</a> (char unsigned in)</td></tr>
+<tr class="separator:ae2c3e60e3ee32da5d8fc4f778b7a225a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03688f50a1c6c85c68d24d1280f66626" id="r_a03688f50a1c6c85c68d24d1280f66626"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> <a class="el" href="classdoctest_1_1_string.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#a03688f50a1c6c85c68d24d1280f66626">doctest::toString</a> (short in)</td></tr>
+<tr class="separator:a03688f50a1c6c85c68d24d1280f66626"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a952f661f63e4c76d8025da928632e98c" id="r_a952f661f63e4c76d8025da928632e98c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> <a class="el" href="classdoctest_1_1_string.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#a952f661f63e4c76d8025da928632e98c">doctest::toString</a> (short unsigned in)</td></tr>
+<tr class="separator:a952f661f63e4c76d8025da928632e98c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd1337b597e5968eb9be5b585a16ea8f" id="r_abd1337b597e5968eb9be5b585a16ea8f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> <a class="el" href="classdoctest_1_1_string.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#abd1337b597e5968eb9be5b585a16ea8f">doctest::toString</a> (signed in)</td></tr>
+<tr class="separator:abd1337b597e5968eb9be5b585a16ea8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2e7368b576fc0ca420b92c0042498e8" id="r_ad2e7368b576fc0ca420b92c0042498e8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> <a class="el" href="classdoctest_1_1_string.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#ad2e7368b576fc0ca420b92c0042498e8">doctest::toString</a> (unsigned in)</td></tr>
+<tr class="separator:ad2e7368b576fc0ca420b92c0042498e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a042e53409374cba1ba423c57d3a58a6f" id="r_a042e53409374cba1ba423c57d3a58a6f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> <a class="el" href="classdoctest_1_1_string.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#a042e53409374cba1ba423c57d3a58a6f">doctest::toString</a> (long in)</td></tr>
+<tr class="separator:a042e53409374cba1ba423c57d3a58a6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ebcd3a7a6807c5bd2b960736851225c" id="r_a6ebcd3a7a6807c5bd2b960736851225c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> <a class="el" href="classdoctest_1_1_string.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#a6ebcd3a7a6807c5bd2b960736851225c">doctest::toString</a> (long unsigned in)</td></tr>
+<tr class="separator:a6ebcd3a7a6807c5bd2b960736851225c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a5486a03f9ff2a7c311df0dc6c1b149" id="r_a0a5486a03f9ff2a7c311df0dc6c1b149"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> <a class="el" href="classdoctest_1_1_string.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#a0a5486a03f9ff2a7c311df0dc6c1b149">doctest::toString</a> (long long in)</td></tr>
+<tr class="separator:a0a5486a03f9ff2a7c311df0dc6c1b149"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13e028fb8470e4f87fe8e41f5300364e" id="r_a13e028fb8470e4f87fe8e41f5300364e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> <a class="el" href="classdoctest_1_1_string.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#a13e028fb8470e4f87fe8e41f5300364e">doctest::toString</a> (long long unsigned in)</td></tr>
+<tr class="separator:a13e028fb8470e4f87fe8e41f5300364e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcc8404d271fb0e62f2674af78cba48f" id="r_abcc8404d271fb0e62f2674af78cba48f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#abcc8404d271fb0e62f2674af78cba48f">doctest::operator==</a> (double lhs, const <a class="el" href="structdoctest_1_1_approx.html">Approx</a> &amp;rhs)</td></tr>
+<tr class="separator:abcc8404d271fb0e62f2674af78cba48f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a568652825c10ad8d4d5a0b71d72ba521" id="r_a568652825c10ad8d4d5a0b71d72ba521"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#a568652825c10ad8d4d5a0b71d72ba521">doctest::operator==</a> (const <a class="el" href="structdoctest_1_1_approx.html">Approx</a> &amp;lhs, double rhs)</td></tr>
+<tr class="separator:a568652825c10ad8d4d5a0b71d72ba521"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d2ed8b1f468985cfa20676bd66521dd" id="r_a1d2ed8b1f468985cfa20676bd66521dd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#a1d2ed8b1f468985cfa20676bd66521dd">doctest::operator!=</a> (double lhs, const <a class="el" href="structdoctest_1_1_approx.html">Approx</a> &amp;rhs)</td></tr>
+<tr class="separator:a1d2ed8b1f468985cfa20676bd66521dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a731ad48891cf96430c0f9d791104c3e8" id="r_a731ad48891cf96430c0f9d791104c3e8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#a731ad48891cf96430c0f9d791104c3e8">doctest::operator!=</a> (const <a class="el" href="structdoctest_1_1_approx.html">Approx</a> &amp;lhs, double rhs)</td></tr>
+<tr class="separator:a731ad48891cf96430c0f9d791104c3e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e53c2522d57aec3f3045bd0eb9d9cc1" id="r_a3e53c2522d57aec3f3045bd0eb9d9cc1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#a3e53c2522d57aec3f3045bd0eb9d9cc1">doctest::operator&lt;=</a> (double lhs, const <a class="el" href="structdoctest_1_1_approx.html">Approx</a> &amp;rhs)</td></tr>
+<tr class="separator:a3e53c2522d57aec3f3045bd0eb9d9cc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6bacadc66d94d8a6583ca637d052c47" id="r_ad6bacadc66d94d8a6583ca637d052c47"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#ad6bacadc66d94d8a6583ca637d052c47">doctest::operator&lt;=</a> (const <a class="el" href="structdoctest_1_1_approx.html">Approx</a> &amp;lhs, double rhs)</td></tr>
+<tr class="separator:ad6bacadc66d94d8a6583ca637d052c47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1a5cb758d77cd3f3c429e3c9b39edd8" id="r_aa1a5cb758d77cd3f3c429e3c9b39edd8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#aa1a5cb758d77cd3f3c429e3c9b39edd8">doctest::operator&gt;=</a> (double lhs, const <a class="el" href="structdoctest_1_1_approx.html">Approx</a> &amp;rhs)</td></tr>
+<tr class="separator:aa1a5cb758d77cd3f3c429e3c9b39edd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a523b003a31e9b1251db6b7e3af80db0c" id="r_a523b003a31e9b1251db6b7e3af80db0c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#a523b003a31e9b1251db6b7e3af80db0c">doctest::operator&gt;=</a> (const <a class="el" href="structdoctest_1_1_approx.html">Approx</a> &amp;lhs, double rhs)</td></tr>
+<tr class="separator:a523b003a31e9b1251db6b7e3af80db0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98238d5f70e848aa1ad2cacbc581764a" id="r_a98238d5f70e848aa1ad2cacbc581764a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#a98238d5f70e848aa1ad2cacbc581764a">doctest::operator&lt;</a> (double lhs, const <a class="el" href="structdoctest_1_1_approx.html">Approx</a> &amp;rhs)</td></tr>
+<tr class="separator:a98238d5f70e848aa1ad2cacbc581764a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4740a43b44c7b981b97182457e0f273" id="r_ab4740a43b44c7b981b97182457e0f273"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#ab4740a43b44c7b981b97182457e0f273">doctest::operator&lt;</a> (const <a class="el" href="structdoctest_1_1_approx.html">Approx</a> &amp;lhs, double rhs)</td></tr>
+<tr class="separator:ab4740a43b44c7b981b97182457e0f273"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac0aadc91f0456a1d995a67373abb5f4" id="r_aac0aadc91f0456a1d995a67373abb5f4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#aac0aadc91f0456a1d995a67373abb5f4">doctest::operator&gt;</a> (double lhs, const <a class="el" href="structdoctest_1_1_approx.html">Approx</a> &amp;rhs)</td></tr>
+<tr class="separator:aac0aadc91f0456a1d995a67373abb5f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3158aec7ec120b42312c60f69126ddce" id="r_a3158aec7ec120b42312c60f69126ddce"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#a3158aec7ec120b42312c60f69126ddce">doctest::operator&gt;</a> (const <a class="el" href="structdoctest_1_1_approx.html">Approx</a> &amp;lhs, double rhs)</td></tr>
+<tr class="separator:a3158aec7ec120b42312c60f69126ddce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63aa06a8555c5aa34a7a6e76e87a3bca" id="r_a63aa06a8555c5aa34a7a6e76e87a3bca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> <a class="el" href="classdoctest_1_1_string.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#a63aa06a8555c5aa34a7a6e76e87a3bca">doctest::toString</a> (const <a class="el" href="structdoctest_1_1_approx.html">Approx</a> &amp;in)</td></tr>
+<tr class="separator:a63aa06a8555c5aa34a7a6e76e87a3bca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13c02a469cfc2264d547fc0fc3a55569" id="r_a13c02a469cfc2264d547fc0fc3a55569"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> const <a class="el" href="structdoctest_1_1_context_options.html">ContextOptions</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#a13c02a469cfc2264d547fc0fc3a55569">doctest::getContextOptions</a> ()</td></tr>
+<tr class="separator:a13c02a469cfc2264d547fc0fc3a55569"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e48c97acbb0ffa163668aad7c7f841e" id="r_a1e48c97acbb0ffa163668aad7c7f841e"><td class="memTemplParams" colspan="2">template&lt;typename F&gt; </td></tr>
+<tr class="memitem:a1e48c97acbb0ffa163668aad7c7f841e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classdoctest_1_1_string.html">String</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#a1e48c97acbb0ffa163668aad7c7f841e">doctest::toString</a> (<a class="el" href="structdoctest_1_1_is_na_n.html">IsNaN</a>&lt; F &gt; in)</td></tr>
+<tr class="separator:a1e48c97acbb0ffa163668aad7c7f841e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a542bab2e5cb29a07cf5939362d2e6bdc" id="r_a542bab2e5cb29a07cf5939362d2e6bdc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> <a class="el" href="classdoctest_1_1_string.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#a542bab2e5cb29a07cf5939362d2e6bdc">doctest::toString</a> (<a class="el" href="structdoctest_1_1_is_na_n.html">IsNaN</a>&lt; float &gt; in)</td></tr>
+<tr class="separator:a542bab2e5cb29a07cf5939362d2e6bdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e0bd449e6b10c53aab4af2957a1f45f" id="r_a5e0bd449e6b10c53aab4af2957a1f45f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> <a class="el" href="classdoctest_1_1_string.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#a5e0bd449e6b10c53aab4af2957a1f45f">doctest::toString</a> (<a class="el" href="structdoctest_1_1_is_na_n.html">IsNaN</a>&lt; double &gt; in)</td></tr>
+<tr class="separator:a5e0bd449e6b10c53aab4af2957a1f45f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa7161751ef3e45340183ada2b8b11bc" id="r_afa7161751ef3e45340183ada2b8b11bc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> <a class="el" href="classdoctest_1_1_string.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#afa7161751ef3e45340183ada2b8b11bc">doctest::toString</a> (<a class="el" href="structdoctest_1_1_is_na_n.html">IsNaN</a>&lt; double long &gt; in)</td></tr>
+<tr class="separator:afa7161751ef3e45340183ada2b8b11bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63d04c2e0ba35dff1e33cf0a24ec66c8" id="r_a63d04c2e0ba35dff1e33cf0a24ec66c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> <a class="el" href="structdoctest_1_1detail_1_1_test_suite.html">doctest::detail::TestSuite</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest__detail__test__suite__ns.html#a63d04c2e0ba35dff1e33cf0a24ec66c8">doctest_detail_test_suite_ns::getCurrentTestSuite</a> ()</td></tr>
+<tr class="separator:a63d04c2e0ba35dff1e33cf0a24ec66c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acec9ff072dd86af95225a8beb9c57298" id="r_acec9ff072dd86af95225a8beb9c57298"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest_1_1detail.html#acec9ff072dd86af95225a8beb9c57298">doctest::detail::checkIfShouldThrow</a> (<a class="el" href="namespacedoctest_1_1assert_type.html#ae1bb5bed722f34f1c38b83cb19d326d3">assertType::Enum</a> at)</td></tr>
+<tr class="separator:acec9ff072dd86af95225a8beb9c57298"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60ffd50b9ee7adfcafc078f333aac8b6" id="r_a60ffd50b9ee7adfcafc078f333aac8b6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest_1_1detail.html#a60ffd50b9ee7adfcafc078f333aac8b6">doctest::detail::throwException</a> ()</td></tr>
+<tr class="separator:a60ffd50b9ee7adfcafc078f333aac8b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70345149a5c385f3c82d26264319b526" id="r_a70345149a5c385f3c82d26264319b526"><td class="memItemLeft" align="right" valign="top">std::set&lt; <a class="el" href="structdoctest_1_1detail_1_1_test_case.html">TestCase</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest_1_1detail.html#a70345149a5c385f3c82d26264319b526">doctest::detail::getRegisteredTests</a> ()</td></tr>
+<tr class="separator:a70345149a5c385f3c82d26264319b526"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00f99edefb8490a8e2602d58c96431f4" id="r_a00f99edefb8490a8e2602d58c96431f4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest_1_1detail.html#a00f99edefb8490a8e2602d58c96431f4">doctest::detail::regTest</a> (const <a class="el" href="structdoctest_1_1detail_1_1_test_case.html">TestCase</a> &amp;tc)</td></tr>
+<tr class="separator:a00f99edefb8490a8e2602d58c96431f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae79cb8df06d35468dd0ba9f04c85802c" id="r_ae79cb8df06d35468dd0ba9f04c85802c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest_1_1detail.html#ae79cb8df06d35468dd0ba9f04c85802c">doctest::detail::setTestSuite</a> (const <a class="el" href="structdoctest_1_1detail_1_1_test_suite.html">TestSuite</a> &amp;ts)</td></tr>
+<tr class="separator:ae79cb8df06d35468dd0ba9f04c85802c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a013828c4e677241cc26aeea33f762710" id="r_a013828c4e677241cc26aeea33f762710"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest_1_1detail.html#a013828c4e677241cc26aeea33f762710">doctest::detail::isDebuggerActive</a> ()</td></tr>
+<tr class="separator:a013828c4e677241cc26aeea33f762710"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3887426da16e0d12e6f0e270a767a6a5" id="r_a3887426da16e0d12e6f0e270a767a6a5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest_1_1detail.html#a3887426da16e0d12e6f0e270a767a6a5">doctest::detail::registerExceptionTranslatorImpl</a> (const <a class="el" href="structdoctest_1_1detail_1_1_i_exception_translator.html">IExceptionTranslator</a> *et)</td></tr>
+<tr class="separator:a3887426da16e0d12e6f0e270a767a6a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ff832be68bf666d856aefd539e1ce81" id="r_a0ff832be68bf666d856aefd539e1ce81"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest_1_1detail.html#a0ff832be68bf666d856aefd539e1ce81">doctest::detail::failed_out_of_a_testing_context</a> (const <a class="el" href="structdoctest_1_1_assert_data.html">AssertData</a> &amp;ad)</td></tr>
+<tr class="separator:a0ff832be68bf666d856aefd539e1ce81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a562fae1586f144b6aa1506bb6f07bd" id="r_a2a562fae1586f144b6aa1506bb6f07bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest_1_1detail.html#a2a562fae1586f144b6aa1506bb6f07bd">doctest::detail::decomp_assert</a> (<a class="el" href="namespacedoctest_1_1assert_type.html#ae1bb5bed722f34f1c38b83cb19d326d3">assertType::Enum</a> at, const char *file, int line, const char *expr, const <a class="el" href="structdoctest_1_1detail_1_1_result.html">Result</a> &amp;result)</td></tr>
+<tr class="separator:a2a562fae1586f144b6aa1506bb6f07bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a828e011bb6028ab94eb14a3c7d8bd2c4" id="r_a828e011bb6028ab94eb14a3c7d8bd2c4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a9c16ffc635ec47f07797d21ede26b1a5">DOCTEST_INTERFACE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest_1_1detail.html#a828e011bb6028ab94eb14a3c7d8bd2c4">doctest::detail::registerReporterImpl</a> (const char *name, int prio, <a class="el" href="namespacedoctest_1_1detail.html#a416cf0c4eeb067baa5532b170c0de8db">reporterCreatorFunc</a> c, bool isReporter)</td></tr>
+<tr class="separator:a828e011bb6028ab94eb14a3c7d8bd2c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Zmienne</h2></td></tr>
+<tr class="memitem:af2cc4009c8af3cad6eabfe9531dceede" id="r_af2cc4009c8af3cad6eabfe9531dceede"><td class="memItemLeft" >class {&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec6c3bfa551b4329181634cafbc3c9f3" id="r_aec6c3bfa551b4329181634cafbc3c9f3"><td class="memItemLeft" >&#160;&#160;&#160;std::vector&lt; std::streampos &gt;&#160;&#160;&#160;<a class="el" href="namespacedoctest_1_1detail.html#a87ae6b8b053a4b7b03f170c63dc40808">doctest::detail::stack</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:aec6c3bfa551b4329181634cafbc3c9f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27cc8ca8a14bbc7c9677b09d101a5bf9" id="r_a27cc8ca8a14bbc7c9677b09d101a5bf9"><td class="memItemLeft" >&#160;&#160;&#160;std::stringstream&#160;&#160;&#160;<a class="el" href="namespacedoctest_1_1detail.html#a561e1fc2781624ea45d3cbbb8ec37a69">doctest::detail::ss</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:a27cc8ca8a14bbc7c9677b09d101a5bf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2cc4009c8af3cad6eabfe9531dceede" id="r_af2cc4009c8af3cad6eabfe9531dceede"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest_1_1detail.html#af2cc4009c8af3cad6eabfe9531dceede">doctest::detail::g_oss</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:af2cc4009c8af3cad6eabfe9531dceede"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fe5845e5b6c9b8201fd49439cf73f58" id="r_a4fe5845e5b6c9b8201fd49439cf73f58"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdoctest_1_1detail_1_1_context_state.html">ContextState</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest_1_1detail.html#a4fe5845e5b6c9b8201fd49439cf73f58">doctest::detail::g_cs</a> = nullptr</td></tr>
+<tr class="separator:a4fe5845e5b6c9b8201fd49439cf73f58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d28cf20f178d3832dc65b356d6ea366" id="r_a0d28cf20f178d3832dc65b356d6ea366"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a8f3293f622cc7fbd71ddfeb73fb37340">DOCTEST_THREAD_LOCAL</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest_1_1detail.html#a0d28cf20f178d3832dc65b356d6ea366">doctest::detail::g_no_colors</a></td></tr>
+<tr class="separator:a0d28cf20f178d3832dc65b356d6ea366"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bb27d33f7b25b3ff5fc6872f47f329b" id="r_a6bb27d33f7b25b3ff5fc6872f47f329b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdoctest_1_1_string.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html#a6bb27d33f7b25b3ff5fc6872f47f329b">doctest::toString</a> (<a class="el" href="namespacestd.html#a147badd87f1e15108e8dbee257b60b84">std::nullptr_t</a>)</td></tr>
+<tr class="separator:a6bb27d33f7b25b3ff5fc6872f47f329b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7ef137800726c15086b16199621401b" id="r_af7ef137800726c15086b16199621401b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a8f3293f622cc7fbd71ddfeb73fb37340">DOCTEST_THREAD_LOCAL</a> std::vector&lt; <a class="el" href="structdoctest_1_1_i_context_scope.html">IContextScope</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest_1_1detail.html#af7ef137800726c15086b16199621401b">doctest::detail::g_infoContexts</a></td></tr>
+<tr class="separator:af7ef137800726c15086b16199621401b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Dokumentacja definicji</h2>
+<a id="ad560d71151aef18edd4ca7a13e1c16ee" name="ad560d71151aef18edd4ca7a13e1c16ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad560d71151aef18edd4ca7a13e1c16ee">&#9670;&#160;</a></span>DOCTEST_BRANCH_ON_DISABLED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DOCTEST_BRANCH_ON_DISABLED</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>if_disabled</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>if_not_disabled</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Wartość:</b><div class="fragment"><div class="line">if_not_disabled</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a6f9f6fd57a2d5f380767593ae98a71e2" name="a6f9f6fd57a2d5f380767593ae98a71e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f9f6fd57a2d5f380767593ae98a71e2">&#9670;&#160;</a></span>DOCTEST_CDECL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DOCTEST_CDECL&#160;&#160;&#160;__cdecl</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae2e6d774b3c2d41781192c176820bdf1" name="ae2e6d774b3c2d41781192c176820bdf1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2e6d774b3c2d41781192c176820bdf1">&#9670;&#160;</a></span>DOCTEST_CONFIG_COLORS_ANSI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DOCTEST_CONFIG_COLORS_ANSI</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a805231f664ebd4bab301e2443810f29b" name="a805231f664ebd4bab301e2443810f29b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a805231f664ebd4bab301e2443810f29b">&#9670;&#160;</a></span>DOCTEST_CONFIG_OPTIONS_PREFIX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DOCTEST_CONFIG_OPTIONS_PREFIX&#160;&#160;&#160;&quot;dt-&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a613ab1d060fe3fb972c3b777744e7579" name="a613ab1d060fe3fb972c3b777744e7579"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a613ab1d060fe3fb972c3b777744e7579">&#9670;&#160;</a></span>DOCTEST_COUNTOF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DOCTEST_COUNTOF</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Wartość:</b><div class="fragment"><div class="line">(<span class="keyword">sizeof</span>(x) / <span class="keyword">sizeof</span>(x[0]))</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a5962860c69c4e8f270e8a4305b0b10c1" name="a5962860c69c4e8f270e8a4305b0b10c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5962860c69c4e8f270e8a4305b0b10c1">&#9670;&#160;</a></span>DOCTEST_DECLARE_MUTEX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DOCTEST_DECLARE_MUTEX</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Wartość:</b><div class="fragment"><div class="line">std::mutex name;</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae423a042928382c76334d70b7f501c9f" name="ae423a042928382c76334d70b7f501c9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae423a042928382c76334d70b7f501c9f">&#9670;&#160;</a></span>DOCTEST_DECLARE_STATIC_MUTEX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DOCTEST_DECLARE_STATIC_MUTEX</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Wartość:</b><div class="fragment"><div class="line"><span class="keyword">static</span> <a class="code hl_define" href="#a5962860c69c4e8f270e8a4305b0b10c1">DOCTEST_DECLARE_MUTEX</a>(name)</div>
+<div class="ttc" id="adoctest_8cpp_html_a5962860c69c4e8f270e8a4305b0b10c1"><div class="ttname"><a href="#a5962860c69c4e8f270e8a4305b0b10c1">DOCTEST_DECLARE_MUTEX</a></div><div class="ttdeci">#define DOCTEST_DECLARE_MUTEX(name)</div><div class="ttdef"><b>Definicja</b> doctest.cpp:83</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aba42908621508523ec252501abc0cc3d" name="aba42908621508523ec252501abc0cc3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba42908621508523ec252501abc0cc3d">&#9670;&#160;</a></span>DOCTEST_GENERATE_ASSERT_TYPE_CASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DOCTEST_GENERATE_ASSERT_TYPE_CASE</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>assert_type</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Wartość:</b><div class="fragment"><div class="line"><span class="keywordflow">case</span> assertType::DT_ ## assert_type: <span class="keywordflow">return</span> #assert_type</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a810c50e9c5ae12c01eb1827d18c8c5d3" name="a810c50e9c5ae12c01eb1827d18c8c5d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a810c50e9c5ae12c01eb1827d18c8c5d3">&#9670;&#160;</a></span>DOCTEST_GENERATE_ASSERT_TYPE_CASES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DOCTEST_GENERATE_ASSERT_TYPE_CASES</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>assert_type</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Wartość:</b><div class="fragment"><div class="line">        <a class="code hl_define" href="#aba42908621508523ec252501abc0cc3d">DOCTEST_GENERATE_ASSERT_TYPE_CASE</a>(WARN_ ## assert_type); \</div>
+<div class="line">        DOCTEST_GENERATE_ASSERT_TYPE_CASE(CHECK_ ## assert_type); \</div>
+<div class="line">        DOCTEST_GENERATE_ASSERT_TYPE_CASE(REQUIRE_ ## assert_type)</div>
+<div class="ttc" id="adoctest_8cpp_html_aba42908621508523ec252501abc0cc3d"><div class="ttname"><a href="#aba42908621508523ec252501abc0cc3d">DOCTEST_GENERATE_ASSERT_TYPE_CASE</a></div><div class="ttdeci">#define DOCTEST_GENERATE_ASSERT_TYPE_CASE(assert_type)</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aec379da2959e1a4d6d1ca8b957f797d2" name="aec379da2959e1a4d6d1ca8b957f797d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec379da2959e1a4d6d1ca8b957f797d2">&#9670;&#160;</a></span>DOCTEST_INTERNAL_ERROR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DOCTEST_INTERNAL_ERROR</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>msg</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Wartość:</b><div class="fragment"><div class="line">    throw_exception(std::logic_error(                                                              \</div>
+<div class="line">            __FILE__ <span class="stringliteral">&quot;:&quot;</span> <a class="code hl_define" href="doctest_2doctest_8h.html#aa928e63972e4bc49fcf27641202f2f38">DOCTEST_TOSTR</a>(__LINE__) <span class="stringliteral">&quot;: Internal doctest error: &quot;</span> msg))</div>
+<div class="ttc" id="adoctest_2doctest_8h_html_aa928e63972e4bc49fcf27641202f2f38"><div class="ttname"><a href="doctest_2doctest_8h.html#aa928e63972e4bc49fcf27641202f2f38">DOCTEST_TOSTR</a></div><div class="ttdeci">#define DOCTEST_TOSTR(x)</div><div class="ttdef"><b>Definicja</b> doctest.h:55</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a590edce32e9348c4b55365ef126426d7" name="a590edce32e9348c4b55365ef126426d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a590edce32e9348c4b55365ef126426d7">&#9670;&#160;</a></span>DOCTEST_ITERATE_THROUGH_REPORTERS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DOCTEST_ITERATE_THROUGH_REPORTERS</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>function</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Wartość:</b><div class="fragment"><div class="line">    <span class="keywordflow">for</span>(<span class="keyword">auto</span>&amp; curr_rep : g_cs-&gt;<a class="code hl_variable" href="structdoctest_1_1detail_1_1_context_state.html#aab775050ecad09436b1d9d99820b75a4">reporters_currently_used</a>)                                           \</div>
+<div class="line">    curr_rep-&gt;function(__VA_ARGS__)</div>
+<div class="ttc" id="astructdoctest_1_1detail_1_1_context_state_html_aab775050ecad09436b1d9d99820b75a4"><div class="ttname"><a href="structdoctest_1_1detail_1_1_context_state.html#aab775050ecad09436b1d9d99820b75a4">doctest::detail::ContextState::reporters_currently_used</a></div><div class="ttdeci">std::vector&lt; IReporter * &gt; reporters_currently_used</div><div class="ttdef"><b>Definicja</b> doctest.cpp:428</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aab6dd1fdb95367987cb9be4f5d4ce2ab" name="aab6dd1fdb95367987cb9be4f5d4ce2ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab6dd1fdb95367987cb9be4f5d4ce2ab">&#9670;&#160;</a></span>DOCTEST_LIBRARY_IMPLEMENTATION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DOCTEST_LIBRARY_IMPLEMENTATION</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a32807dcba98f24c61716160bff8025c7" name="a32807dcba98f24c61716160bff8025c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32807dcba98f24c61716160bff8025c7">&#9670;&#160;</a></span>DOCTEST_LOCK_MUTEX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DOCTEST_LOCK_MUTEX</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Wartość:</b><div class="fragment"><div class="line">std::lock_guard&lt;std::mutex&gt; <a class="code hl_define" href="doctest_2doctest_8h.html#ac2799231daab4b10ca221f997ef94981">DOCTEST_ANONYMOUS</a>(DOCTEST_ANON_LOCK_)(name);</div>
+<div class="ttc" id="adoctest_2doctest_8h_html_ac2799231daab4b10ca221f997ef94981"><div class="ttname"><a href="doctest_2doctest_8h.html#ac2799231daab4b10ca221f997ef94981">DOCTEST_ANONYMOUS</a></div><div class="ttdeci">#define DOCTEST_ANONYMOUS(x)</div><div class="ttdef"><b>Definicja</b> doctest.h:424</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ace932f88ae6fa26ad3862e9abb187867" name="ace932f88ae6fa26ad3862e9abb187867"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace932f88ae6fa26ad3862e9abb187867">&#9670;&#160;</a></span>DOCTEST_MULTI_LANE_ATOMICS_CACHE_LINE_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DOCTEST_MULTI_LANE_ATOMICS_CACHE_LINE_SIZE&#160;&#160;&#160;64</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9287b3dcfc1184fca554e6e1674fee4c" name="a9287b3dcfc1184fca554e6e1674fee4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9287b3dcfc1184fca554e6e1674fee4c">&#9670;&#160;</a></span>DOCTEST_MULTI_LANE_ATOMICS_THREAD_LANES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DOCTEST_MULTI_LANE_ATOMICS_THREAD_LANES&#160;&#160;&#160;32</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac75ba8dd3658b27170c7f73f563422eb" name="ac75ba8dd3658b27170c7f73f563422eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac75ba8dd3658b27170c7f73f563422eb">&#9670;&#160;</a></span>DOCTEST_OPTIONS_PREFIX_DISPLAY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DOCTEST_OPTIONS_PREFIX_DISPLAY&#160;&#160;&#160;&quot;&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a01ec2dbba7655d16a6a2b1fbf909ceb5" name="a01ec2dbba7655d16a6a2b1fbf909ceb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01ec2dbba7655d16a6a2b1fbf909ceb5">&#9670;&#160;</a></span>DOCTEST_OUTPUT_DEBUG_STRING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DOCTEST_OUTPUT_DEBUG_STRING</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>text</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a49a0d00014eeffb9b904cdaeaccc2870" name="a49a0d00014eeffb9b904cdaeaccc2870"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49a0d00014eeffb9b904cdaeaccc2870">&#9670;&#160;</a></span>DOCTEST_PARSE_AS_BOOL_OR_FLAG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DOCTEST_PARSE_AS_BOOL_OR_FLAG</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>sname</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>var</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>default</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Wartość:</b><div class="fragment"><div class="line">    <span class="keywordflow">if</span>(parseIntOption(argc, argv, <a class="code hl_define" href="#a805231f664ebd4bab301e2443810f29b">DOCTEST_CONFIG_OPTIONS_PREFIX</a> name <span class="stringliteral">&quot;=&quot;</span>, option_bool, intRes) ||  \</div>
+<div class="line">       parseIntOption(argc, argv, <a class="code hl_define" href="#a805231f664ebd4bab301e2443810f29b">DOCTEST_CONFIG_OPTIONS_PREFIX</a> sname <span class="stringliteral">&quot;=&quot;</span>, option_bool, intRes))   \</div>
+<div class="line">        p-&gt;var = <span class="keyword">static_cast&lt;</span><span class="keywordtype">bool</span><span class="keyword">&gt;</span>(intRes);                                                        \</div>
+<div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(parseFlag(argc, argv, <a class="code hl_define" href="#a805231f664ebd4bab301e2443810f29b">DOCTEST_CONFIG_OPTIONS_PREFIX</a> name) ||                           \</div>
+<div class="line">            parseFlag(argc, argv, <a class="code hl_define" href="#a805231f664ebd4bab301e2443810f29b">DOCTEST_CONFIG_OPTIONS_PREFIX</a> sname))                            \</div>
+<div class="line">        p-&gt;var = <span class="keyword">true</span>;                                                                             \</div>
+<div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(withDefaults)                                                                          \</div>
+<div class="line">    p-&gt;var = <span class="keywordflow">default</span></div>
+<div class="ttc" id="adoctest_8cpp_html_a805231f664ebd4bab301e2443810f29b"><div class="ttname"><a href="#a805231f664ebd4bab301e2443810f29b">DOCTEST_CONFIG_OPTIONS_PREFIX</a></div><div class="ttdeci">#define DOCTEST_CONFIG_OPTIONS_PREFIX</div><div class="ttdef"><b>Definicja</b> doctest.cpp:153</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a608401f25679702de753228fbd05d992" name="a608401f25679702de753228fbd05d992"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a608401f25679702de753228fbd05d992">&#9670;&#160;</a></span>DOCTEST_PARSE_INT_OPTION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DOCTEST_PARSE_INT_OPTION</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>sname</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>var</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>default</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Wartość:</b><div class="fragment"><div class="line">    <span class="keywordflow">if</span>(parseIntOption(argc, argv, <a class="code hl_define" href="#a805231f664ebd4bab301e2443810f29b">DOCTEST_CONFIG_OPTIONS_PREFIX</a> name <span class="stringliteral">&quot;=&quot;</span>, option_int, intRes) ||   \</div>
+<div class="line">       parseIntOption(argc, argv, <a class="code hl_define" href="#a805231f664ebd4bab301e2443810f29b">DOCTEST_CONFIG_OPTIONS_PREFIX</a> sname <span class="stringliteral">&quot;=&quot;</span>, option_int, intRes))    \</div>
+<div class="line">        p-&gt;var = intRes;                                                                           \</div>
+<div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(withDefaults)                                                                          \</div>
+<div class="line">    p-&gt;var = <span class="keywordflow">default</span></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad462dc1f6a4beee23671682dcf7d03dd" name="ad462dc1f6a4beee23671682dcf7d03dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad462dc1f6a4beee23671682dcf7d03dd">&#9670;&#160;</a></span>DOCTEST_PARSE_STR_OPTION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DOCTEST_PARSE_STR_OPTION</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>sname</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>var</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>default</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Wartość:</b><div class="fragment"><div class="line">    <span class="keywordflow">if</span>(parseOption(argc, argv, <a class="code hl_define" href="#a805231f664ebd4bab301e2443810f29b">DOCTEST_CONFIG_OPTIONS_PREFIX</a> name <span class="stringliteral">&quot;=&quot;</span>, &amp;strRes, <span class="keywordflow">default</span>) ||        \</div>
+<div class="line">       parseOption(argc, argv, <a class="code hl_define" href="#a805231f664ebd4bab301e2443810f29b">DOCTEST_CONFIG_OPTIONS_PREFIX</a> sname <span class="stringliteral">&quot;=&quot;</span>, &amp;strRes, <span class="keywordflow">default</span>) ||       \</div>
+<div class="line">       withDefaults)                                                                               \</div>
+<div class="line">    p-&gt;var = strRes</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8f3293f622cc7fbd71ddfeb73fb37340" name="a8f3293f622cc7fbd71ddfeb73fb37340"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f3293f622cc7fbd71ddfeb73fb37340">&#9670;&#160;</a></span>DOCTEST_THREAD_LOCAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DOCTEST_THREAD_LOCAL&#160;&#160;&#160;thread_local</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abd165ee6474b5b75bf075842fff13a04" name="abd165ee6474b5b75bf075842fff13a04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd165ee6474b5b75bf075842fff13a04">&#9670;&#160;</a></span>STDOUT_FILENO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STDOUT_FILENO&#160;&#160;&#160;fileno(stdout)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_43da05b65ffbb65743beb36240116ac9.html">doctest</a></li><li class="navelem"><a class="el" href="dir_2b8a7629f33b5b764148d7be5ced96bf.html">doctest</a></li><li class="navelem"><a class="el" href="dir_be11d75d2625ea2cf1a8720e900fadc2.html">parts</a></li><li class="navelem"><a class="el" href="doctest_8cpp.html">doctest.cpp</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

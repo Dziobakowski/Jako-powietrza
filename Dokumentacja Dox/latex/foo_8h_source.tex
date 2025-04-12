@@ -1,0 +1,47 @@
+\doxysection{foo.\+h}
+\hypertarget{foo_8h_source}{}\label{foo_8h_source}\index{doctest/examples/combining\_the\_same\_tests\_built\_differently\_in\_multiple\_shared\_objects/foo.h@{doctest/examples/combining\_the\_same\_tests\_built\_differently\_in\_multiple\_shared\_objects/foo.h}}
+\mbox{\hyperlink{foo_8h}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}doctest/doctest.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <type\_traits>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \mbox{\hyperlink{doctest_2doctest_8h_abfc21b2dc3aad9632b9e2689f468646c}{DOCTEST\_CLANG\_SUPPRESS\_WARNING}}(\textcolor{stringliteral}{"{}-\/Wmissing-\/prototypes"{}})}
+\DoxyCodeLine{00006\ \mbox{\hyperlink{doctest_2doctest_8h_a361747fc17fa1c6609c3cc939b4fc983}{DOCTEST\_GCC\_SUPPRESS\_WARNING}}(\textcolor{stringliteral}{"{}-\/Wmissing-\/declarations"{}})}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifdef\ RETURN\_42}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ TEST\_LABEL\ "{}[return42]\ "{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ TEST\_LABEL\ "{}[default]\ "{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{foo_8h_ad8a2dfa8cbec508ec4cf97b2c5452797}{bar}}()\ \{}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifdef\ RETURN\_42}}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordflow}{return}\ 42;}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordflow}{return}\ 11;}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00020\ \}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#ifdef\ DOCTEST\_LIBRARY\_INCLUDED}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#ifdef\ RETURN\_42}}
+\DoxyCodeLine{00025\ \mbox{\hyperlink{doctest_2doctest_8h_a8bc255ff55721571e878568d2b5dcb35}{TEST\_CASE}}(\mbox{\hyperlink{foo_8h_a35a2dd075d78a10df80d2426f0a97c7c}{TEST\_LABEL}}\ \textcolor{stringliteral}{"{}bartest"{}})\{}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{doctest_2doctest_8h_aedf01192151e10a6620567952711ff69}{INFO}}(\textcolor{stringliteral}{"{}Running\ "{}}\ \mbox{\hyperlink{foo_8h_a35a2dd075d78a10df80d2426f0a97c7c}{TEST\_LABEL}}\ \textcolor{stringliteral}{"{}bartest"{}});\ \mbox{\hyperlink{doctest_2doctest_8h_ad655b38a678a6c69f4555b7737d4b7d3}{MESSAGE}}(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{doctest_2doctest_8h_acab009b596160e614aec1ace5aa8560b}{CHECK\_EQ}}(42,\ \mbox{\hyperlink{foo_8h_ad8a2dfa8cbec508ec4cf97b2c5452797}{bar}}());}
+\DoxyCodeLine{00028\ \}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#ifndef\ RETURN\_42}}
+\DoxyCodeLine{00032\ \mbox{\hyperlink{doctest_2doctest_8h_a8bc255ff55721571e878568d2b5dcb35}{TEST\_CASE}}(\mbox{\hyperlink{foo_8h_a35a2dd075d78a10df80d2426f0a97c7c}{TEST\_LABEL}}\ \textcolor{stringliteral}{"{}bartest"{}})\{}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{doctest_2doctest_8h_aedf01192151e10a6620567952711ff69}{INFO}}(\textcolor{stringliteral}{"{}Running\ "{}}\ \mbox{\hyperlink{foo_8h_a35a2dd075d78a10df80d2426f0a97c7c}{TEST\_LABEL}}\ \textcolor{stringliteral}{"{}bartest"{}});\ \mbox{\hyperlink{doctest_2doctest_8h_ad655b38a678a6c69f4555b7737d4b7d3}{MESSAGE}}(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{doctest_2doctest_8h_acab009b596160e614aec1ace5aa8560b}{CHECK\_EQ}}(11,\ \mbox{\hyperlink{foo_8h_ad8a2dfa8cbec508ec4cf97b2c5452797}{bar}}());}
+\DoxyCodeLine{00035\ \}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \mbox{\hyperlink{doctest_2doctest_8h_a8bc255ff55721571e878568d2b5dcb35}{TEST\_CASE}}(\mbox{\hyperlink{foo_8h_a35a2dd075d78a10df80d2426f0a97c7c}{TEST\_LABEL}}\ \textcolor{stringliteral}{"{}commontest"{}})\{}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{doctest_2doctest_8h_aedf01192151e10a6620567952711ff69}{INFO}}(\textcolor{stringliteral}{"{}Running\ "{}}\ \mbox{\hyperlink{foo_8h_a35a2dd075d78a10df80d2426f0a97c7c}{TEST\_LABEL}}\ \textcolor{stringliteral}{"{}commontest"{}});\ \mbox{\hyperlink{doctest_2doctest_8h_ad655b38a678a6c69f4555b7737d4b7d3}{MESSAGE}}(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00040\ \}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DOCTEST\_LIBRARY\_INCLUDED}}
+
+\end{DoxyCode}

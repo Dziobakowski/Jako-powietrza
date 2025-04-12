@@ -1,0 +1,31 @@
+\doxysection{Dokumentacja pliku doctest/examples/range\+\_\+based\+\_\+execution.py}
+\hypertarget{range__based__execution_8py}{}\label{range__based__execution_8py}\index{doctest/examples/range\_based\_execution.py@{doctest/examples/range\_based\_execution.py}}
+\doxysubsubsection*{Przestrzenie nazw}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacerange__based__execution}{range\+\_\+based\+\_\+execution}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacerange__based__execution_aac186c9c8970a95c786b1f7f6603815f}{range\+\_\+based\+\_\+execution.\+worker}} (first, last)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Zmienne}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{namespacerange__based__execution_ae599707c3d1dd0d50210b6f959722931}{range\+\_\+based\+\_\+execution.\+num\+\_\+tests}} = 0
+\item 
+list \mbox{\hyperlink{namespacerange__based__execution_a1ea863a2c801b31809ee56655163b896}{range\+\_\+based\+\_\+execution.\+program\+\_\+with\+\_\+args}} = \mbox{[}sys.\+argv\mbox{[}1\mbox{]}, "{}-\/-\/dt-\/count=1"{}\mbox{]}
+\item 
+\mbox{\hyperlink{namespacerange__based__execution_ac2847575523f7515474d6e72857725f0}{range\+\_\+based\+\_\+execution.\+result}} = subprocess.\+Popen(\mbox{\hyperlink{namespacerange__based__execution_a1ea863a2c801b31809ee56655163b896}{program\+\_\+with\+\_\+args}}, stdout = subprocess.\+PIPE).communicate()\mbox{[}0\mbox{]}
+\item 
+\mbox{\hyperlink{namespacerange__based__execution_ad94693e162522fb5c80f10f601462457}{range\+\_\+based\+\_\+execution.\+cores}} = multiprocessing.\+cpu\+\_\+count()
+\item 
+\mbox{\hyperlink{namespacerange__based__execution_a3842bfa8a8a04c96e07965ea3ddf0791}{range\+\_\+based\+\_\+execution.\+l}} = range(\mbox{\hyperlink{namespacerange__based__execution_ae599707c3d1dd0d50210b6f959722931}{num\+\_\+tests}} + 1)
+\item 
+\mbox{\hyperlink{namespacerange__based__execution_af3ac9e90a688be66c9eab64cbfc3c1da}{range\+\_\+based\+\_\+execution.\+n}} = int(math.\+ceil(float(len( \mbox{\hyperlink{namespacerange__based__execution_a3842bfa8a8a04c96e07965ea3ddf0791}{l}} )) / \mbox{\hyperlink{namespacerange__based__execution_ad94693e162522fb5c80f10f601462457}{cores}}))
+\item 
+list \mbox{\hyperlink{namespacerange__based__execution_a42d7b70280336dbbf7cfa8e17ca63dd3}{range\+\_\+based\+\_\+execution.\+data}} = \mbox{[}\mbox{\hyperlink{namespacerange__based__execution_a3842bfa8a8a04c96e07965ea3ddf0791}{l}}\mbox{[}i \+: i + \mbox{\hyperlink{namespacerange__based__execution_af3ac9e90a688be66c9eab64cbfc3c1da}{n}}\mbox{]} for i in range(1, len( \mbox{\hyperlink{namespacerange__based__execution_a3842bfa8a8a04c96e07965ea3ddf0791}{l}} ), \mbox{\hyperlink{namespacerange__based__execution_af3ac9e90a688be66c9eab64cbfc3c1da}{n}})\mbox{]}
+\item 
+\mbox{\hyperlink{namespacerange__based__execution_a3cbfb4cb2a4db7e87bfaf712902acfa7}{range\+\_\+based\+\_\+execution.\+p}} = multiprocessing.\+Pool(\mbox{\hyperlink{namespacerange__based__execution_ad94693e162522fb5c80f10f601462457}{cores}})
+\end{DoxyCompactItemize}

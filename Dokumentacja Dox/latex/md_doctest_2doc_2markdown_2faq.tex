@@ -1,0 +1,170 @@
+\chapter{FAQ}
+\hypertarget{md_doctest_2doc_2markdown_2faq}{}\label{md_doctest_2doc_2markdown_2faq}\index{FAQ@{FAQ}}
+\label{md_doctest_2doc_2markdown_2faq_autotoc_md126}%
+\Hypertarget{md_doctest_2doc_2markdown_2faq_autotoc_md126}%
+
+
+
+\begin{DoxyItemize}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+How is doctest different from Catch?\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+How is doctest different from Google Test?\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+How to get the best compile-\/time performance with the framework?\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+Is doctest thread-\/aware?\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+Is mocking supported?\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+Why are my tests in a static library not getting registered?\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+Why is comparing C strings (\`{}\`{}\`{}char\texorpdfstring{$\ast$}{*}\`{}\`{}\`{}) actually comparing pointers?\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+How to write tests in header-\/only libraries?\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+Does the framework use exceptions?\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+Why do I get compiler errors in STL headers when including the doctest header?\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+Can different versions of the framework be used within the same binary (executable/dll)?\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+Why is doctest using macros?\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+How to use with multiple files?\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\end{DoxyItemize}\hypertarget{md_doctest_2doc_2markdown_2faq_autotoc_md127}{}\doxysubsection{\texorpdfstring{How is {\bfseries{doctest}} different from Catch?}{How is {\bfseries{doctest}} different from Catch?}}\label{md_doctest_2doc_2markdown_2faq_autotoc_md127}
+Pros of {\bfseries{doctest}}\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{doctest}} is \href{faq.md\#is-doctest-thread-aware}{\texttt{ {\bfseries{thread-\/safe}}}}
+\item asserts can be used \href{assertions.md\#using-asserts-out-of-a-testing-context}{\texttt{ {\bfseries{outside of a testing context}}}}
+\item including the {\bfseries{doctest}} header is \href{benchmarks.md\#cost-of-including-the-header}{\texttt{ {\bfseries{over 20 times lighter}}}} on compile times than that of \href{https://github.com/catchorg/Catch2}{\texttt{ {\bfseries{Catch}}}}
+\item the asserts in {\bfseries{doctest}} can be \href{benchmarks.md\#cost-of-an-assertion-macro}{\texttt{ {\bfseries{many times lighter}}}} on compile times than those of \href{https://github.com/catchorg/Catch2}{\texttt{ {\bfseries{Catch}}}}
+\item {\bfseries{doctest}} executes tests \href{benchmarks.md\#runtime-benchmarks}{\texttt{ {\bfseries{many times faster}}}} than \href{https://github.com/catchorg/Catch2}{\texttt{ {\bfseries{Catch}}}}
+\item everything testing-\/related can be removed from the binary by defining the \href{configuration.md\#doctest_config_disable}{\texttt{ {\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+DISABLE}}}}} identifier
+\item doesn\textquotesingle{}t drag any headers when included (except for in the translation unit where the library gets implemented)
+\item 0 warnings even on the \href{../../scripts/cmake/common.cmake\#L84}{\texttt{ {\bfseries{most aggressive}}}} warning levels for MSVC/\+GCC/\+Clang
+\item per commit tested with 180+ builds on \href{features.md\#extremely-portable}{\texttt{ {\bfseries{much more compilers}}}} -\/ and through valgrind/sanitizers/analyzers
+\item test cases can be written in headers -\/ the framework will still register the tests only once -\/ no duplicates
+\item binaries (exe/dll) can use the test runner of another binary -\/ so tests end up in a single registry -\/ \href{../../examples/executable_dll_and_plugin/}{\texttt{ {\bfseries{example}}}}
+\end{DoxyItemize}
+
+Aside from everything mentioned so far doctest has some \href{features.md\#other-features}{\texttt{ {\bfseries{features}}}} (like \href{testcases.md\#test-suites}{\texttt{ {\bfseries{test suites}}}} and \href{testcases.md\#decorators}{\texttt{ {\bfseries{decorators}}}}) which \href{https://github.com/catchorg/Catch2}{\texttt{ {\bfseries{Catch}}}} doesn\textquotesingle{}t.
+
+Missing stuff\+:
+
+
+\begin{DoxyItemize}
+\item matchers and generators
+\item micro benchmarking support -\/ nonius is used in \href{https://github.com/catchorg/Catch2}{\texttt{ {\bfseries{Catch}}}}
+\item other small stuff such as tags -\/ can be easily emulated/migrated from -\/ see below
+\end{DoxyItemize}
+
+But these things (and more!) are planned in the \href{https://github.com/doctest/doctest/issues/600}{\texttt{ {\bfseries{roadmap}}}}!
+
+{\bfseries{doctest}} can be thought of as a very polished, light, stable and clean subset (or reimplementation) of \href{https://github.com/catchorg/Catch2}{\texttt{ {\bfseries{Catch}}}} but this might change in the future as more features are added.
+
+Also checkout \href{https://github.com/martinmoene/catch-lest-other-comparison}{\texttt{ this table}} that compares {\bfseries{doctest}} / \href{https://github.com/catchorg/Catch2}{\texttt{ {\bfseries{Catch}}}} / \href{https://github.com/martinmoene/lest}{\texttt{ {\bfseries{lest}}}}.
+
+A quick and easy way to migrate most of your Catch tests to doctest is to change the {\ttfamily TEST\+\_\+\+CASE} (if using tags) and {\ttfamily SECTION} macros as follows\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}path/to/doctest.h"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ SECTION(name)\ DOCTEST\_SUBCASE(name)}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ only\ if\ tags\ are\ used:\ will\ concatenate\ them\ to\ the\ test\ name\ string\ literal}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#undef\ TEST\_CASE}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ TEST\_CASE(name,\ tags)\ DOCTEST\_TEST\_CASE(tags\ "{}\ "{}\ name)}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ catch\ exposes\ this\ by\ default\ outside\ of\ its\ namespace}}
+\DoxyCodeLine{\textcolor{keyword}{using\ }\mbox{\hyperlink{structdoctest_1_1_approx}{doctest::Approx}};}
+
+\end{DoxyCode}
+\hypertarget{md_doctest_2doc_2markdown_2faq_autotoc_md128}{}\doxysubsection{\texorpdfstring{How is {\bfseries{doctest}} different from Google Test?}{How is {\bfseries{doctest}} different from Google Test?}}\label{md_doctest_2doc_2markdown_2faq_autotoc_md128}
+Here are a couple of differences\+:
+
+
+\begin{DoxyItemize}
+\item the main one is that only doctest from the C++ frameworks is usable next to your production code (speed of compilation, ability to remove the tests from the binary, ability to execute tests/code/both, ability to have tests in multiple shared objects and still a single registry for all of them)
+\item doctest is a single header -\/ Google Test has to be built as a separate static library and linked against.
+\item doctest has the concept of \href{https://github.com/doctest/doctest/blob/master/doc/markdown/tutorial.md\#test-cases-and-subcases}{\texttt{ {\bfseries{Subcases}}}} which is a much cleaner way to share setup and teardown code between tests compared to fixtures and class inheritance -\/ Google Test is quite verbose!
+\item doctest compiles faster and probably runs faster (although the runtime becomes an issue only when you have millions of asserts)
+\item doctest asserts are thread-\/safe even on Windows (Google Test uses pthreads so thread-\/safe asserts are available only on UNIX)
+\item doctest overall has a simpler API
+\end{DoxyItemize}
+
+but there are also some areas in which doctest is lacking\+:
+
+
+\begin{DoxyItemize}
+\item value-\/parameterized tests
+\item death tests (where you check if calling a certain function doesn’t simply throw but if it crashes the process)
+\item doctest has some integration with mocking libraries but Google Test works perfectly with Google Mock (although doctest should in theory work with it as well)
+\end{DoxyItemize}
+
+The areas where doctest is behind are planned for improvement in the future. There are many other smaller differences -\/ it would be impractical to cover them all.\hypertarget{md_doctest_2doc_2markdown_2faq_autotoc_md129}{}\doxysubsection{\texorpdfstring{How to get the best compile-\/time performance with the framework?}{How to get the best compile-\/time performance with the framework?}}\label{md_doctest_2doc_2markdown_2faq_autotoc_md129}
+The \href{configuration.md\#doctest_config_super_fast_asserts}{\texttt{ {\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+SUPER\+\_\+\+FAST\+\_\+\+ASSERTS}}}}} config option yields the \href{benchmarks.md\#cost-of-an-assertion-macro}{\texttt{ {\bfseries{fastest possible}}}} compile times (up to 31-\/91\%). Also the expression-\/decomposing template machinery can be skipped by using the \href{assertions.md\#binary-and-unary-asserts}{\texttt{ {\bfseries{binary}}}} asserts.
+
+There are only 2 tiny drawbacks of using this config option\+:
+
+
+\begin{DoxyItemize}
+\item there is no {\ttfamily try/catch} block in each assert so if an expression is thrown the whole test case ends (but is still caught and reported).
+\item when an assert fails and a debugger is present -\/ the framework will break inside a doctest function so the user will have to go 1 level up in the callstack to see where the actual assert is in the source code.
+\end{DoxyItemize}
+
+These 2 things can be considered negligible and totally worth it if you are dealing mainly with expressions unlikely to throw exceptions and all the tests usually pass (you don\textquotesingle{}t need to navigate often to a failing assert with a debugger attached).\hypertarget{md_doctest_2doc_2markdown_2faq_autotoc_md130}{}\doxysubsection{\texorpdfstring{Is doctest thread-\/aware?}{Is doctest thread-\/aware?}}\label{md_doctest_2doc_2markdown_2faq_autotoc_md130}
+Most macros/functionality is safe to use in a multithreaded context\+: \doxysectlink{md_doctest_2doc_2markdown_2assertions}{{\bfseries{assertion}}}{0} and \doxysectlink{md_doctest_2doc_2markdown_2logging}{{\bfseries{logging}}}{0} macros can be safely used from multiple threads spawned from a single test case. This however does not mean that multiple test cases can be run in parallel -\/ test cases are still run serially. \href{tutorial.md\#test-cases-and-subcases}{\texttt{ {\bfseries{Subcases}}}} should also be used only from the test runner thread and all threads spawned in a subcase ought to be joined before the end of that subcase and no new subcases should be entered while other threads with doctest assertions in them are still running -\/ not following these instructions will lead to crashes (example in \href{../../examples/all_features/concurrency.cpp}{\texttt{ {\bfseries{here}}}}). Also note that logged context in one thread will not be used/printed when asserts from another thread fail -\/ logged context is thread-\/local.
+
+There is also an option to run a \doxysectlink{md_doctest_2doc_2markdown_2commandline}{{\bfseries{range}}}{0} of tests from an executable -\/ so tests can be run in parallel by invoking the process multiple times with different ranges -\/ see \href{../../examples/range_based_execution.py}{\texttt{ {\bfseries{the example python script}}}}.\hypertarget{md_doctest_2doc_2markdown_2faq_autotoc_md131}{}\doxysubsection{\texorpdfstring{Is mocking supported?}{Is mocking supported?}}\label{md_doctest_2doc_2markdown_2faq_autotoc_md131}
+{\bfseries{doctest}} doesn\textquotesingle{}t support mocking but should be easy to integrate with third-\/party libraries such as\+:
+
+
+\begin{DoxyItemize}
+\item \href{https://github.com/rollbear/trompeloeil}{\texttt{ trompeloeil}} -\/ integration shown \href{https://github.com/rollbear/trompeloeil/blob/master/docs/CookBook.md\#adapt_doctest}{\texttt{ here}}
+\item \href{https://github.com/eranpeer/FakeIt}{\texttt{ Fake\+It}} -\/ integration might be similar to that of \href{https://github.com/eranpeer/FakeIt/tree/master/config/catch}{\texttt{ catch}} but this has not been looked into
+\end{DoxyItemize}
+
+by using the \href{logging.md\#messages-which-can-optionally-fail-test-cases}{\texttt{ {\bfseries{logging}}}} macros such as {\ttfamily \doxylink{doctest_2doctest_8h_a1937649cc9503739c20b3c81b97b5e5d}{ADD\+\_\+\+FAIL\+\_\+\+AT(file, line, message)}}\hypertarget{md_doctest_2doc_2markdown_2faq_autotoc_md132}{}\doxysubsection{\texorpdfstring{Why are my tests in a static library not getting registered?}{Why are my tests in a static library not getting registered?}}\label{md_doctest_2doc_2markdown_2faq_autotoc_md132}
+This is a \href{https://groups.google.com/forum/\#!msg/catch-forum/FV0Qo62DvgY/jxEO6c9_q3kJ}{\texttt{ {\bfseries{common problem among libraries with self-\/registering code}}}} and it affects all modern compilers on all platforms.
+
+The problem is that when a static library is being linked to a binary (executable or dll) -\/ only object files from the static library that define a symbol being required from the binary will get pulled in (this is a linker/dependency optimization).
+
+A way to solve this in CMake is to use object libraries instead of static libraries -\/ like this\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{add\_library(with\_tests\ OBJECT\ src\_1.cpp\ src\_2.cpp\ src\_3.cpp\ ...)}
+\DoxyCodeLine{}
+\DoxyCodeLine{add\_library(dll\ SHARED\ \$<TARGET\_OBJECTS:with\_tests>\ dll\_src\_1.cpp\ ...)}
+\DoxyCodeLine{add\_executable(exe\ \$<TARGET\_OBJECTS:with\_tests>\ exe\_src\_1.cpp\ ...)}
+
+\end{DoxyCode}
+
+
+Thanks to \href{https://github.com/pthom}{\texttt{ pthom}} for suggesting this.
+
+As an alternative I have created a CMake function that forces every object file from a static library to be linked into a binary target -\/ it is called \href{../../examples/exe_with_static_libs/doctest_force_link_static_lib_in_target.cmake}{\texttt{ {\bfseries{{\ttfamily doctest\+\_\+force\+\_\+link\+\_\+static\+\_\+lib\+\_\+in\+\_\+target()}}}}}. It is unintrusive -\/ no source file gets changed -\/ everything is done with compiler flags per source files. An example project using it can be found \href{../../examples/exe_with_static_libs}{\texttt{ {\bfseries{here}}}} -\/ the commented part of the CMake\+Lists.\+txt file.
+
+It doesn\textquotesingle{}t work in 2 scenarios\+:
+
+
+\begin{DoxyItemize}
+\item either the target or the library uses a precompiled header -\/ see \href{https://github.com/doctest/doctest/issues/21\#issuecomment-247001423}{\texttt{ {\bfseries{this}}}} issue for details
+\item either the target or the library is an imported target (pre-\/built) and not built within the current cmake tree
+\end{DoxyItemize}
+
+You can also checkout this repository for a different solution\+: \href{https://github.com/pthom/doctest_registerlibrary}{\texttt{ {\bfseries{pthom/doctest\+\_\+registerlibrary}}}}.
+
+A compiler-\/specific solution for MSVC is to use the \href{https://msdn.microsoft.com/en-us/library/bxwfs976.aspx}{\texttt{ {\ttfamily /\+OPT\+:NOREF}}} linker flag (thanks to \href{https://github.com/Lectem}{\texttt{ lectem}} for \href{https://github.com/doctest/doctest/issues/106}{\texttt{ reporting}} it!). Another option is to look at \href{https://docs.microsoft.com/en-us/cpp/build/reference/wholearchive-include-all-library-object-files?view=vs-2019}{\texttt{ {\ttfamily /wholearchive}}} for MSVC.\hypertarget{md_doctest_2doc_2markdown_2faq_autotoc_md133}{}\doxysubsection{\texorpdfstring{Why is comparing C strings ({\ttfamily char\texorpdfstring{$\ast$}{*}}) actually comparing pointers?}{Why is comparing C strings ({\ttfamily char\texorpdfstring{$\ast$}{*}}) actually comparing pointers?}}\label{md_doctest_2doc_2markdown_2faq_autotoc_md133}
+{\bfseries{doctest}} by default treats {\ttfamily char\texorpdfstring{$\ast$}{*}} as normal pointers. Using the \href{configuration.md\#doctest_config_treat_char_star_as_string}{\texttt{ {\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+TREAT\+\_\+\+CHAR\+\_\+\+STAR\+\_\+\+AS\+\_\+\+STRING}}}}} changes that.\hypertarget{md_doctest_2doc_2markdown_2faq_autotoc_md134}{}\doxysubsection{\texorpdfstring{How to write tests in header-\/only libraries?}{How to write tests in header-\/only libraries?}}\label{md_doctest_2doc_2markdown_2faq_autotoc_md134}
+There are 2 options\+:
+
+
+\begin{DoxyItemize}
+\item just include the doctest header in your headers and write the tests -\/ the doctest header should be shipped with your headers and the user will have to implement the doctest runner in one of their source files.
+\item don\textquotesingle{}t include the doctest header and guard your test cases with {\ttfamily \#ifdef DOCTEST\+\_\+\+LIBRARY\+\_\+\+INCLUDED} and {\ttfamily \#endif} -\/ that way your tests will be compiled and registered if the user includes the doctest header before your headers (and they will also have to implement the test runner somewhere).
+\end{DoxyItemize}
+
+Also note that it would be a good idea to add a tag in your test case names (like this\+: {\ttfamily TEST\+\_\+\+CASE("{}\mbox{[}the\+\_\+lib\mbox{]} testing foo"{})}) so the user can easily filter them out with {\ttfamily -\/-\/test-\/case-\/exclude=\texorpdfstring{$\ast$}{*}the\+\_\+lib\texorpdfstring{$\ast$}{*}} if they wish to.\hypertarget{md_doctest_2doc_2markdown_2faq_autotoc_md135}{}\doxysubsection{\texorpdfstring{Does the framework use exceptions?}{Does the framework use exceptions?}}\label{md_doctest_2doc_2markdown_2faq_autotoc_md135}
+Yes -\/ but they can be disabled -\/ see the \href{configuration.md\#doctest_config_no_exceptions}{\texttt{ {\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+NO\+\_\+\+EXCEPTIONS}}}}} config identifier.\hypertarget{md_doctest_2doc_2markdown_2faq_autotoc_md136}{}\doxysubsection{\texorpdfstring{Why do I get compiler errors in STL headers when including the doctest header?}{Why do I get compiler errors in STL headers when including the doctest header?}}\label{md_doctest_2doc_2markdown_2faq_autotoc_md136}
+Try using the \href{configuration.md\#doctest_config_use_std_headers}{\texttt{ {\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+USE\+\_\+\+STD\+\_\+\+HEADERS}}}}} configuration identifier.\hypertarget{md_doctest_2doc_2markdown_2faq_autotoc_md137}{}\doxysubsection{\texorpdfstring{Can different versions of the framework be used within the same binary (executable/dll)?}{Can different versions of the framework be used within the same binary (executable/dll)?}}\label{md_doctest_2doc_2markdown_2faq_autotoc_md137}
+Currently no. Single header libraries like \href{https://github.com/nothings/stb}{\texttt{ {\bfseries{stb}}}} have this as an option (everything gets declared static -\/ making it with internal linkage) but it isn\textquotesingle{}t very logical for {\bfseries{doctest}} -\/ the main point is to write tests in any source file of the project and have the test runner implemented in only one source file.\hypertarget{md_doctest_2doc_2markdown_2faq_autotoc_md138}{}\doxysubsection{\texorpdfstring{Why is doctest using macros?}{Why is doctest using macros?}}\label{md_doctest_2doc_2markdown_2faq_autotoc_md138}
+Aren\textquotesingle{}t they evil and not {\itshape modern}? -\/ Check out the answer Phil Nash gives to this question \href{http://accu.org/index.php/journals/2064}{\texttt{ {\bfseries{here}}}} (the creator of \href{https://github.com/catchorg/Catch2}{\texttt{ {\bfseries{Catch}}}}).\hypertarget{md_doctest_2doc_2markdown_2faq_autotoc_md139}{}\doxysubsection{\texorpdfstring{How to use with multiple files?}{How to use with multiple files?}}\label{md_doctest_2doc_2markdown_2faq_autotoc_md139}
+All you need to do is define either \href{configuration.md\#doctest_config_implement_with_main}{\texttt{ {\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+IMPLEMENT\+\_\+\+WITH\+\_\+\+MAIN}}}}} or \href{configuration.md\#doctest_config_implement}{\texttt{ {\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+IMPLEMENT}}}}} in only ONE of the source files just before including the doctest header -\/ in all other source files you just include the header and use the framework. The difference between the two is that one of them provides a {\ttfamily \doxylink{how__exception__translators__work_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main()}} entry point -\/ for more info on that please refer to \doxysectlink{md_doctest_2doc_2markdown_2main}{{\ttfamily The main() entry point}}{0}.
+
+\DoxyHorRuler{0}
+
+
+\href{readme.md\#reference}{\texttt{ Home}}
+

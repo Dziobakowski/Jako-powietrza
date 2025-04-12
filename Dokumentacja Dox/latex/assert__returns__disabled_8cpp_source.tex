@@ -1,0 +1,36 @@
+\doxysection{assert\+\_\+returns\+\_\+disabled.\+cpp}
+\hypertarget{assert__returns__disabled_8cpp_source}{}\label{assert__returns__disabled_8cpp_source}\index{doctest/examples/all\_features/assert\_returns\_disabled.cpp@{doctest/examples/all\_features/assert\_returns\_disabled.cpp}}
+\mbox{\hyperlink{assert__returns__disabled_8cpp}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#define\ DOCTEST\_CONFIG\_ASSERTS\_RETURN\_VALUES}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <doctest/doctest.h>}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \mbox{\hyperlink{doctest_2doctest_8h_ad3e5c37dc8bd7b0f9346c99c6aab2d1d}{DOCTEST\_MAKE\_STD\_HEADERS\_CLEAN\_FROM\_WARNINGS\_ON\_WALL\_BEGIN}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ \mbox{\hyperlink{namespace_d_o_c_t_e_s_t___m_a_k_e___s_t_d___h_e_a_d_e_r_s___c_l_e_a_n___f_r_o_m___w_a_r_n_i_n_g_s___o_n___w_a_l_l___e_n_d}{DOCTEST\_MAKE\_STD\_HEADERS\_CLEAN\_FROM\_WARNINGS\_ON\_WALL\_END}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ TEST\_FLIP}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ TEST\_FLIP\ 0}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ TEST\_FAIL()\ std::cout\ <<\ "{}FAILED\ ON:\ "{}\ <<\ \_\_LINE\_\_\ \(\backslash\)}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\ \ \ \ <<\ "{}("{}\ <<\ (TEST\_FLIP\ ?\ "{}EVALUATED"{}\ :\ "{}DISABLED"{})\ <<\ "{})"{}\ <<\ std::endl}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ test\_disabled\_var\_\ =\ []\ \{\ \textcolor{comment}{//\ NOLINT}}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{//\ none\ may\ return\ true}}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{assert__returns__disabled_8cpp_aaf25c36758c78333a9e7921c9a4226db}{TEST\_FLIP}}\ \string^\ \mbox{\hyperlink{doctest_2doctest_8h_a836cca6b6ed3a1706353f6d1bca0935f}{CHECK}}(0\ ==\ 0))\ \{\ \mbox{\hyperlink{assert__returns__disabled_8cpp_acf4d2a6eb579e0c4d02cd64c8f350aa2}{TEST\_FAIL}}();\ \}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{assert__returns__disabled_8cpp_aaf25c36758c78333a9e7921c9a4226db}{TEST\_FLIP}}\ \string^\ \mbox{\hyperlink{doctest_2doctest_8h_a7bf095d8512cb180f8ff3a2258a6eaac}{CHECK\_FALSE}}(0\ !=\ 0))\ \{\ \mbox{\hyperlink{assert__returns__disabled_8cpp_acf4d2a6eb579e0c4d02cd64c8f350aa2}{TEST\_FAIL}}();\ \}}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{assert__returns__disabled_8cpp_aaf25c36758c78333a9e7921c9a4226db}{TEST\_FLIP}}\ \string^\ \mbox{\hyperlink{doctest_2doctest_8h_acab009b596160e614aec1ace5aa8560b}{CHECK\_EQ}}(0,\ 0))\ \{\ \mbox{\hyperlink{assert__returns__disabled_8cpp_acf4d2a6eb579e0c4d02cd64c8f350aa2}{TEST\_FAIL}}();\ \}}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{assert__returns__disabled_8cpp_aaf25c36758c78333a9e7921c9a4226db}{TEST\_FLIP}}\ \string^\ \mbox{\hyperlink{doctest_2doctest_8h_abcf94ba403b7c0d3a652a7c8da342858}{CHECK\_UNARY}}(\textcolor{keyword}{true}))\ \{\ \mbox{\hyperlink{assert__returns__disabled_8cpp_acf4d2a6eb579e0c4d02cd64c8f350aa2}{TEST\_FAIL}}();\ \}}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{assert__returns__disabled_8cpp_aaf25c36758c78333a9e7921c9a4226db}{TEST\_FLIP}}\ \string^\ \mbox{\hyperlink{doctest_2doctest_8h_ab6e15c04937a22c57a3222e8436d4fac}{CHECK\_UNARY\_FALSE}}(\textcolor{keyword}{false}))\ \{\ \mbox{\hyperlink{assert__returns__disabled_8cpp_acf4d2a6eb579e0c4d02cd64c8f350aa2}{TEST\_FAIL}}();\ \}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#ifndef\ DOCTEST\_CONFIG\_NO\_EXCEPTIONS\_BUT\_WITH\_ALL\_ASSERTS}}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 2;\ (void)i;}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{assert__returns__disabled_8cpp_aaf25c36758c78333a9e7921c9a4226db}{TEST\_FLIP}}\ \string^\ \mbox{\hyperlink{doctest_2doctest_8h_a5c646dfe831e596b59073014c1c8b9e5}{CHECK\_THROWS}}([=]\ \{\ \textcolor{keywordflow}{throw}\ i;\ \}()))\ \{\ \mbox{\hyperlink{assert__returns__disabled_8cpp_acf4d2a6eb579e0c4d02cd64c8f350aa2}{TEST\_FAIL}}();\ \}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{assert__returns__disabled_8cpp_aaf25c36758c78333a9e7921c9a4226db}{TEST\_FLIP}}\ \string^\ \mbox{\hyperlink{doctest_2doctest_8h_aabaaa591d46f29cf307dbed1a5abba83}{CHECK\_THROWS\_AS}}([=]\ \{\ \textcolor{keywordflow}{throw}\ i;\ \}(),\ int))\ \{\ \mbox{\hyperlink{assert__returns__disabled_8cpp_acf4d2a6eb579e0c4d02cd64c8f350aa2}{TEST\_FAIL}}();\ \}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{assert__returns__disabled_8cpp_aaf25c36758c78333a9e7921c9a4226db}{TEST\_FLIP}}\ \string^\ \mbox{\hyperlink{doctest_2doctest_8h_a78e70f011f20c4ade1d1ac2b8fd33626}{CHECK\_NOTHROW}}([=]\{\ \}()))\ \{\ \mbox{\hyperlink{assert__returns__disabled_8cpp_acf4d2a6eb579e0c4d02cd64c8f350aa2}{TEST\_FAIL}}();\ \}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00030\ \}();}
+
+\end{DoxyCode}

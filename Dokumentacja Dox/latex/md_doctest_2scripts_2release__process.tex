@@ -1,0 +1,33 @@
+\chapter{release\+\_\+process}
+\hypertarget{md_doctest_2scripts_2release__process}{}\label{md_doctest_2scripts_2release__process}\index{release\_process@{release\_process}}
+
+\begin{DoxyItemize}
+\item update version in version.\+txt (following semver)
+\item run \doxylink{update__stuff_8py}{update\+\_\+stuff.\+py} from the scripts folder
+\item regenerate test output (actually only the {\ttfamily version} test\textquotesingle{}s output changes and that was done to maximize code coverage -\/ might remove it to simplify the release process)
+\begin{DoxyItemize}
+\item first run cmake with -\/DDOCTEST\+\_\+\+TEST\+\_\+\+MODE=COLLECT
+\item then run ctest \& git add the changed and/or new .txt files
+\end{DoxyItemize}
+\item run changelog generator (WIP)
+\item commit in dev
+\item rebase dev onto master (linear history instead of merge commits)
+\item push all branches (git push --all)
+\item create github release with the same semver tag as the changelog
+\begin{DoxyItemize}
+\item copy the text from a previous release and update the version numbers \& dates
+\end{DoxyItemize}
+\item OPTIONAL\+: update packages (I\textquotesingle{}ve never done it)
+\begin{DoxyItemize}
+\item vcpkg \href{https://github.com/Microsoft/vcpkg/tree/master/ports/doctest}{\texttt{ https\+://github.\+com/\+Microsoft/vcpkg/tree/master/ports/doctest}}
+\item hunter
+\begin{DoxyItemize}
+\item \href{https://github.com/ruslo/hunter/blob/master/cmake/configs/default.cmake}{\texttt{ https\+://github.\+com/ruslo/hunter/blob/master/cmake/configs/default.\+cmake}}
+\item \href{https://github.com/ruslo/hunter/blob/master/cmake/projects/doctest/hunter.cmake}{\texttt{ https\+://github.\+com/ruslo/hunter/blob/master/cmake/projects/doctest/hunter.\+cmake}}
+\end{DoxyItemize}
+\item conan
+\begin{DoxyItemize}
+\item \href{https://github.com/bincrafters/conan-doctest}{\texttt{ https\+://github.\+com/bincrafters/conan-\/doctest}} 
+\end{DoxyItemize}
+\end{DoxyItemize}
+\end{DoxyItemize}

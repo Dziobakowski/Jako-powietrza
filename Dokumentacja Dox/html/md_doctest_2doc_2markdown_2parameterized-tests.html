@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Jakość powietrza w Polsce: Parameterized test cases</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Jakość powietrza w Polsce
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('md_doctest_2doc_2markdown_2parameterized-tests.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">Parameterized test cases</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="autotoc_md154"></a></p>
+<p>Test cases can be parameterized easily by type and indirectly by value.</p>
+<h1><a class="anchor" id="autotoc_md155"></a>
+Value-parameterized test cases</h1>
+<p>There will be proper support for this in the future. For now there are 2 ways of doing data-driven testing in doctest:</p>
+<ul>
+<li><p class="startli">extracting the asserts in a helper function and calling it with a user-constructed array of data:</p>
+<div class="fragment"><div class="line"><span class="keywordtype">void</span> doChecks(<span class="keywordtype">int</span> data) {</div>
+<div class="line">    <span class="comment">// do asserts with data</span></div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_define" href="doctest_2doctest_8h.html#a8bc255ff55721571e878568d2b5dcb35">TEST_CASE</a>(<span class="stringliteral">&quot;test name&quot;</span>) {</div>
+<div class="line">    std::vector&lt;int&gt; data {1, 2, 3, 4, 5, 6};</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keyword">auto</span>&amp; i : data) {</div>
+<div class="line">        <a class="code hl_define" href="doctest_2doctest_8h.html#a0cd84d289552018d72489c085df0a9ca">CAPTURE</a>(i); <span class="comment">// log the current input data</span></div>
+<div class="line">        doChecks(i);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+<div class="ttc" id="adoctest_2doctest_8h_html_a0cd84d289552018d72489c085df0a9ca"><div class="ttname"><a href="doctest_2doctest_8h.html#a0cd84d289552018d72489c085df0a9ca">CAPTURE</a></div><div class="ttdeci">#define CAPTURE(x)</div><div class="ttdef"><b>Definicja</b> doctest.h:2953</div></div>
+<div class="ttc" id="adoctest_2doctest_8h_html_a8bc255ff55721571e878568d2b5dcb35"><div class="ttname"><a href="doctest_2doctest_8h.html#a8bc255ff55721571e878568d2b5dcb35">TEST_CASE</a></div><div class="ttdeci">#define TEST_CASE(name)</div><div class="ttdef"><b>Definicja</b> doctest.h:2936</div></div>
+</div><!-- fragment --><p class="startli">This has several drawbacks:</p><ul>
+<li>in case of an exception (or a <code>REQUIRE</code> assert failing) the entire test case ends and the checks are not done for the rest of the input data</li>
+<li>the user has to manually log the data with calls to <code><a class="el" href="doctest_2doctest_8h.html#a0cd84d289552018d72489c085df0a9ca">CAPTURE()</a></code> ( or <code><a class="el" href="doctest_2doctest_8h.html#aedf01192151e10a6620567952711ff69">INFO()</a></code>)</li>
+<li>more boilerplate - doctest should supply primitives for generating data but currently doesn't - so the user has to write their own data generation</li>
+</ul>
+</li>
+<li><p class="startli">using subcases to initialize data differently:</p>
+<div class="fragment"><div class="line"><a class="code hl_define" href="doctest_2doctest_8h.html#a8bc255ff55721571e878568d2b5dcb35">TEST_CASE</a>(<span class="stringliteral">&quot;test name&quot;</span>) {</div>
+<div class="line">    <span class="keywordtype">int</span> data;</div>
+<div class="line">    <a class="code hl_define" href="doctest_2doctest_8h.html#a4147381e5cb6f68c1a315a852c63bf70">SUBCASE</a>(<span class="stringliteral">&quot;&quot;</span>) { data = 1; }</div>
+<div class="line">    <a class="code hl_define" href="doctest_2doctest_8h.html#a4147381e5cb6f68c1a315a852c63bf70">SUBCASE</a>(<span class="stringliteral">&quot;&quot;</span>) { data = 2; }</div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_define" href="doctest_2doctest_8h.html#a0cd84d289552018d72489c085df0a9ca">CAPTURE</a>(data);</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// do asserts with data</span></div>
+<div class="line">}</div>
+<div class="ttc" id="adoctest_2doctest_8h_html_a4147381e5cb6f68c1a315a852c63bf70"><div class="ttname"><a href="doctest_2doctest_8h.html#a4147381e5cb6f68c1a315a852c63bf70">SUBCASE</a></div><div class="ttdeci">#define SUBCASE(name)</div><div class="ttdef"><b>Definicja</b> doctest.h:2945</div></div>
+</div><!-- fragment --><p class="startli">This has the following drawbacks:</p><ul>
+<li>doesn't scale well - it is very impractical to write such code for more than a few different inputs</li>
+<li>the user has to manually log the data with calls to <code><a class="el" href="doctest_2doctest_8h.html#a0cd84d289552018d72489c085df0a9ca">CAPTURE()</a></code> (or <code><a class="el" href="doctest_2doctest_8h.html#aedf01192151e10a6620567952711ff69">INFO()</a></code>)</li>
+</ul>
+</li>
+</ul>
+<hr  />
+<p>There is however an easy way to encapsulate this into a macro (written with C++14 for simplicity):</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#define DOCTEST_VALUE_PARAMETERIZED_DATA(data, data_container)                                  \</span></div>
+<div class="line"><span class="preprocessor">    static size_t _doctest_subcase_idx = 0;                                                     \</span></div>
+<div class="line"><span class="preprocessor">    std::for_each(data_container.begin(), data_container.end(), [&amp;](const auto&amp; in) {           \</span></div>
+<div class="line"><span class="preprocessor">        DOCTEST_SUBCASE((std::string(#data_container &quot;[&quot;) +                                     \</span></div>
+<div class="line"><span class="preprocessor">                        std::to_string(_doctest_subcase_idx++) + &quot;]&quot;).c_str()) { data = in; }  \</span></div>
+<div class="line"><span class="preprocessor">    });                                                                                         \</span></div>
+<div class="line"><span class="preprocessor">    _doctest_subcase_idx = 0</span></div>
+</div><!-- fragment --><p>and now this can be used as follows:</p>
+<p>```c++ TEST_CASE("test name") { int data; std::list&lt;int&gt; data_container = {1, 2, 3, 4}; // must be iterable - std::vector&lt;&gt; would work as well</p>
+<p>DOCTEST_VALUE_PARAMETERIZED_DATA(data, data_container);</p>
+<p>printf("%d\n", data); } ```</p>
+<p>and will print the 4 numbers by re-entering the test case 3 times (after the first entry) - just like subcases work:</p>
+<p><code> 1 2 3 4 </code></p>
+<p>The big limitation of this approach is that the macro cannot be used with other subcases at the same code block {} indentation level (will act weird) - it can only be used within a subcase.</p>
+<p>Stay tuned for proper value-parameterization in doctest!</p>
+<h1><a class="anchor" id="autotoc_md157"></a>
+Templated test cases - parameterized by type</h1>
+<p>Suppose you have multiple implementations of the same interface and want to make sure that all of them satisfy some common requirements. Or, you may have defined several types that are supposed to conform to the same "concept" and you want to verify it. In both cases, you want the same test logic repeated for different types.</p>
+<p>While you can write one <code>TEST_CASE</code> for each type you want to test (and you may even factor the test logic into a function template that you invoke from the test case), it's tedious and doesn't scale: if you want <code>M</code> tests over <code><a class="el" href="namespace_n.html">N</a></code> types, you'll end up writing <code>M * <a class="el" href="namespace_n.html">N</a></code> tests.</p>
+<p>Templated tests allow you to repeat the same test logic over a list of types. You only need to write the test logic once.</p>
+<p>There are 2 ways to do it:</p>
+<ul>
+<li><p class="startli">directly pass the list of types to the templated test case</p>
+<div class="fragment"><div class="line"><a class="code hl_define" href="doctest_2doctest_8h.html#a8ab7703bbaae3e25e7e5f5eb9fbe3642">TEST_CASE_TEMPLATE</a>(<span class="stringliteral">&quot;signed integers stuff&quot;</span>, T, <span class="keywordtype">char</span>, <span class="keywordtype">short</span>, <span class="keywordtype">int</span>, <span class="keywordtype">long</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span>) {</div>
+<div class="line">    T var = T();</div>
+<div class="line">    --var;</div>
+<div class="line">    <a class="code hl_define" href="doctest_2doctest_8h.html#a836cca6b6ed3a1706353f6d1bca0935f">CHECK</a>(var == -1);</div>
+<div class="line">}</div>
+<div class="ttc" id="adoctest_2doctest_8h_html_a836cca6b6ed3a1706353f6d1bca0935f"><div class="ttname"><a href="doctest_2doctest_8h.html#a836cca6b6ed3a1706353f6d1bca0935f">CHECK</a></div><div class="ttdeci">#define CHECK(...)</div><div class="ttdef"><b>Definicja</b> doctest.h:2969</div></div>
+<div class="ttc" id="adoctest_2doctest_8h_html_a8ab7703bbaae3e25e7e5f5eb9fbe3642"><div class="ttname"><a href="doctest_2doctest_8h.html#a8ab7703bbaae3e25e7e5f5eb9fbe3642">TEST_CASE_TEMPLATE</a></div><div class="ttdeci">#define TEST_CASE_TEMPLATE(name, T,...)</div><div class="ttdef"><b>Definicja</b> doctest.h:2941</div></div>
+</div><!-- fragment --></li>
+<li><p class="startli">define the templated test case with a specific unique name (identifier) for later instantiation</p>
+<div class="fragment"><div class="line"><a class="code hl_define" href="doctest_2doctest_8h.html#a39cb44ec5ab4ae7457e06cc734b57286">TEST_CASE_TEMPLATE_DEFINE</a>(<span class="stringliteral">&quot;signed integer stuff&quot;</span>, T, test_id) {</div>
+<div class="line">    T var = T();</div>
+<div class="line">    --var;</div>
+<div class="line">    <a class="code hl_define" href="doctest_2doctest_8h.html#a836cca6b6ed3a1706353f6d1bca0935f">CHECK</a>(var == -1);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_define" href="doctest_2doctest_8h.html#a6d6b09ad857bf02d03049faf3235ed55">TEST_CASE_TEMPLATE_INVOKE</a>(test_id, <span class="keywordtype">char</span>, <span class="keywordtype">short</span>, <span class="keywordtype">int</span>, <span class="keywordtype">long</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span>);</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_define" href="doctest_2doctest_8h.html#a19d32dc25683908b43c4503dc6698a87">TEST_CASE_TEMPLATE_APPLY</a>(test_id, <a class="code hl_class" href="classstd_1_1tuple.html">std::tuple&lt;float, double&gt;</a>);</div>
+<div class="ttc" id="aclassstd_1_1tuple_html"><div class="ttname"><a href="classstd_1_1tuple.html">std::tuple</a></div><div class="ttdef"><b>Definicja</b> doctest.h:539</div></div>
+<div class="ttc" id="adoctest_2doctest_8h_html_a19d32dc25683908b43c4503dc6698a87"><div class="ttname"><a href="doctest_2doctest_8h.html#a19d32dc25683908b43c4503dc6698a87">TEST_CASE_TEMPLATE_APPLY</a></div><div class="ttdeci">#define TEST_CASE_TEMPLATE_APPLY(id,...)</div><div class="ttdef"><b>Definicja</b> doctest.h:2944</div></div>
+<div class="ttc" id="adoctest_2doctest_8h_html_a39cb44ec5ab4ae7457e06cc734b57286"><div class="ttname"><a href="doctest_2doctest_8h.html#a39cb44ec5ab4ae7457e06cc734b57286">TEST_CASE_TEMPLATE_DEFINE</a></div><div class="ttdeci">#define TEST_CASE_TEMPLATE_DEFINE(name, T, id)</div><div class="ttdef"><b>Definicja</b> doctest.h:2942</div></div>
+<div class="ttc" id="adoctest_2doctest_8h_html_a6d6b09ad857bf02d03049faf3235ed55"><div class="ttname"><a href="doctest_2doctest_8h.html#a6d6b09ad857bf02d03049faf3235ed55">TEST_CASE_TEMPLATE_INVOKE</a></div><div class="ttdeci">#define TEST_CASE_TEMPLATE_INVOKE(id,...)</div><div class="ttdef"><b>Definicja</b> doctest.h:2943</div></div>
+</div><!-- fragment --><p> If you are designing an interface or concept, you can define a suite of type-parameterized tests to verify properties that any valid implementation of the interface/concept should have. Then, the author of each implementation can just instantiate the test suite with their type to verify that it conforms to the requirements, without having to write similar tests repeatedly.</p>
+</li>
+</ul>
+<p>A test case named <code>signed integers stuff</code> instantiated for type <code>int</code> will yield the following test case name:</p>
+<div class="fragment"><div class="line">signed integers stuff&lt;int&gt;</div>
+</div><!-- fragment --><p>By default all primitive types (fundamental - <code>int</code>, <code>bool</code>, <code>float</code>...) have stringification provided by the library. For all other types the user will have to use the <code><a class="el" href="doctest_2doctest_8h.html#a8245b61f7381307d76a1472436d35ebe">TYPE_TO_STRING(type)</a></code> macro - like this:</p>
+<div class="fragment"><div class="line"><a class="code hl_define" href="doctest_2doctest_8h.html#a8245b61f7381307d76a1472436d35ebe">TYPE_TO_STRING</a>(std::vector&lt;int&gt;);</div>
+<div class="ttc" id="adoctest_2doctest_8h_html_a8245b61f7381307d76a1472436d35ebe"><div class="ttname"><a href="doctest_2doctest_8h.html#a8245b61f7381307d76a1472436d35ebe">TYPE_TO_STRING</a></div><div class="ttdeci">#define TYPE_TO_STRING(...)</div><div class="ttdef"><b>Definicja</b> doctest.h:2940</div></div>
+</div><!-- fragment --><p>The <code>TYPE_TO_STRING</code> macro has an effect only in the current source file and thus needs to be used in some header if the same type will be used in separate source files for templated test cases.</p>
+<p>Other testing frameworks use the header <code>&lt;typeinfo&gt;</code> in addition to demangling to get the string for types automatically but doctest cannot afford to include any header in its forward declaration part (the public one) of the header - so the user has to teach the framework for each type. This is done to achieve <a class="el" href="md_doctest_2doc_2markdown_2benchmarks.html">maximal compile time performance</a>.</p>
+<p>Some notes:</p>
+<ul>
+<li>types are NOT filtered for uniqueness - the same templated test case can be instantiated multiple times for the same type - preventing that is left up to the user</li>
+<li>you don't need to provide stringification for every type as that plays a role only in the test case name - the default is <code>&lt;&gt;</code> - the tests will still work and be distinct</li>
+<li><p class="startli">if you need parameterization on more than 1 type you can package multiple types in a single one like this:</p>
+<div class="fragment"><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> first, <span class="keyword">typename</span> second&gt;</div>
+<div class="line"><span class="keyword">struct </span><a class="code hl_struct" href="struct_type_pair.html">TypePair</a></div>
+<div class="line">{</div>
+<div class="line">    <span class="keyword">typedef</span> first  <a class="code hl_typedef" href="struct_type_pair.html#a992ddacb9c5bcf6bce380a3c2e96832a">A</a>;</div>
+<div class="line">    <span class="keyword">typedef</span> second <a class="code hl_typedef" href="struct_type_pair.html#a91c3db1aa16650c80fd26610a0a04982">B</a>;</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#define pairs \</span></div>
+<div class="line"><span class="preprocessor">    TypePair&lt;int, char&gt;, \</span></div>
+<div class="line"><span class="preprocessor">    TypePair&lt;char, int&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_define" href="doctest_2doctest_8h.html#a8ab7703bbaae3e25e7e5f5eb9fbe3642">TEST_CASE_TEMPLATE</a>(<span class="stringliteral">&quot;multiple types&quot;</span>, T, pairs) {</div>
+<div class="line">    <span class="keyword">typedef</span> <span class="keyword">typename</span> T::A T1;</div>
+<div class="line">    <span class="keyword">typedef</span> <span class="keyword">typename</span> T::B T2;</div>
+<div class="line">    <span class="comment">// use T1 and T2 types</span></div>
+<div class="line">}</div>
+<div class="ttc" id="astruct_type_pair_html"><div class="ttname"><a href="struct_type_pair.html">TypePair</a></div><div class="ttdef"><b>Definicja</b> templated_test_cases.cpp:47</div></div>
+<div class="ttc" id="astruct_type_pair_html_a91c3db1aa16650c80fd26610a0a04982"><div class="ttname"><a href="struct_type_pair.html#a91c3db1aa16650c80fd26610a0a04982">TypePair::B</a></div><div class="ttdeci">second B</div><div class="ttdef"><b>Definicja</b> templated_test_cases.cpp:49</div></div>
+<div class="ttc" id="astruct_type_pair_html_a992ddacb9c5bcf6bce380a3c2e96832a"><div class="ttname"><a href="struct_type_pair.html#a992ddacb9c5bcf6bce380a3c2e96832a">TypePair::A</a></div><div class="ttdeci">first A</div><div class="ttdef"><b>Definicja</b> templated_test_cases.cpp:48</div></div>
+</div><!-- fragment --></li>
+</ul>
+<hr  />
+<ul>
+<li>Check out the <a href="../../examples/all_features/templated_test_cases.cpp"><b>example</b></a> which shows how all of these are used.</li>
+</ul>
+<hr  />
+<p><a href="readme.md#reference">Home</a></p>
+<p><img src="../../scripts/data/logo/icon_2.svg" alt="" style="pointer-events: none;" class="inline"/></p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

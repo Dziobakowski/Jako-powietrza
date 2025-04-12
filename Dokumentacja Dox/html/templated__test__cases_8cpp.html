@@ -1,0 +1,524 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Jakość powietrza w Polsce: Dokumentacja pliku doctest/examples/all_features/templated_test_cases.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Jakość powietrza w Polsce
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('templated__test__cases_8cpp.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Komponenty</a> &#124;
+<a href="#typedef-members">Definicje typów</a> &#124;
+<a href="#func-members">Funkcje</a>  </div>
+  <div class="headertitle"><div class="title">Dokumentacja pliku templated_test_cases.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;doctest/doctest.h&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Komponenty</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_type_pair.html">TypePair&lt; first, second &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Definicje typów</h2></td></tr>
+<tr class="memitem:a8bfd0b1d1b92bb3741ae12929f8e2830" id="r_a8bfd0b1d1b92bb3741ae12929f8e2830"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8bfd0b1d1b92bb3741ae12929f8e2830">int_pair</a> = <a class="el" href="struct_type_pair.html">TypePair</a>&lt;int, int&gt;</td></tr>
+<tr class="separator:a8bfd0b1d1b92bb3741ae12929f8e2830"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funkcje</h2></td></tr>
+<tr class="memitem:a73491a737bf4c001869fb5a05567fc11" id="r_a73491a737bf4c001869fb5a05567fc11"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#ad3e5c37dc8bd7b0f9346c99c6aab2d1d">DOCTEST_MAKE_STD_HEADERS_CLEAN_FROM_WARNINGS_ON_WALL_BEGIN</a> <a class="el" href="doctest_2doctest_8h.html#acca96650713994a51c3deb8e4bdec43d">DOCTEST_MAKE_STD_HEADERS_CLEAN_FROM_WARNINGS_ON_WALL_END</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73491a737bf4c001869fb5a05567fc11">TYPE_TO_STRING_AS</a> (&quot;SHORT!!!&quot;, short)</td></tr>
+<tr class="separator:a73491a737bf4c001869fb5a05567fc11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad573de422395b6c9ccdb44a6661c1996" id="r_ad573de422395b6c9ccdb44a6661c1996"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad573de422395b6c9ccdb44a6661c1996">TEST_CASE_TEMPLATE</a> (&quot;signed integers stuff&quot;, T, signed char, short, int)</td></tr>
+<tr class="separator:ad573de422395b6c9ccdb44a6661c1996"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae222a883bbab2aa05a0a7049fae21cd8" id="r_ae222a883bbab2aa05a0a7049fae21cd8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae222a883bbab2aa05a0a7049fae21cd8">TYPE_TO_STRING</a> (std::vector&lt; int &gt;)</td></tr>
+<tr class="separator:ae222a883bbab2aa05a0a7049fae21cd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d3c4a103e6bde24e0a5baa883c54d23" id="r_a5d3c4a103e6bde24e0a5baa883c54d23"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d3c4a103e6bde24e0a5baa883c54d23">TEST_CASE_TEMPLATE</a> (&quot;vector stuff&quot;, T, std::vector&lt; int &gt;)</td></tr>
+<tr class="separator:a5d3c4a103e6bde24e0a5baa883c54d23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94cf0ed73555fc92a37b4835a001e392" id="r_a94cf0ed73555fc92a37b4835a001e392"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94cf0ed73555fc92a37b4835a001e392">TEST_CASE_TEMPLATE_DEFINE</a> (&quot;default construction&quot;, T, test_id)</td></tr>
+<tr class="separator:a94cf0ed73555fc92a37b4835a001e392"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fe886d813be3be64635ab5242624ba5" id="r_a5fe886d813be3be64635ab5242624ba5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5fe886d813be3be64635ab5242624ba5">TEST_CASE_TEMPLATE_INVOKE</a> (test_id, signed char, short, int)</td></tr>
+<tr class="separator:a5fe886d813be3be64635ab5242624ba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28a8304c7088dbfc595711ce6dfd4cc3" id="r_a28a8304c7088dbfc595711ce6dfd4cc3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a28a8304c7088dbfc595711ce6dfd4cc3">TEST_CASE_TEMPLATE_INVOKE</a> (test_id, double, double)</td></tr>
+<tr class="separator:a28a8304c7088dbfc595711ce6dfd4cc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a795e2ba7c742a14e6901cc6700d7dccf" id="r_a795e2ba7c742a14e6901cc6700d7dccf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a795e2ba7c742a14e6901cc6700d7dccf">TEST_CASE_TEMPLATE_APPLY</a> (test_id, <a class="el" href="classstd_1_1tuple.html">std::tuple</a>&lt; unsigned char, char &gt;)</td></tr>
+<tr class="separator:a795e2ba7c742a14e6901cc6700d7dccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8abffbc18e6ca3533493385cfaf4c672" id="r_a8abffbc18e6ca3533493385cfaf4c672"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8abffbc18e6ca3533493385cfaf4c672">TYPE_TO_STRING_AS</a> (&quot;Custom name test&quot;, <a class="el" href="struct_type_pair.html">TypePair</a>&lt; int, char &gt;)</td></tr>
+<tr class="separator:a8abffbc18e6ca3533493385cfaf4c672"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81f0e75c2547f51f4299c6b977e55e87" id="r_a81f0e75c2547f51f4299c6b977e55e87"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81f0e75c2547f51f4299c6b977e55e87">TYPE_TO_STRING_AS</a> (&quot;Other custom name&quot;, <a class="el" href="struct_type_pair.html">TypePair</a>&lt; char, int &gt;)</td></tr>
+<tr class="separator:a81f0e75c2547f51f4299c6b977e55e87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20ec43fb19edc277ce26e70933dbf068" id="r_a20ec43fb19edc277ce26e70933dbf068"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20ec43fb19edc277ce26e70933dbf068">TYPE_TO_STRING</a> (<a class="el" href="struct_type_pair.html">TypePair</a>&lt; bool, int &gt;)</td></tr>
+<tr class="separator:a20ec43fb19edc277ce26e70933dbf068"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a413121fcfbba268b2b46edee95a439" id="r_a9a413121fcfbba268b2b46edee95a439"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a413121fcfbba268b2b46edee95a439">TEST_CASE_TEMPLATE</a> (&quot;multiple types&quot;, T, <a class="el" href="struct_type_pair.html">TypePair</a>&lt; int, char &gt;, <a class="el" href="struct_type_pair.html">TypePair</a>&lt; char, int &gt;, <a class="el" href="struct_type_pair.html">TypePair</a>&lt; bool, int &gt;)</td></tr>
+<tr class="separator:a9a413121fcfbba268b2b46edee95a439"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada9d33374e7c6e1462c07ceef73e9b62" id="r_ada9d33374e7c6e1462c07ceef73e9b62"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ada9d33374e7c6e1462c07ceef73e9b62">TYPE_TO_STRING</a> (<a class="el" href="#a8bfd0b1d1b92bb3741ae12929f8e2830">int_pair</a>)</td></tr>
+<tr class="separator:ada9d33374e7c6e1462c07ceef73e9b62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6aeb4decd97c278c102c9c3beb6fbed7" id="r_a6aeb4decd97c278c102c9c3beb6fbed7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6aeb4decd97c278c102c9c3beb6fbed7">TEST_CASE_TEMPLATE</a> (&quot;bad stringification of type pair&quot;, T, <a class="el" href="#a8bfd0b1d1b92bb3741ae12929f8e2830">int_pair</a>)</td></tr>
+<tr class="separator:a6aeb4decd97c278c102c9c3beb6fbed7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Dokumentacja definicji typów</h2>
+<a id="a8bfd0b1d1b92bb3741ae12929f8e2830" name="a8bfd0b1d1b92bb3741ae12929f8e2830"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bfd0b1d1b92bb3741ae12929f8e2830">&#9670;&#160;</a></span>int_pair</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a8bfd0b1d1b92bb3741ae12929f8e2830">int_pair</a> = <a class="el" href="struct_type_pair.html">TypePair</a>&lt;int, int&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja funkcji</h2>
+<a id="a6aeb4decd97c278c102c9c3beb6fbed7" name="a6aeb4decd97c278c102c9c3beb6fbed7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6aeb4decd97c278c102c9c3beb6fbed7">&#9670;&#160;</a></span>TEST_CASE_TEMPLATE() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE_TEMPLATE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;bad stringification of type pair&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a8bfd0b1d1b92bb3741ae12929f8e2830">int_pair</a></td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9a413121fcfbba268b2b46edee95a439" name="a9a413121fcfbba268b2b46edee95a439"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a413121fcfbba268b2b46edee95a439">&#9670;&#160;</a></span>TEST_CASE_TEMPLATE() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE_TEMPLATE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;multiple types&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_type_pair.html">TypePair</a>&lt; int, char &gt;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_type_pair.html">TypePair</a>&lt; char, int &gt;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_type_pair.html">TypePair</a>&lt; bool, int &gt;</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad573de422395b6c9ccdb44a6661c1996" name="ad573de422395b6c9ccdb44a6661c1996"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad573de422395b6c9ccdb44a6661c1996">&#9670;&#160;</a></span>TEST_CASE_TEMPLATE() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE_TEMPLATE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;signed integers stuff&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">signed char</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">short</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5d3c4a103e6bde24e0a5baa883c54d23" name="a5d3c4a103e6bde24e0a5baa883c54d23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d3c4a103e6bde24e0a5baa883c54d23">&#9670;&#160;</a></span>TEST_CASE_TEMPLATE() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE_TEMPLATE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;vector stuff&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; int &gt;</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a795e2ba7c742a14e6901cc6700d7dccf" name="a795e2ba7c742a14e6901cc6700d7dccf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a795e2ba7c742a14e6901cc6700d7dccf">&#9670;&#160;</a></span>TEST_CASE_TEMPLATE_APPLY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE_TEMPLATE_APPLY </td>
+          <td>(</td>
+          <td class="paramtype">test_id</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classstd_1_1tuple.html">std::tuple</a>&lt; unsigned char, char &gt;</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a94cf0ed73555fc92a37b4835a001e392" name="a94cf0ed73555fc92a37b4835a001e392"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94cf0ed73555fc92a37b4835a001e392">&#9670;&#160;</a></span>TEST_CASE_TEMPLATE_DEFINE()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE_TEMPLATE_DEFINE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;default construction&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">test_id</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a28a8304c7088dbfc595711ce6dfd4cc3" name="a28a8304c7088dbfc595711ce6dfd4cc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28a8304c7088dbfc595711ce6dfd4cc3">&#9670;&#160;</a></span>TEST_CASE_TEMPLATE_INVOKE() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE_TEMPLATE_INVOKE </td>
+          <td>(</td>
+          <td class="paramtype">test_id</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5fe886d813be3be64635ab5242624ba5" name="a5fe886d813be3be64635ab5242624ba5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fe886d813be3be64635ab5242624ba5">&#9670;&#160;</a></span>TEST_CASE_TEMPLATE_INVOKE() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE_TEMPLATE_INVOKE </td>
+          <td>(</td>
+          <td class="paramtype">test_id</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">signed char</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">short</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ada9d33374e7c6e1462c07ceef73e9b62" name="ada9d33374e7c6e1462c07ceef73e9b62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada9d33374e7c6e1462c07ceef73e9b62">&#9670;&#160;</a></span>TYPE_TO_STRING() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TYPE_TO_STRING </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a8bfd0b1d1b92bb3741ae12929f8e2830">int_pair</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae222a883bbab2aa05a0a7049fae21cd8" name="ae222a883bbab2aa05a0a7049fae21cd8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae222a883bbab2aa05a0a7049fae21cd8">&#9670;&#160;</a></span>TYPE_TO_STRING() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TYPE_TO_STRING </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; int &gt;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a20ec43fb19edc277ce26e70933dbf068" name="a20ec43fb19edc277ce26e70933dbf068"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20ec43fb19edc277ce26e70933dbf068">&#9670;&#160;</a></span>TYPE_TO_STRING() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TYPE_TO_STRING </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_type_pair.html">TypePair</a>&lt; bool, int &gt;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8abffbc18e6ca3533493385cfaf4c672" name="a8abffbc18e6ca3533493385cfaf4c672"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8abffbc18e6ca3533493385cfaf4c672">&#9670;&#160;</a></span>TYPE_TO_STRING_AS() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TYPE_TO_STRING_AS </td>
+          <td>(</td>
+          <td class="paramtype">&quot;Custom name test&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_type_pair.html">TypePair</a>&lt; int, char &gt;</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a81f0e75c2547f51f4299c6b977e55e87" name="a81f0e75c2547f51f4299c6b977e55e87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81f0e75c2547f51f4299c6b977e55e87">&#9670;&#160;</a></span>TYPE_TO_STRING_AS() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TYPE_TO_STRING_AS </td>
+          <td>(</td>
+          <td class="paramtype">&quot;Other custom name&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_type_pair.html">TypePair</a>&lt; char, int &gt;</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a73491a737bf4c001869fb5a05567fc11" name="a73491a737bf4c001869fb5a05567fc11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73491a737bf4c001869fb5a05567fc11">&#9670;&#160;</a></span>TYPE_TO_STRING_AS() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="doctest_2doctest_8h.html#ad3e5c37dc8bd7b0f9346c99c6aab2d1d">DOCTEST_MAKE_STD_HEADERS_CLEAN_FROM_WARNINGS_ON_WALL_BEGIN</a> <a class="el" href="doctest_2doctest_8h.html#acca96650713994a51c3deb8e4bdec43d">DOCTEST_MAKE_STD_HEADERS_CLEAN_FROM_WARNINGS_ON_WALL_END</a> TYPE_TO_STRING_AS </td>
+          <td>(</td>
+          <td class="paramtype">&quot;SHORT!!!&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">short</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_43da05b65ffbb65743beb36240116ac9.html">doctest</a></li><li class="navelem"><a class="el" href="dir_4b46fc18e9c3a54fd7f49e6033bfe473.html">examples</a></li><li class="navelem"><a class="el" href="dir_8d2d41c16255cf43b7755d6077c1b3ee.html">all_features</a></li><li class="navelem"><a class="el" href="templated__test__cases_8cpp.html">templated_test_cases.cpp</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

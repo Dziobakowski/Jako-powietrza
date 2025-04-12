@@ -1,0 +1,277 @@
+\doxysection{mpi\+\_\+reporter.\+h}
+\hypertarget{mpi__reporter_8h_source}{}\label{mpi__reporter_8h_source}\index{doctest/doctest/extensions/mpi\_reporter.h@{doctest/doctest/extensions/mpi\_reporter.h}}
+\mbox{\hyperlink{mpi__reporter_8h}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DOCTEST\_MPI\_REPORTER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DOCTEST\_MPI\_REPORTER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ \#include\ <doctest/doctest.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}mpi.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacedoctest}{doctest}}\ \{}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespacedoctest_abc8d05c3f3012554ddf365d0d68726cf}{nb\_test\_cases\_skipped\_insufficient\_procs}};}
+\DoxyCodeLine{00016\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespacedoctest_a43b461984ffead1ccd9e21c64be0c144}{mpi\_comm\_world\_size}}();}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{namespace\ }\{}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{comment}{//\ https://stackoverflow.com/a/11826666/1583122}}
+\DoxyCodeLine{00021\ \textcolor{keyword}{struct\ }NullBuffer\ :\ std::streambuf\ \{}
+\DoxyCodeLine{00022\ \ \ \textcolor{keywordtype}{int}\ overflow(\textcolor{keywordtype}{int}\ c)\ \{\ \textcolor{keywordflow}{return}\ c;\ \}}
+\DoxyCodeLine{00023\ \};}
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }NullStream\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{namespacestd_af1127a426e9584e1fc5e158ded14b7da}{std::ostream}}\ \{}
+\DoxyCodeLine{00025\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ NullStream()}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ :\ std::\mbox{\hyperlink{namespacestd_af1127a426e9584e1fc5e158ded14b7da}{ostream}}(\&nullBuff)}
+\DoxyCodeLine{00028\ \ \ \ \ \{\}}
+\DoxyCodeLine{00029\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00030\ \ \ \ \ NullBuffer\ nullBuff\ =\ \{\};}
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ \textcolor{keyword}{static}\ NullStream\ nullStream;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{comment}{/*\ \(\backslash\)brief\ Extends\ the\ ConsoleReporter\ of\ doctest}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ Each\ process\ writes\ its\ results\ to\ its\ own\ file}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ Intended\ to\ be\ used\ when\ a\ test\ assertion\ fails\ and\ the\ user\ wants\ to\ know\ exactly\ what\ happens\ on\ which\ process}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00039\ \textcolor{keyword}{struct\ }MpiFileReporter\ :\ \textcolor{keyword}{public}\ ConsoleReporter\ \{}
+\DoxyCodeLine{00040\ \ \ std::ofstream\ logfile\_stream\ =\ \{\};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ MpiFileReporter(\textcolor{keyword}{const}\ ContextOptions\&\ co)}
+\DoxyCodeLine{00043\ \ \ \ \ :\ ConsoleReporter(co,logfile\_stream)}
+\DoxyCodeLine{00044\ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{int}\ rank\ =\ 0;}
+\DoxyCodeLine{00046\ \ \ \ \ MPI\_Comm\_rank(MPI\_COMM\_WORLD,\ \&rank);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ std::string\ logfile\_name\ =\ \textcolor{stringliteral}{"{}doctest\_"{}}\ +\ std::to\_string(rank)\ +\ \textcolor{stringliteral}{"{}.log"{}};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ logfile\_stream\ =\ std::ofstream(logfile\_name.c\_str(),\ std::fstream::out);}
+\DoxyCodeLine{00051\ \ \ \}}
+\DoxyCodeLine{00052\ \};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{comment}{/*\ \(\backslash\)brief\ Extends\ the\ ConsoleReporter\ of\ doctest}}
+\DoxyCodeLine{00056\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ Allows\ to\ manage\ the\ execution\ of\ tests\ in\ a\ parallel\ framework}}
+\DoxyCodeLine{00057\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ All\ results\ are\ collected\ on\ rank\ 0}}
+\DoxyCodeLine{00058\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00059\ \textcolor{keyword}{struct\ }MpiConsoleReporter\ :\ \textcolor{keyword}{public}\ ConsoleReporter\ \{}
+\DoxyCodeLine{00060\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00061\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{namespacestd_af1127a426e9584e1fc5e158ded14b7da}{std::ostream}}\&\ replace\_by\_null\_if\_not\_rank\_0(\mbox{\hyperlink{namespacestd_af1127a426e9584e1fc5e158ded14b7da}{std::ostream}}*\ os)\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{int}\ rank\ =\ 0;}
+\DoxyCodeLine{00063\ \ \ \ \ MPI\_Comm\_rank(MPI\_COMM\_WORLD,\ \&rank);}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordflow}{if}\ (rank==0)\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *os;}
+\DoxyCodeLine{00066\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ nullStream;}
+\DoxyCodeLine{00068\ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \}}
+\DoxyCodeLine{00070\ \ \ std::vector<std::pair<std::string,\ int>>\ m\_failure\_str\_queue\ =\ \{\};}
+\DoxyCodeLine{00071\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00072\ \ \ MpiConsoleReporter(\textcolor{keyword}{const}\ ContextOptions\&\ co)}
+\DoxyCodeLine{00073\ \ \ \ \ :\ ConsoleReporter(co,replace\_by\_null\_if\_not\_rank\_0(co.cout))}
+\DoxyCodeLine{00074\ \ \ \{\}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ std::string\ file\_line\_to\_string(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ file,\ \textcolor{keywordtype}{int}\ line,}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ tail\ =\ \textcolor{stringliteral}{"{}"{}})\{}
+\DoxyCodeLine{00078\ \ \ \ \ std::stringstream\ \mbox{\hyperlink{namespacedoctest_1_1detail_a561e1fc2781624ea45d3cbbb8ec37a69}{ss}};}
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{namespacedoctest_1_1detail_a561e1fc2781624ea45d3cbbb8ec37a69}{ss}}\ <<\ \mbox{\hyperlink{namespacedoctest_a31b19b71f2b30f77f84b6a8bb4943925}{skipPathFromFilename}}(file)}
+\DoxyCodeLine{00080\ \ \ \ \ <<\ (opt.gnu\_file\_line\ ?\ \textcolor{stringliteral}{"{}:"{}}\ :\ \textcolor{stringliteral}{"{}("{}})}
+\DoxyCodeLine{00081\ \ \ \ \ <<\ (opt.no\_line\_numbers\ ?\ 0\ :\ line)\ \textcolor{comment}{//\ 0\ or\ the\ real\ num\ depending\ on\ the\ option}}
+\DoxyCodeLine{00082\ \ \ \ \ <<\ (opt.gnu\_file\_line\ ?\ \textcolor{stringliteral}{"{}:"{}}\ :\ \textcolor{stringliteral}{"{}):"{}})\ <<\ tail;}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacedoctest_1_1detail_a561e1fc2781624ea45d3cbbb8ec37a69}{ss}}.str();}
+\DoxyCodeLine{00084\ \ \ \}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \textcolor{keywordtype}{void}\ test\_run\_end(\textcolor{keyword}{const}\ TestRunStats\&\ p)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00087\ \ \ \ \ ConsoleReporter::test\_run\_end(p);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ anythingFailed\ =\ \mbox{\hyperlink{namespacerange__based__execution_a3cbfb4cb2a4db7e87bfaf712902acfa7}{p}}.numTestCasesFailed\ >\ 0\ ||\ \mbox{\hyperlink{namespacerange__based__execution_a3cbfb4cb2a4db7e87bfaf712902acfa7}{p}}.numAssertsFailed\ >\ 0;}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{comment}{//\ >\ Gather\ information\ in\ rank\ 0}}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{int}\ n\_rank,\ rank;}
+\DoxyCodeLine{00094\ \ \ \ \ MPI\_Comm\_rank(MPI\_COMM\_WORLD,\ \&rank);}
+\DoxyCodeLine{00095\ \ \ \ \ MPI\_Comm\_size(MPI\_COMM\_WORLD,\ \&n\_rank);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{int}\ g\_numAsserts\ \ \ \ \ \ \ \ \ =\ 0;}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{int}\ g\_numAssertsFailed\ \ \ =\ 0;}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{int}\ g\_numTestCasesFailed\ =\ 0;}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ MPI\_Reduce(\&\mbox{\hyperlink{namespacerange__based__execution_a3cbfb4cb2a4db7e87bfaf712902acfa7}{p}}.numAsserts\ \ \ \ \ \ \ \ ,\ \&g\_numAsserts\ \ \ \ \ \ \ \ ,\ 1,\ MPI\_INT,\ MPI\_SUM,\ 0,\ MPI\_COMM\_WORLD);}
+\DoxyCodeLine{00102\ \ \ \ \ MPI\_Reduce(\&\mbox{\hyperlink{namespacerange__based__execution_a3cbfb4cb2a4db7e87bfaf712902acfa7}{p}}.numAssertsFailed\ \ ,\ \&g\_numAssertsFailed\ \ ,\ 1,\ MPI\_INT,\ MPI\_SUM,\ 0,\ MPI\_COMM\_WORLD);}
+\DoxyCodeLine{00103\ \ \ \ \ MPI\_Reduce(\&\mbox{\hyperlink{namespacerange__based__execution_a3cbfb4cb2a4db7e87bfaf712902acfa7}{p}}.numTestCasesFailed,\ \&g\_numTestCasesFailed,\ 1,\ MPI\_INT,\ MPI\_SUM,\ 0,\ MPI\_COMM\_WORLD);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ std::vector<int>\ numAssertsFailedByRank;}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordflow}{if}(rank\ ==\ 0)\{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ numAssertsFailedByRank.resize(\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{namespacestd_a25d17c6c6e00988b019e030fe1754689}{std::size\_t}}\textcolor{keyword}{>}(n\_rank));}
+\DoxyCodeLine{00108\ \ \ \ \ \}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ MPI\_Gather(\&\mbox{\hyperlink{namespacerange__based__execution_a3cbfb4cb2a4db7e87bfaf712902acfa7}{p}}.numAssertsFailed,\ 1,\ MPI\_INT,\ numAssertsFailedByRank.data(),\ 1,\ MPI\_INT,\ 0,\ MPI\_COMM\_WORLD);}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordflow}{if}(rank\ ==\ 0)\ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ separator\_to\_stream();}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ s\ <<\ \mbox{\hyperlink{namespacedoctest_1_1_color_a32e9eaf6013139846e848af6e6cf2b92a224464feccc4e9f73da5db46fdcc1f68}{Color::Cyan}}\ <<\ \textcolor{stringliteral}{"{}[doctest]\ "{}}\ <<\ \mbox{\hyperlink{namespacedoctest_1_1_color_a32e9eaf6013139846e848af6e6cf2b92a0ff185b954d22b4b0d3cdfa893f09c9f}{Color::None}}\ <<\ \textcolor{stringliteral}{"{}assertions\ on\ all\ processes:\ "{}}\ <<\ std::setw(6)}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ <<\ g\_numAsserts\ <<\ \textcolor{stringliteral}{"{}\ |\ "{}}}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ <<\ ((g\_numAsserts\ ==\ 0\ ||\ anythingFailed)\ ?\ \mbox{\hyperlink{namespacedoctest_1_1_color_a32e9eaf6013139846e848af6e6cf2b92a0ff185b954d22b4b0d3cdfa893f09c9f}{Color::None}}\ :\ \mbox{\hyperlink{namespacedoctest_1_1_color_a32e9eaf6013139846e848af6e6cf2b92a528915d98b89c5ce06249f11b502e1a6}{Color::Green}})}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ <<\ std::setw(6)\ <<\ (g\_numAsserts\ -\/\ g\_numAssertsFailed)\ <<\ \textcolor{stringliteral}{"{}\ passed"{}}\ <<\ \mbox{\hyperlink{namespacedoctest_1_1_color_a32e9eaf6013139846e848af6e6cf2b92a0ff185b954d22b4b0d3cdfa893f09c9f}{Color::None}}}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ |\ "{}}\ <<\ (g\_numAssertsFailed\ >\ 0\ ?\ \mbox{\hyperlink{namespacedoctest_1_1_color_a32e9eaf6013139846e848af6e6cf2b92aa3eaac8aa7fd734593ad59d60f723428}{Color::Red}}\ :\ \mbox{\hyperlink{namespacedoctest_1_1_color_a32e9eaf6013139846e848af6e6cf2b92a0ff185b954d22b4b0d3cdfa893f09c9f}{Color::None}})\ <<\ std::setw(6)}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ <<\ g\_numAssertsFailed\ <<\ \textcolor{stringliteral}{"{}\ failed"{}}\ <<\ \mbox{\hyperlink{namespacedoctest_1_1_color_a32e9eaf6013139846e848af6e6cf2b92a0ff185b954d22b4b0d3cdfa893f09c9f}{Color::None}}\ <<\ \textcolor{stringliteral}{"{}\ |\(\backslash\)n"{}};}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespacedoctest_abc8d05c3f3012554ddf365d0d68726cf}{nb\_test\_cases\_skipped\_insufficient\_procs}}>0)\ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ s\ <<\ \mbox{\hyperlink{namespacedoctest_1_1_color_a32e9eaf6013139846e848af6e6cf2b92a224464feccc4e9f73da5db46fdcc1f68}{Color::Cyan}}\ <<\ \textcolor{stringliteral}{"{}[doctest]\ "{}}\ <<\ \mbox{\hyperlink{namespacedoctest_1_1_color_a32e9eaf6013139846e848af6e6cf2b92a04988252804e4f608acacb74706425b9}{Color::Yellow}}\ <<\ \textcolor{stringliteral}{"{}WARNING:\ Skipped\ "{}};}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespacedoctest_abc8d05c3f3012554ddf365d0d68726cf}{nb\_test\_cases\_skipped\_insufficient\_procs}}>1)\ \{}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ s\ <<\ \mbox{\hyperlink{namespacedoctest_abc8d05c3f3012554ddf365d0d68726cf}{nb\_test\_cases\_skipped\_insufficient\_procs}}\ <<\ \textcolor{stringliteral}{"{}\ tests\ requiring\ more\ than\ "{}};}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ s\ <<\ \mbox{\hyperlink{namespacedoctest_abc8d05c3f3012554ddf365d0d68726cf}{nb\_test\_cases\_skipped\_insufficient\_procs}}\ <<\ \textcolor{stringliteral}{"{}\ test\ requiring\ more\ than\ "{}};}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespacedoctest_a43b461984ffead1ccd9e21c64be0c144}{mpi\_comm\_world\_size}}()>1)\ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ s\ <<\ \mbox{\hyperlink{namespacedoctest_a43b461984ffead1ccd9e21c64be0c144}{mpi\_comm\_world\_size}}()\ <<\ \textcolor{stringliteral}{"{}\ MPI\ processes\ to\ run\(\backslash\)n"{}};}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ s\ <<\ \mbox{\hyperlink{namespacedoctest_a43b461984ffead1ccd9e21c64be0c144}{mpi\_comm\_world\_size}}()\ <<\ \textcolor{stringliteral}{"{}\ MPI\ process\ to\ run\(\backslash\)n"{}};}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ \ \ separator\_to\_stream();}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(g\_numAssertsFailed\ >\ 0)\{}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ s\ <<\ \mbox{\hyperlink{namespacedoctest_1_1_color_a32e9eaf6013139846e848af6e6cf2b92a224464feccc4e9f73da5db46fdcc1f68}{Color::Cyan}}\ <<\ \textcolor{stringliteral}{"{}[doctest]\ "{}}\ <<\ \mbox{\hyperlink{namespacedoctest_1_1_color_a32e9eaf6013139846e848af6e6cf2b92a0ff185b954d22b4b0d3cdfa893f09c9f}{Color::None}}\ <<\ \textcolor{stringliteral}{"{}fail\ on\ rank:"{}}\ <<\ std::setw(6)\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\mbox{\hyperlink{namespacestd_a25d17c6c6e00988b019e030fe1754689}{std::size\_t}}\ i\ =\ 0;\ i\ <\ numAssertsFailedByRank.size();\ ++i)\{}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\ numAssertsFailedByRank[i]\ >\ 0\ )\{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ s\ <<\ std::setw(16)\ <<\ \textcolor{stringliteral}{"{}\ -\/>\ On\ rank\ ["{}}\ <<\ i\ <<\ \textcolor{stringliteral}{"{}]\ with\ "{}}\ <<\ numAssertsFailedByRank[i]\ <<\ \textcolor{stringliteral}{"{}\ test\ failed"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ s\ <<\ \mbox{\hyperlink{namespacedoctest_1_1_color_a32e9eaf6013139846e848af6e6cf2b92a224464feccc4e9f73da5db46fdcc1f68}{Color::Cyan}}\ <<\ \textcolor{stringliteral}{"{}[doctest]\ "{}}\ <<\ \mbox{\hyperlink{namespacedoctest_1_1_color_a32e9eaf6013139846e848af6e6cf2b92a0ff185b954d22b4b0d3cdfa893f09c9f}{Color::None}}}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Status:\ "{}}\ <<\ (g\_numTestCasesFailed\ >\ 0\ ?\ \mbox{\hyperlink{namespacedoctest_1_1_color_a32e9eaf6013139846e848af6e6cf2b92aa3eaac8aa7fd734593ad59d60f723428}{Color::Red}}\ :\ \mbox{\hyperlink{namespacedoctest_1_1_color_a32e9eaf6013139846e848af6e6cf2b92a528915d98b89c5ce06249f11b502e1a6}{Color::Green}})}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ <<\ ((g\_numTestCasesFailed\ >\ 0)\ ?\ \textcolor{stringliteral}{"{}FAILURE!"{}}\ :\ \textcolor{stringliteral}{"{}SUCCESS!"{}})\ <<\ \mbox{\hyperlink{namespacedoctest_1_1_color_a32e9eaf6013139846e848af6e6cf2b92a0ff185b954d22b4b0d3cdfa893f09c9f}{Color::None}}\ <<\ std::endl;}
+\DoxyCodeLine{00147\ \ \ \ \ \}}
+\DoxyCodeLine{00148\ \ \ \}}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \textcolor{keywordtype}{void}\ test\_case\_end(\textcolor{keyword}{const}\ CurrentTestCaseStats\&\ st)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordflow}{if}\ (is\_mpi\_test\_case())\ \{}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \textcolor{comment}{//\ function\ called\ by\ every\ rank\ at\ the\ end\ of\ a\ test}}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \textcolor{comment}{//\ if\ failed\ assertions\ happened,\ they\ have\ been\ sent\ to\ rank\ 0}}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \textcolor{comment}{//\ here\ rank\ zero\ gathers\ them\ and\ prints\ them\ all}}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ rank;}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ MPI\_Comm\_rank(MPI\_COMM\_WORLD,\ \&rank);}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \ \ \ \ \ \ std::vector<MPI\_Request>\ requests;}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ requests.reserve(m\_failure\_str\_queue.size());\ \ \textcolor{comment}{//\ avoid\ realloc\ \&\ copy\ of\ MPI\_Request}}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ std::pair<std::string,\ int>\ \&failure\ :\ m\_failure\_str\_queue)}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\ failure\_str\ =\ failure.first;}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ failure\_line\ =\ failure.second;}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ failure\_msg\_size\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(failure\_str.size());}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ requests.push\_back(MPI\_REQUEST\_NULL);}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ MPI\_Isend(failure\_str.c\_str(),\ failure\_msg\_size,\ MPI\_BYTE,}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ failure\_line,\ MPI\_COMM\_WORLD,\ \&requests.back());\ \textcolor{comment}{//\ Tag\ =\ file\ line}}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ the\ number\ of\ assert\ with\ fail\ among\ all\ procs}}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ nb\_fail\_asserts\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(m\_failure\_str\_queue.size());}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ nb\_fail\_asserts\_glob\ =\ 0;}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ MPI\_Reduce(\&nb\_fail\_asserts,\ \&nb\_fail\_asserts\_glob,\ 1,\ MPI\_INT,\ MPI\_SUM,\ 0,\ MPI\_COMM\_WORLD);}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(rank\ ==\ 0)\ \{}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ MPI\_Status\ status;}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ MPI\_Status\ status\_recv;}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }id\_string\ =\ std::pair<int,std::string>;}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ std::vector<id\_string>\ msgs(\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{namespacestd_a25d17c6c6e00988b019e030fe1754689}{std::size\_t}}\textcolor{keyword}{>}(nb\_fail\_asserts\_glob));}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{namespacestd_a25d17c6c6e00988b019e030fe1754689}{std::size\_t}}\ i=0;\ i<static\_cast<std::size\_t>(nb\_fail\_asserts\_glob);\ ++i)\ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ MPI\_Probe(MPI\_ANY\_SOURCE,\ MPI\_ANY\_TAG,\ MPI\_COMM\_WORLD,\ \&status);}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ count;}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ MPI\_Get\_count(\&status,\ MPI\_BYTE,\ \&count);}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ std::string\ recv\_msg(\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{namespacestd_a25d17c6c6e00988b019e030fe1754689}{std::size\_t}}\textcolor{keyword}{>}(count),\textcolor{charliteral}{'\(\backslash\)0'});}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ recv\_msg\_data\ =\ \textcolor{keyword}{const\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(recv\_msg.data());\ \textcolor{comment}{//\ const\_cast\ needed.\ Non-\/const\ .data()\ exists\ in\ C++11\ though...}}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ MPI\_Recv(recv\_msg\_data,\ count,\ MPI\_BYTE,\ status.MPI\_SOURCE,}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ status.MPI\_TAG,\ MPI\_COMM\_WORLD,\ \&status\_recv);}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ msgs[i]\ =\ \{status.MPI\_SOURCE,recv\_msg\};}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ std::sort(begin(msgs),\mbox{\hyperlink{namespacebench_a7ce78ea39893edd8f6e84722cda05eff}{end}}(msgs),[](\textcolor{keyword}{const}\ id\_string\&\ x,\ \textcolor{keyword}{const}\ id\_string\&\ y)\{\ \textcolor{keywordflow}{return}\ x.first\ <\ y.first;\ \});}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ print}}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (nb\_fail\_asserts\_glob>0)\ \{}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ separator\_to\_stream();}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ file\_line\_to\_stream(tc-\/>m\_file.c\_str(),\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(tc-\/>m\_line),\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(tc-\/>m\_test\_suite\ \&\&\ tc-\/>m\_test\_suite[0]\ !=\ \textcolor{charliteral}{'\(\backslash\)0'})}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ s\ <<\ \mbox{\hyperlink{namespacedoctest_1_1_color_a32e9eaf6013139846e848af6e6cf2b92a04988252804e4f608acacb74706425b9}{Color::Yellow}}\ <<\ \textcolor{stringliteral}{"{}TEST\ SUITE:\ "{}}\ <<\ \mbox{\hyperlink{namespacedoctest_1_1_color_a32e9eaf6013139846e848af6e6cf2b92a0ff185b954d22b4b0d3cdfa893f09c9f}{Color::None}}\ <<\ tc-\/>m\_test\_suite\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(strncmp(tc-\/>m\_name,\ \textcolor{stringliteral}{"{}\ \ Scenario:"{}},\ 11)\ !=\ 0)}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ s\ <<\ \mbox{\hyperlink{namespacedoctest_1_1_color_a32e9eaf6013139846e848af6e6cf2b92a04988252804e4f608acacb74706425b9}{Color::Yellow}}\ <<\ \textcolor{stringliteral}{"{}TEST\ CASE:\ \ "{}};}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ s\ <<\ \mbox{\hyperlink{namespacedoctest_1_1_color_a32e9eaf6013139846e848af6e6cf2b92a0ff185b954d22b4b0d3cdfa893f09c9f}{Color::None}}\ <<\ tc-\/>m\_name\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)n"{}};}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ msg\ :\ msgs)\ \{}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ s\ <<\ msg.second;}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ s\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \ \ \ \ \ \ MPI\_Waitall(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(requests.size()),\ requests.data(),\ MPI\_STATUSES\_IGNORE);}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ m\_failure\_str\_queue.clear();}
+\DoxyCodeLine{00220\ \ \ \ \ \}}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \ \ \ \ ConsoleReporter::test\_case\_end(st);}
+\DoxyCodeLine{00223\ \ \ \}}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00225\ \ \ \textcolor{keywordtype}{bool}\ is\_mpi\_test\_case()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00226\ \ \ \ \ \textcolor{keywordflow}{return}\ tc-\/>m\_description\ !=\ \textcolor{keyword}{nullptr}}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \&\&\ std::string(tc-\/>m\_description)\ ==\ std::string(\textcolor{stringliteral}{"{}MPI\_TEST\_CASE"{}});}
+\DoxyCodeLine{00228\ \ \ \}}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00230\ \ \ \textcolor{keywordtype}{void}\ log\_assert(\textcolor{keyword}{const}\ AssertData\&\ rb)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00231\ \ \ \ \ \textcolor{keywordflow}{if}\ (!is\_mpi\_test\_case())\ \{}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ ConsoleReporter::log\_assert(rb);}
+\DoxyCodeLine{00233\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ rank;}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ MPI\_Comm\_rank(MPI\_COMM\_WORLD,\ \&rank);}
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!rb.m\_failed\ \&\&\ !opt.success)}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00241\ \ \ \ \ \ \ std::lock\_guard<std::mutex>\ lock(mutex);}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00243\ \ \ \ \ \ \ std::stringstream\ failure\_msg;}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ failure\_msg\ <<\ \mbox{\hyperlink{namespacedoctest_1_1_color_a32e9eaf6013139846e848af6e6cf2b92aa3eaac8aa7fd734593ad59d60f723428}{Color::Red}}\ <<\ \textcolor{stringliteral}{"{}On\ rank\ ["{}}\ <<\ rank\ <<\ \textcolor{stringliteral}{"{}]\ :\ "{}}\ <<\ \mbox{\hyperlink{namespacedoctest_1_1_color_a32e9eaf6013139846e848af6e6cf2b92a0ff185b954d22b4b0d3cdfa893f09c9f}{Color::None}};}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ failure\_msg\ <<\ file\_line\_to\_string(rb.m\_file,\ rb.m\_line,\ \textcolor{stringliteral}{"{}\ "{}});}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \textcolor{keywordflow}{if}((rb.m\_at\ \&\ (\mbox{\hyperlink{namespacedoctest_1_1assert_type_ae1bb5bed722f34f1c38b83cb19d326d3a963a644bdf5862ad090793796ceb66bb}{assertType::is\_throws\_as}}\ |\ \mbox{\hyperlink{namespacedoctest_1_1assert_type_ae1bb5bed722f34f1c38b83cb19d326d3a0ea2bbff31127e391e116ae517d5c514}{assertType::is\_throws\_with}}))\ ==0)\{}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ failure\_msg\ <<\ \mbox{\hyperlink{namespacedoctest_1_1_color_a32e9eaf6013139846e848af6e6cf2b92a224464feccc4e9f73da5db46fdcc1f68}{Color::Cyan}}}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{namespacedoctest_a44bf1260a82383247d446170810493cf}{assertString}}(rb.m\_at)}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}(\ "{}}\ <<\ rb.m\_expr\ <<\ \textcolor{stringliteral}{"{}\ )\ "{}}}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{namespacedoctest_1_1_color_a32e9eaf6013139846e848af6e6cf2b92a0ff185b954d22b4b0d3cdfa893f09c9f}{Color::None}}}
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ (!rb.m\_failed\ ?\ \textcolor{stringliteral}{"{}is\ correct!\(\backslash\)n"{}}\ :\ \textcolor{stringliteral}{"{}is\ NOT\ correct!\(\backslash\)n"{}})}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ \ values:\ "{}}}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{namespacedoctest_a44bf1260a82383247d446170810493cf}{assertString}}(rb.m\_at)}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}(\ "{}}\ <<\ rb.m\_decomp.c\_str()\ <<\ \textcolor{stringliteral}{"{}\ )\(\backslash\)n"{}};}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00258\ }
+\DoxyCodeLine{00259\ \ \ \ \ \ \ m\_failure\_str\_queue.push\_back(\{failure\_msg.str(),\ rb.m\_line\});}
+\DoxyCodeLine{00260\ \ \ \ \ \}}
+\DoxyCodeLine{00261\ \ \ \}}
+\DoxyCodeLine{00262\ \};\ \textcolor{comment}{//\ MpiConsoleReporter}}
+\DoxyCodeLine{00263\ }
+\DoxyCodeLine{00264\ \textcolor{comment}{//\ "{}1"{}\ is\ the\ priority\ -\/\ used\ for\ ordering\ when\ multiple\ reporters/listeners\ are\ used}}
+\DoxyCodeLine{00265\ \mbox{\hyperlink{doctest_2doctest_8h_add8ee38907c3536a7c422f79260311fd}{REGISTER\_REPORTER}}(\textcolor{stringliteral}{"{}MpiConsoleReporter"{}},\ 1,\ MpiConsoleReporter);}
+\DoxyCodeLine{00266\ \mbox{\hyperlink{doctest_2doctest_8h_add8ee38907c3536a7c422f79260311fd}{REGISTER\_REPORTER}}(\textcolor{stringliteral}{"{}MpiFileReporter"{}},\ 1,\ MpiFileReporter);}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00268\ \}\ \textcolor{comment}{//\ anonymous}}
+\DoxyCodeLine{00269\ \}\ \textcolor{comment}{//\ doctest}}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00271\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DOCTEST\_REPORTER\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,90 @@
+\doxysection{mpi\+\_\+sub\+\_\+comm.\+h}
+\hypertarget{mpi__sub__comm_8h_source}{}\label{mpi__sub__comm_8h_source}\index{doctest/doctest/extensions/mpi\_sub\_comm.h@{doctest/doctest/extensions/mpi\_sub\_comm.h}}
+\mbox{\hyperlink{mpi__sub__comm_8h}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DOCTEST\_MPI\_SUB\_COMM\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DOCTEST\_MPI\_SUB\_COMM\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}mpi.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}doctest/doctest.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacedoctest}{doctest}}\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{inline}}
+\DoxyCodeLine{00012\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespacedoctest_aab57a2f917b123829504e29c045d3597}{mpi\_world\_nb\_procs}}()\ \{}
+\DoxyCodeLine{00013\ \ \ \textcolor{keywordtype}{int}\ n;}
+\DoxyCodeLine{00014\ \ \ MPI\_Comm\_size(MPI\_COMM\_WORLD,\ \&n);}
+\DoxyCodeLine{00015\ \ \ \textcolor{keywordflow}{return}\ n;}
+\DoxyCodeLine{00016\ \}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_aaf61c20f598e1884d4ab7151168db890}{mpi\_sub\_comm}}\ \{}
+\DoxyCodeLine{00019\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_a2e26a3457f8b0f0184efad8c57d34045}{nb\_procs}};}
+\DoxyCodeLine{00020\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_a336b0077bb17427b3df8c04a2e8ad6e6}{rank}};}
+\DoxyCodeLine{00021\ \ \ MPI\_Comm\ \mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_a49ced9b5710939127882e7d8a5d0f43b}{comm}};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_aaf61c20f598e1884d4ab7151168db890}{mpi\_sub\_comm}}(\ \mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_aaf61c20f598e1884d4ab7151168db890}{mpi\_sub\_comm}}\ \textcolor{keyword}{const}\&\ )\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00024\ \ \ \mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_aaf61c20f598e1884d4ab7151168db890}{mpi\_sub\_comm}}\&\ \mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_a67dbf898bd040615bc4470b947524acf}{operator=}}(\ \mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_aaf61c20f598e1884d4ab7151168db890}{mpi\_sub\_comm}}\ \textcolor{keyword}{const}\&\ )\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_a996f4afe7d50905d7b837f5a6163ecb9}{mpi\_sub\_comm}}(\textcolor{keywordtype}{int}\ nb\_prcs)\ noexcept}
+\DoxyCodeLine{00027\ \ \ \ \ :\ \mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_a2e26a3457f8b0f0184efad8c57d34045}{nb\_procs}}(nb\_prcs)}
+\DoxyCodeLine{00028\ \ \ \ \ ,\ \mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_a336b0077bb17427b3df8c04a2e8ad6e6}{rank}}(-\/1)}
+\DoxyCodeLine{00029\ \ \ \ \ ,\ \mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_a49ced9b5710939127882e7d8a5d0f43b}{comm}}(MPI\_COMM\_NULL)}
+\DoxyCodeLine{00030\ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{int}\ comm\_world\_rank;}
+\DoxyCodeLine{00032\ \ \ \ \ MPI\_Comm\_rank(MPI\_COMM\_WORLD,\ \&comm\_world\_rank);}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_a2e26a3457f8b0f0184efad8c57d34045}{nb\_procs}}>\mbox{\hyperlink{namespacedoctest_aab57a2f917b123829504e29c045d3597}{mpi\_world\_nb\_procs}}())\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (comm\_world\_rank==0)\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{doctest_2doctest_8h_ad655b38a678a6c69f4555b7737d4b7d3}{MESSAGE}}(}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Unable\ to\ run\ test:\ need\ "{}},\ std::to\_string(\mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_a2e26a3457f8b0f0184efad8c57d34045}{nb\_procs}}),\ \textcolor{stringliteral}{"{}\ procs"{}},}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\ but\ program\ launched\ with\ only\ "{}},\ std::to\_string(\mbox{\hyperlink{namespacedoctest_aab57a2f917b123829504e29c045d3597}{doctest::mpi\_world\_nb\_procs}}()),\ \textcolor{stringliteral}{"{}."{}}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{doctest_2doctest_8h_a836cca6b6ed3a1706353f6d1bca0935f}{CHECK}}(\mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_a2e26a3457f8b0f0184efad8c57d34045}{nb\_procs}}<=\mbox{\hyperlink{namespacedoctest_aab57a2f917b123829504e29c045d3597}{mpi\_world\_nb\_procs}}());}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ color\ =\ MPI\_UNDEFINED;}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(comm\_world\_rank\ <\ \mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_a2e26a3457f8b0f0184efad8c57d34045}{nb\_procs}})\{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ color\ =\ 0;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ MPI\_Comm\_split(MPI\_COMM\_WORLD,\ color,\ comm\_world\_rank,\ \&\mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_a49ced9b5710939127882e7d8a5d0f43b}{comm}});}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_a49ced9b5710939127882e7d8a5d0f43b}{comm}}\ !=\ MPI\_COMM\_NULL)\{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ MPI\_Comm\_rank(\mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_a49ced9b5710939127882e7d8a5d0f43b}{comm}},\ \&\mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_a336b0077bb17427b3df8c04a2e8ad6e6}{rank}});}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ assert(\mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_a336b0077bb17427b3df8c04a2e8ad6e6}{rank}}==comm\_world\_rank);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \ \ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_a9228c228407c53715210e3f79c9f264d}{destroy\_comm}}()\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_a49ced9b5710939127882e7d8a5d0f43b}{comm}}\ !=\ MPI\_COMM\_NULL)\{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ MPI\_Comm\_free(\&\mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_a49ced9b5710939127882e7d8a5d0f43b}{comm}});}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+\DoxyCodeLine{00059\ \ \ \}}
+\DoxyCodeLine{00060\ \ \ }
+\DoxyCodeLine{00061\ \ \ \mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_a6597480c23cc6cd17654959ef8c5adbb}{mpi\_sub\_comm}}(\mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_aaf61c20f598e1884d4ab7151168db890}{mpi\_sub\_comm}}\&\&\ x)}
+\DoxyCodeLine{00062\ \ \ \ \ :\ \mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_a2e26a3457f8b0f0184efad8c57d34045}{nb\_procs}}(x.\mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_a2e26a3457f8b0f0184efad8c57d34045}{nb\_procs}})}
+\DoxyCodeLine{00063\ \ \ \ \ ,\ \mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_a336b0077bb17427b3df8c04a2e8ad6e6}{rank}}(x.\mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_a336b0077bb17427b3df8c04a2e8ad6e6}{rank}})}
+\DoxyCodeLine{00064\ \ \ \ \ ,\ \mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_a49ced9b5710939127882e7d8a5d0f43b}{comm}}(x.\mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_a49ced9b5710939127882e7d8a5d0f43b}{comm}})}
+\DoxyCodeLine{00065\ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ x.comm\ =\ MPI\_COMM\_NULL;}
+\DoxyCodeLine{00067\ \ \ \}}
+\DoxyCodeLine{00068\ \ \ \mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_aaf61c20f598e1884d4ab7151168db890}{mpi\_sub\_comm}}\&\ \mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_aaff6cb39b1770d57c1d8c1f5ff5612b1}{operator=}}(\mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_aaf61c20f598e1884d4ab7151168db890}{mpi\_sub\_comm}}\&\&\ x)\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_a9228c228407c53715210e3f79c9f264d}{destroy\_comm}}();}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_a2e26a3457f8b0f0184efad8c57d34045}{nb\_procs}}\ =\ x.nb\_procs;}
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_a336b0077bb17427b3df8c04a2e8ad6e6}{rank}}\ =\ x.rank;}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_a49ced9b5710939127882e7d8a5d0f43b}{comm}}\ =\ x.comm;}
+\DoxyCodeLine{00073\ \ \ \ \ x.comm\ =\ MPI\_COMM\_NULL;}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00075\ \ \ \}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_a5d6ec2e8b5fde8fbcfad9a2ddf8bc573}{\string~mpi\_sub\_comm}}()\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_a9228c228407c53715210e3f79c9f264d}{destroy\_comm}}();}
+\DoxyCodeLine{00079\ \ \ \}}
+\DoxyCodeLine{00080\ \};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \}\ \textcolor{comment}{//\ doctest}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DOCTEST\_SUB\_COMM\_H}}
+
+\end{DoxyCode}

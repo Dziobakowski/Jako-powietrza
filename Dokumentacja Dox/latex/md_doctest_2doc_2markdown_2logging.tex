@@ -1,0 +1,98 @@
+\chapter{Logging macros}
+\hypertarget{md_doctest_2doc_2markdown_2logging}{}\label{md_doctest_2doc_2markdown_2logging}\index{Logging macros@{Logging macros}}
+\label{md_doctest_2doc_2markdown_2logging_autotoc_md146}%
+\Hypertarget{md_doctest_2doc_2markdown_2logging_autotoc_md146}%
+
+
+Additional messages can be logged during a test case (safely even in \href{faq.md\#is-doctest-thread-aware}{\texttt{ {\bfseries{concurrent threads}}}}).\hypertarget{md_doctest_2doc_2markdown_2logging_autotoc_md147}{}\doxysection{\texorpdfstring{INFO()}{INFO()}}\label{md_doctest_2doc_2markdown_2logging_autotoc_md147}
+The {\ttfamily \doxylink{doctest_2doctest_8h_aedf01192151e10a6620567952711ff69}{INFO()}} macro allows heterogeneous sequences of expressions to be captured by listing them with commas.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{doctest_2doctest_8h_aedf01192151e10a6620567952711ff69}{INFO}}(\textcolor{stringliteral}{"{}The\ number\ is\ "{}},\ i);}
+
+\end{DoxyCode}
+
+
+This message will be relevant to all asserts after it in the current scope or in scopes nested in the current one and will be printed later only if an assert fails.
+
+The expression is {\bfseries{NOT}} evaluated right away -\/ instead it gets lazily evaluated only when needed.
+
+Some notes\+:
+
+
+\begin{DoxyItemize}
+\item the lazy stringification means the expressions will be evaluated when an assert fails and not at the point of capture -\/ so the value might have changed by then
+\item refer to the \doxysectlink{md_doctest_2doc_2markdown_2stringification}{{\bfseries{stringification}}}{0} page for information on how to teach doctest to stringify your types
+\end{DoxyItemize}
+
+The lazy evaluation means that in the common case when no asserts fail the code runs super fast. This makes it suitable even in loops -\/ perhaps to log the iteration.
+
+There is also the {\bfseries{{\ttfamily \doxylink{doctest_2doctest_8h_a0cd84d289552018d72489c085df0a9ca}{CAPTURE()}}}} macro which is a convenience wrapper of {\bfseries{{\ttfamily \doxylink{doctest_2doctest_8h_aedf01192151e10a6620567952711ff69}{INFO()}}}}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{doctest_2doctest_8h_a0cd84d289552018d72489c085df0a9ca}{CAPTURE}}(some\_variable)}
+
+\end{DoxyCode}
+
+
+This will handle the stringification of the variable name for you (actually it works with any expression, not just variables).
+
+This would log something like\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{some\_variable\ :=\ 42}
+
+\end{DoxyCode}
+\hypertarget{md_doctest_2doc_2markdown_2logging_autotoc_md148}{}\doxysection{\texorpdfstring{Messages which can optionally fail test cases}{Messages which can optionally fail test cases}}\label{md_doctest_2doc_2markdown_2logging_autotoc_md148}
+There are a few other macros for logging information\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily \doxylink{doctest_2doctest_8h_ad655b38a678a6c69f4555b7737d4b7d3}{MESSAGE(message)}}
+\item {\ttfamily \doxylink{doctest_2doctest_8h_a3c2341a3238242fdc02d33a1968bd1d2}{FAIL\+\_\+\+CHECK(message)}}
+\item {\ttfamily \doxylink{doctest_2doctest_8h_ac8d1eaf65528f86b445cf6e45b2d72c9}{FAIL(message)}}
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{()}
+
+\end{DoxyCode}
+ is like a {\ttfamily REQUIRE} assert -\/ fails the test case and exits it. {\ttfamily \doxylink{doctest_2doctest_8h_a3c2341a3238242fdc02d33a1968bd1d2}{FAIL\+\_\+\+CHECK()}} acts like a {\ttfamily CHECK} assert -\/ fails the test case but continues with the execution. {\ttfamily \doxylink{doctest_2doctest_8h_ad655b38a678a6c69f4555b7737d4b7d3}{MESSAGE()}} just prints a message.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{doctest_2doctest_8h_ac8d1eaf65528f86b445cf6e45b2d72c9}{FAIL}}(\textcolor{stringliteral}{"{}This\ is\ not\ supposed\ to\ happen!\ some\ var:\ "{}},\ var);}
+
+\end{DoxyCode}
+
+
+Also there is no lazy stringification here -\/ strings are always constructed and printed.
+
+There are also a few more intended for use by third party libraries such as mocking frameworks\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily \doxylink{doctest_2doctest_8h_adb66a4c291609d4a1c554ad0a23f0662}{ADD\+\_\+\+MESSAGE\+\_\+\+AT(file, line, message)}}
+\item {\ttfamily \doxylink{doctest_2doctest_8h_a4608a06d7117332c14b21b93f9655653}{ADD\+\_\+\+FAIL\+\_\+\+CHECK\+\_\+\+AT(file, line, message)}}
+\item {\ttfamily \doxylink{doctest_2doctest_8h_a1937649cc9503739c20b3c81b97b5e5d}{ADD\+\_\+\+FAIL\+\_\+\+AT(file, line, message)}}
+\end{DoxyItemize}
+
+They can be useful when integrating asserts from a different framework with doctest.
+
+\DoxyHorRuler{0}
+
+
+
+\begin{DoxyItemize}
+\item Check out the \href{../../examples/all_features/logging.cpp}{\texttt{ {\bfseries{example}}}} which shows how all of these are used.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+
+
+\href{readme.md\#reference}{\texttt{ Home}}
+

@@ -1,0 +1,141 @@
+\doxysection{Dokumentacja pliku doctest/examples/all\+\_\+features/templated\+\_\+test\+\_\+cases.cpp}
+\hypertarget{templated__test__cases_8cpp}{}\label{templated__test__cases_8cpp}\index{doctest/examples/all\_features/templated\_test\_cases.cpp@{doctest/examples/all\_features/templated\_test\_cases.cpp}}
+{\ttfamily \#include $<$doctest/doctest.\+h$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsubsection*{Komponenty}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_type_pair}{Type\+Pair$<$ first, second $>$}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Definicje typów}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{templated__test__cases_8cpp_a8bfd0b1d1b92bb3741ae12929f8e2830}{int\+\_\+pair}} = \mbox{\hyperlink{struct_type_pair}{Type\+Pair}}$<$int, int$>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{doctest_2doctest_8h_ad3e5c37dc8bd7b0f9346c99c6aab2d1d}{DOCTEST\+\_\+\+MAKE\+\_\+\+STD\+\_\+\+HEADERS\+\_\+\+CLEAN\+\_\+\+FROM\+\_\+\+WARNINGS\+\_\+\+ON\+\_\+\+WALL\+\_\+\+BEGIN}} \mbox{\hyperlink{doctest_2doctest_8h_acca96650713994a51c3deb8e4bdec43d}{DOCTEST\+\_\+\+MAKE\+\_\+\+STD\+\_\+\+HEADERS\+\_\+\+CLEAN\+\_\+\+FROM\+\_\+\+WARNINGS\+\_\+\+ON\+\_\+\+WALL\+\_\+\+END}} \mbox{\hyperlink{templated__test__cases_8cpp_a73491a737bf4c001869fb5a05567fc11}{TYPE\+\_\+\+TO\+\_\+\+STRING\+\_\+\+AS}} ("{}SHORT!!!"{}, short)
+\item 
+\mbox{\hyperlink{templated__test__cases_8cpp_ad573de422395b6c9ccdb44a6661c1996}{TEST\+\_\+\+CASE\+\_\+\+TEMPLATE}} ("{}signed integers stuff"{}, T, signed char, short, int)
+\item 
+\mbox{\hyperlink{templated__test__cases_8cpp_ae222a883bbab2aa05a0a7049fae21cd8}{TYPE\+\_\+\+TO\+\_\+\+STRING}} (std\+::vector$<$ int $>$)
+\item 
+\mbox{\hyperlink{templated__test__cases_8cpp_a5d3c4a103e6bde24e0a5baa883c54d23}{TEST\+\_\+\+CASE\+\_\+\+TEMPLATE}} ("{}vector stuff"{}, T, std\+::vector$<$ int $>$)
+\item 
+\mbox{\hyperlink{templated__test__cases_8cpp_a94cf0ed73555fc92a37b4835a001e392}{TEST\+\_\+\+CASE\+\_\+\+TEMPLATE\+\_\+\+DEFINE}} ("{}default construction"{}, T, test\+\_\+id)
+\item 
+\mbox{\hyperlink{templated__test__cases_8cpp_a5fe886d813be3be64635ab5242624ba5}{TEST\+\_\+\+CASE\+\_\+\+TEMPLATE\+\_\+\+INVOKE}} (test\+\_\+id, signed char, short, int)
+\item 
+\mbox{\hyperlink{templated__test__cases_8cpp_a28a8304c7088dbfc595711ce6dfd4cc3}{TEST\+\_\+\+CASE\+\_\+\+TEMPLATE\+\_\+\+INVOKE}} (test\+\_\+id, double, double)
+\item 
+\mbox{\hyperlink{templated__test__cases_8cpp_a795e2ba7c742a14e6901cc6700d7dccf}{TEST\+\_\+\+CASE\+\_\+\+TEMPLATE\+\_\+\+APPLY}} (test\+\_\+id, \mbox{\hyperlink{classstd_1_1tuple}{std\+::tuple}}$<$ unsigned char, char $>$)
+\item 
+\mbox{\hyperlink{templated__test__cases_8cpp_a8abffbc18e6ca3533493385cfaf4c672}{TYPE\+\_\+\+TO\+\_\+\+STRING\+\_\+\+AS}} ("{}Custom name test"{}, \mbox{\hyperlink{struct_type_pair}{Type\+Pair}}$<$ int, char $>$)
+\item 
+\mbox{\hyperlink{templated__test__cases_8cpp_a81f0e75c2547f51f4299c6b977e55e87}{TYPE\+\_\+\+TO\+\_\+\+STRING\+\_\+\+AS}} ("{}Other custom name"{}, \mbox{\hyperlink{struct_type_pair}{Type\+Pair}}$<$ char, int $>$)
+\item 
+\mbox{\hyperlink{templated__test__cases_8cpp_a20ec43fb19edc277ce26e70933dbf068}{TYPE\+\_\+\+TO\+\_\+\+STRING}} (\mbox{\hyperlink{struct_type_pair}{Type\+Pair}}$<$ bool, int $>$)
+\item 
+\mbox{\hyperlink{templated__test__cases_8cpp_a9a413121fcfbba268b2b46edee95a439}{TEST\+\_\+\+CASE\+\_\+\+TEMPLATE}} ("{}multiple types"{}, T, \mbox{\hyperlink{struct_type_pair}{Type\+Pair}}$<$ int, char $>$, \mbox{\hyperlink{struct_type_pair}{Type\+Pair}}$<$ char, int $>$, \mbox{\hyperlink{struct_type_pair}{Type\+Pair}}$<$ bool, int $>$)
+\item 
+\mbox{\hyperlink{templated__test__cases_8cpp_ada9d33374e7c6e1462c07ceef73e9b62}{TYPE\+\_\+\+TO\+\_\+\+STRING}} (\mbox{\hyperlink{templated__test__cases_8cpp_a8bfd0b1d1b92bb3741ae12929f8e2830}{int\+\_\+pair}})
+\item 
+\mbox{\hyperlink{templated__test__cases_8cpp_a6aeb4decd97c278c102c9c3beb6fbed7}{TEST\+\_\+\+CASE\+\_\+\+TEMPLATE}} ("{}bad stringification of type pair"{}, T, \mbox{\hyperlink{templated__test__cases_8cpp_a8bfd0b1d1b92bb3741ae12929f8e2830}{int\+\_\+pair}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Dokumentacja definicji typów}
+\Hypertarget{templated__test__cases_8cpp_a8bfd0b1d1b92bb3741ae12929f8e2830}\index{templated\_test\_cases.cpp@{templated\_test\_cases.cpp}!int\_pair@{int\_pair}}
+\index{int\_pair@{int\_pair}!templated\_test\_cases.cpp@{templated\_test\_cases.cpp}}
+\doxysubsubsection{\texorpdfstring{int\_pair}{int\_pair}}
+{\footnotesize\ttfamily \label{templated__test__cases_8cpp_a8bfd0b1d1b92bb3741ae12929f8e2830} 
+using \mbox{\hyperlink{templated__test__cases_8cpp_a8bfd0b1d1b92bb3741ae12929f8e2830}{int\+\_\+pair}} = \mbox{\hyperlink{struct_type_pair}{Type\+Pair}}$<$int, int$>$}
+
+
+
+\doxysubsection{Dokumentacja funkcji}
+\Hypertarget{templated__test__cases_8cpp_a6aeb4decd97c278c102c9c3beb6fbed7}\index{templated\_test\_cases.cpp@{templated\_test\_cases.cpp}!TEST\_CASE\_TEMPLATE@{TEST\_CASE\_TEMPLATE}}
+\index{TEST\_CASE\_TEMPLATE@{TEST\_CASE\_TEMPLATE}!templated\_test\_cases.cpp@{templated\_test\_cases.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE\_TEMPLATE()}{TEST\_CASE\_TEMPLATE()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{templated__test__cases_8cpp_a6aeb4decd97c278c102c9c3beb6fbed7} 
+TEST\+\_\+\+CASE\+\_\+\+TEMPLATE (\begin{DoxyParamCaption}\item[{"{}bad stringification of type pair"{}}]{}{, }\item[{T}]{}{, }\item[{\mbox{\hyperlink{templated__test__cases_8cpp_a8bfd0b1d1b92bb3741ae12929f8e2830}{int\+\_\+pair}}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{templated__test__cases_8cpp_a9a413121fcfbba268b2b46edee95a439}\index{templated\_test\_cases.cpp@{templated\_test\_cases.cpp}!TEST\_CASE\_TEMPLATE@{TEST\_CASE\_TEMPLATE}}
+\index{TEST\_CASE\_TEMPLATE@{TEST\_CASE\_TEMPLATE}!templated\_test\_cases.cpp@{templated\_test\_cases.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE\_TEMPLATE()}{TEST\_CASE\_TEMPLATE()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{templated__test__cases_8cpp_a9a413121fcfbba268b2b46edee95a439} 
+TEST\+\_\+\+CASE\+\_\+\+TEMPLATE (\begin{DoxyParamCaption}\item[{"{}multiple types"{}}]{}{, }\item[{T}]{}{, }\item[{\mbox{\hyperlink{struct_type_pair}{Type\+Pair}}$<$ int, char $>$}]{}{, }\item[{\mbox{\hyperlink{struct_type_pair}{Type\+Pair}}$<$ char, int $>$}]{}{, }\item[{\mbox{\hyperlink{struct_type_pair}{Type\+Pair}}$<$ bool, int $>$}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{templated__test__cases_8cpp_ad573de422395b6c9ccdb44a6661c1996}\index{templated\_test\_cases.cpp@{templated\_test\_cases.cpp}!TEST\_CASE\_TEMPLATE@{TEST\_CASE\_TEMPLATE}}
+\index{TEST\_CASE\_TEMPLATE@{TEST\_CASE\_TEMPLATE}!templated\_test\_cases.cpp@{templated\_test\_cases.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE\_TEMPLATE()}{TEST\_CASE\_TEMPLATE()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{templated__test__cases_8cpp_ad573de422395b6c9ccdb44a6661c1996} 
+TEST\+\_\+\+CASE\+\_\+\+TEMPLATE (\begin{DoxyParamCaption}\item[{"{}signed integers stuff"{}}]{}{, }\item[{T}]{}{, }\item[{signed char}]{}{, }\item[{short}]{}{, }\item[{int}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{templated__test__cases_8cpp_a5d3c4a103e6bde24e0a5baa883c54d23}\index{templated\_test\_cases.cpp@{templated\_test\_cases.cpp}!TEST\_CASE\_TEMPLATE@{TEST\_CASE\_TEMPLATE}}
+\index{TEST\_CASE\_TEMPLATE@{TEST\_CASE\_TEMPLATE}!templated\_test\_cases.cpp@{templated\_test\_cases.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE\_TEMPLATE()}{TEST\_CASE\_TEMPLATE()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{templated__test__cases_8cpp_a5d3c4a103e6bde24e0a5baa883c54d23} 
+TEST\+\_\+\+CASE\+\_\+\+TEMPLATE (\begin{DoxyParamCaption}\item[{"{}vector stuff"{}}]{}{, }\item[{T}]{}{, }\item[{std\+::vector$<$ int $>$}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{templated__test__cases_8cpp_a795e2ba7c742a14e6901cc6700d7dccf}\index{templated\_test\_cases.cpp@{templated\_test\_cases.cpp}!TEST\_CASE\_TEMPLATE\_APPLY@{TEST\_CASE\_TEMPLATE\_APPLY}}
+\index{TEST\_CASE\_TEMPLATE\_APPLY@{TEST\_CASE\_TEMPLATE\_APPLY}!templated\_test\_cases.cpp@{templated\_test\_cases.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE\_TEMPLATE\_APPLY()}{TEST\_CASE\_TEMPLATE\_APPLY()}}
+{\footnotesize\ttfamily \label{templated__test__cases_8cpp_a795e2ba7c742a14e6901cc6700d7dccf} 
+TEST\+\_\+\+CASE\+\_\+\+TEMPLATE\+\_\+\+APPLY (\begin{DoxyParamCaption}\item[{test\+\_\+id}]{}{, }\item[{\mbox{\hyperlink{classstd_1_1tuple}{std\+::tuple}}$<$ unsigned char, char $>$}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{templated__test__cases_8cpp_a94cf0ed73555fc92a37b4835a001e392}\index{templated\_test\_cases.cpp@{templated\_test\_cases.cpp}!TEST\_CASE\_TEMPLATE\_DEFINE@{TEST\_CASE\_TEMPLATE\_DEFINE}}
+\index{TEST\_CASE\_TEMPLATE\_DEFINE@{TEST\_CASE\_TEMPLATE\_DEFINE}!templated\_test\_cases.cpp@{templated\_test\_cases.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE\_TEMPLATE\_DEFINE()}{TEST\_CASE\_TEMPLATE\_DEFINE()}}
+{\footnotesize\ttfamily \label{templated__test__cases_8cpp_a94cf0ed73555fc92a37b4835a001e392} 
+TEST\+\_\+\+CASE\+\_\+\+TEMPLATE\+\_\+\+DEFINE (\begin{DoxyParamCaption}\item[{"{}default construction"{}}]{}{, }\item[{T}]{}{, }\item[{test\+\_\+id}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{templated__test__cases_8cpp_a28a8304c7088dbfc595711ce6dfd4cc3}\index{templated\_test\_cases.cpp@{templated\_test\_cases.cpp}!TEST\_CASE\_TEMPLATE\_INVOKE@{TEST\_CASE\_TEMPLATE\_INVOKE}}
+\index{TEST\_CASE\_TEMPLATE\_INVOKE@{TEST\_CASE\_TEMPLATE\_INVOKE}!templated\_test\_cases.cpp@{templated\_test\_cases.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE\_TEMPLATE\_INVOKE()}{TEST\_CASE\_TEMPLATE\_INVOKE()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{templated__test__cases_8cpp_a28a8304c7088dbfc595711ce6dfd4cc3} 
+TEST\+\_\+\+CASE\+\_\+\+TEMPLATE\+\_\+\+INVOKE (\begin{DoxyParamCaption}\item[{test\+\_\+id}]{}{, }\item[{double}]{}{, }\item[{double}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{templated__test__cases_8cpp_a5fe886d813be3be64635ab5242624ba5}\index{templated\_test\_cases.cpp@{templated\_test\_cases.cpp}!TEST\_CASE\_TEMPLATE\_INVOKE@{TEST\_CASE\_TEMPLATE\_INVOKE}}
+\index{TEST\_CASE\_TEMPLATE\_INVOKE@{TEST\_CASE\_TEMPLATE\_INVOKE}!templated\_test\_cases.cpp@{templated\_test\_cases.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE\_TEMPLATE\_INVOKE()}{TEST\_CASE\_TEMPLATE\_INVOKE()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{templated__test__cases_8cpp_a5fe886d813be3be64635ab5242624ba5} 
+TEST\+\_\+\+CASE\+\_\+\+TEMPLATE\+\_\+\+INVOKE (\begin{DoxyParamCaption}\item[{test\+\_\+id}]{}{, }\item[{signed char}]{}{, }\item[{short}]{}{, }\item[{int}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{templated__test__cases_8cpp_ada9d33374e7c6e1462c07ceef73e9b62}\index{templated\_test\_cases.cpp@{templated\_test\_cases.cpp}!TYPE\_TO\_STRING@{TYPE\_TO\_STRING}}
+\index{TYPE\_TO\_STRING@{TYPE\_TO\_STRING}!templated\_test\_cases.cpp@{templated\_test\_cases.cpp}}
+\doxysubsubsection{\texorpdfstring{TYPE\_TO\_STRING()}{TYPE\_TO\_STRING()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{templated__test__cases_8cpp_ada9d33374e7c6e1462c07ceef73e9b62} 
+TYPE\+\_\+\+TO\+\_\+\+STRING (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{templated__test__cases_8cpp_a8bfd0b1d1b92bb3741ae12929f8e2830}{int\+\_\+pair}}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{templated__test__cases_8cpp_ae222a883bbab2aa05a0a7049fae21cd8}\index{templated\_test\_cases.cpp@{templated\_test\_cases.cpp}!TYPE\_TO\_STRING@{TYPE\_TO\_STRING}}
+\index{TYPE\_TO\_STRING@{TYPE\_TO\_STRING}!templated\_test\_cases.cpp@{templated\_test\_cases.cpp}}
+\doxysubsubsection{\texorpdfstring{TYPE\_TO\_STRING()}{TYPE\_TO\_STRING()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{templated__test__cases_8cpp_ae222a883bbab2aa05a0a7049fae21cd8} 
+TYPE\+\_\+\+TO\+\_\+\+STRING (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{templated__test__cases_8cpp_a20ec43fb19edc277ce26e70933dbf068}\index{templated\_test\_cases.cpp@{templated\_test\_cases.cpp}!TYPE\_TO\_STRING@{TYPE\_TO\_STRING}}
+\index{TYPE\_TO\_STRING@{TYPE\_TO\_STRING}!templated\_test\_cases.cpp@{templated\_test\_cases.cpp}}
+\doxysubsubsection{\texorpdfstring{TYPE\_TO\_STRING()}{TYPE\_TO\_STRING()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{templated__test__cases_8cpp_a20ec43fb19edc277ce26e70933dbf068} 
+TYPE\+\_\+\+TO\+\_\+\+STRING (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_type_pair}{Type\+Pair}}$<$ bool, int $>$}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{templated__test__cases_8cpp_a8abffbc18e6ca3533493385cfaf4c672}\index{templated\_test\_cases.cpp@{templated\_test\_cases.cpp}!TYPE\_TO\_STRING\_AS@{TYPE\_TO\_STRING\_AS}}
+\index{TYPE\_TO\_STRING\_AS@{TYPE\_TO\_STRING\_AS}!templated\_test\_cases.cpp@{templated\_test\_cases.cpp}}
+\doxysubsubsection{\texorpdfstring{TYPE\_TO\_STRING\_AS()}{TYPE\_TO\_STRING\_AS()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{templated__test__cases_8cpp_a8abffbc18e6ca3533493385cfaf4c672} 
+TYPE\+\_\+\+TO\+\_\+\+STRING\+\_\+\+AS (\begin{DoxyParamCaption}\item[{"{}Custom name test"{}}]{}{, }\item[{\mbox{\hyperlink{struct_type_pair}{Type\+Pair}}$<$ int, char $>$}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{templated__test__cases_8cpp_a81f0e75c2547f51f4299c6b977e55e87}\index{templated\_test\_cases.cpp@{templated\_test\_cases.cpp}!TYPE\_TO\_STRING\_AS@{TYPE\_TO\_STRING\_AS}}
+\index{TYPE\_TO\_STRING\_AS@{TYPE\_TO\_STRING\_AS}!templated\_test\_cases.cpp@{templated\_test\_cases.cpp}}
+\doxysubsubsection{\texorpdfstring{TYPE\_TO\_STRING\_AS()}{TYPE\_TO\_STRING\_AS()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{templated__test__cases_8cpp_a81f0e75c2547f51f4299c6b977e55e87} 
+TYPE\+\_\+\+TO\+\_\+\+STRING\+\_\+\+AS (\begin{DoxyParamCaption}\item[{"{}Other custom name"{}}]{}{, }\item[{\mbox{\hyperlink{struct_type_pair}{Type\+Pair}}$<$ char, int $>$}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{templated__test__cases_8cpp_a73491a737bf4c001869fb5a05567fc11}\index{templated\_test\_cases.cpp@{templated\_test\_cases.cpp}!TYPE\_TO\_STRING\_AS@{TYPE\_TO\_STRING\_AS}}
+\index{TYPE\_TO\_STRING\_AS@{TYPE\_TO\_STRING\_AS}!templated\_test\_cases.cpp@{templated\_test\_cases.cpp}}
+\doxysubsubsection{\texorpdfstring{TYPE\_TO\_STRING\_AS()}{TYPE\_TO\_STRING\_AS()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{templated__test__cases_8cpp_a73491a737bf4c001869fb5a05567fc11} 
+\mbox{\hyperlink{doctest_2doctest_8h_ad3e5c37dc8bd7b0f9346c99c6aab2d1d}{DOCTEST\+\_\+\+MAKE\+\_\+\+STD\+\_\+\+HEADERS\+\_\+\+CLEAN\+\_\+\+FROM\+\_\+\+WARNINGS\+\_\+\+ON\+\_\+\+WALL\+\_\+\+BEGIN}} \mbox{\hyperlink{doctest_2doctest_8h_acca96650713994a51c3deb8e4bdec43d}{DOCTEST\+\_\+\+MAKE\+\_\+\+STD\+\_\+\+HEADERS\+\_\+\+CLEAN\+\_\+\+FROM\+\_\+\+WARNINGS\+\_\+\+ON\+\_\+\+WALL\+\_\+\+END}} TYPE\+\_\+\+TO\+\_\+\+STRING\+\_\+\+AS (\begin{DoxyParamCaption}\item[{"{}SHORT!!!"{}}]{}{, }\item[{short}]{}{}\end{DoxyParamCaption})}
+

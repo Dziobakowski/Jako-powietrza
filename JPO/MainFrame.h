@@ -6,8 +6,9 @@
 #include <string>
 #include <map>
 #include <fstream>
+#include <mutex>
 #include "Curl.h"
-#include "PlotPanel.h"  // Na pocz¹tku pliku
+#include "PlotPanel.h"
 
 /**
  * @brief G³ówna klasa okna aplikacji, dziedziczy po `wxFrame`.
@@ -44,6 +45,7 @@ private:
     wxChoice* endDateChoice; ///< Lista rozwijana do wyboru górnej granicy czasowej.
     wxButton* confirmButton; ///< Przycisk do potwierdzenia wyboru zakresu czasowego.
     PlotPanel* plotPanel; ///< Panel wykresu, na którym rysowane s¹ dane pomiarowe.
+    wxGauge* progressGauge; ///< WskaŸnik postêpu dla operacji w tle.
 
     // Struktury danych
     std::map<wxString, int> stationMap; ///< Mapa stacji i ich identyfikatorów.
@@ -51,6 +53,16 @@ private:
     std::vector<wxString> timestamps; ///< Przechowywanie wszystkich dostêpnych znaczników czasu.
     std::vector<std::pair<wxString, double>> values; ///< Wszystkie dane pomiarowe przed filtrowaniem.
     Json::Value currentSensorData; ///< Aktualne dane pomiarowe w formacie JSON.
+
+    // Muteksy do synchronizacji dostêpu do danych wspó³dzielonych
+    std::mutex stationMapMutex; ///< Muteks dla mapy stacji.
+    std::mutex sensorMapMutex; ///< Muteks dla mapy sensorów.
+    std::mutex valuesMutex; ///< Muteks dla wartoœci pomiarowych.
+
+    // Flagi stanu operacji
+    bool stationsLoading; ///< Flaga informuj¹ca czy stacje s¹ w trakcie ³adowania.
+    bool sensorsLoading; ///< Flaga informuj¹ca czy sensory s¹ w trakcie ³adowania.
+    bool measurementsLoading; ///< Flaga informuj¹ca czy pomiary s¹ w trakcie ³adowania.
 
     /**
      * @brief Pobiera dane o jakoœci powietrza z serwera.

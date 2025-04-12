@@ -1,0 +1,123 @@
+\doxysection{Dokumentacja pliku doctest/scripts/how\+\_\+stuff\+\_\+works/how\+\_\+subcases\+\_\+work.cpp}
+\hypertarget{how__subcases__work_8cpp}{}\label{how__subcases__work_8cpp}\index{doctest/scripts/how\_stuff\_works/how\_subcases\_work.cpp@{doctest/scripts/how\_stuff\_works/how\_subcases\_work.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$set$>$}\newline
+\doxysubsubsection*{Komponenty}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_subcase}{Subcase}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Definicje}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{how__subcases__work_8cpp_a8e0ebf4e0f06e595b4a273dcfdc23db7}{STR\+\_\+\+CONCAT\+\_\+\+IMPL}}(s1,  s2)
+\item 
+\#define \mbox{\hyperlink{how__subcases__work_8cpp_a598e904839eba520e6bf6c3c11d8a7a7}{STR\+\_\+\+CONCAT}}(s1,  s2)
+\item 
+\#define \mbox{\hyperlink{how__subcases__work_8cpp_a73b12f7aafb4c385a80f3407b8987abe}{ANON\+\_\+\+VAR}}~\mbox{\hyperlink{how__subcases__work_8cpp_a598e904839eba520e6bf6c3c11d8a7a7}{STR\+\_\+\+CONCAT}}(anon, \+\_\+\+\_\+\+LINE\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{how__subcases__work_8cpp_a233512ea2462b6cbda8d6c6598a88c10}{subcase}}(title)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{how__subcases__work_8cpp_ae1a3968e7947464bee7714f6d43b7002}{test}} ()
+\item 
+int \mbox{\hyperlink{how__subcases__work_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Zmienne}
+\begin{DoxyCompactItemize}
+\item 
+set$<$ pair$<$ const char \texorpdfstring{$\ast$}{*}, int $>$ $>$ \mbox{\hyperlink{how__subcases__work_8cpp_a783a67f7723de21f3d8118cfb0235622}{passed\+\_\+subcases}}
+\item 
+set$<$ int $>$ \mbox{\hyperlink{how__subcases__work_8cpp_a566cade267d5dfdb49c9c244ed96be90}{entered\+\_\+levels}}
+\item 
+int \mbox{\hyperlink{how__subcases__work_8cpp_aadd67ce7858be05c138c310167fcf663}{current\+\_\+level}}
+\item 
+bool \mbox{\hyperlink{how__subcases__work_8cpp_a619bd02064f3e460d6c0ff4e9e17bc0d}{has\+\_\+skipped}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Dokumentacja definicji}
+\Hypertarget{how__subcases__work_8cpp_a73b12f7aafb4c385a80f3407b8987abe}\index{how\_subcases\_work.cpp@{how\_subcases\_work.cpp}!ANON\_VAR@{ANON\_VAR}}
+\index{ANON\_VAR@{ANON\_VAR}!how\_subcases\_work.cpp@{how\_subcases\_work.cpp}}
+\doxysubsubsection{\texorpdfstring{ANON\_VAR}{ANON\_VAR}}
+{\footnotesize\ttfamily \label{how__subcases__work_8cpp_a73b12f7aafb4c385a80f3407b8987abe} 
+\#define ANON\+\_\+\+VAR~\mbox{\hyperlink{how__subcases__work_8cpp_a598e904839eba520e6bf6c3c11d8a7a7}{STR\+\_\+\+CONCAT}}(anon, \+\_\+\+\_\+\+LINE\+\_\+\+\_\+)}
+
+\Hypertarget{how__subcases__work_8cpp_a598e904839eba520e6bf6c3c11d8a7a7}\index{how\_subcases\_work.cpp@{how\_subcases\_work.cpp}!STR\_CONCAT@{STR\_CONCAT}}
+\index{STR\_CONCAT@{STR\_CONCAT}!how\_subcases\_work.cpp@{how\_subcases\_work.cpp}}
+\doxysubsubsection{\texorpdfstring{STR\_CONCAT}{STR\_CONCAT}}
+{\footnotesize\ttfamily \label{how__subcases__work_8cpp_a598e904839eba520e6bf6c3c11d8a7a7} 
+\#define STR\+\_\+\+CONCAT(\begin{DoxyParamCaption}\item[{}]{s1}{, }\item[{}]{s2}{}\end{DoxyParamCaption})}
+
+{\bfseries Wartość\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{how__subcases__work_8cpp_a8e0ebf4e0f06e595b4a273dcfdc23db7}{STR\_CONCAT\_IMPL}}(s1,\ s2)}
+
+\end{DoxyCode}
+\Hypertarget{how__subcases__work_8cpp_a8e0ebf4e0f06e595b4a273dcfdc23db7}\index{how\_subcases\_work.cpp@{how\_subcases\_work.cpp}!STR\_CONCAT\_IMPL@{STR\_CONCAT\_IMPL}}
+\index{STR\_CONCAT\_IMPL@{STR\_CONCAT\_IMPL}!how\_subcases\_work.cpp@{how\_subcases\_work.cpp}}
+\doxysubsubsection{\texorpdfstring{STR\_CONCAT\_IMPL}{STR\_CONCAT\_IMPL}}
+{\footnotesize\ttfamily \label{how__subcases__work_8cpp_a8e0ebf4e0f06e595b4a273dcfdc23db7} 
+\#define STR\+\_\+\+CONCAT\+\_\+\+IMPL(\begin{DoxyParamCaption}\item[{}]{s1}{, }\item[{}]{s2}{}\end{DoxyParamCaption})}
+
+{\bfseries Wartość\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{s1\#\#s2}
+
+\end{DoxyCode}
+\Hypertarget{how__subcases__work_8cpp_a233512ea2462b6cbda8d6c6598a88c10}\index{how\_subcases\_work.cpp@{how\_subcases\_work.cpp}!subcase@{subcase}}
+\index{subcase@{subcase}!how\_subcases\_work.cpp@{how\_subcases\_work.cpp}}
+\doxysubsubsection{\texorpdfstring{subcase}{subcase}}
+{\footnotesize\ttfamily \label{how__subcases__work_8cpp_a233512ea2462b6cbda8d6c6598a88c10} 
+\#define subcase(\begin{DoxyParamCaption}\item[{}]{title}{}\end{DoxyParamCaption})}
+
+{\bfseries Wartość\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_subcase}{Subcase}}\&\ \mbox{\hyperlink{how__subcases__work_8cpp_a73b12f7aafb4c385a80f3407b8987abe}{ANON\_VAR}}\ =\ \mbox{\hyperlink{struct_subcase}{Subcase}}(\_\_FILE\_\_,\ \_\_LINE\_\_))}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Dokumentacja funkcji}
+\Hypertarget{how__subcases__work_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\index{how\_subcases\_work.cpp@{how\_subcases\_work.cpp}!main@{main}}
+\index{main@{main}!how\_subcases\_work.cpp@{how\_subcases\_work.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{how__subcases__work_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+int main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{how__subcases__work_8cpp_ae1a3968e7947464bee7714f6d43b7002}\index{how\_subcases\_work.cpp@{how\_subcases\_work.cpp}!test@{test}}
+\index{test@{test}!how\_subcases\_work.cpp@{how\_subcases\_work.cpp}}
+\doxysubsubsection{\texorpdfstring{test()}{test()}}
+{\footnotesize\ttfamily \label{how__subcases__work_8cpp_ae1a3968e7947464bee7714f6d43b7002} 
+void test (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Dokumentacja zmiennych}
+\Hypertarget{how__subcases__work_8cpp_aadd67ce7858be05c138c310167fcf663}\index{how\_subcases\_work.cpp@{how\_subcases\_work.cpp}!current\_level@{current\_level}}
+\index{current\_level@{current\_level}!how\_subcases\_work.cpp@{how\_subcases\_work.cpp}}
+\doxysubsubsection{\texorpdfstring{current\_level}{current\_level}}
+{\footnotesize\ttfamily \label{how__subcases__work_8cpp_aadd67ce7858be05c138c310167fcf663} 
+int current\+\_\+level}
+
+\Hypertarget{how__subcases__work_8cpp_a566cade267d5dfdb49c9c244ed96be90}\index{how\_subcases\_work.cpp@{how\_subcases\_work.cpp}!entered\_levels@{entered\_levels}}
+\index{entered\_levels@{entered\_levels}!how\_subcases\_work.cpp@{how\_subcases\_work.cpp}}
+\doxysubsubsection{\texorpdfstring{entered\_levels}{entered\_levels}}
+{\footnotesize\ttfamily \label{how__subcases__work_8cpp_a566cade267d5dfdb49c9c244ed96be90} 
+set$<$int$>$ entered\+\_\+levels}
+
+\Hypertarget{how__subcases__work_8cpp_a619bd02064f3e460d6c0ff4e9e17bc0d}\index{how\_subcases\_work.cpp@{how\_subcases\_work.cpp}!has\_skipped@{has\_skipped}}
+\index{has\_skipped@{has\_skipped}!how\_subcases\_work.cpp@{how\_subcases\_work.cpp}}
+\doxysubsubsection{\texorpdfstring{has\_skipped}{has\_skipped}}
+{\footnotesize\ttfamily \label{how__subcases__work_8cpp_a619bd02064f3e460d6c0ff4e9e17bc0d} 
+bool has\+\_\+skipped}
+
+\Hypertarget{how__subcases__work_8cpp_a783a67f7723de21f3d8118cfb0235622}\index{how\_subcases\_work.cpp@{how\_subcases\_work.cpp}!passed\_subcases@{passed\_subcases}}
+\index{passed\_subcases@{passed\_subcases}!how\_subcases\_work.cpp@{how\_subcases\_work.cpp}}
+\doxysubsubsection{\texorpdfstring{passed\_subcases}{passed\_subcases}}
+{\footnotesize\ttfamily \label{how__subcases__work_8cpp_a783a67f7723de21f3d8118cfb0235622} 
+set$<$pair$<$const char\texorpdfstring{$\ast$}{*}, int$>$ $>$ passed\+\_\+subcases}
+

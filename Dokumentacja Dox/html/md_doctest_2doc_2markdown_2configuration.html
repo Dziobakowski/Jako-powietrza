@@ -1,0 +1,342 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Jakość powietrza w Polsce: Configuration</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Jakość powietrza w Polsce
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('md_doctest_2doc_2markdown_2configuration.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">Configuration</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="autotoc_md78"></a></p>
+<p><b>doctest</b> is designed to "just work" as much as possible. It also allows configuring how it is built with a set of identifiers.</p>
+<p>The identifiers should be defined before the inclusion of the framework header.</p>
+<p>Defining something <code>globally</code> means for every source file of the binary (executable / shared object).</p>
+<ul>
+<li>**```DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN```**</li>
+<li>**```DOCTEST_CONFIG_IMPLEMENT```**</li>
+<li>**```DOCTEST_CONFIG_DISABLE```**</li>
+<li>**```DOCTEST_CONFIG_IMPLEMENTATION_IN_DLL```**</li>
+<li>**```DOCTEST_CONFIG_NO_SHORT_MACRO_NAMES```**</li>
+<li>**```DOCTEST_CONFIG_TREAT_CHAR_STAR_AS_STRING```**</li>
+<li>**```DOCTEST_CONFIG_REQUIRE_STRINGIFICATION_FOR_ALL_USED_TYPES```**</li>
+<li>**```DOCTEST_CONFIG_DOUBLE_STRINGIFY```**</li>
+<li>**```DOCTEST_CONFIG_SUPER_FAST_ASSERTS```**</li>
+<li>**```DOCTEST_CONFIG_USE_STD_HEADERS```**</li>
+<li>**```DOCTEST_CONFIG_VOID_CAST_EXPRESSIONS```**</li>
+<li>**```DOCTEST_CONFIG_NO_COMPARISON_WARNING_SUPPRESSION```**</li>
+<li>**```DOCTEST_CONFIG_OPTIONS_PREFIX```**</li>
+<li>**```DOCTEST_CONFIG_NO_UNPREFIXED_OPTIONS```**</li>
+<li>**```DOCTEST_CONFIG_NO_TRY_CATCH_IN_ASSERTS```**</li>
+<li>**```DOCTEST_CONFIG_NO_EXCEPTIONS```**</li>
+<li>**```DOCTEST_CONFIG_NO_EXCEPTIONS_BUT_WITH_ALL_ASSERTS```**</li>
+<li>**```DOCTEST_CONFIG_ASSERTION_PARAMETERS_BY_VALUE```**</li>
+<li>**```DOCTEST_CONFIG_COLORS_NONE```**</li>
+<li>**```DOCTEST_CONFIG_COLORS_WINDOWS```**</li>
+<li>**```DOCTEST_CONFIG_COLORS_ANSI```**</li>
+<li>**```DOCTEST_CONFIG_WINDOWS_SEH```**</li>
+<li>**```DOCTEST_CONFIG_NO_WINDOWS_SEH```**</li>
+<li>**```DOCTEST_CONFIG_POSIX_SIGNALS```**</li>
+<li>**```DOCTEST_CONFIG_NO_POSIX_SIGNALS```**</li>
+<li>**```DOCTEST_CONFIG_INCLUDE_TYPE_TRAITS```**</li>
+<li>**```DOCTEST_CONFIG_NO_MULTITHREADING```**</li>
+<li>**```DOCTEST_CONFIG_NO_MULTI_LANE_ATOMICS```**</li>
+<li>**```DOCTEST_CONFIG_ASSERTS_RETURN_VALUES```**</li>
+<li>**```DOCTEST_CONFIG_EVALUATE_ASSERTS_EVEN_WHEN_DISABLED```**</li>
+<li>**```DOCTEST_CONFIG_NO_CONTRADICTING_INLINE```**</li>
+<li>**```DOCTEST_CONFIG_NO_INCLUDE_IOSTREAM```**</li>
+<li>**```DOCTEST_CONFIG_HANDLE_EXCEPTION```**</li>
+</ul>
+<p>For most people the only configuration needed is telling <b>doctest</b> which source file should host all the implementation code:</p>
+<h2><a class="anchor" id="autotoc_md79"></a>
+<b><code>DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN</code></b></h2>
+<div class="fragment"><div class="line"><span class="preprocessor">#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN</span></div>
+<div class="line"><span class="preprocessor">#include &quot;doctest.h&quot;</span></div>
+</div><!-- fragment --><p>This should be defined only in the source file where the library is implemented. It also creates a <code><a class="el" href="how__exception__translators__work_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main()</a></code> entry point.</p>
+<h2><a class="anchor" id="autotoc_md80"></a>
+<b><code>DOCTEST_CONFIG_IMPLEMENT</code></b></h2>
+<p>If the client wants to <a class="el" href="md_doctest_2doc_2markdown_2main.html"><b>supply the <code>main()</code> function</b></a> (either to set an option with some value from the code or to integrate the framework into their existing project codebase) this identifier should be used.</p>
+<p>This should be defined only in the source file where the library is implemented.</p>
+<h2><a class="anchor" id="autotoc_md81"></a>
+<b><code>DOCTEST_CONFIG_DISABLE</code></b></h2>
+<p>One of the most important configuration options - everything testing-related is removed from the binary - including most of the framework implementation and every test case written anywhere! This is one of the most unique features of <b>doctest</b>.</p>
+<p>This should be defined globally.</p>
+<h2><a class="anchor" id="autotoc_md82"></a>
+<b><code>DOCTEST_CONFIG_IMPLEMENTATION_IN_DLL</code></b></h2>
+<p>This will affect the public interface of doctest - all necessary forward declarations for writing tests will be turned into imported symbols. That way the test runner doesn't have to be implemented in the binary (executable / shared object) and can be reused from another binary where it is built and exported.</p>
+<p>To export the test runner from a binary simply use **```DOCTEST_CONFIG_IMPLEMENTATION_IN_DLL```** together with **```DOCTEST_CONFIG_IMPLEMENT```** (or **```DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN```** but then the other binaries will have to link to the executable) in whatever source file the test runner gets implemented into. Note that this identifier should not be defined in the other source files of the binary which exports the doctest test runner - or there will be linker conflicts - having the same symbols as both imported and exported within the same binary.</p>
+<p>Checkout the <a href="../../examples/executable_dll_and_plugin/"><b>example</b></a> - it shows how to have the test runner implemented in a dll (and there are even tests in a plugin which is dynamically loaded).</p>
+<p>This should be defined globally in binaries that import the symbols.</p>
+<p>This should be defined only in the source file where the library is implemented for binaries that export the test runner.</p>
+<h2><a class="anchor" id="autotoc_md83"></a>
+<b><code>DOCTEST_CONFIG_NO_SHORT_MACRO_NAMES</code></b></h2>
+<p>This will remove all macros from <b>doctest</b> that don't have the <b><code>DOCTEST_</code></b> prefix - like <b><code>CHECK</code></b>, <b><code>TEST_CASE</code></b> and <b><code>SUBCASE</code></b>. Then only the full macro names will be available - <b><code>DOCTEST_CHECK</code></b>, <b><code>DOCTEST_TEST_CASE</code></b> and <b><code>DOCTEST_SUBCASE</code></b>. The user is free to make their own short versions of these macros - <a href="../../examples/all_features/alternative_macros.cpp"><b>example</b></a>.</p>
+<p>This can be defined both globally and in specific source files only.</p>
+<h2><a class="anchor" id="autotoc_md84"></a>
+<b><code>DOCTEST_CONFIG_TREAT_CHAR_STAR_AS_STRING</code></b></h2>
+<p>By default <code>char*</code> is being treated as a pointer. With this option comparing <code>char*</code> pointers will switch to using <code>strcmp()</code> for comparisons and when stringified the string will be printed instead of the pointer value.</p>
+<p>This should be defined globally.</p>
+<h2><a class="anchor" id="autotoc_md85"></a>
+<b><code>DOCTEST_CONFIG_REQUIRE_STRINGIFICATION_FOR_ALL_USED_TYPES</code></b></h2>
+<p>By default if stringification is not available for a type, it is simply printed as <code>{?}</code>. By enabling this flag, whenever a type is used in an assert that does not provide stringification, the compilation is stopped.</p>
+<p>This can be defined both globally and in specific source files only.</p>
+<h2><a class="anchor" id="autotoc_md86"></a>
+<b><code>DOCTEST_CONFIG_DOUBLE_STRINGIFY</code></b></h2>
+<p>If you define your own <code>toString</code> functions that return something, that's different from <code><a class="el" href="classdoctest_1_1_string.html">doctest::String</a></code>, but still stringifiable, you can enable this flag to stringify the result of internal stringification calls again.</p>
+<p>You can also define <code>DOCTEST_STRINGIFY</code> yourself to override doctest's stringification behavior.</p>
+<p>This can be defined both globally and in specific source files only.</p>
+<h2><a class="anchor" id="autotoc_md87"></a>
+<b><code>DOCTEST_CONFIG_SUPER_FAST_ASSERTS</code></b></h2>
+<p>This config option makes the assert macros (except for those dealing with exceptions) compile <a href="benchmarks.md#cost-of-an-assertion-macro"><b>much faster</b></a>! (31-91% - depending on the type - <a href="assertions.md#expression-decomposing-asserts"><b>normal</b></a> or <a href="assertions.md#binary-and-unary-asserts"><b>binary</b></a>)</p>
+<p>Each assert is turned into a single function call - the only downside of this is: if an assert fails and a debugger is attached - when it breaks it will be in an internal function - the user will have to go 1 level up in the callstack to see the actual assert.</p>
+<p>It also implies **```DOCTEST_CONFIG_NO_TRY_CATCH_IN_ASSERTS```** (so exceptions thrown during the evaluation of an assert are not caught by the assert itself but by the testing framework - meaning that the test case is immediately aborted).</p>
+<p>This can be defined both globally and in specific source files only.</p>
+<h2><a class="anchor" id="autotoc_md88"></a>
+<b><code>DOCTEST_CONFIG_USE_STD_HEADERS</code></b></h2>
+<p>The library by default provides a forward declaration of <code><a class="el" href="namespacestd.html#af1127a426e9584e1fc5e158ded14b7da">std::ostream</a></code> in order to support the <code>operator&lt;&lt;</code> <a class="el" href="md_doctest_2doc_2markdown_2stringification.html"><b>stringification</b></a> mechanism (also <code><a class="el" href="classstd_1_1tuple.html">std::tuple</a>&lt;&gt;</code> and <code><a class="el" href="namespacestd.html#a147badd87f1e15108e8dbee257b60b84">std::nullptr_t</a></code>). This is forbidden by the standard (even though it works everywhere on all tested compilers). However if the user wishes to be 100% standards compliant - then this configuration option can be used to force the inclusion of the relevant standard headers.</p>
+<p>Also it is possible that some STL implementation of a compiler with niche usage defines them differently - then there will be compilation errors in STL headers and using this option should fix the problem.</p>
+<p>This should be defined globally.</p>
+<h2><a class="anchor" id="autotoc_md89"></a>
+<b><code>DOCTEST_CONFIG_VOID_CAST_EXPRESSIONS</code></b></h2>
+<p>This affects the <a href="assertions.md#exceptions">asserts dealing with exceptions</a> - the expression is cast to void to avoid problems such as when functions with the <code>[[nodiscard]]</code> attribute are used but their result isn't checked.</p>
+<p>This can be defined both globally and in specific source files only.</p>
+<h2><a class="anchor" id="autotoc_md90"></a>
+<b><code>DOCTEST_CONFIG_NO_COMPARISON_WARNING_SUPPRESSION</code></b></h2>
+<p>By default the library suppresses warnings about comparing signed and unsigned types, etc.</p>
+<ul>
+<li>g++/clang <code>-Wsign-conversion</code></li>
+<li>g++/clang <code>-Wsign-compare</code></li>
+<li>msvc <code>C4389</code> 'operator' : signed/unsigned mismatch</li>
+<li>msvc <code>C4018</code> 'expression' : signed/unsigned mismatch</li>
+</ul>
+<p>You can checkout <a href="https://github.com/doctest/doctest/issues/16#issuecomment-246803303"><b>this</b></a> issue to better understand why I suppress these warnings by default.</p>
+<p>This can be defined both globally and in specific source files only.</p>
+<h2><a class="anchor" id="autotoc_md91"></a>
+<b><code>DOCTEST_CONFIG_OPTIONS_PREFIX</code></b></h2>
+<p>Defining this as a string will change the prefix of the <a class="el" href="md_doctest_2doc_2markdown_2commandline.html"><b>command line</b></a> options to use the given prefix instead of the default <code>dt-</code> prefix. This can be useful for integrating the testing framework into a client codebase, where a command option prefix like <code>selftest-</code> might be more clear to users.</p>
+<p>This should be defined only in the source file where the library is implemented (it's relevant only there).</p>
+<h2><a class="anchor" id="autotoc_md92"></a>
+<b><code>DOCTEST_CONFIG_NO_UNPREFIXED_OPTIONS</code></b></h2>
+<p>This will disable the short versions of the <a class="el" href="md_doctest_2doc_2markdown_2commandline.html"><b>command line</b></a> options and only the versions with <code>--dt-</code> prefix will be parsed by <b>doctest</b> - this is possible for easy interoperability with client command line option handling when the testing framework is integrated within a client codebase - so there are no clashes and so that the user can exclude everything starting with <code>--dt-</code> from their option parsing.</p>
+<p>This should be defined only in the source file where the library is implemented (it's relevant only there).</p>
+<h2><a class="anchor" id="autotoc_md93"></a>
+<b><code>DOCTEST_CONFIG_NO_TRY_CATCH_IN_ASSERTS</code></b></h2>
+<p>This will remove all <code>try</code> / <code>catch</code> sections from:</p>
+<ul>
+<li>the <a href="assertions.md#expression-decomposing-asserts">normal asserts</a></li>
+<li>the <a href="assertions.md#binary-and-unary-asserts">binary and unary asserts</a></li>
+</ul>
+<p>so exceptions thrown while evaluating the expression in an assert will terminate the current test case.</p>
+<p>This can be used for some mild compile time savings but for greater impact look into <a href="configuration.md#doctest_config_super_fast_asserts"><b><code>DOCTEST_CONFIG_SUPER_FAST_ASSERTS</code></b></a>.</p>
+<p>This can be defined both globally and in specific source files only.</p>
+<h2><a class="anchor" id="autotoc_md94"></a>
+<b><code>DOCTEST_CONFIG_NO_EXCEPTIONS</code></b></h2>
+<p>This will remove everything that uses exceptions from the framework - it is also auto detectable if exceptions are disabled for compilers (like with <code>-fno-exceptions</code> for GCC/Clang).</p>
+<p>What gets changed:</p>
+<ul>
+<li>asserts that evaluate the expression in a <code>try</code> / <code>catch</code> section no longer evaluate in such a context</li>
+<li><code>REQUIRE</code> macros are gone (undefined)</li>
+<li><a href="assertions.md#exceptions">exception macros</a> are gone (undefined)</li>
+<li>the <code>abort-after</code> option won't be fully working because an exception is used to terminate test cases</li>
+</ul>
+<p>The <code>REQUIRE</code> family of asserts uses exceptions to terminate the current test case when they fail. An exception is used instead of a simple <code>return;</code> because asserts can be used not only in a test case but also in functions called by a test case.</p>
+<p>Also some of the <a href="logging.md#messages-which-can-optionally-fail-test-cases"><b>logging macros</b></a> which act like a <code>REQUIRE</code> assert (terminating the test case) - like <code><a class="el" href="doctest_2doctest_8h.html#ac8d1eaf65528f86b445cf6e45b2d72c9">FAIL()</a></code> - start to work differently - like a <code><a class="el" href="doctest_2doctest_8h.html#a3c2341a3238242fdc02d33a1968bd1d2">FAIL_CHECK()</a></code>.</p>
+<p>**```DOCTEST_CONFIG_NO_EXCEPTIONS```** implies **```DOCTEST_CONFIG_NO_TRY_CATCH_IN_ASSERTS```**</p>
+<p>If you wish to use asserts that deal with exceptions and only sometimes build without exceptions - check the **```DOCTEST_CONFIG_NO_EXCEPTIONS_BUT_WITH_ALL_ASSERTS```** config option.</p>
+<p>This should be defined globally.</p>
+<h2><a class="anchor" id="autotoc_md95"></a>
+<b><code>DOCTEST_CONFIG_NO_EXCEPTIONS_BUT_WITH_ALL_ASSERTS</code></b></h2>
+<p>When building with no exceptions (see **```DOCTEST_CONFIG_NO_EXCEPTIONS```**) <code>REQUIRE</code> asserts and the ones about dealing with exceptions are gone.</p>
+<p>If however you want your code to use these assertions and only sometimes build without exceptions - then using this config will be of help. The effects of using it are the following:</p>
+<ul>
+<li><code>REQUIRE</code> asserts are not gone - but they act like <code>CHECK</code> asserts - when one of them fails the whole test case will be marked as failed but will not be exited immediately</li>
+<li>the <a href="assertions.md#exceptions">asserts for dealing with exceptions</a> are turned into a no-op (instead of being totally undefined)</li>
+</ul>
+<p>This can be defined both globally and in specific source files only.</p>
+<h2><a class="anchor" id="autotoc_md96"></a>
+<b><code>DOCTEST_CONFIG_ASSERTION_PARAMETERS_BY_VALUE</code></b></h2>
+<p>This option forces all doctest asserts to copy by value the expressions they are given instead of binding them to const references. This might be useful to avoid ODR-usage of static constants (which might lead to linker errors with g++/clang):</p>
+<div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="keyword">struct </span>type_traits { <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">bool</span> value = <span class="keyword">false</span>; };</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// unless DOCTEST_CONFIG_ASSERTION_PARAMETERS_BY_VALUE is defined the following assertion</span></div>
+<div class="line"><span class="comment">// will lead to a linker error if type_traits&lt;int&gt;::value isn&#39;t defined in a translation unit</span></div>
+<div class="line"><a class="code hl_define" href="doctest_2doctest_8h.html#a836cca6b6ed3a1706353f6d1bca0935f">CHECK</a>(type_traits&lt;int&gt;::value == <span class="keyword">false</span>);</div>
+<div class="ttc" id="adoctest_2doctest_8h_html_a836cca6b6ed3a1706353f6d1bca0935f"><div class="ttname"><a href="doctest_2doctest_8h.html#a836cca6b6ed3a1706353f6d1bca0935f">CHECK</a></div><div class="ttdeci">#define CHECK(...)</div><div class="ttdef"><b>Definicja</b> doctest.h:2969</div></div>
+</div><!-- fragment --><p>This can be defined both globally and in specific source files only.</p>
+<h2><a class="anchor" id="autotoc_md97"></a>
+<b><code>DOCTEST_CONFIG_COLORS_NONE</code></b></h2>
+<p>This will remove support for colors in the console output of the framework.</p>
+<p>This should be defined only in the source file where the library is implemented (it's relevant only there).</p>
+<h2><a class="anchor" id="autotoc_md98"></a>
+<b><code>DOCTEST_CONFIG_COLORS_WINDOWS</code></b></h2>
+<p>This will force the support for colors in the console output to use the Windows APIs and headers.</p>
+<p>This should be defined only in the source file where the library is implemented (it's relevant only there).</p>
+<h2><a class="anchor" id="autotoc_md99"></a>
+<b><code>DOCTEST_CONFIG_COLORS_ANSI</code></b></h2>
+<p>This will force the support for colors in the console output to use ANSI escape codes.</p>
+<p>This should be defined only in the source file where the library is implemented (it's relevant only there).</p>
+<h2><a class="anchor" id="autotoc_md100"></a>
+<b><code>DOCTEST_CONFIG_WINDOWS_SEH</code></b></h2>
+<p>This will enable SEH handling on Windows. Currently enabled only when compiled with MSVC, because some versions of MinGW do not have the necessary Win32 API support. The user may choose to enable this explicitly - it is known to work with the MinGW-w64 project.</p>
+<p>This should be defined only in the source file where the library is implemented (it's relevant only there).</p>
+<h2><a class="anchor" id="autotoc_md101"></a>
+<b><code>DOCTEST_CONFIG_NO_WINDOWS_SEH</code></b></h2>
+<p>This can be used to disable **```DOCTEST_CONFIG_WINDOWS_SEH```** when it is auto-selected by the library.</p>
+<p>This should be defined only in the source file where the library is implemented (it's relevant only there).</p>
+<h2><a class="anchor" id="autotoc_md102"></a>
+<b><code>DOCTEST_CONFIG_POSIX_SIGNALS</code></b></h2>
+<p>This will enable the use of signals under UNIX for handling crashes. On by default.</p>
+<p>This should be defined only in the source file where the library is implemented (it's relevant only there).</p>
+<h2><a class="anchor" id="autotoc_md103"></a>
+<b><code>DOCTEST_CONFIG_NO_POSIX_SIGNALS</code></b></h2>
+<p>This can be used to disable <b><code>DOCTEST_CONFIG_POSIX_SIGNALS</code></b> when it is auto-selected by the library.</p>
+<p>This should be defined only in the source file where the library is implemented (it's relevant only there).</p>
+<h2><a class="anchor" id="autotoc_md104"></a>
+<b><code>DOCTEST_CONFIG_INCLUDE_TYPE_TRAITS</code></b></h2>
+<p>This can be used to include the <code>&lt;type_traits&gt;</code> C++11 header. That in turn will enable the ability for the <code>Approx</code> helper to be used with strong typedefs of <code>double</code> - check <a href="https://github.com/doctest/doctest/issues/62">this</a> or <a href="https://github.com/doctest/doctest/issues/85">this</a> issue for more details on that.</p>
+<p>This can be defined both globally and in specific source files only.</p>
+<h2><a class="anchor" id="autotoc_md105"></a>
+<b><code>DOCTEST_CONFIG_NO_MULTITHREADING</code></b></h2>
+<p>This can be used to disable all multithreading support.</p>
+<p>Speeds up single threaded applications.</p>
+<p>Includes **```DOCTEST_CONFIG_NO_MULTI_LANE_ATOMICS```**.</p>
+<p>This should be defined only in the source file where the library is implemented (it's relevant only there).</p>
+<h2><a class="anchor" id="autotoc_md106"></a>
+<b><code>DOCTEST_CONFIG_NO_MULTI_LANE_ATOMICS</code></b></h2>
+<p>This can be used to disable multi lane atomics. Multi lane atomics can speed up highly parallel use of assert statements, but have a small overhead for single threaded applications.</p>
+<p>This should be defined only in the source file where the library is implemented (it's relevant only there).</p>
+<h2><a class="anchor" id="autotoc_md107"></a>
+<b><code>DOCTEST_CONFIG_ASSERTS_RETURN_VALUES</code></b></h2>
+<p>Makes all assertion macros return a boolean value, reporting whether the assertion succeeded. This can be used, for example, to have <code>nullptr</code> checks that don't terminate the test case on failure.</p>
+<p>Example: </p><div class="fragment"><div class="line"><span class="keywordflow">if</span> (<a class="code hl_define" href="doctest_2doctest_8h.html#a836cca6b6ed3a1706353f6d1bca0935f">CHECK</a>(somePtr != <span class="keyword">nullptr</span>))</div>
+<div class="line">    <a class="code hl_define" href="doctest_2doctest_8h.html#a836cca6b6ed3a1706353f6d1bca0935f">CHECK</a>(somePtr-&gt;someMethod() == 42);</div>
+</div><!-- fragment --><p>This has a slight negative impact on performance as well as disabling some functionality inside assertions (e.g. <code>co_return</code>).</p>
+<p>When **```DOCTEST_CONFIG_DISABLE```** is defined, all macros return <code>false</code> by default.</p>
+<p>This can be defined both globally and in specific source files only.</p>
+<h2><a class="anchor" id="autotoc_md108"></a>
+<b><code>DOCTEST_CONFIG_EVALUATE_ASSERTS_EVEN_WHEN_DISABLED</code></b></h2>
+<p>When **```DOCTEST_CONFIG_ASSERTS_RETURN_VALUES```** and **```DOCTEST_CONFIG_DISABLE```** are defined, this macro will cause conditions from assertions to evaluate properly (instead of returning <code>false</code>), although all overhead and functionality from doctest is removed. This is useful when assertions are used in production code within if statements so that the condition continues to be evaluated.</p>
+<p>Since all <code>THROWS_WITH</code> assertions depend on doctest functionality which is not available when **```DOCTEST_CONFIG_DISABLE```** is defined (stringification), they will still unconditionally return <code>false</code>.</p>
+<p>This can be defined both globally and in specific source files only.</p>
+<h2><a class="anchor" id="autotoc_md109"></a>
+<b><code>DOCTEST_CONFIG_NO_CONTRADICTING_INLINE</code></b></h2>
+<p>Some functions in doctest are marked with both <code>inline</code> and a compiler specific no-inline attribute. This is done because they need to be weak symbols (inline) so that they can be defined in multiple compilation units, but they should not actually be inlined as a compiler optimization as that would degrade compilation speed.</p>
+<p>However, this is known to cause some issues with a few compilers with hard to suppress warnings. This flag disables the use of the no-inline attribute in order to suppress the warning if your build requires that.</p>
+<h2><a class="anchor" id="autotoc_md110"></a>
+<b><code>DOCTEST_CONFIG_NO_INCLUDE_IOSTREAM</code></b></h2>
+<p>This option disables any inclusion of <code>&lt;iostream&gt;</code>, <code>std::cout</code> and <code>std::cerr</code>. This implies that the <code>cout</code> context field must be supplied. If </p><div class="fragment"><div class="line">_CONFIG_NO_EXCEPTIONS</div>
+</div><!-- fragment --><p> is defined, then the unhandled exception is not printed to <code>std::cerr</code>. ```DOCTEST_CONFIG_HANDLE_EXCEPTION``` can be defined to handle this case.</p>
+<h2><a class="anchor" id="autotoc_md111"></a>
+<b><code>DOCTEST_CONFIG_HANDLE_EXCEPTION</code></b></h2>
+<p>This macro function can be defined to handle exceptions instead of just printing them to <code>std::cerr</code>.</p>
+<hr  />
+<p><a href="readme.md#reference">Home</a></p>
+<p><img src="../../scripts/data/logo/icon_2.svg" alt="" style="pointer-events: none;" class="inline"/></p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

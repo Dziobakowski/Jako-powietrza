@@ -1,0 +1,430 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Jakość powietrza w Polsce: Dokumentacja pliku doctest/examples/all_features/stringification.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Jakość powietrza w Polsce
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('stringification_8cpp.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Komponenty</a> &#124;
+<a href="#namespaces">Przestrzenie nazw</a> &#124;
+<a href="#define-members">Definicje</a> &#124;
+<a href="#enum-members">Wyliczenia</a> &#124;
+<a href="#func-members">Funkcje</a>  </div>
+  <div class="headertitle"><div class="title">Dokumentacja pliku stringification.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;doctest/doctest.h&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
+<code>#include &quot;<a class="el" href="header_8h_source.html">header.h</a>&quot;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;list&gt;</code><br />
+<code>#include &lt;sstream&gt;</code><br />
+<code>#include &lt;limits&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Komponenty</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_n_1_1_a.html">N::A</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_n_1_1_b.html">N::B</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_n_1_1_c.html">N::C</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdoctest_1_1_string_maker_3_01std_1_1list_3_01_t_01_4_01_4.html">doctest::StringMaker&lt; std::list&lt; T &gt; &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_my_type.html">MyType&lt; T, K &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_my_type_inherited.html">MyTypeInherited&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_bar_1_1_foo.html">Bar::Foo</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_bar_1_1_my_other_type.html">Bar::MyOtherType</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Przestrzenie nazw</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_n.html">N</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestd.html">std</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedoctest.html">doctest</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_bar.html">Bar</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Definicje</h2></td></tr>
+<tr class="memitem:a2acdc4aa0f128c9b2788707db3e6935e" id="r_a2acdc4aa0f128c9b2788707db3e6935e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2acdc4aa0f128c9b2788707db3e6935e">MOVE</a>&#160;&#160;&#160;std::move</td></tr>
+<tr class="separator:a2acdc4aa0f128c9b2788707db3e6935e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abeaeba4cdc724ae205a847a2ebfda0d2" id="r_abeaeba4cdc724ae205a847a2ebfda0d2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abeaeba4cdc724ae205a847a2ebfda0d2">CHECK_NOT_DEFAULT_STR</a>(var)</td></tr>
+<tr class="separator:abeaeba4cdc724ae205a847a2ebfda0d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Wyliczenia</h2></td></tr>
+<tr class="memitem:aa621f6f849ec2327dabfc4392fd59a70" id="r_aa621f6f849ec2327dabfc4392fd59a70"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa621f6f849ec2327dabfc4392fd59a70">Foo</a> </td></tr>
+<tr class="separator:aa621f6f849ec2327dabfc4392fd59a70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funkcje</h2></td></tr>
+<tr class="memitem:ab7f7193b4d4c7d9637654176043d3fe6" id="r_ab7f7193b4d4c7d9637654176043d3fe6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab7f7193b4d4c7d9637654176043d3fe6">TEST_CASE</a> (&quot;operator&lt;&lt;&quot;)</td></tr>
+<tr class="separator:ab7f7193b4d4c7d9637654176043d3fe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8a97062cf1ee8926569324eadb93ac4" id="r_ac8a97062cf1ee8926569324eadb93ac4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac8a97062cf1ee8926569324eadb93ac4">TEST_CASE</a> (&quot;no headers&quot;)</td></tr>
+<tr class="separator:ac8a97062cf1ee8926569324eadb93ac4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f759b8f7d019aba865c741ed5df68dc" id="r_a4f759b8f7d019aba865c741ed5df68dc"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a4f759b8f7d019aba865c741ed5df68dc"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacestd.html#af1127a426e9584e1fc5e158ded14b7da">ostream</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestd.html#a4f759b8f7d019aba865c741ed5df68dc">std::operator&lt;&lt;</a> (<a class="el" href="namespacestd.html#af1127a426e9584e1fc5e158ded14b7da">ostream</a> &amp;stream, const vector&lt; T &gt; &amp;in)</td></tr>
+<tr class="separator:a4f759b8f7d019aba865c741ed5df68dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f781ff7a0bf5be5472c21f819671121" id="r_a1f781ff7a0bf5be5472c21f819671121"><td class="memTemplParams" colspan="2">template&lt;typename T, typename K&gt; </td></tr>
+<tr class="memitem:a1f781ff7a0bf5be5472c21f819671121"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a1f781ff7a0bf5be5472c21f819671121">operator==</a> (const <a class="el" href="struct_my_type.html">MyType</a>&lt; T, K &gt; &amp;lhs, const <a class="el" href="struct_my_type.html">MyType</a>&lt; T, K &gt; &amp;rhs)</td></tr>
+<tr class="separator:a1f781ff7a0bf5be5472c21f819671121"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e947501f968e72964f20080e5099723" id="r_a9e947501f968e72964f20080e5099723"><td class="memTemplParams" colspan="2">template&lt;typename T, typename K&gt; </td></tr>
+<tr class="memitem:a9e947501f968e72964f20080e5099723"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacestd.html#af1127a426e9584e1fc5e158ded14b7da">std::ostream</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a9e947501f968e72964f20080e5099723">operator&lt;&lt;</a> (<a class="el" href="namespacestd.html#af1127a426e9584e1fc5e158ded14b7da">std::ostream</a> &amp;stream, const <a class="el" href="struct_my_type.html">MyType</a>&lt; T, K &gt; &amp;in)</td></tr>
+<tr class="separator:a9e947501f968e72964f20080e5099723"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afaaac24a49a90d14978aceb5d1212451" id="r_afaaac24a49a90d14978aceb5d1212451"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdoctest_1_1_string.html">doctest::String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_bar.html#afaaac24a49a90d14978aceb5d1212451">Bar::toString</a> (const <a class="el" href="struct_bar_1_1_foo.html">Foo</a> &amp;)</td></tr>
+<tr class="separator:afaaac24a49a90d14978aceb5d1212451"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69b6b7aa4d2fa9bf7f2f368f079e46e8" id="r_a69b6b7aa4d2fa9bf7f2f368f079e46e8"><td class="memTemplParams" colspan="2">template&lt;class OStream&gt; </td></tr>
+<tr class="memitem:a69b6b7aa4d2fa9bf7f2f368f079e46e8"><td class="memTemplItemLeft" align="right" valign="top">OStream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_bar.html#a69b6b7aa4d2fa9bf7f2f368f079e46e8">Bar::operator&lt;&lt;</a> (OStream &amp;stream, const <a class="el" href="struct_bar_1_1_my_other_type.html">MyOtherType</a> &amp;in)</td></tr>
+<tr class="separator:a69b6b7aa4d2fa9bf7f2f368f079e46e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac49781eb2fe15b0a1820ba0e3ef1558e" id="r_ac49781eb2fe15b0a1820ba0e3ef1558e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac49781eb2fe15b0a1820ba0e3ef1558e">REGISTER_EXCEPTION_TRANSLATOR</a> (<a class="el" href="struct_my_type_inherited.html">MyTypeInherited</a>&lt; int &gt; &amp;ex)</td></tr>
+<tr class="separator:ac49781eb2fe15b0a1820ba0e3ef1558e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26a9fbf928bf7887fb023d7f7ca1e5d5" id="r_a26a9fbf928bf7887fb023d7f7ca1e5d5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26a9fbf928bf7887fb023d7f7ca1e5d5">TEST_CASE</a> (&quot;all asserts should fail and show how the objects get stringified&quot;)</td></tr>
+<tr class="separator:a26a9fbf928bf7887fb023d7f7ca1e5d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59e8cda39bc152624b5ef0099060d9f6" id="r_a59e8cda39bc152624b5ef0099060d9f6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59e8cda39bc152624b5ef0099060d9f6">TEST_CASE</a> (&quot;a <a class="el" href="how__subcases__work_8cpp.html#ae1a3968e7947464bee7714f6d43b7002">test</a> case that registers an exception translator for int and then throws one&quot;)</td></tr>
+<tr class="separator:a59e8cda39bc152624b5ef0099060d9f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a570b5ac76d01ac55c9c255d67f3defe8" id="r_a570b5ac76d01ac55c9c255d67f3defe8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a570b5ac76d01ac55c9c255d67f3defe8">TEST_CASE</a> (&quot;pointer comparisons&quot;)</td></tr>
+<tr class="separator:a570b5ac76d01ac55c9c255d67f3defe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87313e3745c4de13fed5fe76546dd04d" id="r_a87313e3745c4de13fed5fe76546dd04d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a87313e3745c4de13fed5fe76546dd04d">TEST_CASE</a> (&quot;enum with operator&lt;&lt;&quot;)</td></tr>
+<tr class="separator:a87313e3745c4de13fed5fe76546dd04d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Dokumentacja definicji</h2>
+<a id="abeaeba4cdc724ae205a847a2ebfda0d2" name="abeaeba4cdc724ae205a847a2ebfda0d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abeaeba4cdc724ae205a847a2ebfda0d2">&#9670;&#160;</a></span>CHECK_NOT_DEFAULT_STR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CHECK_NOT_DEFAULT_STR</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>var</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Wartość:</b><div class="fragment"><div class="line"><a class="code hl_define" href="doctest_2doctest_8h.html#a836cca6b6ed3a1706353f6d1bca0935f">CHECK</a>(toString(var) != <span class="stringliteral">&quot;{?}&quot;</span>)</div>
+<div class="ttc" id="adoctest_2doctest_8h_html_a836cca6b6ed3a1706353f6d1bca0935f"><div class="ttname"><a href="doctest_2doctest_8h.html#a836cca6b6ed3a1706353f6d1bca0935f">CHECK</a></div><div class="ttdeci">#define CHECK(...)</div><div class="ttdef"><b>Definicja</b> doctest.h:2969</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2acdc4aa0f128c9b2788707db3e6935e" name="a2acdc4aa0f128c9b2788707db3e6935e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2acdc4aa0f128c9b2788707db3e6935e">&#9670;&#160;</a></span>MOVE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MOVE&#160;&#160;&#160;std::move</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja typów wyliczanych</h2>
+<a id="aa621f6f849ec2327dabfc4392fd59a70" name="aa621f6f849ec2327dabfc4392fd59a70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa621f6f849ec2327dabfc4392fd59a70">&#9670;&#160;</a></span>Foo</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#aa621f6f849ec2327dabfc4392fd59a70">Foo</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja funkcji</h2>
+<a id="a9e947501f968e72964f20080e5099723" name="a9e947501f968e72964f20080e5099723"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e947501f968e72964f20080e5099723">&#9670;&#160;</a></span>operator&lt;&lt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, typename K&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacestd.html#af1127a426e9584e1fc5e158ded14b7da">std::ostream</a> &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacestd.html#af1127a426e9584e1fc5e158ded14b7da">std::ostream</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stream</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_my_type.html">MyType</a>&lt; T, K &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>in</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1f781ff7a0bf5be5472c21f819671121" name="a1f781ff7a0bf5be5472c21f819671121"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f781ff7a0bf5be5472c21f819671121">&#9670;&#160;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, typename K&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_my_type.html">MyType</a>&lt; T, K &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>lhs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_my_type.html">MyType</a>&lt; T, K &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac49781eb2fe15b0a1820ba0e3ef1558e" name="ac49781eb2fe15b0a1820ba0e3ef1558e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac49781eb2fe15b0a1820ba0e3ef1558e">&#9670;&#160;</a></span>REGISTER_EXCEPTION_TRANSLATOR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">REGISTER_EXCEPTION_TRANSLATOR </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_my_type_inherited.html">MyTypeInherited</a>&lt; int &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>ex</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a59e8cda39bc152624b5ef0099060d9f6" name="a59e8cda39bc152624b5ef0099060d9f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59e8cda39bc152624b5ef0099060d9f6">&#9670;&#160;</a></span>TEST_CASE() <span class="overload">[1/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;a <a class="el" href="how__subcases__work_8cpp.html#ae1a3968e7947464bee7714f6d43b7002">test</a> case that registers an exception translator for int and then throws one&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a26a9fbf928bf7887fb023d7f7ca1e5d5" name="a26a9fbf928bf7887fb023d7f7ca1e5d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26a9fbf928bf7887fb023d7f7ca1e5d5">&#9670;&#160;</a></span>TEST_CASE() <span class="overload">[2/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;all asserts should fail and show how the objects get stringified&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a87313e3745c4de13fed5fe76546dd04d" name="a87313e3745c4de13fed5fe76546dd04d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87313e3745c4de13fed5fe76546dd04d">&#9670;&#160;</a></span>TEST_CASE() <span class="overload">[3/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;enum with operator&lt;&lt;&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac8a97062cf1ee8926569324eadb93ac4" name="ac8a97062cf1ee8926569324eadb93ac4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8a97062cf1ee8926569324eadb93ac4">&#9670;&#160;</a></span>TEST_CASE() <span class="overload">[4/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;no headers&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab7f7193b4d4c7d9637654176043d3fe6" name="ab7f7193b4d4c7d9637654176043d3fe6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7f7193b4d4c7d9637654176043d3fe6">&#9670;&#160;</a></span>TEST_CASE() <span class="overload">[5/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;operator&lt;&lt;&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a570b5ac76d01ac55c9c255d67f3defe8" name="a570b5ac76d01ac55c9c255d67f3defe8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a570b5ac76d01ac55c9c255d67f3defe8">&#9670;&#160;</a></span>TEST_CASE() <span class="overload">[6/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;pointer comparisons&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_43da05b65ffbb65743beb36240116ac9.html">doctest</a></li><li class="navelem"><a class="el" href="dir_4b46fc18e9c3a54fd7f49e6033bfe473.html">examples</a></li><li class="navelem"><a class="el" href="dir_8d2d41c16255cf43b7755d6077c1b3ee.html">all_features</a></li><li class="navelem"><a class="el" href="stringification_8cpp.html">stringification.cpp</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

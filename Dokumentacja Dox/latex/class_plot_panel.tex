@@ -47,7 +47,7 @@ Plot\+Panel\+::\+Plot\+Panel (\begin{DoxyParamCaption}\item[{wx\+Window \texorpd
 
 Konstruktor klasy {\ttfamily \doxylink{class_plot_panel}{Plot\+Panel}}. 
 
-\texorpdfstring{$<$}{<} Rejestruje zdarzenie malowania, wywoÅ‚uje metodÄ™ {\ttfamily On\+Paint}.
+\texorpdfstring{$<$}{<} Rejestruje zdarzenie malowania, wywo³uje metodê {\ttfamily On\+Paint}.
 
 Tworzy panel wykresu w aplikacji. Inicjalizuje komponenty panelu, w tym rejestruje zdarzenia rysowania wykresu.
 
@@ -58,11 +58,11 @@ Tworzy panel wykresu w aplikacji. Inicjalizuje komponenty panelu, w tym rejestru
 \end{DoxyParams}
 Konstruktor klasy {\ttfamily \doxylink{class_plot_panel}{Plot\+Panel}}.
 
-Inicjalizuje panel wykresu w aplikacji, ustawiajÄ…c jego wymiary i pozycjÄ™.
+Inicjalizuje panel wykresu w aplikacji, ustawiaj¹c jego wymiary i pozycjê.
 
 
 \begin{DoxyParams}{Parametry}
-{\em parent} & Okno, w ktÃ³rym panel bÄ™dzie osadzony. \\
+{\em parent} & Okno, w którym panel bêdzie osadzony. \\
 \hline
 \end{DoxyParams}
 
@@ -78,6 +78,8 @@ void Plot\+Panel\+::\+On\+Paint (\begin{DoxyParamCaption}\item[{wx\+Paint\+Event
 
 Funkcja malujÄ…ca wykres. 
 
+Funkcja maluj¹ca wykres.
+
 Funkcja ta jest wywoÅ‚ywana przy kaÅ¼dym zdarzeniu malowania. Odpowiada za renderowanie wykresu na panelu na podstawie danych dostarczonych przez metodÄ™ {\ttfamily Set\+Data}.
 
 
@@ -85,50 +87,50 @@ Funkcja ta jest wywoÅ‚ywana przy kaÅ¼dym zdarzeniu malowania. Odpowiada za rende
 {\em event} & Zdarzenie malowania (dostarczane przez wx\+Widgets).\\
 \hline
 \end{DoxyParams}
-Funkcja ta jest wywoÅ‚ywana przy kaÅ¼dym zdarzeniu malowania. Rysuje wykres na panelu na podstawie danych dostarczonych przez metodÄ™ {\ttfamily Set\+Data}. JeÅ›li brak jest danych, wyÅ›wietla komunikat "{}\+Brak danych"{}.
+Funkcja ta jest wywo³ywana przy ka¿dym zdarzeniu malowania. Rysuje wykres na panelu na podstawie danych dostarczonych przez metodê {\ttfamily Set\+Data}. Jeœli brak jest danych, wyœwietla komunikat "{}\+Brak danych"{}.
 
 
 \begin{DoxyParams}{Parametry}
-{\em event} & Zdarzenie malowania, dostarczane przez wx\+Widgets. UÅ¼ywane do tworzenia obiektu {\ttfamily wx\+Paint\+DC} do malowania na panelu. \\
+{\em event} & Zdarzenie malowania, dostarczane przez wx\+Widgets. U¿ywane do tworzenia obiektu {\ttfamily wx\+Paint\+DC} do malowania na panelu. \\
 \hline
 \end{DoxyParams}
 \texorpdfstring{$<$}{<} Obiekt odpowiedzialny za malowanie na panelu.
 
-\texorpdfstring{$<$}{<} Ustawia kolor tÅ‚a na biaÅ‚y.
+\texorpdfstring{$<$}{<} Ustawia kolor t³a na bia³y.
 
-\texorpdfstring{$<$}{<} WyczyÅ›Ä‡ panel przed narysowaniem nowego wykresu.
+\texorpdfstring{$<$}{<} Wyczyœæ panel przed narysowaniem nowego wykresu.
 
-\texorpdfstring{$<$}{<} WyÅ›wietla komunikat, gdy brak danych.
+\texorpdfstring{$<$}{<} Wyœwietla komunikat, gdy brak danych.
 
 \texorpdfstring{$<$}{<} Pobiera wymiary panelu.
 
-\texorpdfstring{$<$}{<} Marginesy wokÃ³Å‚ wykresu.
+\texorpdfstring{$<$}{<} Zwiêkszone marginesy dla wiêkszej iloœci miejsca na etykiety osi
 
-\texorpdfstring{$<$}{<} SzerokoÅ›Ä‡ wykresu.
+\texorpdfstring{$<$}{<} Szerokoœæ wykresu.
 
-\texorpdfstring{$<$}{<} WysokoÅ›Ä‡ wykresu.
+\texorpdfstring{$<$}{<} Wysokoœæ wykresu.
 
-\texorpdfstring{$<$}{<} Zapobiega dzieleniu przez 0, jeÅ›li wszystkie wartoÅ›ci sÄ… rÃ³wne.
+\texorpdfstring{$<$}{<} Zapobiega dzieleniu przez 0, jeœli wszystkie wartoœci s¹ równe.
 
 \texorpdfstring{$<$}{<} Ustawia kolor rysowania osi na czarny.
 
-\texorpdfstring{$<$}{<} OÅ› X.
+\texorpdfstring{$<$}{<} Oœ X.
 
-\texorpdfstring{$<$}{<} OÅ› Y.
+\texorpdfstring{$<$}{<} Oœ Y.
 
-\texorpdfstring{$<$}{<} Ustawia kolor rysowania punktÃ³w na niebieski.
+\texorpdfstring{$<$}{<} Ustawia kolor rysowania punktów na niebieski.
 
-\texorpdfstring{$<$}{<} Oblicza wspÃ³Å‚rzÄ™dnÄ… X punktu.
+\texorpdfstring{$<$}{<} Oblicza wspó³rzêdn¹ X punktu.
 
-\texorpdfstring{$<$}{<} Oblicza wspÃ³Å‚rzÄ™dnÄ… Y punktu.
+\texorpdfstring{$<$}{<} Oblicza wspó³rzêdn¹ Y punktu.
 
 \texorpdfstring{$<$}{<} Rysuje punkt na wykresie.
 
-\texorpdfstring{$<$}{<} Oblicza wspÃ³Å‚rzÄ™dnÄ… X poprzedniego punktu.
+\texorpdfstring{$<$}{<} Oblicza wspó³rzêdn¹ X poprzedniego punktu.
 
-\texorpdfstring{$<$}{<} Oblicza wspÃ³Å‚rzÄ™dnÄ… Y poprzedniego punktu.
+\texorpdfstring{$<$}{<} Oblicza wspó³rzêdn¹ Y poprzedniego punktu.
 
-\texorpdfstring{$<$}{<} ÅÄ…czy punkt z poprzednim punktem na wykresie.\Hypertarget{class_plot_panel_afad1c71375d54806ef8308fa24d19dfc}\index{PlotPanel@{PlotPanel}!SetData@{SetData}}
+\texorpdfstring{$<$}{<} £¹czy punkt z poprzednim punktem na wykresie.\Hypertarget{class_plot_panel_afad1c71375d54806ef8308fa24d19dfc}\index{PlotPanel@{PlotPanel}!SetData@{SetData}}
 \index{SetData@{SetData}!PlotPanel@{PlotPanel}}
 \doxysubsubsection{\texorpdfstring{SetData()}{SetData()}}
 {\footnotesize\ttfamily \label{class_plot_panel_afad1c71375d54806ef8308fa24d19dfc} 
@@ -145,14 +147,14 @@ Funkcja ta ustawia dane wykresu na podstawie podanych par czas-\/wartoÅ›Ä‡. Dane
 {\em new\+Data} & Dane wykresu w postaci wektora par (czas, wartoÅ›Ä‡).\\
 \hline
 \end{DoxyParams}
-Metoda ta ustawia dane wykresu na podstawie podanych par (czas, wartoÅ›Ä‡) oraz odÅ›wieÅ¼a panel, aby wyÅ›wietliÄ‡ nowy wykres.
+Metoda ta ustawia dane wykresu na podstawie podanych par (czas, wartoœæ) oraz odœwie¿a panel, aby wyœwietliæ nowy wykres.
 
 
 \begin{DoxyParams}{Parametry}
-{\em new\+Data} & Wektor par (czas, wartoÅ›Ä‡), ktÃ³re bÄ™dÄ… uÅ¼yte do narysowania wykresu. \\
+{\em new\+Data} & Wektor par (czas, wartoœæ), które bêd¹ u¿yte do narysowania wykresu. \\
 \hline
 \end{DoxyParams}
-\texorpdfstring{$<$}{<} OdÅ›wieÅ¼enie panelu, aby zaktualizowaÄ‡ wykres.
+\texorpdfstring{$<$}{<} Odœwie¿enie panelu, aby zaktualizowaæ wykres.
 
 \doxysubsection{Dokumentacja atrybutÃ³w skÅ‚adowych}
 \Hypertarget{class_plot_panel_a8871bc9c7b2c88147027834b9b8e4696}\index{PlotPanel@{PlotPanel}!data@{data}}

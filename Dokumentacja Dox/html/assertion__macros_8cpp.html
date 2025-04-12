@@ -1,0 +1,610 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Jakość powietrza w Polsce: Dokumentacja pliku doctest/examples/all_features/assertion_macros.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Jakość powietrza w Polsce
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('assertion__macros_8cpp.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Definicje</a> &#124;
+<a href="#func-members">Funkcje</a>  </div>
+  <div class="headertitle"><div class="title">Dokumentacja pliku assertion_macros.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;doctest/doctest.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="header_8h_source.html">header.h</a>&quot;</code><br />
+<code>#include &lt;stdexcept&gt;</code><br />
+<code>#include &lt;cmath&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Definicje</h2></td></tr>
+<tr class="memitem:af058f668dc8d1b3d973833403b241f0d" id="r_af058f668dc8d1b3d973833403b241f0d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af058f668dc8d1b3d973833403b241f0d">DOCTEST_CONFIG_ASSERTS_RETURN_VALUES</a></td></tr>
+<tr class="separator:af058f668dc8d1b3d973833403b241f0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funkcje</h2></td></tr>
+<tr class="memitem:a95f0c0efa944e7635aa339609a212541" id="r_a95f0c0efa944e7635aa339609a212541"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#ad3e5c37dc8bd7b0f9346c99c6aab2d1d">DOCTEST_MAKE_STD_HEADERS_CLEAN_FROM_WARNINGS_ON_WALL_BEGIN</a> <a class="el" href="doctest_2doctest_8h.html#acca96650713994a51c3deb8e4bdec43d">DOCTEST_MAKE_STD_HEADERS_CLEAN_FROM_WARNINGS_ON_WALL_END</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95f0c0efa944e7635aa339609a212541">TEST_CASE</a> (&quot;normal macros&quot;)</td></tr>
+<tr class="separator:a95f0c0efa944e7635aa339609a212541"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab46585a2fcb247f654ac11d7c2950911" id="r_ab46585a2fcb247f654ac11d7c2950911"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab46585a2fcb247f654ac11d7c2950911">TEST_CASE</a> (&quot;expressions should be evaluated only once&quot;)</td></tr>
+<tr class="separator:ab46585a2fcb247f654ac11d7c2950911"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae9d0b1dacf7f5fa60a0c20d222f1842" id="r_aae9d0b1dacf7f5fa60a0c20d222f1842"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae9d0b1dacf7f5fa60a0c20d222f1842">TEST_CASE</a> (&quot;exceptions-related macros&quot;)</td></tr>
+<tr class="separator:aae9d0b1dacf7f5fa60a0c20d222f1842"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62c457295e4c1fca59fd16fdae6ba7f7" id="r_a62c457295e4c1fca59fd16fdae6ba7f7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62c457295e4c1fca59fd16fdae6ba7f7">TEST_CASE</a> (&quot;exceptions-related macros for std::exception&quot;)</td></tr>
+<tr class="separator:a62c457295e4c1fca59fd16fdae6ba7f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61cb46a6e34bc72c818bc846f1c538e3" id="r_a61cb46a6e34bc72c818bc846f1c538e3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a61cb46a6e34bc72c818bc846f1c538e3">TEST_CASE</a> (&quot;WARN level of asserts don't fail the <a class="el" href="how__subcases__work_8cpp.html#ae1a3968e7947464bee7714f6d43b7002">test</a> case&quot;)</td></tr>
+<tr class="separator:a61cb46a6e34bc72c818bc846f1c538e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d3739633f81aa818039c245ab60a598" id="r_a7d3739633f81aa818039c245ab60a598"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d3739633f81aa818039c245ab60a598">TEST_CASE</a> (&quot;CHECK level of asserts fail the <a class="el" href="how__subcases__work_8cpp.html#ae1a3968e7947464bee7714f6d43b7002">test</a> case but don't abort it&quot;)</td></tr>
+<tr class="separator:a7d3739633f81aa818039c245ab60a598"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08f0b6ad4a50f0ddaee01239d8c507e1" id="r_a08f0b6ad4a50f0ddaee01239d8c507e1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08f0b6ad4a50f0ddaee01239d8c507e1">TEST_CASE</a> (&quot;REQUIRE level of asserts fail and abort the <a class="el" href="how__subcases__work_8cpp.html#ae1a3968e7947464bee7714f6d43b7002">test</a> case - 1&quot;)</td></tr>
+<tr class="separator:a08f0b6ad4a50f0ddaee01239d8c507e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83ece59eec496db2df7c8387cb22d176" id="r_a83ece59eec496db2df7c8387cb22d176"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a83ece59eec496db2df7c8387cb22d176">TEST_CASE</a> (&quot;REQUIRE level of asserts fail and abort the <a class="el" href="how__subcases__work_8cpp.html#ae1a3968e7947464bee7714f6d43b7002">test</a> case - 2&quot;)</td></tr>
+<tr class="separator:a83ece59eec496db2df7c8387cb22d176"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29b82c7b62c073a579f0a9f0e2b36a0b" id="r_a29b82c7b62c073a579f0a9f0e2b36a0b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29b82c7b62c073a579f0a9f0e2b36a0b">TEST_CASE</a> (&quot;REQUIRE level of asserts fail and abort the <a class="el" href="how__subcases__work_8cpp.html#ae1a3968e7947464bee7714f6d43b7002">test</a> case - 3&quot;)</td></tr>
+<tr class="separator:a29b82c7b62c073a579f0a9f0e2b36a0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac80b79fb169857c7dcc945eb683d378c" id="r_ac80b79fb169857c7dcc945eb683d378c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac80b79fb169857c7dcc945eb683d378c">TEST_CASE</a> (&quot;REQUIRE level of asserts fail and abort the <a class="el" href="how__subcases__work_8cpp.html#ae1a3968e7947464bee7714f6d43b7002">test</a> case - 4&quot;)</td></tr>
+<tr class="separator:ac80b79fb169857c7dcc945eb683d378c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8293cc8bf2ea93f233473fad7770cb7b" id="r_a8293cc8bf2ea93f233473fad7770cb7b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8293cc8bf2ea93f233473fad7770cb7b">TEST_CASE</a> (&quot;REQUIRE level of asserts fail and abort the <a class="el" href="how__subcases__work_8cpp.html#ae1a3968e7947464bee7714f6d43b7002">test</a> case - 5&quot;)</td></tr>
+<tr class="separator:a8293cc8bf2ea93f233473fad7770cb7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae93bb26f2fadb2bd27c07786187dd967" id="r_ae93bb26f2fadb2bd27c07786187dd967"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae93bb26f2fadb2bd27c07786187dd967">TEST_CASE</a> (&quot;REQUIRE level of asserts fail and abort the <a class="el" href="how__subcases__work_8cpp.html#ae1a3968e7947464bee7714f6d43b7002">test</a> case - 6&quot;)</td></tr>
+<tr class="separator:ae93bb26f2fadb2bd27c07786187dd967"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a357c99b56d1d7df91c5bf61795cdff19" id="r_a357c99b56d1d7df91c5bf61795cdff19"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a357c99b56d1d7df91c5bf61795cdff19">TEST_CASE</a> (&quot;REQUIRE level of asserts fail and abort the <a class="el" href="how__subcases__work_8cpp.html#ae1a3968e7947464bee7714f6d43b7002">test</a> case - 7&quot;)</td></tr>
+<tr class="separator:a357c99b56d1d7df91c5bf61795cdff19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a015189f41e9f0919c92c7ca9cfc316f8" id="r_a015189f41e9f0919c92c7ca9cfc316f8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a015189f41e9f0919c92c7ca9cfc316f8">TEST_CASE</a> (&quot;REQUIRE level of asserts fail and abort the <a class="el" href="how__subcases__work_8cpp.html#ae1a3968e7947464bee7714f6d43b7002">test</a> case - 8&quot;)</td></tr>
+<tr class="separator:a015189f41e9f0919c92c7ca9cfc316f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14bfe3ff4a155a4deb150b4a05a45ddd" id="r_a14bfe3ff4a155a4deb150b4a05a45ddd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a14bfe3ff4a155a4deb150b4a05a45ddd">TEST_CASE</a> (&quot;REQUIRE level of asserts fail and abort the <a class="el" href="how__subcases__work_8cpp.html#ae1a3968e7947464bee7714f6d43b7002">test</a> case - 9&quot;)</td></tr>
+<tr class="separator:a14bfe3ff4a155a4deb150b4a05a45ddd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71b9195514595ce6b50244088da2dab8" id="r_a71b9195514595ce6b50244088da2dab8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71b9195514595ce6b50244088da2dab8">TEST_CASE</a> (&quot;REQUIRE level of asserts fail and abort the <a class="el" href="how__subcases__work_8cpp.html#ae1a3968e7947464bee7714f6d43b7002">test</a> case - 10&quot;)</td></tr>
+<tr class="separator:a71b9195514595ce6b50244088da2dab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1ac7ccb2f6b0d944bccfa246e93d561" id="r_ac1ac7ccb2f6b0d944bccfa246e93d561"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac1ac7ccb2f6b0d944bccfa246e93d561">TEST_CASE</a> (&quot;REQUIRE level of asserts fail and abort the <a class="el" href="how__subcases__work_8cpp.html#ae1a3968e7947464bee7714f6d43b7002">test</a> case - 11&quot;)</td></tr>
+<tr class="separator:ac1ac7ccb2f6b0d944bccfa246e93d561"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af24a9f698795be5b6ea6f44b71903a4b" id="r_af24a9f698795be5b6ea6f44b71903a4b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af24a9f698795be5b6ea6f44b71903a4b">TEST_CASE</a> (&quot;REQUIRE level of asserts fail and abort the <a class="el" href="how__subcases__work_8cpp.html#ae1a3968e7947464bee7714f6d43b7002">test</a> case - 12&quot;)</td></tr>
+<tr class="separator:af24a9f698795be5b6ea6f44b71903a4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe8347837c0714f2328334ef6bf70e87" id="r_afe8347837c0714f2328334ef6bf70e87"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe8347837c0714f2328334ef6bf70e87">TEST_CASE</a> (&quot;REQUIRE level of asserts fail and abort the <a class="el" href="how__subcases__work_8cpp.html#ae1a3968e7947464bee7714f6d43b7002">test</a> case - 13&quot;)</td></tr>
+<tr class="separator:afe8347837c0714f2328334ef6bf70e87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a104afb055a5a9a24c557220b514b9665" id="r_a104afb055a5a9a24c557220b514b9665"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a104afb055a5a9a24c557220b514b9665">TEST_CASE</a> (&quot;all binary assertions&quot;)</td></tr>
+<tr class="separator:a104afb055a5a9a24c557220b514b9665"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a742e90c2689987c9f93197886bc78eaa" id="r_a742e90c2689987c9f93197886bc78eaa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a742e90c2689987c9f93197886bc78eaa">TEST_CASE</a> (&quot;some asserts used in a function called by a <a class="el" href="how__subcases__work_8cpp.html#ae1a3968e7947464bee7714f6d43b7002">test</a> case&quot;)</td></tr>
+<tr class="separator:a742e90c2689987c9f93197886bc78eaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa253be5d1a2e541d634427d366ffb0d6" id="r_aa253be5d1a2e541d634427d366ffb0d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doctest_2doctest_8h.html#a747b5dff90ae60f6f1636ebbe065a9da">DOCTEST_INLINE_NOINLINE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa253be5d1a2e541d634427d366ffb0d6">comp</a> (int a, int b)</td></tr>
+<tr class="separator:aa253be5d1a2e541d634427d366ffb0d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81fe12bcc2ffebd24ac0b3f937e6ff89" id="r_a81fe12bcc2ffebd24ac0b3f937e6ff89"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81fe12bcc2ffebd24ac0b3f937e6ff89">TEST_CASE</a> (&quot;check return values&quot;)</td></tr>
+<tr class="separator:a81fe12bcc2ffebd24ac0b3f937e6ff89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a959e1b91b0a4bdbac46a67c650063efd" id="r_a959e1b91b0a4bdbac46a67c650063efd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a959e1b91b0a4bdbac46a67c650063efd">TEST_CASE</a> (&quot;check return values no print&quot;)</td></tr>
+<tr class="separator:a959e1b91b0a4bdbac46a67c650063efd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Dokumentacja definicji</h2>
+<a id="af058f668dc8d1b3d973833403b241f0d" name="af058f668dc8d1b3d973833403b241f0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af058f668dc8d1b3d973833403b241f0d">&#9670;&#160;</a></span>DOCTEST_CONFIG_ASSERTS_RETURN_VALUES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DOCTEST_CONFIG_ASSERTS_RETURN_VALUES</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja funkcji</h2>
+<a id="aa253be5d1a2e541d634427d366ffb0d6" name="aa253be5d1a2e541d634427d366ffb0d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa253be5d1a2e541d634427d366ffb0d6">&#9670;&#160;</a></span>comp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="doctest_2doctest_8h.html#a747b5dff90ae60f6f1636ebbe065a9da">DOCTEST_INLINE_NOINLINE</a> void comp </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a104afb055a5a9a24c557220b514b9665" name="a104afb055a5a9a24c557220b514b9665"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a104afb055a5a9a24c557220b514b9665">&#9670;&#160;</a></span>TEST_CASE() <span class="overload">[1/23]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;all binary assertions&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7d3739633f81aa818039c245ab60a598" name="a7d3739633f81aa818039c245ab60a598"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d3739633f81aa818039c245ab60a598">&#9670;&#160;</a></span>TEST_CASE() <span class="overload">[2/23]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;CHECK level of asserts fail the <a class="el" href="how__subcases__work_8cpp.html#ae1a3968e7947464bee7714f6d43b7002">test</a> case but don't abort it&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a959e1b91b0a4bdbac46a67c650063efd" name="a959e1b91b0a4bdbac46a67c650063efd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a959e1b91b0a4bdbac46a67c650063efd">&#9670;&#160;</a></span>TEST_CASE() <span class="overload">[3/23]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;check return values no print&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a81fe12bcc2ffebd24ac0b3f937e6ff89" name="a81fe12bcc2ffebd24ac0b3f937e6ff89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81fe12bcc2ffebd24ac0b3f937e6ff89">&#9670;&#160;</a></span>TEST_CASE() <span class="overload">[4/23]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;check return values&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a62c457295e4c1fca59fd16fdae6ba7f7" name="a62c457295e4c1fca59fd16fdae6ba7f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62c457295e4c1fca59fd16fdae6ba7f7">&#9670;&#160;</a></span>TEST_CASE() <span class="overload">[5/23]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;exceptions-related macros for std::exception&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aae9d0b1dacf7f5fa60a0c20d222f1842" name="aae9d0b1dacf7f5fa60a0c20d222f1842"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae9d0b1dacf7f5fa60a0c20d222f1842">&#9670;&#160;</a></span>TEST_CASE() <span class="overload">[6/23]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;exceptions-related macros&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab46585a2fcb247f654ac11d7c2950911" name="ab46585a2fcb247f654ac11d7c2950911"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab46585a2fcb247f654ac11d7c2950911">&#9670;&#160;</a></span>TEST_CASE() <span class="overload">[7/23]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;expressions should be evaluated only once&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a95f0c0efa944e7635aa339609a212541" name="a95f0c0efa944e7635aa339609a212541"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95f0c0efa944e7635aa339609a212541">&#9670;&#160;</a></span>TEST_CASE() <span class="overload">[8/23]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="doctest_2doctest_8h.html#ad3e5c37dc8bd7b0f9346c99c6aab2d1d">DOCTEST_MAKE_STD_HEADERS_CLEAN_FROM_WARNINGS_ON_WALL_BEGIN</a> <a class="el" href="doctest_2doctest_8h.html#acca96650713994a51c3deb8e4bdec43d">DOCTEST_MAKE_STD_HEADERS_CLEAN_FROM_WARNINGS_ON_WALL_END</a> TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;normal macros&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a08f0b6ad4a50f0ddaee01239d8c507e1" name="a08f0b6ad4a50f0ddaee01239d8c507e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08f0b6ad4a50f0ddaee01239d8c507e1">&#9670;&#160;</a></span>TEST_CASE() <span class="overload">[9/23]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;REQUIRE level of asserts fail and abort the <a class="el" href="how__subcases__work_8cpp.html#ae1a3968e7947464bee7714f6d43b7002">test</a> case - 1&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a71b9195514595ce6b50244088da2dab8" name="a71b9195514595ce6b50244088da2dab8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71b9195514595ce6b50244088da2dab8">&#9670;&#160;</a></span>TEST_CASE() <span class="overload">[10/23]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;REQUIRE level of asserts fail and abort the <a class="el" href="how__subcases__work_8cpp.html#ae1a3968e7947464bee7714f6d43b7002">test</a> case - 10&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac1ac7ccb2f6b0d944bccfa246e93d561" name="ac1ac7ccb2f6b0d944bccfa246e93d561"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1ac7ccb2f6b0d944bccfa246e93d561">&#9670;&#160;</a></span>TEST_CASE() <span class="overload">[11/23]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;REQUIRE level of asserts fail and abort the <a class="el" href="how__subcases__work_8cpp.html#ae1a3968e7947464bee7714f6d43b7002">test</a> case - 11&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af24a9f698795be5b6ea6f44b71903a4b" name="af24a9f698795be5b6ea6f44b71903a4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af24a9f698795be5b6ea6f44b71903a4b">&#9670;&#160;</a></span>TEST_CASE() <span class="overload">[12/23]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;REQUIRE level of asserts fail and abort the <a class="el" href="how__subcases__work_8cpp.html#ae1a3968e7947464bee7714f6d43b7002">test</a> case - 12&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afe8347837c0714f2328334ef6bf70e87" name="afe8347837c0714f2328334ef6bf70e87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe8347837c0714f2328334ef6bf70e87">&#9670;&#160;</a></span>TEST_CASE() <span class="overload">[13/23]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;REQUIRE level of asserts fail and abort the <a class="el" href="how__subcases__work_8cpp.html#ae1a3968e7947464bee7714f6d43b7002">test</a> case - 13&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a83ece59eec496db2df7c8387cb22d176" name="a83ece59eec496db2df7c8387cb22d176"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83ece59eec496db2df7c8387cb22d176">&#9670;&#160;</a></span>TEST_CASE() <span class="overload">[14/23]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;REQUIRE level of asserts fail and abort the <a class="el" href="how__subcases__work_8cpp.html#ae1a3968e7947464bee7714f6d43b7002">test</a> case - 2&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a29b82c7b62c073a579f0a9f0e2b36a0b" name="a29b82c7b62c073a579f0a9f0e2b36a0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29b82c7b62c073a579f0a9f0e2b36a0b">&#9670;&#160;</a></span>TEST_CASE() <span class="overload">[15/23]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;REQUIRE level of asserts fail and abort the <a class="el" href="how__subcases__work_8cpp.html#ae1a3968e7947464bee7714f6d43b7002">test</a> case - 3&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac80b79fb169857c7dcc945eb683d378c" name="ac80b79fb169857c7dcc945eb683d378c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac80b79fb169857c7dcc945eb683d378c">&#9670;&#160;</a></span>TEST_CASE() <span class="overload">[16/23]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;REQUIRE level of asserts fail and abort the <a class="el" href="how__subcases__work_8cpp.html#ae1a3968e7947464bee7714f6d43b7002">test</a> case - 4&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8293cc8bf2ea93f233473fad7770cb7b" name="a8293cc8bf2ea93f233473fad7770cb7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8293cc8bf2ea93f233473fad7770cb7b">&#9670;&#160;</a></span>TEST_CASE() <span class="overload">[17/23]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;REQUIRE level of asserts fail and abort the <a class="el" href="how__subcases__work_8cpp.html#ae1a3968e7947464bee7714f6d43b7002">test</a> case - 5&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae93bb26f2fadb2bd27c07786187dd967" name="ae93bb26f2fadb2bd27c07786187dd967"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae93bb26f2fadb2bd27c07786187dd967">&#9670;&#160;</a></span>TEST_CASE() <span class="overload">[18/23]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;REQUIRE level of asserts fail and abort the <a class="el" href="how__subcases__work_8cpp.html#ae1a3968e7947464bee7714f6d43b7002">test</a> case - 6&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a357c99b56d1d7df91c5bf61795cdff19" name="a357c99b56d1d7df91c5bf61795cdff19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a357c99b56d1d7df91c5bf61795cdff19">&#9670;&#160;</a></span>TEST_CASE() <span class="overload">[19/23]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;REQUIRE level of asserts fail and abort the <a class="el" href="how__subcases__work_8cpp.html#ae1a3968e7947464bee7714f6d43b7002">test</a> case - 7&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a015189f41e9f0919c92c7ca9cfc316f8" name="a015189f41e9f0919c92c7ca9cfc316f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a015189f41e9f0919c92c7ca9cfc316f8">&#9670;&#160;</a></span>TEST_CASE() <span class="overload">[20/23]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;REQUIRE level of asserts fail and abort the <a class="el" href="how__subcases__work_8cpp.html#ae1a3968e7947464bee7714f6d43b7002">test</a> case - 8&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a14bfe3ff4a155a4deb150b4a05a45ddd" name="a14bfe3ff4a155a4deb150b4a05a45ddd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14bfe3ff4a155a4deb150b4a05a45ddd">&#9670;&#160;</a></span>TEST_CASE() <span class="overload">[21/23]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;REQUIRE level of asserts fail and abort the <a class="el" href="how__subcases__work_8cpp.html#ae1a3968e7947464bee7714f6d43b7002">test</a> case - 9&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a742e90c2689987c9f93197886bc78eaa" name="a742e90c2689987c9f93197886bc78eaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a742e90c2689987c9f93197886bc78eaa">&#9670;&#160;</a></span>TEST_CASE() <span class="overload">[22/23]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;some asserts used in a function called by a <a class="el" href="how__subcases__work_8cpp.html#ae1a3968e7947464bee7714f6d43b7002">test</a> case&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a61cb46a6e34bc72c818bc846f1c538e3" name="a61cb46a6e34bc72c818bc846f1c538e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61cb46a6e34bc72c818bc846f1c538e3">&#9670;&#160;</a></span>TEST_CASE() <span class="overload">[23/23]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;WARN level of asserts don't fail the <a class="el" href="how__subcases__work_8cpp.html#ae1a3968e7947464bee7714f6d43b7002">test</a> case&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_43da05b65ffbb65743beb36240116ac9.html">doctest</a></li><li class="navelem"><a class="el" href="dir_4b46fc18e9c3a54fd7f49e6033bfe473.html">examples</a></li><li class="navelem"><a class="el" href="dir_8d2d41c16255cf43b7755d6077c1b3ee.html">all_features</a></li><li class="navelem"><a class="el" href="assertion__macros_8cpp.html">assertion_macros.cpp</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

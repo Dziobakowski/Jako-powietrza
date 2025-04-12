@@ -1,0 +1,74 @@
+\doxysection{header.\+h}
+\hypertarget{header_8h_source}{}\label{header_8h_source}\index{doctest/examples/all\_features/header.h@{doctest/examples/all\_features/header.h}}
+\mbox{\hyperlink{header_8h}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <doctest/doctest.h>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ helper\ for\ throwing\ exceptions}}
+\DoxyCodeLine{00006\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00007\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{header_8h_a10d71eeec6eb9397276e5069d39f9cc7}{throw\_if}}(\textcolor{keywordtype}{bool}\ in,\ \textcolor{keyword}{const}\ T\&\ ex)\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordflow}{if}(in)}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ DOCTEST\_CONFIG\_NO\_EXCEPTIONS}}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ ex;\ \textcolor{comment}{//\ NOLINT}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#else\ \ }\textcolor{comment}{//\ DOCTEST\_CONFIG\_NO\_EXCEPTIONS}}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ ((void)ex);}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DOCTEST\_CONFIG\_NO\_EXCEPTIONS}}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordflow}{return}\ 42;}
+\DoxyCodeLine{00015\ \}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ stuff\ that\ should\ be\ fine\ when\ used\ in\ a\ header\ -\/\ test\ cases\ for\ example\ should\ be\ registered\ only\ once}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \mbox{\hyperlink{doctest_2doctest_8h_af640e6ea35d0c6511986d40ce36e2afc}{TEST\_SUITE}}(\textcolor{stringliteral}{"{}some\ TS"{}})\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{doctest_2doctest_8h_a8bc255ff55721571e878568d2b5dcb35}{TEST\_CASE}}(\textcolor{stringliteral}{"{}in\ TS"{}})\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{doctest_2doctest_8h_ac8d1eaf65528f86b445cf6e45b2d72c9}{FAIL}}(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+\DoxyCodeLine{00023\ \}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \mbox{\hyperlink{doctest_2doctest_8h_a4f7616cc57079fbcd459e73d64ce52e3}{REGISTER\_EXCEPTION\_TRANSLATOR}}(\textcolor{keywordtype}{int}\&\ in)\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacedoctest_a6bb27d33f7b25b3ff5fc6872f47f329b}{doctest::toString}}(in);}
+\DoxyCodeLine{00027\ \}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ Removes\ class\ on\ MSVC}}
+\DoxyCodeLine{00030\ \mbox{\hyperlink{doctest_2doctest_8h_a8245b61f7381307d76a1472436d35ebe}{TYPE\_TO\_STRING}}(\mbox{\hyperlink{classdoctest_1_1_string}{doctest::String}});}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \mbox{\hyperlink{doctest_2doctest_8h_a8ab7703bbaae3e25e7e5f5eb9fbe3642}{TEST\_CASE\_TEMPLATE}}(\textcolor{stringliteral}{"{}template\ 1"{}},\ T,\ \textcolor{keywordtype}{char})\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{doctest_2doctest_8h_ac8d1eaf65528f86b445cf6e45b2d72c9}{FAIL}}(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00034\ \}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \mbox{\hyperlink{doctest_2doctest_8h_a39cb44ec5ab4ae7457e06cc734b57286}{TEST\_CASE\_TEMPLATE\_DEFINE}}(\textcolor{stringliteral}{"{}template\ 2"{}},\ T,\ header\_test)\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{doctest_2doctest_8h_ac8d1eaf65528f86b445cf6e45b2d72c9}{FAIL}}(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00038\ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \mbox{\hyperlink{doctest_2doctest_8h_a6d6b09ad857bf02d03049faf3235ed55}{TEST\_CASE\_TEMPLATE\_INVOKE}}(header\_test,\ \mbox{\hyperlink{classdoctest_1_1_string}{doctest::String}});}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{comment}{//\ to\ silence\ GCC\ warnings\ when\ inheriting\ from\ some\ class\ which\ has\ no\ virtual\ destructor\ -\/\ happens\ only\ on\ gcc\ 4.7/4.8}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#if\ DOCTEST\_GCC\ >=\ DOCTEST\_COMPILER(4,\ 7,\ 0)\ \&\&\ DOCTEST\_GCC\ <\ DOCTEST\_COMPILER(4,\ 9,\ 0)}}
+\DoxyCodeLine{00044\ \mbox{\hyperlink{doctest_2doctest_8h_a361747fc17fa1c6609c3cc939b4fc983}{DOCTEST\_GCC\_SUPPRESS\_WARNING}}(\textcolor{stringliteral}{"{}-\/Weffc++"{}})}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ gcc\ 4.7\ /\ 4.8}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#if\ DOCTEST\_GCC\ >=\ DOCTEST\_COMPILER(5,\ 0,\ 0)\ \&\&\ DOCTEST\_GCC\ <\ DOCTEST\_COMPILER(6,\ 0,\ 0)}}
+\DoxyCodeLine{00047\ \mbox{\hyperlink{doctest_2doctest_8h_a361747fc17fa1c6609c3cc939b4fc983}{DOCTEST\_GCC\_SUPPRESS\_WARNING}}(\textcolor{stringliteral}{"{}-\/Wstrict-\/overflow"{}})}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ gcc\ 5}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{comment}{//\ NOLINTBEGIN}}
+\DoxyCodeLine{00051\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_some_fixture_a03ca8674d67e0e7b5959ccf233a8cff9}{SomeFixture}}}
+\DoxyCodeLine{00052\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_some_fixture_a57a0113ce5dd08afb72e3ad9a930666f}{data}};}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{struct_some_fixture_a03ca8674d67e0e7b5959ccf233a8cff9}{SomeFixture}}()\ noexcept}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{struct_some_fixture_a57a0113ce5dd08afb72e3ad9a930666f}{data}}(42)\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ setup\ here}}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{struct_some_fixture_a06b42ad1e9bae6e711a25de55a361980}{\string~SomeFixture}}()\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ teardown\ here}}
+\DoxyCodeLine{00061\ \ \ \ \ \}}
+\DoxyCodeLine{00062\ \};}
+\DoxyCodeLine{00063\ \textcolor{comment}{//\ NOLINTEND}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \mbox{\hyperlink{doctest_2doctest_8h_a2225e7c2d9587e1e3cfc5f7ab5f0b27d}{TEST\_CASE\_FIXTURE}}(\mbox{\hyperlink{struct_some_fixture}{SomeFixture}},\ \textcolor{stringliteral}{"{}fixtured\ test"{}})\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ data\ /=\ 2;}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{doctest_2doctest_8h_a836cca6b6ed3a1706353f6d1bca0935f}{CHECK}}(data\ ==\ 21);}
+\DoxyCodeLine{00068\ \}}
+
+\end{DoxyCode}

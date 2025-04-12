@@ -1,0 +1,374 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Jakość powietrza w Polsce: Dokumentacja struktury doctest::mpi_sub_comm</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Jakość powietrza w Polsce
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('structdoctest_1_1mpi__sub__comm.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Metody publiczne</a> &#124;
+<a href="#pub-attribs">Atrybuty publiczne</a> &#124;
+<a href="structdoctest_1_1mpi__sub__comm-members.html">Lista wszystkich składowych</a>  </div>
+  <div class="headertitle"><div class="title">Dokumentacja struktury doctest::mpi_sub_comm</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="mpi__sub__comm_8h_source.html">mpi_sub_comm.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:aaf61c20f598e1884d4ab7151168db890" id="r_aaf61c20f598e1884d4ab7151168db890"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf61c20f598e1884d4ab7151168db890">mpi_sub_comm</a> (<a class="el" href="structdoctest_1_1mpi__sub__comm.html">mpi_sub_comm</a> const &amp;)=delete</td></tr>
+<tr class="separator:aaf61c20f598e1884d4ab7151168db890"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67dbf898bd040615bc4470b947524acf" id="r_a67dbf898bd040615bc4470b947524acf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdoctest_1_1mpi__sub__comm.html">mpi_sub_comm</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a67dbf898bd040615bc4470b947524acf">operator=</a> (<a class="el" href="structdoctest_1_1mpi__sub__comm.html">mpi_sub_comm</a> const &amp;)=delete</td></tr>
+<tr class="separator:a67dbf898bd040615bc4470b947524acf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a996f4afe7d50905d7b837f5a6163ecb9" id="r_a996f4afe7d50905d7b837f5a6163ecb9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a996f4afe7d50905d7b837f5a6163ecb9">mpi_sub_comm</a> (int nb_prcs) noexcept</td></tr>
+<tr class="separator:a996f4afe7d50905d7b837f5a6163ecb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9228c228407c53715210e3f79c9f264d" id="r_a9228c228407c53715210e3f79c9f264d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9228c228407c53715210e3f79c9f264d">destroy_comm</a> ()</td></tr>
+<tr class="separator:a9228c228407c53715210e3f79c9f264d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6597480c23cc6cd17654959ef8c5adbb" id="r_a6597480c23cc6cd17654959ef8c5adbb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6597480c23cc6cd17654959ef8c5adbb">mpi_sub_comm</a> (<a class="el" href="structdoctest_1_1mpi__sub__comm.html">mpi_sub_comm</a> &amp;&amp;x)</td></tr>
+<tr class="separator:a6597480c23cc6cd17654959ef8c5adbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaff6cb39b1770d57c1d8c1f5ff5612b1" id="r_aaff6cb39b1770d57c1d8c1f5ff5612b1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdoctest_1_1mpi__sub__comm.html">mpi_sub_comm</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaff6cb39b1770d57c1d8c1f5ff5612b1">operator=</a> (<a class="el" href="structdoctest_1_1mpi__sub__comm.html">mpi_sub_comm</a> &amp;&amp;x)</td></tr>
+<tr class="separator:aaff6cb39b1770d57c1d8c1f5ff5612b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d6ec2e8b5fde8fbcfad9a2ddf8bc573" id="r_a5d6ec2e8b5fde8fbcfad9a2ddf8bc573"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d6ec2e8b5fde8fbcfad9a2ddf8bc573">~mpi_sub_comm</a> ()</td></tr>
+<tr class="separator:a5d6ec2e8b5fde8fbcfad9a2ddf8bc573"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Atrybuty publiczne</h2></td></tr>
+<tr class="memitem:a2e26a3457f8b0f0184efad8c57d34045" id="r_a2e26a3457f8b0f0184efad8c57d34045"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e26a3457f8b0f0184efad8c57d34045">nb_procs</a></td></tr>
+<tr class="separator:a2e26a3457f8b0f0184efad8c57d34045"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a336b0077bb17427b3df8c04a2e8ad6e6" id="r_a336b0077bb17427b3df8c04a2e8ad6e6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a336b0077bb17427b3df8c04a2e8ad6e6">rank</a></td></tr>
+<tr class="separator:a336b0077bb17427b3df8c04a2e8ad6e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49ced9b5710939127882e7d8a5d0f43b" id="r_a49ced9b5710939127882e7d8a5d0f43b"><td class="memItemLeft" align="right" valign="top">MPI_Comm&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a49ced9b5710939127882e7d8a5d0f43b">comm</a></td></tr>
+<tr class="separator:a49ced9b5710939127882e7d8a5d0f43b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Dokumentacja konstruktora i destruktora</h2>
+<a id="aaf61c20f598e1884d4ab7151168db890" name="aaf61c20f598e1884d4ab7151168db890"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf61c20f598e1884d4ab7151168db890">&#9670;&#160;</a></span>mpi_sub_comm() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">doctest::mpi_sub_comm::mpi_sub_comm </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structdoctest_1_1mpi__sub__comm.html">mpi_sub_comm</a> const &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel delete">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a996f4afe7d50905d7b837f5a6163ecb9" name="a996f4afe7d50905d7b837f5a6163ecb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a996f4afe7d50905d7b837f5a6163ecb9">&#9670;&#160;</a></span>mpi_sub_comm() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">doctest::mpi_sub_comm::mpi_sub_comm </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>nb_prcs</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6597480c23cc6cd17654959ef8c5adbb" name="a6597480c23cc6cd17654959ef8c5adbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6597480c23cc6cd17654959ef8c5adbb">&#9670;&#160;</a></span>mpi_sub_comm() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">doctest::mpi_sub_comm::mpi_sub_comm </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structdoctest_1_1mpi__sub__comm.html">mpi_sub_comm</a> &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5d6ec2e8b5fde8fbcfad9a2ddf8bc573" name="a5d6ec2e8b5fde8fbcfad9a2ddf8bc573"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d6ec2e8b5fde8fbcfad9a2ddf8bc573">&#9670;&#160;</a></span>~mpi_sub_comm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">doctest::mpi_sub_comm::~mpi_sub_comm </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="a9228c228407c53715210e3f79c9f264d" name="a9228c228407c53715210e3f79c9f264d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9228c228407c53715210e3f79c9f264d">&#9670;&#160;</a></span>destroy_comm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void doctest::mpi_sub_comm::destroy_comm </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaff6cb39b1770d57c1d8c1f5ff5612b1" name="aaff6cb39b1770d57c1d8c1f5ff5612b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaff6cb39b1770d57c1d8c1f5ff5612b1">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structdoctest_1_1mpi__sub__comm.html">mpi_sub_comm</a> &amp; doctest::mpi_sub_comm::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structdoctest_1_1mpi__sub__comm.html">mpi_sub_comm</a> &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a67dbf898bd040615bc4470b947524acf" name="a67dbf898bd040615bc4470b947524acf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67dbf898bd040615bc4470b947524acf">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structdoctest_1_1mpi__sub__comm.html">mpi_sub_comm</a> &amp; doctest::mpi_sub_comm::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structdoctest_1_1mpi__sub__comm.html">mpi_sub_comm</a> const &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel delete">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja atrybutów składowych</h2>
+<a id="a49ced9b5710939127882e7d8a5d0f43b" name="a49ced9b5710939127882e7d8a5d0f43b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49ced9b5710939127882e7d8a5d0f43b">&#9670;&#160;</a></span>comm</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MPI_Comm doctest::mpi_sub_comm::comm</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2e26a3457f8b0f0184efad8c57d34045" name="a2e26a3457f8b0f0184efad8c57d34045"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e26a3457f8b0f0184efad8c57d34045">&#9670;&#160;</a></span>nb_procs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int doctest::mpi_sub_comm::nb_procs</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a336b0077bb17427b3df8c04a2e8ad6e6" name="a336b0077bb17427b3df8c04a2e8ad6e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a336b0077bb17427b3df8c04a2e8ad6e6">&#9670;&#160;</a></span>rank</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int doctest::mpi_sub_comm::rank</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej struktury została wygenerowana z pliku:<ul>
+<li>doctest/doctest/extensions/<a class="el" href="mpi__sub__comm_8h_source.html">mpi_sub_comm.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacedoctest.html">doctest</a></li><li class="navelem"><a class="el" href="structdoctest_1_1mpi__sub__comm.html">mpi_sub_comm</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

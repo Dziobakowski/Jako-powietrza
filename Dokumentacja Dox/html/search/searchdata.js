@@ -4,7 +4,7 @@ var indexSectionsWithContent =
   1: "mp",
   2: "acmpr",
   3: "afgmopswz",
-  4: "cdefilprstv",
+  4: "cdefilmprstv",
   5: "jpw"
 };
 

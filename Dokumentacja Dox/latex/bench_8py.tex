@@ -1,0 +1,69 @@
+\doxysection{Dokumentacja pliku doctest/scripts/bench/bench.py}
+\hypertarget{bench_8py}{}\label{bench_8py}\index{doctest/scripts/bench/bench.py@{doctest/scripts/bench/bench.py}}
+\doxysubsubsection*{Przestrzenie nazw}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacebench}{bench}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacebench_af1ae126ecec4ca335692d02a844c975c}{bench.\+add\+Common\+Flags}} (\mbox{\hyperlink{namespacebench_abd56138379be6816ab86ff1d7695a816}{parser}})
+\item 
+\mbox{\hyperlink{namespacebench_a1da94499bf3c15dc2779948000bfdd7d}{bench.\+compile}} (\mbox{\hyperlink{namespacebench_a608a03d270995ecd8974becbaa517116}{args}})
+\item 
+\mbox{\hyperlink{namespacebench_ad8fee855cd358a7331fe58c88450e86e}{bench.\+runtime}} (\mbox{\hyperlink{namespacebench_a608a03d270995ecd8974becbaa517116}{args}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Zmienne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacebench_abd56138379be6816ab86ff1d7695a816}{bench.\+parser}} = argparse.\+Argument\+Parser()
+\item 
+\mbox{\hyperlink{namespacebench_a3c99f96895a47f4328cbabd7d72d44d6}{bench.\+subparsers}} = parser.\+add\+\_\+subparsers()
+\item 
+\mbox{\hyperlink{namespacebench_a7d9d10649b50acc709ce1f6338d34f48}{bench.\+parser\+\_\+c}} = subparsers.\+add\+\_\+parser(\textquotesingle{}\mbox{\hyperlink{namespacebench_a1da94499bf3c15dc2779948000bfdd7d}{compile}}\textquotesingle{}, \mbox{\hyperlink{namespacebench_ab56ea727fb0f04b558c15f39c5c9ce03}{help}}=\textquotesingle{}benchmark \mbox{\hyperlink{namespacebench_a1da94499bf3c15dc2779948000bfdd7d}{compile}} times\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespacebench_ae2deebb589c32069d49dd046c3a5d800}{bench.\+action}}
+\item 
+\mbox{\hyperlink{namespacebench_ab56ea727fb0f04b558c15f39c5c9ce03}{bench.\+help}}
+\item 
+\mbox{\hyperlink{namespacebench_a2bf40612e01424144f5520a36a5d878f}{bench.\+parser\+\_\+r}} = subparsers.\+add\+\_\+parser(\textquotesingle{}\mbox{\hyperlink{namespacebench_ad8fee855cd358a7331fe58c88450e86e}{runtime}}\textquotesingle{}, \mbox{\hyperlink{namespacebench_ab56ea727fb0f04b558c15f39c5c9ce03}{help}}=\textquotesingle{}benchmark \mbox{\hyperlink{namespacebench_ad8fee855cd358a7331fe58c88450e86e}{runtime}}\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespacebench_a9c991e4e8b85fe943346b8c680952727}{bench.\+type}}
+\item 
+\mbox{\hyperlink{namespacebench_a749bf9cb640c901dd75d5782959df4b8}{bench.\+int}}
+\item 
+\mbox{\hyperlink{namespacebench_a1a2e7ce3cad58089c2bbef352dff6145}{bench.\+default}}
+\item 
+\mbox{\hyperlink{namespacebench_ab1d526655bd5cba92fe4f0a8e7575a45}{bench.\+func}}
+\item 
+\mbox{\hyperlink{namespacebench_a608a03d270995ecd8974becbaa517116}{bench.\+args}} = parser.\+parse\+\_\+args()
+\item 
+\mbox{\hyperlink{namespacebench_ac8589b144c2f4f80126edb5b64100a21}{bench.\+width}}
+\item 
+str \mbox{\hyperlink{namespacebench_aaf162e97c86d20737a3dd19ae840a75a}{bench.\+catch\+\_\+ver}} = "{}2.\+3.\+0"{}
+\item 
+str \mbox{\hyperlink{namespacebench_a5f7a535dd21725a2ef95b009229d31e6}{bench.\+catch\+\_\+header}} = "{}catch."{} + \mbox{\hyperlink{namespacebench_aaf162e97c86d20737a3dd19ae840a75a}{catch\+\_\+ver}} + "{}.hpp"{}
+\item 
+str \mbox{\hyperlink{namespacebench_a90155a3ff0c753a5b68d36269c22e632}{bench.\+the\+\_\+folder}} = \textquotesingle{}project\textquotesingle{}
+\item 
+str \mbox{\hyperlink{namespacebench_aca215d1f68c4c6458b91196126dcd679}{bench.\+defines}} = "{}"{}
+\item 
+str \mbox{\hyperlink{namespacebench_a8e83a0a88b006a497201695ecd08c807}{bench.\+define\+\_\+implement}} = "{}\#define DOCTEST\+\_\+\+CONFIG\+\_\+\+IMPLEMENT\textbackslash{}n"{}
+\item 
+str \mbox{\hyperlink{namespacebench_a1af09d425bf310558688bf848c7aa058}{bench.\+macro}} = "{} CHECK(a == b);\textbackslash{}n"{}
+\item 
+str \mbox{\hyperlink{namespacebench_a058e9aea95e21efe59fdd69731418836}{bench.\+include}} = \textquotesingle{}\#include "{}doctest.\+h"{}\textbackslash{}n\textquotesingle{}
+\item 
+\mbox{\hyperlink{namespacebench_a77947313af56951cedb44c9592bbf758}{bench.\+f}} = open(str(i) + \textquotesingle{}.cpp\textquotesingle{}, \textquotesingle{}w\textquotesingle{})
+\item 
+str \mbox{\hyperlink{namespacebench_a5e786da0e9a4568f3708b5f856f481d3}{bench.\+compiler}} = "{}"{}
+\item 
+str \mbox{\hyperlink{namespacebench_a87e00324db9751df0cfc37916813c660}{bench.\+cmake\+\_\+command}} = \textquotesingle{}cmake . -\/G "{}Visual Studio 15 Win64"{}\textquotesingle{}
+\item 
+str \mbox{\hyperlink{namespacebench_a620e7db8ca35c983633873f4ed59e6e2}{bench.\+the\+\_\+config}} = \textquotesingle{}\textquotesingle{}
+\item 
+\mbox{\hyperlink{namespacebench_a8bb2558915414b0e3454fd161abd7227}{bench.\+start}} = datetime.\+now()
+\item 
+\mbox{\hyperlink{namespacebench_a7ce78ea39893edd8f6e84722cda05eff}{bench.\+end}} = datetime.\+now()
+\end{DoxyCompactItemize}

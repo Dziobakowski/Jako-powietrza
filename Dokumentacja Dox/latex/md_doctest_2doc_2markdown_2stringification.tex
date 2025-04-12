@@ -1,0 +1,108 @@
+\chapter{String conversions}
+\hypertarget{md_doctest_2doc_2markdown_2stringification}{}\label{md_doctest_2doc_2markdown_2stringification}\index{String conversions@{String conversions}}
+\label{md_doctest_2doc_2markdown_2stringification_autotoc_md163}%
+\Hypertarget{md_doctest_2doc_2markdown_2stringification_autotoc_md163}%
+
+
+{\bfseries{doctest}} needs to be able to convert types you use in assertions and logging expressions into strings (for logging and reporting purposes). Most built-\/in types are supported out of the box but there are three ways that you can tell {\bfseries{doctest}} how to convert your own types (or other, third-\/party types) into strings.
+
+For stringifying enums checkout \href{https://github.com/doctest/doctest/issues/121}{\texttt{ this issue}}.\hypertarget{md_doctest_2doc_2markdown_2stringification_autotoc_md164}{}\doxysection{\texorpdfstring{{\ttfamily operator\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}} overload for {\ttfamily std\+::ostream}}{{\ttfamily operator\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}} overload for {\ttfamily std\+::ostream}}}\label{md_doctest_2doc_2markdown_2stringification_autotoc_md164}
+This is the standard way of providing string conversions in C++ -\/ and the chances are you may already provide this for your own purposes. If you\textquotesingle{}re not familiar with this idiom it involves writing a free function of the form\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespacestd_af1127a426e9584e1fc5e158ded14b7da}{std::ostream}}\&\ operator<<\ (\mbox{\hyperlink{namespacestd_af1127a426e9584e1fc5e158ded14b7da}{std::ostream}}\&\ os,\ \textcolor{keyword}{const}\ T\&\ value)\ \{}
+\DoxyCodeLine{\ \ \ \ os\ <<\ convertMyTypeToString(value);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+(where {\ttfamily T} is your type and {\ttfamily convert\+My\+Type\+To\+String} is where you\textquotesingle{}ll write whatever code is necessary to make your type printable -\/ it doesn\textquotesingle{}t have to be in another function).
+
+You should put this function in the same namespace as your type.
+
+Alternatively you may prefer to write it as a member function\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespacestd_af1127a426e9584e1fc5e158ded14b7da}{std::ostream}}\&\ T::operator<<(\mbox{\hyperlink{namespacestd_af1127a426e9584e1fc5e158ded14b7da}{std::ostream}}\&\ os)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\ \ \ \ os\ <<\ convertMyTypeToString(*\textcolor{keyword}{this});}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_doctest_2doc_2markdown_2stringification_autotoc_md165}{}\doxysection{\texorpdfstring{{\ttfamily doctest\+::to\+String} overload}{{\ttfamily doctest\+::to\+String} overload}}\label{md_doctest_2doc_2markdown_2stringification_autotoc_md165}
+If you don\textquotesingle{}t want to provide an {\ttfamily operator\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}} overload, or you want to convert your type differently for testing purposes, you can provide an overload for {\ttfamily to\+String()} for your type which returns {\ttfamily \doxylink{classdoctest_1_1_string}{doctest\+::\+String}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{namespace\ }user\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{struct\ }udt\ \{\};}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ doctest::String\ \mbox{\hyperlink{namespacedoctest_a6bb27d33f7b25b3ff5fc6872f47f329b}{toString}}(\textcolor{keyword}{const}\ udt\&\ value)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ convertMyTypeToString(value);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Note that the function must be in the same namespace as your type. If the type is not in any namespace -\/ then the overload should be in the global namespace as well. {\ttfamily convert\+My\+Type\+To\+String} is where you\textquotesingle{}ll write whatever code is necessary to make your type printable.\hypertarget{md_doctest_2doc_2markdown_2stringification_autotoc_md166}{}\doxysection{\texorpdfstring{{\ttfamily doctest\+::\+String\+Maker\texorpdfstring{$<$}{<}T\texorpdfstring{$>$}{>}} specialisation}{{\ttfamily doctest\+::\+String\+Maker\texorpdfstring{$<$}{<}T\texorpdfstring{$>$}{>}} specialisation}}\label{md_doctest_2doc_2markdown_2stringification_autotoc_md166}
+There are some cases where overloading {\ttfamily to\+String} does not work as expected. Specialising {\ttfamily String\+Maker\texorpdfstring{$<$}{<}T\texorpdfstring{$>$}{>}} gives you more precise and reliable control -\/ but at the cost of slightly more code and complexity\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacedoctest}{doctest}}\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{template}<>\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structdoctest_1_1_string_maker}{StringMaker}}<T>\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ String\ \mbox{\hyperlink{structdoctest_1_1detail_1_1_string_maker_base_a67d29f2a5de9a522d8e8607c1a39db9b}{convert}}(\textcolor{keyword}{const}\ T\&\ value)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ convertMyTypeToString(value);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_doctest_2doc_2markdown_2stringification_autotoc_md167}{}\doxysection{\texorpdfstring{Translating exceptions}{Translating exceptions}}\label{md_doctest_2doc_2markdown_2stringification_autotoc_md167}
+By default all exceptions deriving from {\ttfamily std\+::exception} will be translated to strings by calling the {\ttfamily what()} method (also C strings). For exception types that do not derive from {\ttfamily std\+::exception} -\/ or if {\ttfamily what()} does not return a suitable string -\/ use {\ttfamily REGISTER\+\_\+\+EXCEPTION\+\_\+\+TRANSLATOR}. This defines a function that takes your exception type and returns a {\ttfamily \doxylink{classdoctest_1_1_string}{doctest\+::\+String}}. It can appear anywhere in the code -\/ it doesn\textquotesingle{}t have to be in the same translation unit. For example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{doctest_2doctest_8h_a4f7616cc57079fbcd459e73d64ce52e3}{REGISTER\_EXCEPTION\_TRANSLATOR}}(\mbox{\hyperlink{struct_my_type}{MyType}}\&\ ex)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classdoctest_1_1_string}{doctest::String}}(ex.message());}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Note that the exception may be accepted without a reference but it is considered bad practice in C++.
+
+An alternative way to register an exception translator is to do the following in some function -\/ before executing any tests\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ adding\ a\ lambda\ -\/\ the\ signature\ required\ is\ \`{}doctest::String(exception\_type)`}}
+\DoxyCodeLine{\mbox{\hyperlink{namespacedoctest_a8e23e6bb4c6982688652060dbe41385d}{doctest::registerExceptionTranslator<int>}}([](\textcolor{keywordtype}{int}\ in)\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacedoctest_a6bb27d33f7b25b3ff5fc6872f47f329b}{doctest::toString}}(in);\ \});}
+
+\end{DoxyCode}
+
+
+The order of registering exception translators can be controlled -\/ simply call the explicit function in the required order or list the exception translators with the macro in a top-\/to-\/bottom fashion in a single translation unit -\/ everything that auto-\/registers in doctest works in a top-\/to-\/bottom way for a single translation unit (source file).
+
+You could also \href{https://github.com/catchorg/Catch2/issues/539\#issuecomment-454549904}{\texttt{ override the translation mechanism}} for exceptions deriving from {\ttfamily std\+::exception}.
+
+\DoxyHorRuler{0}
+
+
+
+\begin{DoxyItemize}
+\item Check out the \href{../../examples/all_features/stringification.cpp}{\texttt{ {\bfseries{example}}}} which shows how to stringify {\ttfamily std\+::vector\texorpdfstring{$<$}{<}T\texorpdfstring{$>$}{>}} and other types/exceptions.
+\item Note that the type {\ttfamily String} is used when specializing {\ttfamily String\+Maker\texorpdfstring{$<$}{<}T\texorpdfstring{$>$}{>}} or overloading {\ttfamily to\+String()} -\/ it is the string type {\bfseries{doctest}} works with. {\ttfamily std\+::string} is not an option because doctest would have to include the {\ttfamily \texorpdfstring{$<$}{<}string\texorpdfstring{$>$}{>}} header.
+\item To support the {\ttfamily operator\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}(\doxylink{namespacestd_af1127a426e9584e1fc5e158ded14b7da}{std\+::ostream}\&...} stringification the library has to offer a forward declaration of {\ttfamily \doxylink{namespacestd_af1127a426e9584e1fc5e158ded14b7da}{std\+::ostream}} and that is what the library does -\/ but it is forbidden by the standard. It currently works everywhere -\/ on all tested compilers -\/ but if the user wishes to be 100\% standards compliant -\/ then the \href{configuration.md\#doctest_config_use_std_headers}{\texttt{ {\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+USE\+\_\+\+STD\+\_\+\+HEADERS}}}}} identifier can be used to force the inclusion of {\ttfamily \texorpdfstring{$<$}{<}iosfwd\texorpdfstring{$>$}{>}}. The reason the header is not included by default is that on MSVC (for example) it drags a whole bunch of stuff with it -\/ and after the preprocessor is finished the translation unit has grown to 42k lines of C++ code -\/ while Clang and the libc++ are so well implemented that including {\ttfamily \texorpdfstring{$<$}{<}iosfwd\texorpdfstring{$>$}{>}} there results in 400 lines of code.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+
+
+\href{readme.md\#reference}{\texttt{ Home}}
+

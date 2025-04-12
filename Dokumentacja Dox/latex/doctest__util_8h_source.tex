@@ -1,0 +1,43 @@
+\doxysection{doctest\+\_\+util.\+h}
+\hypertarget{doctest__util_8h_source}{}\label{doctest__util_8h_source}\index{doctest/doctest/extensions/doctest\_util.h@{doctest/doctest/extensions/doctest\_util.h}}
+\mbox{\hyperlink{doctest__util_8h}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ doctest\_util.h\ -\/\ an\ accompanying\ extensions\ header\ to\ the\ main\ doctest.h\ header}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ Copyright\ (c)\ 2016-\/2023\ Viktor\ Kirilov}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ Distributed\ under\ the\ MIT\ Software\ License}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ See\ accompanying\ file\ LICENSE.txt\ or\ copy\ at}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ https://opensource.org/licenses/MIT}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ The\ documentation\ can\ be\ found\ at\ the\ library's\ page:}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ https://github.com/doctest/doctest/blob/master/doc/markdown/readme.md}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#ifndef\ DOCTEST\_UTIL\_H}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ DOCTEST\_UTIL\_H}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ DOCTEST\_LIBRARY\_INCLUDED}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{doctest_2doctest_8h}{../doctest.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacedoctest}{doctest}}\ \{}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacedoctest_ad01ed889a01aa24f6efab31f8fd4327e}{applyCommandLine}}(\mbox{\hyperlink{classdoctest_1_1_context}{doctest::Context}}\&\ ctx,\ \textcolor{keyword}{const}\ std::vector<std::string>\&\ args)\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ doctest\_args\ =\ std::make\_unique<const\ char*[]>(args.size());}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ args.size();\ ++i)\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ doctest\_args[i]\ =\ args[i].c\_str();}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ ctx.\mbox{\hyperlink{classdoctest_1_1_context_ad55229220bf9ca74e6e0c6323bf672e1}{applyCommandLine}}(args.size(),\ doctest\_args.get());}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \}\ \textcolor{comment}{//\ namespace\ doctest}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DOCTEST\_UTIL\_H}}
+
+\end{DoxyCode}

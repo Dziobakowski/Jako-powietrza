@@ -9,5 +9,6 @@ var searchData=
   ['pobierzdane_6',['PobierzDane',['../class_main_frame.html#a242c8190443f5149e2d277f263bba99b',1,'MainFrame']]],
   ['polsce_7',['Jakość-powietrza-w-Polsce',['../md__r_e_a_d_m_e.html',1,'']]],
   ['potwierdzzakres_8',['PotwierdzZakres',['../class_main_frame.html#aef3d76628efa0328cbdc4b25ade1bd19',1,'MainFrame']]],
-  ['powietrza_20w_20polsce_9',['Jakość-powietrza-w-Polsce',['../md__r_e_a_d_m_e.html',1,'']]]
+  ['powietrza_20w_20polsce_9',['Jakość-powietrza-w-Polsce',['../md__r_e_a_d_m_e.html',1,'']]],
+  ['progressgauge_10',['progressGauge',['../class_main_frame.html#ad9ca0fec9a6d63942551c5cbf2281d98',1,'MainFrame']]]
 ];

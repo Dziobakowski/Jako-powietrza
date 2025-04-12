@@ -2,7 +2,7 @@
 \hypertarget{_curl_8h}{}\label{_curl_8h}\index{JPO/Curl.h@{JPO/Curl.h}}
 
 
-Deklaracja funkcji do obs≈Çugi zapyta≈Ñ HTTP oraz parsowania odpowiedzi w formacie JSON.  
+Deklaracja funkcji do obs≥ugi zapytaÒ HTTP oraz parsowania odpowiedzi w formacie JSON.  
 
 
 {\ttfamily \#include $<$string$>$}\newline
@@ -13,13 +13,13 @@ Deklaracja funkcji do obs≈Çugi zapyta≈Ñ HTTP oraz parsowania odpowiedzi w formac
 bool \mbox{\hyperlink{_curl_8h_ae153a754f69f7d45753cc3ddb01c2379}{perform\+Curl\+Request}} (const std\+::string \&url, std\+::string \&response)
 \begin{DoxyCompactList}\small\item\em Wykonuje zapytanie HTTP do podanego URL. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{_curl_8h_a0d098418988357a4bd8a5664ada1b047}{parse\+Json\+Response}} (const std\+::string \&response, Json\+::\+Value \&root)
-\begin{DoxyCompactList}\small\item\em Parsuje odpowied≈∫ w formacie JSON. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Parsuje odpowiedü w formacie JSON. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Opis szczeg√≥≈Çowy}
-Deklaracja funkcji do obs≈Çugi zapyta≈Ñ HTTP oraz parsowania odpowiedzi w formacie JSON. 
+Deklaracja funkcji do obs≥ugi zapytaÒ HTTP oraz parsowania odpowiedzi w formacie JSON. 
 
-Plik nag≈Ç√≥wkowy zawiera deklaracje funkcji wykorzystywanych do wykonywania zapyta≈Ñ HTTP z wykorzystaniem biblioteki CURL oraz parsowania odpowiedzi w formacie JSON. 
+Plik nag≥Ûwkowy zawiera deklaracje funkcji wykorzystywanych do wykonywania zapytaÒ HTTP z wykorzystaniem biblioteki CURL oraz parsowania odpowiedzi w formacie JSON. 
 
 \doxysubsection{Dokumentacja funkcji}
 \Hypertarget{_curl_8h_a0d098418988357a4bd8a5664ada1b047}\index{Curl.h@{Curl.h}!parseJsonResponse@{parseJsonResponse}}
@@ -30,21 +30,21 @@ bool parse\+Json\+Response (\begin{DoxyParamCaption}\item[{const std\+::string \
 
 
 
-Parsuje odpowied≈∫ w formacie JSON. 
+Parsuje odpowiedü w formacie JSON. 
 
-Funkcja ta przyjmuje odpowied≈∫ serwera w formie ciƒÖgu znak√≥w i parsuje jƒÖ do obiektu typu {\ttfamily Json\+::\+Value}. Biblioteka Json\+Cpp jest wykorzystywana do konwersji odpowiedzi w format JSON.
+Funkcja ta przyjmuje odpowiedü serwera w formie ciπgu znakÛw i parsuje jπ do obiektu typu {\ttfamily Json\+::\+Value}. Biblioteka Json\+Cpp jest wykorzystywana do konwersji odpowiedzi w format JSON.
 
 
 \begin{DoxyParams}{Parametry}
-{\em response} & Odpowied≈∫ serwera w formacie JSON w postaci ciƒÖgu znak√≥w. \\
+{\em response} & Odpowiedü serwera w formacie JSON w postaci ciπgu znakÛw. \\
 \hline
-{\em root} & Obiekt typu {\ttfamily Json\+::\+Value}, do kt√≥rego zapisane zostanƒÖ dane z odpowiedzi. \\
+{\em root} & Obiekt typu {\ttfamily Json\+::\+Value}, do ktÛrego zapisane zostanπ dane z odpowiedzi. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Zwraca}
-Zwraca {\ttfamily true}, je≈õli odpowied≈∫ zosta≈Ça poprawnie sparsowana, w przeciwnym razie {\ttfamily false}.
+Zwraca {\ttfamily true}, jeúli odpowiedü zosta≥a poprawnie sparsowana, w przeciwnym razie {\ttfamily false}.
 \end{DoxyReturn}
-Parsuje odpowied≈∫ w formacie JSON.
+Parsuje odpowiedü w formacie JSON.
 
 Funkcja ta konwertuje odpowied≈∫ w postaci ciƒÖgu znak√≥w (response) do obiektu typu Json\+::\+Value przy u≈ºyciu biblioteki Json\+Cpp. W przypadku b≈Çƒôdu zwraca false.
 
@@ -68,17 +68,17 @@ bool perform\+Curl\+Request (\begin{DoxyParamCaption}\item[{const std\+::string 
 
 Wykonuje zapytanie HTTP do podanego URL. 
 
-Funkcja ta wykorzystuje bibliotekƒô CURL do wysy≈Çania zapyta≈Ñ HTTP na okre≈õlony adres URL. Odpowied≈∫ serwera jest przechowywana w zmiennej przekazanej jako argument. Funkcja wy≈ÇƒÖcza weryfikacjƒô SSL.
+Funkcja ta wykorzystuje bibliotekÍ CURL do wysy≥ania zapytaÒ HTTP na okreúlony adres URL. Odpowiedü serwera jest przechowywana w zmiennej przekazanej jako argument. Funkcja wy≥πcza weryfikacjÍ SSL.
 
 
 \begin{DoxyParams}{Parametry}
-{\em url} & Adres URL, do kt√≥rego wysy≈Çane jest zapytanie HTTP. \\
+{\em url} & Adres URL, do ktÛrego wysy≥ane jest zapytanie HTTP. \\
 \hline
-{\em response} & Zmienna, do kt√≥rej zostanƒÖ zapisane dane zwr√≥cone przez serwer. \\
+{\em response} & Zmienna, do ktÛrej zostanπ zapisane dane zwrÛcone przez serwer. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Zwraca}
-Zwraca {\ttfamily true}, je≈õli zapytanie zako≈Ñczy≈Ço siƒô sukcesem, w przeciwnym razie {\ttfamily false}.
+Zwraca {\ttfamily true}, jeúli zapytanie zakoÒczy≥o siÍ sukcesem, w przeciwnym razie {\ttfamily false}.
 \end{DoxyReturn}
 Wykonuje zapytanie HTTP do podanego URL.
 

@@ -1,0 +1,121 @@
+\doxysection{Dokumentacja katalogu doctest}
+\hypertarget{dir_43da05b65ffbb65743beb36240116ac9}{}\label{dir_43da05b65ffbb65743beb36240116ac9}\index{Dokumentacja katalogu doctest@{Dokumentacja katalogu doctest}}
+\doxysubsubsection*{Katalogi}
+\begin{DoxyCompactItemize}
+\item 
+katalog \mbox{\hyperlink{dir_97041381e70e36c86ad5b0c1bba66db4}{doc}}
+\item 
+katalog \mbox{\hyperlink{dir_2b8a7629f33b5b764148d7be5ced96bf}{doctest}}
+\item 
+katalog \mbox{\hyperlink{dir_4b46fc18e9c3a54fd7f49e6033bfe473}{examples}}
+\item 
+katalog \mbox{\hyperlink{dir_f060255ccb16877e838d213cd97c69ed}{scripts}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+
+
+
+
+{\bfseries{ \tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+master branch  &\href{https://github.com/doctest/doctest/actions?query=branch\%3Amaster}{\texttt{ }}  &\href{https://app.codecov.io/gh/doctest/doctest/branch/master}{\texttt{ }}   \\\cline{1-3}
+dev branch  &\href{https://github.com/doctest/doctest/actions?query=branch\%3Adev}{\texttt{ }}  &\href{https://app.codecov.io/gh/doctest/doctest/branch/dev}{\texttt{ }}   \\\cline{1-3}
+\end{longtabu}
+}}
+
+{\bfseries{doctest}} is a new C++ testing framework but is by far the fastest both in compile times (by \doxysectlink{md_doctest_2doc_2markdown_2benchmarks}{{\bfseries{orders of magnitude}}}{0}) and runtime compared to other feature-\/rich alternatives. It brings the ability of compiled languages such as \href{https://dlang.org/spec/unittest.html}{\texttt{ {\bfseries{D}}}} / \href{https://doc.rust-lang.org/book/second-edition/ch11-00-testing.html}{\texttt{ {\bfseries{Rust}}}} / \href{https://nim-lang.org/docs/unittest.html}{\texttt{ {\bfseries{Nim}}}} to have tests written directly in the production code thanks to a fast, transparent and flexible test runner with a clean interface.
+
+\href{https://en.wikipedia.org/wiki/C\%2B\%2B\#Standardization}{\texttt{ }} \href{https://opensource.org/licenses/MIT}{\texttt{ }} \href{https://raw.githubusercontent.com/doctest/doctest/master/doctest/doctest.h}{\texttt{ }} \href{https://bestpractices.coreinfrastructure.org/projects/503}{\texttt{ }} \href{https://discord.gg/PGXn9YmyF3}{\texttt{ }} \href{https://godbolt.org/z/4s389Kbfs}{\texttt{ }}   
+
+\href{https://www.patreon.com/onqtam}{\texttt{ }}
+
+The framework is and will stay free but needs your support to sustain its development. There are lots of \href{https://github.com/doctest/doctest/issues/600}{\texttt{ {\bfseries{new features}}}} and maintenance to do. If you work for a company using {\bfseries{doctest}} or have the means to do so, please consider financial support. Monthly donations via Patreon and one-\/offs via Pay\+Pal.
+
+\href{https://www.paypal.me/onqtam/10}{\texttt{ }}
+
+A complete example with a self-\/registering test that compiles to an executable looks like this\+:
+
+
+
+There are many C++ testing frameworks -\/ \href{https://github.com/catchorg/Catch2}{\texttt{ Catch}}, \href{http://www.boost.org/doc/libs/1_64_0/libs/test/doc/html/index.html}{\texttt{ Boost.\+Test}}, \href{https://github.com/unittest-cpp/unittest-cpp}{\texttt{ Unit\+Test++}}, \href{https://github.com/cpputest/cpputest}{\texttt{ cpputest}}, \href{https://github.com/google/googletest}{\texttt{ googletest}} and \href{https://en.wikipedia.org/wiki/List_of_unit_testing_frameworks\#C.2B.2B}{\texttt{ others}}.
+
+The {\bfseries{key}} differences between it and other testing frameworks are that it is light and unintrusive\+:
+\begin{DoxyItemize}
+\item Ultra light on compile times both in terms of \href{doc/markdown/benchmarks.md\#cost-of-including-the-header}{\texttt{ {\bfseries{including the header}}}} and writing \href{doc/markdown/benchmarks.md\#cost-of-an-assertion-macro}{\texttt{ {\bfseries{thousands of asserts}}}}
+\item Doesn\textquotesingle{}t produce any warnings even on the \href{scripts/cmake/common.cmake\#L84}{\texttt{ {\bfseries{most aggressive}}}} warning levels for {\bfseries{MSVC}}/\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+GCC\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}/\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+Clang\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item Can remove {\bfseries{everything}} testing-\/related from the binary with the \href{doc/markdown/configuration.md\#doctest_config_disable}{\texttt{ {\bfseries{{\ttfamily DOCTEST\+\_\+\+CONFIG\+\_\+\+DISABLE}}}}} identifier
+\item \href{doc/markdown/faq.md\#is-doctest-thread-aware}{\texttt{ {\bfseries{thread-\/safe}}}} -\/ asserts can be used from multiple threads spawned from a single test case -\/ \href{examples/all_features/concurrency.cpp}{\texttt{ {\bfseries{example}}}}
+\item asserts can be used \href{doc/markdown/assertions.md\#using-asserts-out-of-a-testing-context}{\texttt{ {\bfseries{outside of a testing context}}}} -\/ as a general purpose assert library -\/ \href{examples/all_features/asserts_used_outside_of_tests.cpp}{\texttt{ {\bfseries{example}}}}
+\item No global namespace pollution (everything is in {\ttfamily doctest\+:\+:}) \& doesn\textquotesingle{}t drag {\bfseries{any}} headers with it
+\item \href{doc/markdown/features.md\#extremely-portable}{\texttt{ {\bfseries{Portable}}}} C++11 (use tag \href{https://github.com/doctest/doctest/tree/1.2.9}{\texttt{ {\bfseries{1.\+2.\+9}}}} for C++98) with over 100 different CI builds (static analysis, sanitizers..)
+\item binaries (exe/dll) can use the test runner of another binary =\texorpdfstring{$>$}{>} tests in a single registry -\/ \href{examples/executable_dll_and_plugin/}{\texttt{ {\bfseries{example}}}}
+\end{DoxyItemize}
+
+
+
+This allows the framework to be used in more ways than any other -\/ tests can be written directly in the production code!
+
+{\itshape Tests can be a form of documentation and should be able to reside near the production code which they test.}
+
+
+\begin{DoxyItemize}
+\item This makes the barrier for writing tests {\bfseries{much lower}} -\/ you don\textquotesingle{}t have to\+: {\bfseries{1)}} make a separate source file {\bfseries{2)}} include a bunch of stuff in it {\bfseries{3)}} add it to the build system and {\bfseries{4)}} add it to source control -\/ You can just write the tests for a class or a piece of functionality at the bottom of its source file -\/ or even header file!
+\item Tests in the production code can be thought of as documentation/up-\/to-\/date comments -\/ showcasing the APIs
+\item Testing internals that are not exposed through the public API and headers is no longer a mind-\/bending exercise
+\item \href{https://en.wikipedia.org/wiki/Test-driven_development}{\texttt{ {\bfseries{Test-\/driven development}}}} in C++ has never been easier!
+\end{DoxyItemize}
+
+The framework can be used just like any other without mixing production code and tests -\/ check out the \doxysectlink{md_doctest_2doc_2markdown_2features}{{\bfseries{features}}}{0}.
+
+{\bfseries{doctest}} is modeled after \href{https://github.com/catchorg/Catch2}{\texttt{ {\bfseries{Catch}}}} and some parts of the code have been taken directly -\/ check out \href{doc/markdown/faq.md\#how-is-doctest-different-from-catch}{\texttt{ {\bfseries{the differences}}}}.
+
+\href{https://github.com/martinmoene/catch-lest-other-comparison}{\texttt{ This table}} compares {\bfseries{doctest}} / \href{https://github.com/catchorg/Catch2}{\texttt{ {\bfseries{Catch}}}} / \href{https://github.com/martinmoene/lest}{\texttt{ {\bfseries{lest}}}} which are all very similar.
+
+Checkout the \href{https://cppcon2017.sched.com/event/BgsI/mix-tests-and-production-code-with-doctest-implementing-and-using-the-fastest-modern-c-testing-framework}{\texttt{ {\bfseries{Cpp\+Con 2017 talk}}}} on \href{https://www.youtube.com/watch?v=eH1CxEC29l8}{\texttt{ {\bfseries{You\+Tube}}}} to get a better understanding of how the framework works and read about how to use it in \href{https://blog.jetbrains.com/rscpp/better-ways-testing-with-doctest/}{\texttt{ {\bfseries{the Jet\+Brains article}}}} -\/ highlighting the unique aspects of the framework! On a short description on how to use the framework along production code you could refer to \href{https://github.com/doctest/doctest/issues/252}{\texttt{ {\bfseries{this Git\+Hub issue}}}}. There is also an \href{https://accu.org/var/uploads/journals/Overload137.pdf}{\texttt{ {\bfseries{older article}}}} in the february edition of ACCU Overload 2017.
+
+\href{https://www.youtube.com/watch?v=eH1CxEC29l8}{\texttt{ }}\hypertarget{README.md_autotoc_md184}{}\doxysubsubsection{\texorpdfstring{Documentation}{Documentation}}\label{README.md_autotoc_md184}
+Project\+:
+
+
+\begin{DoxyItemize}
+\item \doxysectlink{md_doctest_2doc_2markdown_2features}{Features and design goals}{0} -\/ the complete list of features
+\item \href{https://github.com/doctest/doctest/issues/600}{\texttt{ Community driven roadmap}} -\/ upcoming features
+\item \doxysectlink{md_doctest_2doc_2markdown_2benchmarks}{Benchmarks}{0} -\/ compile-\/time and runtime supremacy
+\item \doxysectlink{md_doctest_2_c_o_n_t_r_i_b_u_t_i_n_g}{Contributing}{0} -\/ how to make a proper pull request
+\item \doxysectlink{md_doctest_2_c_h_a_n_g_e_l_o_g}{Changelog}{0} -\/ generated changelog based on closed issues/\+PRs
+\end{DoxyItemize}
+
+Usage\+:
+
+
+\begin{DoxyItemize}
+\item \doxysectlink{md_doctest_2doc_2markdown_2tutorial}{Tutorial}{0} -\/ make sure you have read it before the other parts of the documentation
+\item \doxysectlink{md_doctest_2doc_2markdown_2assertions}{Assertion macros}{0}
+\item \doxysectlink{md_doctest_2doc_2markdown_2testcases}{Test cases, subcases and test fixtures}{0}
+\item \doxysectlink{md_doctest_2doc_2markdown_2parameterized-tests}{Parameterized test cases}{0}
+\item \doxysectlink{md_doctest_2doc_2markdown_2commandline}{Command line}{0}
+\item \doxysectlink{md_doctest_2doc_2markdown_2logging}{Logging macros}{0}
+\item \doxysectlink{md_doctest_2doc_2markdown_2main}{{\ttfamily main()} entry point}{0}
+\item \doxysectlink{md_doctest_2doc_2markdown_2configuration}{Configuration}{0}
+\item \doxysectlink{md_doctest_2doc_2markdown_2stringification}{String conversions}{0}
+\item \doxysectlink{md_doctest_2doc_2markdown_2reporters}{Reporters}{0}
+\item \doxysectlink{md_doctest_2doc_2markdown_2extensions}{Extensions}{0}
+\item \doxysectlink{md_doctest_2doc_2markdown_2faq}{FAQ}{0}
+\item \doxysectlink{md_doctest_2doc_2markdown_2build-systems}{Build systems}{0}
+\item \mbox{[}Examples\mbox{]}(examples)
+\end{DoxyItemize}\hypertarget{README.md_autotoc_md185}{}\doxysubsubsection{\texorpdfstring{Contributing}{Contributing}}\label{README.md_autotoc_md185}
+\href{https://www.patreon.com/onqtam}{\texttt{ }}
+
+Support the development of the project with donations! There is a list of planned features which are all important and big -\/ see the \href{https://github.com/doctest/doctest/issues/600}{\texttt{ {\bfseries{roadmap}}}}.
+
+\href{https://www.paypal.me/onqtam/10}{\texttt{ }}
+
+If you work for a company using {\bfseries{doctest}} or have the means to do so, please consider financial support.
+
+Contributions in the form of issues and pull requests are welcome as well -\/ check out the \doxysectlink{md_doctest_2_c_o_n_t_r_i_b_u_t_i_n_g}{{\bfseries{Contributing}}}{0} page.\hypertarget{README.md_autotoc_md186}{}\doxysubsubsection{\texorpdfstring{Stargazers over time}{Stargazers over time}}\label{README.md_autotoc_md186}
+\href{https://starchart.cc/doctest/doctest}{\texttt{ }}\hypertarget{README.md_autotoc_md187}{}\doxysubsubsection{\texorpdfstring{Logo}{Logo}}\label{README.md_autotoc_md187}
+The \href{scripts/data/logo}{\texttt{ logo}} is licensed under a Creative Commons Attribution 4.\+0 International License. Copyright \copyright{} 2019 \href{https://github.com/area55git}{\texttt{ area55git}} ~ \href{https://creativecommons.org/licenses/by/4.0/}{\texttt{ }}
+

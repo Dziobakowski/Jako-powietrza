@@ -1,0 +1,75 @@
+\doxysection{Dokumentacja przestrzeni nazw std}
+\hypertarget{namespacestd}{}\label{namespacestd}\index{std@{std}}
+\doxysubsubsection*{Komponenty}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classstd_1_1basic__istream}{basic\+\_\+istream}}
+\item 
+class \mbox{\hyperlink{classstd_1_1basic__ostream}{basic\+\_\+ostream}}
+\item 
+struct \mbox{\hyperlink{structstd_1_1char__traits}{char\+\_\+traits}}
+\item 
+class \mbox{\hyperlink{classstd_1_1tuple}{tuple}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Definicje typów}
+\begin{DoxyCompactItemize}
+\item 
+typedef decltype(nullptr) \mbox{\hyperlink{namespacestd_a147badd87f1e15108e8dbee257b60b84}{nullptr\+\_\+t}}
+\item 
+typedef decltype(sizeof(void \texorpdfstring{$\ast$}{*})) \mbox{\hyperlink{namespacestd_a25d17c6c6e00988b019e030fe1754689}{size\+\_\+t}}
+\item 
+typedef \mbox{\hyperlink{classstd_1_1basic__ostream}{basic\+\_\+ostream}}$<$ char, \mbox{\hyperlink{structstd_1_1char__traits}{char\+\_\+traits}}$<$ char $>$ $>$ \mbox{\hyperlink{namespacestd_af1127a426e9584e1fc5e158ded14b7da}{ostream}}
+\item 
+typedef \mbox{\hyperlink{classstd_1_1basic__istream}{basic\+\_\+istream}}$<$ char, \mbox{\hyperlink{structstd_1_1char__traits}{char\+\_\+traits}}$<$ char $>$ $>$ \mbox{\hyperlink{namespacestd_ae6b37430d2e027d0e7d1e266d46d8cef}{istream}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class traits$>$ }\\\mbox{\hyperlink{classstd_1_1basic__ostream}{basic\+\_\+ostream}}$<$ char, traits $>$ \& \mbox{\hyperlink{namespacestd_a51374695e8a67674c4308639aae941ca}{operator$<$$<$}} (\mbox{\hyperlink{classstd_1_1basic__ostream}{basic\+\_\+ostream}}$<$ char, traits $>$ \&, const char \texorpdfstring{$\ast$}{*})
+\item 
+{\footnotesize template$<$typename T$>$ }\\\mbox{\hyperlink{namespacestd_af1127a426e9584e1fc5e158ded14b7da}{ostream}} \& \mbox{\hyperlink{namespacestd_a4f759b8f7d019aba865c741ed5df68dc}{operator$<$$<$}} (\mbox{\hyperlink{namespacestd_af1127a426e9584e1fc5e158ded14b7da}{ostream}} \&stream, const vector$<$ T $>$ \&in)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Dokumentacja definicji typów}
+\Hypertarget{namespacestd_ae6b37430d2e027d0e7d1e266d46d8cef}\index{std@{std}!istream@{istream}}
+\index{istream@{istream}!std@{std}}
+\doxysubsubsection{\texorpdfstring{istream}{istream}}
+{\footnotesize\ttfamily \label{namespacestd_ae6b37430d2e027d0e7d1e266d46d8cef} 
+typedef \mbox{\hyperlink{classstd_1_1basic__istream}{basic\+\_\+istream}}$<$ char, \mbox{\hyperlink{structstd_1_1char__traits}{char\+\_\+traits}}$<$ char $>$ $>$ \mbox{\hyperlink{namespacestd_ae6b37430d2e027d0e7d1e266d46d8cef}{std\+::istream}}}
+
+\Hypertarget{namespacestd_a147badd87f1e15108e8dbee257b60b84}\index{std@{std}!nullptr\_t@{nullptr\_t}}
+\index{nullptr\_t@{nullptr\_t}!std@{std}}
+\doxysubsubsection{\texorpdfstring{nullptr\_t}{nullptr\_t}}
+{\footnotesize\ttfamily \label{namespacestd_a147badd87f1e15108e8dbee257b60b84} 
+typedef decltype(nullptr) \mbox{\hyperlink{namespacestd_a147badd87f1e15108e8dbee257b60b84}{std\+::nullptr\+\_\+t}}}
+
+\Hypertarget{namespacestd_af1127a426e9584e1fc5e158ded14b7da}\index{std@{std}!ostream@{ostream}}
+\index{ostream@{ostream}!std@{std}}
+\doxysubsubsection{\texorpdfstring{ostream}{ostream}}
+{\footnotesize\ttfamily \label{namespacestd_af1127a426e9584e1fc5e158ded14b7da} 
+typedef \mbox{\hyperlink{classstd_1_1basic__ostream}{basic\+\_\+ostream}}$<$ char, \mbox{\hyperlink{structstd_1_1char__traits}{char\+\_\+traits}}$<$ char $>$ $>$ \mbox{\hyperlink{namespacestd_af1127a426e9584e1fc5e158ded14b7da}{std\+::ostream}}}
+
+\Hypertarget{namespacestd_a25d17c6c6e00988b019e030fe1754689}\index{std@{std}!size\_t@{size\_t}}
+\index{size\_t@{size\_t}!std@{std}}
+\doxysubsubsection{\texorpdfstring{size\_t}{size\_t}}
+{\footnotesize\ttfamily \label{namespacestd_a25d17c6c6e00988b019e030fe1754689} 
+decltype(sizeof(void \texorpdfstring{$\ast$}{*})) typedef \mbox{\hyperlink{namespacestd_a25d17c6c6e00988b019e030fe1754689}{std\+::size\+\_\+t}}}
+
+
+
+\doxysubsection{Dokumentacja funkcji}
+\Hypertarget{namespacestd_a51374695e8a67674c4308639aae941ca}\index{std@{std}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!std@{std}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{namespacestd_a51374695e8a67674c4308639aae941ca} 
+template$<$class traits$>$ \\
+\mbox{\hyperlink{classstd_1_1basic__ostream}{basic\+\_\+ostream}}$<$ char, traits $>$ \& std\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classstd_1_1basic__ostream}{basic\+\_\+ostream}}$<$ char, traits $>$ \&}]{}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespacestd_a4f759b8f7d019aba865c741ed5df68dc}\index{std@{std}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!std@{std}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{namespacestd_a4f759b8f7d019aba865c741ed5df68dc} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{namespacestd_af1127a426e9584e1fc5e158ded14b7da}{ostream}} \& std\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacestd_af1127a426e9584e1fc5e158ded14b7da}{ostream}} \&}]{stream}{, }\item[{const vector$<$ T $>$ \&}]{in}{}\end{DoxyParamCaption})}
+

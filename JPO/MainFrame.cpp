@@ -30,123 +30,96 @@
 MainFrame::MainFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title, wxDefaultPosition, wxSize(800, 600)) {
     wxPanel* panel = new wxPanel(this);
 
-    // Tworzymy g³ówny sizer o orientacji pionowej
+    //Sizery do podzia³u apki na kilka podokien
     wxBoxSizer* mainSizer = new wxBoxSizer(wxVERTICAL);
-
-    // Tworzymy poziomy sizer dla czêœci górnej interfejsu (wybór stacji i zanieczyszczenia)
     wxBoxSizer* topSizer = new wxBoxSizer(wxHORIZONTAL);
-
-    // Tworzymy lewy pionowy sizer dla wyboru stacji
     wxBoxSizer* leftSizer = new wxBoxSizer(wxVERTICAL);
 
-    // Etykieta nad list¹ wyboru
     label = new wxStaticText(panel, wxID_ANY, "Wybierz stacjê pomiarow¹:");
 
     // Lista rozwijana do wyboru stacji
     choice = new wxChoice(panel, wxID_ANY, wxDefaultPosition, wxSize(300, -1));
-    choice->Bind(wxEVT_CHOICE, &MainFrame::WyswietlStanowiska, this); // Po wyborze stacji
+    choice->Bind(wxEVT_CHOICE, &MainFrame::WyswietlStanowiska, this);
 
-    // Tworzymy sizer poziomy dla pola tekstowego i przycisku
     wxBoxSizer* filterSizer = new wxBoxSizer(wxHORIZONTAL);
 
-    // Pole tekstowe do wpisania miejscowoœci
+    // Filter
     cityInput = new wxTextCtrl(panel, wxID_ANY, "", wxDefaultPosition, wxSize(200, -1));
 
-    // Przycisk do filtrowania listy
     filterButton = new wxButton(panel, wxID_ANY, "Filtruj", wxDefaultPosition, wxSize(80, -1));
     filterButton->Bind(wxEVT_BUTTON, &MainFrame::FiltrujStacje, this);
 
-    // Dodanie pola tekstowego i przycisku do poziomego sizeru
     filterSizer->Add(cityInput, 0, wxALL, 5);
     filterSizer->Add(filterButton, 0, wxALL, 5);
 
-    // Dodajemy elementy wyboru stacji do lewego sizera
     leftSizer->Add(label, 0, wxALL, 5);
     leftSizer->Add(choice, 0, wxALL | wxEXPAND, 5);
     leftSizer->Add(filterSizer, 0, wxALL, 5);
 
-    // Tworzymy sizer poziomy dla przycisków zapisu i ³adowania danych
     wxBoxSizer* dataButtonsSizer = new wxBoxSizer(wxHORIZONTAL);
 
-    // Przycisk do zapisywania danych do pliku JSON
+    // Zapis i ³adowanie JSON
     saveButton = new wxButton(panel, wxID_ANY, "Zapisz dane", wxDefaultPosition, wxSize(120, -1));
     saveButton->Bind(wxEVT_BUTTON, &MainFrame::ZapiszDane, this);
 
-    // Przycisk do ³adowania danych z pliku JSON
     loadButton = new wxButton(panel, wxID_ANY, "Za³aduj dane", wxDefaultPosition, wxSize(120, -1));
     loadButton->Bind(wxEVT_BUTTON, &MainFrame::ZaladujDane, this);
 
-    // Dodanie przycisków do sizera
     dataButtonsSizer->Add(saveButton, 0, wxALL, 5);
     dataButtonsSizer->Add(loadButton, 0, wxALL, 5);
 
-    // Dodanie sizera przycisków do lewego sizera
     leftSizer->Add(dataButtonsSizer, 0, wxALL, 5);
 
-    // Tworzymy prawy pionowy sizer dla wyboru zanieczyszczeñ
     wxBoxSizer* rightSizer = new wxBoxSizer(wxVERTICAL);
 
-    // Etykieta nad list¹ stanowisk pomiarowych
+    //Rodzaje zanieczyszczeñ
     infoLabel = new wxStaticText(panel, wxID_ANY, "Wybierz rodzaj zanieczyszczenia:");
 
-    // Lista stanowisk pomiarowych
     sensorList = new wxListBox(panel, wxID_ANY, wxDefaultPosition, wxSize(300, 100));
 
-    // Powi¹zanie listy stanowisk z funkcj¹ pobierania danych
     sensorList->Bind(wxEVT_LISTBOX, &MainFrame::WyswietlDanePomiarowe, this);
 
-    // Dodajemy elementy wyboru zanieczyszczeñ do prawego sizera
     rightSizer->Add(infoLabel, 0, wxALL, 5);
     rightSizer->Add(sensorList, 1, wxALL | wxEXPAND, 5);
 
-    // Dodajemy lewy i prawy sizer do górnego poziomego sizera
     topSizer->Add(leftSizer, 0, wxALL | wxEXPAND, 5);
     topSizer->Add(rightSizer, 1, wxALL | wxEXPAND, 5);
 
-    // Pole tekstowe do wyœwietlania analizy danych
     resultBox = new wxTextCtrl(panel, wxID_ANY, "", wxDefaultPosition, wxSize(450, 80), wxTE_MULTILINE | wxTE_READONLY);
 
-    // Tworzymy panel wykresu (PlotPanel)
-    plotPanel = new PlotPanel(panel);  // Dodajemy panel wykresu
+    // Wykres
+    plotPanel = new PlotPanel(panel);
 
-    // Tworzymy sizer poziomy dla dolnej czêœci interfejsu (do wyboru zakresu czasowego)
     wxBoxSizer* timeRangeSizer = new wxBoxSizer(wxHORIZONTAL);
 
-    // Etykiety dla rozwijanych list
+    //Daty analizowanych danych
     wxStaticText* startDateLabel = new wxStaticText(panel, wxID_ANY, "Dolna granica:");
     wxStaticText* endDateLabel = new wxStaticText(panel, wxID_ANY, "Górnica granica:");
 
-    // Inicjalizacja list rozwijanych
     startDateChoice = new wxChoice(panel, wxID_ANY, wxDefaultPosition, wxSize(200, -1));
     endDateChoice = new wxChoice(panel, wxID_ANY, wxDefaultPosition, wxSize(200, -1));
 
-    // Dodanie przycisku "PotwierdŸ"
     confirmButton = new wxButton(panel, wxID_ANY, "PotwierdŸ", wxDefaultPosition, wxSize(100, -1));
     confirmButton->Bind(wxEVT_BUTTON, &MainFrame::PotwierdzZakres, this);
 
-    // Dodajemy elementy wyboru zakresu czasowego do sizera
     timeRangeSizer->Add(startDateLabel, 0, wxALL | wxALIGN_CENTER_VERTICAL, 5);
     timeRangeSizer->Add(startDateChoice, 0, wxALL, 5);
     timeRangeSizer->Add(endDateLabel, 0, wxALL | wxALIGN_CENTER_VERTICAL, 5);
     timeRangeSizer->Add(endDateChoice, 0, wxALL, 5);
     timeRangeSizer->Add(confirmButton, 0, wxALL, 5);
 
-    // Dodajemy wszystkie g³ówne elementy do g³ównego sizera
     mainSizer->Add(topSizer, 0, wxALL | wxEXPAND, 5);
     mainSizer->Add(resultBox, 0, wxALL | wxEXPAND, 5);
-    mainSizer->Add(plotPanel, 1, wxEXPAND | wxALL, 5); // Zwiêkszamy proporcjê dla wykresu
+    mainSizer->Add(plotPanel, 1, wxEXPAND | wxALL, 5);
     mainSizer->Add(timeRangeSizer, 0, wxALL | wxALIGN_CENTER, 5);
 
     panel->SetSizer(mainSizer);
-    mainSizer->SetSizeHints(this); // Dopasowuje rozmiar okna do zawartoœci
+    mainSizer->SetSizeHints(this);
 
-    // Pobranie danych z API i aktualizacja listy
     PobierzDane();
 
     // Tworzymy obiekt ikony
     wxIcon myIcon("C:\\Users\\Dziobakowski\\source\\repos\\JPO z chujowym wykresem\\JPO\\cloud.ico", wxBITMAP_TYPE_ICO);
-
-    // Ustawiamy ikonê aplikacji
     SetIcon(myIcon);
 }
 
@@ -314,7 +287,7 @@ void MainFrame::WyswietlDanePomiarowe(wxCommandEvent& event) {
 void MainFrame::AnalizujDane(const Json::Value& data) {
     if (data["values"].empty()) {
         resultBox->SetValue("Brak danych pomiarowych.");
-        plotPanel->SetData({}); // Czyœci wykres
+        plotPanel->SetData({});
         return;
     }
 
@@ -322,7 +295,7 @@ void MainFrame::AnalizujDane(const Json::Value& data) {
     wxString minTime, maxTime;
     int count = 0;
 
-    values.clear(); // Wyczyœæ poprzednie dane
+    values.clear();
 
     for (const auto& entry : data["values"]) {
         if (entry["value"].isNull()) continue;
@@ -356,9 +329,9 @@ void MainFrame::AnalizujDane(const Json::Value& data) {
 
     resultBox->SetValue(result);
 
-    plotPanel->SetData(values); // Aktualizacja wykresu
+    plotPanel->SetData(values);
 
-    timestamps.clear();  // Wyczyœæ poprzednie dane
+    timestamps.clear();
     startDateChoice->Clear();
     endDateChoice->Clear();
 
@@ -366,7 +339,7 @@ void MainFrame::AnalizujDane(const Json::Value& data) {
         if (entry["value"].isNull()) continue;
 
         wxString timestamp = wxString::FromUTF8(entry["date"].asString());
-        timestamps.push_back(timestamp);  // Dodaj do listy dostêpnych znaczników czasu
+        timestamps.push_back(timestamp);
     }
 
     for (const auto& timestamp : timestamps) {
@@ -398,11 +371,9 @@ void MainFrame::PotwierdzZakres(wxCommandEvent& event) {
         return;
     }
 
-    // Pobieramy faktyczne znaczniki czasowe (a nie tylko indeksy)
     wxString startTimestamp = startDateChoice->GetString(startIdx);
     wxString endTimestamp = endDateChoice->GetString(endIdx);
 
-    // Sprawdzamy, czy wybrany zakres czasowy jest poprawny
     if (startTimestamp > endTimestamp) {
         wxMessageBox("Dolna granica czasu nie mo¿e byæ póŸniejsza ni¿ górna granica.", "B³¹d", wxOK | wxICON_ERROR);
         return;
@@ -413,11 +384,9 @@ void MainFrame::PotwierdzZakres(wxCommandEvent& event) {
         return;
     }
 
-    // Filtrujemy dane na podstawie wybranych znaczników czasowych
     std::vector<std::pair<wxString, double>> filteredValues;
 
     for (const auto& entry : values) {
-        // Sprawdzamy czy wartoœæ mieœci siê w zakresie czasowym
         if (entry.first >= startTimestamp && entry.first <= endTimestamp) {
             filteredValues.push_back(entry);
         }
@@ -427,19 +396,16 @@ void MainFrame::PotwierdzZakres(wxCommandEvent& event) {
         wxMessageBox("Brak danych w wybranym zakresie czasu.", "B³¹d", wxOK | wxICON_ERROR);
         resultBox->SetValue("Brak danych w wybranym zakresie czasu.");
         plotPanel->SetData({});
-        plotPanel->Refresh(); // Wymuszamy odœwie¿enie panelu
+        plotPanel->Refresh();
         return;
     }
 
-    // Sortujemy dane chronologicznie (opcjonalnie, jeœli to konieczne)
     std::sort(filteredValues.begin(), filteredValues.end(),
         [](const auto& a, const auto& b) { return a.first < b.first; });
 
-    // Aktualizujemy wyœwietlane dane
     plotPanel->SetData(filteredValues);
-    plotPanel->Refresh(); // Wymuszamy odœwie¿enie panelu
+    plotPanel->Refresh();
 
-    // Aktualizacja informacji o zakresie w resultBox
     double minVal = DBL_MAX, maxVal = DBL_MIN, sum = 0;
     wxString minTime, maxTime;
     int count = 0;
@@ -471,7 +437,6 @@ void MainFrame::PotwierdzZakres(wxCommandEvent& event) {
 
     resultBox->SetValue(result);
 
-    // Wymuszamy odœwie¿enie interfejsu
     this->Update();
 }
 
@@ -491,20 +456,16 @@ void MainFrame::ZapiszDane(wxCommandEvent& event) {
         return;
     }
 
-    // Generujemy nazwê pliku
     wxString fileName = GenerujNazwePliku();
 
-    // Otwieramy plik do zapisu
     std::ofstream file(fileName.ToStdString());
     if (!file.is_open()) {
         wxMessageBox("Nie mo¿na utworzyæ pliku " + fileName, "B³¹d", wxOK | wxICON_ERROR);
         return;
     }
 
-    // Tworzymy strukturê JSON do zapisu
     Json::Value saveData;
 
-    // Zapisujemy dane z aktualnie wybranej stacji i sensora
     int stationIdx = choice->GetSelection();
     int sensorIdx = sensorList->GetSelection();
 
@@ -516,9 +477,8 @@ void MainFrame::ZapiszDane(wxCommandEvent& event) {
         saveData["sensorName"] = sensorName.ToStdString();
         saveData["data"] = currentSensorData;
 
-        // Zapisujemy dane do pliku
         Json::StreamWriterBuilder writer;
-        writer["indentation"] = "    "; // £adne formatowanie
+        writer["indentation"] = "    ";
         std::string jsonData = Json::writeString(writer, saveData);
         file << jsonData;
         file.close();
@@ -539,21 +499,18 @@ void MainFrame::ZapiszDane(wxCommandEvent& event) {
  * @param event Zdarzenie klikniêcia przycisku "Za³aduj".
  */
 void MainFrame::ZaladujDane(wxCommandEvent& event) {
-    // Otwórz okno dialogowe wyboru pliku
     wxFileDialog openFileDialog(this, "Wybierz plik z danymi", "", "", "Pliki JSON (*.json)|*.json",
         wxFD_OPEN | wxFD_FILE_MUST_EXIST);
 
     if (openFileDialog.ShowModal() == wxID_CANCEL)
         return;
 
-    // Otwieramy plik do odczytu
     std::ifstream file(openFileDialog.GetPath().ToStdString());
     if (!file.is_open()) {
         wxMessageBox("Nie mo¿na otworzyæ pliku " + openFileDialog.GetPath(), "B³¹d", wxOK | wxICON_ERROR);
         return;
     }
 
-    // Wczytujemy dane z pliku JSON
     Json::Value loadedData;
     Json::CharReaderBuilder reader;
     std::string errors;
@@ -566,17 +523,14 @@ void MainFrame::ZaladujDane(wxCommandEvent& event) {
         return;
     }
 
-    // Sprawdzamy strukturê pliku
     if (!loadedData.isMember("stationName") || !loadedData.isMember("sensorName") || !loadedData.isMember("data")) {
         wxMessageBox("Nieprawid³owy format pliku. Brak wymaganych pól.", "B³¹d", wxOK | wxICON_ERROR);
         return;
     }
 
-    // Aktualizujemy interfejs
     wxString stationName = wxString::FromUTF8(loadedData["stationName"].asString());
     wxString sensorName = wxString::FromUTF8(loadedData["sensorName"].asString());
 
-    // Aktualizujemy pole wyboru stacji (je¿eli istnieje w aktualnej liœcie)
     bool stationFound = false;
     for (unsigned int i = 0; i < choice->GetCount(); i++) {
         if (choice->GetString(i) == stationName) {
@@ -587,17 +541,14 @@ void MainFrame::ZaladujDane(wxCommandEvent& event) {
     }
 
     if (!stationFound && choice->GetCount() > 0) {
-        choice->SetSelection(0); // Wybieramy pierwsz¹ stacjê, jeœli nie znaleziono dopasowania
+        choice->SetSelection(0);
     }
 
-    // Ustawiamy dane sensora
     currentSensorData = loadedData["data"];
 
-    // Wyœwietlamy nazwê za³adowanej stacji i sensora
     wxString infoText = "Za³adowano dane z pliku:\nStacja: " + stationName + "\nSensor: " + sensorName;
     wxMessageBox(infoText, "Dane za³adowane", wxOK | wxICON_INFORMATION);
 
-    // Analizujemy i wyœwietlamy dane
     AnalizujDane(currentSensorData);
 }
 

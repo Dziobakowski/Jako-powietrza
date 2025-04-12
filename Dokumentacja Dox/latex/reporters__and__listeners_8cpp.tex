@@ -1,0 +1,32 @@
+\doxysection{Dokumentacja pliku doctest/examples/all\+\_\+features/reporters\+\_\+and\+\_\+listeners.cpp}
+\hypertarget{reporters__and__listeners_8cpp}{}\label{reporters__and__listeners_8cpp}\index{doctest/examples/all\_features/reporters\_and\_listeners.cpp@{doctest/examples/all\_features/reporters\_and\_listeners.cpp}}
+{\ttfamily \#include $<$doctest/doctest.\+h$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$mutex$>$}\newline
+\doxysubsubsection*{Komponenty}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_my_xml_reporter}{My\+Xml\+Reporter}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{reporters__and__listeners_8cpp_a3f24ec7c7cad29e20caa785f826ad76a}{REGISTER\+\_\+\+REPORTER}} ("{}my\+\_\+xml"{}, 1, \mbox{\hyperlink{struct_my_xml_reporter}{My\+Xml\+Reporter}})
+\item 
+\mbox{\hyperlink{reporters__and__listeners_8cpp_a3af97f2c2d7d0bea5bf3d434f802d4f6}{REGISTER\+\_\+\+LISTENER}} ("{}my\+\_\+listener"{}, 1, \mbox{\hyperlink{struct_my_xml_reporter}{My\+Xml\+Reporter}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Dokumentacja funkcji}
+\Hypertarget{reporters__and__listeners_8cpp_a3af97f2c2d7d0bea5bf3d434f802d4f6}\index{reporters\_and\_listeners.cpp@{reporters\_and\_listeners.cpp}!REGISTER\_LISTENER@{REGISTER\_LISTENER}}
+\index{REGISTER\_LISTENER@{REGISTER\_LISTENER}!reporters\_and\_listeners.cpp@{reporters\_and\_listeners.cpp}}
+\doxysubsubsection{\texorpdfstring{REGISTER\_LISTENER()}{REGISTER\_LISTENER()}}
+{\footnotesize\ttfamily \label{reporters__and__listeners_8cpp_a3af97f2c2d7d0bea5bf3d434f802d4f6} 
+REGISTER\+\_\+\+LISTENER (\begin{DoxyParamCaption}\item[{"{}my\+\_\+listener"{}}]{}{, }\item[{1}]{}{, }\item[{\mbox{\hyperlink{struct_my_xml_reporter}{My\+Xml\+Reporter}}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{reporters__and__listeners_8cpp_a3f24ec7c7cad29e20caa785f826ad76a}\index{reporters\_and\_listeners.cpp@{reporters\_and\_listeners.cpp}!REGISTER\_REPORTER@{REGISTER\_REPORTER}}
+\index{REGISTER\_REPORTER@{REGISTER\_REPORTER}!reporters\_and\_listeners.cpp@{reporters\_and\_listeners.cpp}}
+\doxysubsubsection{\texorpdfstring{REGISTER\_REPORTER()}{REGISTER\_REPORTER()}}
+{\footnotesize\ttfamily \label{reporters__and__listeners_8cpp_a3f24ec7c7cad29e20caa785f826ad76a} 
+REGISTER\+\_\+\+REPORTER (\begin{DoxyParamCaption}\item[{"{}my\+\_\+xml"{}}]{}{, }\item[{1}]{}{, }\item[{\mbox{\hyperlink{struct_my_xml_reporter}{My\+Xml\+Reporter}}}]{}{}\end{DoxyParamCaption})}
+

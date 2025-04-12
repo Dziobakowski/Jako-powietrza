@@ -1,0 +1,203 @@
+\chapter{Parameterized test cases}
+\hypertarget{md_doctest_2doc_2markdown_2parameterized-tests}{}\label{md_doctest_2doc_2markdown_2parameterized-tests}\index{Parameterized test cases@{Parameterized test cases}}
+\label{md_doctest_2doc_2markdown_2parameterized-tests_autotoc_md154}%
+\Hypertarget{md_doctest_2doc_2markdown_2parameterized-tests_autotoc_md154}%
+
+
+Test cases can be parameterized easily by type and indirectly by value.\hypertarget{md_doctest_2doc_2markdown_2parameterized-tests_autotoc_md155}{}\doxysection{\texorpdfstring{Value-\/parameterized test cases}{Value-\/parameterized test cases}}\label{md_doctest_2doc_2markdown_2parameterized-tests_autotoc_md155}
+There will be proper support for this in the future. For now there are 2 ways of doing data-\/driven testing in doctest\+:
+
+
+\begin{DoxyItemize}
+\item extracting the asserts in a helper function and calling it with a user-\/constructed array of data\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ doChecks(\textcolor{keywordtype}{int}\ data)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ do\ asserts\ with\ data}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{doctest_2doctest_8h_a8bc255ff55721571e878568d2b5dcb35}{TEST\_CASE}}(\textcolor{stringliteral}{"{}test\ name"{}})\ \{}
+\DoxyCodeLine{\ \ \ \ std::vector<int>\ \mbox{\hyperlink{namespacerange__based__execution_a42d7b70280336dbbf7cfa8e17ca63dd3}{data}}\ \{1,\ 2,\ 3,\ 4,\ 5,\ 6\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\&\ i\ :\ data)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{doctest_2doctest_8h_a0cd84d289552018d72489c085df0a9ca}{CAPTURE}}(i);\ \textcolor{comment}{//\ log\ the\ current\ input\ data}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ doChecks(i);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+This has several drawbacks\+:
+\begin{DoxyItemize}
+\item in case of an exception (or a {\ttfamily REQUIRE} assert failing) the entire test case ends and the checks are not done for the rest of the input data
+\item the user has to manually log the data with calls to {\ttfamily \doxylink{doctest_2doctest_8h_a0cd84d289552018d72489c085df0a9ca}{CAPTURE()}} ( or {\ttfamily \doxylink{doctest_2doctest_8h_aedf01192151e10a6620567952711ff69}{INFO()}})
+\item more boilerplate -\/ doctest should supply primitives for generating data but currently doesn\textquotesingle{}t -\/ so the user has to write their own data generation
+\end{DoxyItemize}
+\item using subcases to initialize data differently\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{doctest_2doctest_8h_a8bc255ff55721571e878568d2b5dcb35}{TEST\_CASE}}(\textcolor{stringliteral}{"{}test\ name"{}})\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespacerange__based__execution_a42d7b70280336dbbf7cfa8e17ca63dd3}{data}};}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{doctest_2doctest_8h_a4147381e5cb6f68c1a315a852c63bf70}{SUBCASE}}(\textcolor{stringliteral}{"{}"{}})\ \{\ \mbox{\hyperlink{namespacerange__based__execution_a42d7b70280336dbbf7cfa8e17ca63dd3}{data}}\ =\ 1;\ \}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{doctest_2doctest_8h_a4147381e5cb6f68c1a315a852c63bf70}{SUBCASE}}(\textcolor{stringliteral}{"{}"{}})\ \{\ \mbox{\hyperlink{namespacerange__based__execution_a42d7b70280336dbbf7cfa8e17ca63dd3}{data}}\ =\ 2;\ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{doctest_2doctest_8h_a0cd84d289552018d72489c085df0a9ca}{CAPTURE}}(data);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ do\ asserts\ with\ data}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+This has the following drawbacks\+:
+\begin{DoxyItemize}
+\item doesn\textquotesingle{}t scale well -\/ it is very impractical to write such code for more than a few different inputs
+\item the user has to manually log the data with calls to {\ttfamily \doxylink{doctest_2doctest_8h_a0cd84d289552018d72489c085df0a9ca}{CAPTURE()}} (or {\ttfamily \doxylink{doctest_2doctest_8h_aedf01192151e10a6620567952711ff69}{INFO()}})
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+
+
+There is however an easy way to encapsulate this into a macro (written with C++14 for simplicity)\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ DOCTEST\_VALUE\_PARAMETERIZED\_DATA(data,\ data\_container)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{\ \ \ \ static\ size\_t\ \_doctest\_subcase\_idx\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{\ \ \ \ std::for\_each(data\_container.begin(),\ data\_container.end(),\ [\&](const\ auto\&\ in)\ \{\ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{\ \ \ \ \ \ \ \ DOCTEST\_SUBCASE((std::string(\#data\_container\ "{}["{})\ +\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::to\_string(\_doctest\_subcase\_idx++)\ +\ "{}]"{}).c\_str())\ \{\ data\ =\ in;\ \}\ \ \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{\ \ \ \ \});\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{\ \ \ \ \_doctest\_subcase\_idx\ =\ 0}}
+
+\end{DoxyCode}
+
+
+and now this can be used as follows\+:
+
+\`{}\`{}\`{}c++ TEST\+\_\+\+CASE("{}test name"{}) \{ int data; std\+::list$<$int$>$ data\+\_\+container = \{1, 2, 3, 4\}; // must be iterable -\/ std\+::vector$<$$>$ would work as well
+
+DOCTEST\+\_\+\+VALUE\+\_\+\+PARAMETERIZED\+\_\+\+DATA(data, data\+\_\+container);
+
+printf("{}\%d\textbackslash{}n"{}, data); \} \`{}\`{}\`{}
+
+and will print the 4 numbers by re-\/entering the test case 3 times (after the first entry) -\/ just like subcases work\+:
+
+{\ttfamily  1 2 3 4 }
+
+The big limitation of this approach is that the macro cannot be used with other subcases at the same code block \{\} indentation level (will act weird) -\/ it can only be used within a subcase.
+
+Stay tuned for proper value-\/parameterization in doctest!\hypertarget{md_doctest_2doc_2markdown_2parameterized-tests_autotoc_md157}{}\doxysection{\texorpdfstring{Templated test cases -\/ parameterized by type}{Templated test cases -\/ parameterized by type}}\label{md_doctest_2doc_2markdown_2parameterized-tests_autotoc_md157}
+Suppose you have multiple implementations of the same interface and want to make sure that all of them satisfy some common requirements. Or, you may have defined several types that are supposed to conform to the same "{}concept"{} and you want to verify it. In both cases, you want the same test logic repeated for different types.
+
+While you can write one {\ttfamily TEST\+\_\+\+CASE} for each type you want to test (and you may even factor the test logic into a function template that you invoke from the test case), it\textquotesingle{}s tedious and doesn\textquotesingle{}t scale\+: if you want {\ttfamily M} tests over {\ttfamily \doxylink{namespace_n}{N}} types, you\textquotesingle{}ll end up writing {\ttfamily M \texorpdfstring{$\ast$}{*} \doxylink{namespace_n}{N}} tests.
+
+Templated tests allow you to repeat the same test logic over a list of types. You only need to write the test logic once.
+
+There are 2 ways to do it\+:
+
+
+\begin{DoxyItemize}
+\item directly pass the list of types to the templated test case
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{doctest_2doctest_8h_a8ab7703bbaae3e25e7e5f5eb9fbe3642}{TEST\_CASE\_TEMPLATE}}(\textcolor{stringliteral}{"{}signed\ integers\ stuff"{}},\ T,\ \textcolor{keywordtype}{char},\ \textcolor{keywordtype}{short},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int})\ \{}
+\DoxyCodeLine{\ \ \ \ T\ var\ =\ T();}
+\DoxyCodeLine{\ \ \ \ -\/-\/var;}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{doctest_2doctest_8h_a836cca6b6ed3a1706353f6d1bca0935f}{CHECK}}(var\ ==\ -\/1);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+\item define the templated test case with a specific unique name (identifier) for later instantiation
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{doctest_2doctest_8h_a39cb44ec5ab4ae7457e06cc734b57286}{TEST\_CASE\_TEMPLATE\_DEFINE}}(\textcolor{stringliteral}{"{}signed\ integer\ stuff"{}},\ T,\ test\_id)\ \{}
+\DoxyCodeLine{\ \ \ \ T\ var\ =\ T();}
+\DoxyCodeLine{\ \ \ \ -\/-\/var;}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{doctest_2doctest_8h_a836cca6b6ed3a1706353f6d1bca0935f}{CHECK}}(var\ ==\ -\/1);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{doctest_2doctest_8h_a6d6b09ad857bf02d03049faf3235ed55}{TEST\_CASE\_TEMPLATE\_INVOKE}}(test\_id,\ \textcolor{keywordtype}{char},\ \textcolor{keywordtype}{short},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{doctest_2doctest_8h_a19d32dc25683908b43c4503dc6698a87}{TEST\_CASE\_TEMPLATE\_APPLY}}(test\_id,\ \mbox{\hyperlink{classstd_1_1tuple}{std::tuple<float,\ double>}});}
+
+\end{DoxyCode}
+ If you are designing an interface or concept, you can define a suite of type-\/parameterized tests to verify properties that any valid implementation of the interface/concept should have. Then, the author of each implementation can just instantiate the test suite with their type to verify that it conforms to the requirements, without having to write similar tests repeatedly.
+\end{DoxyItemize}
+
+A test case named {\ttfamily signed integers stuff} instantiated for type {\ttfamily int} will yield the following test case name\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{signed\ integers\ stuff<int>}
+
+\end{DoxyCode}
+
+
+By default all primitive types (fundamental -\/ {\ttfamily int}, {\ttfamily bool}, {\ttfamily float}...) have stringification provided by the library. For all other types the user will have to use the {\ttfamily \doxylink{doctest_2doctest_8h_a8245b61f7381307d76a1472436d35ebe}{TYPE\+\_\+\+TO\+\_\+\+STRING(type)}} macro -\/ like this\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{doctest_2doctest_8h_a8245b61f7381307d76a1472436d35ebe}{TYPE\_TO\_STRING}}(std::vector<int>);}
+
+\end{DoxyCode}
+
+
+The {\ttfamily TYPE\+\_\+\+TO\+\_\+\+STRING} macro has an effect only in the current source file and thus needs to be used in some header if the same type will be used in separate source files for templated test cases.
+
+Other testing frameworks use the header {\ttfamily \texorpdfstring{$<$}{<}typeinfo\texorpdfstring{$>$}{>}} in addition to demangling to get the string for types automatically but doctest cannot afford to include any header in its forward declaration part (the public one) of the header -\/ so the user has to teach the framework for each type. This is done to achieve \doxysectlink{md_doctest_2doc_2markdown_2benchmarks}{maximal compile time performance}{0}.
+
+Some notes\+:
+
+
+\begin{DoxyItemize}
+\item types are NOT filtered for uniqueness -\/ the same templated test case can be instantiated multiple times for the same type -\/ preventing that is left up to the user
+\item you don\textquotesingle{}t need to provide stringification for every type as that plays a role only in the test case name -\/ the default is {\ttfamily \texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}} -\/ the tests will still work and be distinct
+\item if you need parameterization on more than 1 type you can package multiple types in a single one like this\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ first,\ \textcolor{keyword}{typename}\ second>}
+\DoxyCodeLine{\textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_type_pair}{TypePair}}}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{typedef}\ first\ \ \mbox{\hyperlink{struct_type_pair_a992ddacb9c5bcf6bce380a3c2e96832a}{A}};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{typedef}\ second\ \mbox{\hyperlink{struct_type_pair_a91c3db1aa16650c80fd26610a0a04982}{B}};}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ pairs\ \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{\ \ \ \ TypePair<int,\ char>,\ \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{\ \ \ \ TypePair<char,\ int>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{doctest_2doctest_8h_a8ab7703bbaae3e25e7e5f5eb9fbe3642}{TEST\_CASE\_TEMPLATE}}(\textcolor{stringliteral}{"{}multiple\ types"{}},\ T,\ pairs)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ T::A\ T1;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ T::B\ T2;}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ use\ T1\ and\ T2\ types}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+
+
+
+\begin{DoxyItemize}
+\item Check out the \href{../../examples/all_features/templated_test_cases.cpp}{\texttt{ {\bfseries{example}}}} which shows how all of these are used.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+
+
+\href{readme.md\#reference}{\texttt{ Home}}
+

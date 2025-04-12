@@ -1,0 +1,175 @@
+\doxysection{doctest\+\_\+mpi.\+h}
+\hypertarget{doctest__mpi_8h_source}{}\label{doctest__mpi_8h_source}\index{doctest/doctest/extensions/doctest\_mpi.h@{doctest/doctest/extensions/doctest\_mpi.h}}
+\mbox{\hyperlink{doctest__mpi_8h}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DOCTEST\_MPI\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DOCTEST\_MPI\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifdef\ DOCTEST\_CONFIG\_IMPLEMENT}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mpi__sub__comm_8h}{doctest/extensions/mpi\_sub\_comm.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mpi__reporter_8h}{mpi\_reporter.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacedoctest}{doctest}}\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ Each\ time\ a\ MPI\_TEST\_CASE\ is\ executed\ on\ N\ procs,}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ we\ need\ a\ sub-\/communicator\ of\ N\ procs\ to\ execute\ it.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ It\ is\ then\ registered\ here\ and\ can\ be\ re-\/used}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ by\ other\ tests\ that\ requires\ a\ sub-\/comm\ of\ the\ same\ size}}
+\DoxyCodeLine{00016\ std::unordered\_map<int,mpi\_sub\_comm>\ \mbox{\hyperlink{namespacedoctest_a2be314193d767eb557519868f492cdc3}{sub\_comms\_by\_size}};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ Record\ if\ at\ least\ one\ MPI\_TEST\_CASE\ was\ registered\ "{}skipped"{}}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ because\ there\ is\ not\ enought\ procs\ to\ execute\ it}}
+\DoxyCodeLine{00020\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespacedoctest_abc8d05c3f3012554ddf365d0d68726cf}{nb\_test\_cases\_skipped\_insufficient\_procs}}\ =\ 0;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ std::string\ thread\_level\_to\_string(\textcolor{keywordtype}{int}\ thread\_lvl);}
+\DoxyCodeLine{00024\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespacedoctest_a3cadc91a1955b20cb6b529b0dd0fc069}{mpi\_init\_thread}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}\ *argv[],\ \textcolor{keywordtype}{int}\ required\_thread\_support);}
+\DoxyCodeLine{00025\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacedoctest_abe48bb917f3ad5bb3a129d6b11058bed}{mpi\_finalize}}();}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{comment}{//\ Can\ be\ safely\ called\ before\ MPI\_Init()}}
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ \ \ This\ is\ needed\ for\ MPI\_TEST\_CASE\ because\ we\ use\ doctest::skip()}}
+\DoxyCodeLine{00030\ \textcolor{comment}{//\ \ \ to\ prevent\ execution\ of\ tests\ where\ there\ is\ not\ enough\ procs,}}
+\DoxyCodeLine{00031\ \textcolor{comment}{//\ \ \ but\ doctest::skip()\ is\ called\ during\ test\ registration,\ that\ is,\ before\ main(),\ and\ hence\ before\ MPI\_Init()}}
+\DoxyCodeLine{00032\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespacedoctest_a43b461984ffead1ccd9e21c64be0c144}{mpi\_comm\_world\_size}}()\ \{}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\ \ \#if\ defined(OPEN\_MPI)}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ size\_str\ =\ std::getenv(\textcolor{stringliteral}{"{}OMPI\_COMM\_WORLD\_SIZE"{}});}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\ \ \#elif\ defined(I\_MPI\_VERSION)\ ||\ defined(MPI\_VERSION)\ }\textcolor{comment}{//\ Intel\ MPI\ +\ MPICH\ (at\ least)}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ size\_str\ =\ std::getenv(\textcolor{stringliteral}{"{}PMI\_SIZE"{}});\ \textcolor{comment}{//\ see\ https://community.intel.com/t5/Intel-\/oneAPI-\/HPC-\/Toolkit/Environment-\/variables-\/defined-\/by-\/intel-\/mpirun/td-\/p/1096703}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\ \ \#else}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\ \ \ \ \#error\ "{}Unknown\ MPI\ implementation:\ please\ submit\ an\ issue\ or\ a\ PR\ to\ doctest.\ Meanwhile,\ you\ can\ look\ at\ the\ output\ of\ e.g.\ \`{}mpirun\ -\/np\ 3\ env`\ to\ search\ for\ an\ environnement\ variable\ that\ contains\ the\ size\ of\ MPI\_COMM\_WORLD\ and\ extend\ this\ code\ accordingly"{}}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\ \ \#endif}}
+\DoxyCodeLine{00040\ \ \ \textcolor{keywordflow}{if}\ (size\_str==\textcolor{keyword}{nullptr})\ \textcolor{keywordflow}{return}\ 1;\ \textcolor{comment}{//\ not\ launched\ with\ mpirun/mpiexec,\ so\ assume\ only\ one\ process}}
+\DoxyCodeLine{00041\ \ \ \textcolor{keywordflow}{return}\ std::stoi(size\_str);}
+\DoxyCodeLine{00042\ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{comment}{//\ Record\ size\ of\ MPI\_COMM\_WORLD\ with\ mpi\_comm\_world\_size()}}
+\DoxyCodeLine{00045\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespacedoctest_a75102e771fb3746a21a9273e79748e3e}{world\_size\_before\_init}}\ =\ \mbox{\hyperlink{namespacedoctest_a43b461984ffead1ccd9e21c64be0c144}{mpi\_comm\_world\_size}}();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ std::string\ thread\_level\_to\_string(\textcolor{keywordtype}{int}\ thread\_lvl)\ \{}
+\DoxyCodeLine{00049\ \ \ \textcolor{keywordflow}{switch}\ (thread\_lvl)\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{case}\ MPI\_THREAD\_SINGLE:\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}MPI\_THREAD\_SINGLE"{}};}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordflow}{case}\ MPI\_THREAD\_FUNNELED:\ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}MPI\_THREAD\_FUNNELED"{}};}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordflow}{case}\ MPI\_THREAD\_SERIALIZED:\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}MPI\_THREAD\_SERIALIZED"{}};}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordflow}{case}\ MPI\_THREAD\_MULTIPLE:\ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}MPI\_THREAD\_MULTIPLE"{}};}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordflow}{default}:\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Invalid\ MPI\ thread\ level"{}};}
+\DoxyCodeLine{00055\ \ \ \}}
+\DoxyCodeLine{00056\ \}}
+\DoxyCodeLine{00057\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespacedoctest_a3cadc91a1955b20cb6b529b0dd0fc069}{mpi\_init\_thread}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}\ *argv[],\ \textcolor{keywordtype}{int}\ required\_thread\_support)\ \{}
+\DoxyCodeLine{00058\ \ \ \textcolor{keywordtype}{int}\ provided\_thread\_support;}
+\DoxyCodeLine{00059\ \ \ MPI\_Init\_thread(\&argc,\ \&argv,\ required\_thread\_support,\ \&provided\_thread\_support);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \textcolor{keywordtype}{int}\ world\_size;}
+\DoxyCodeLine{00062\ \ \ MPI\_Comm\_size(MPI\_COMM\_WORLD,\&world\_size);}
+\DoxyCodeLine{00063\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespacedoctest_a75102e771fb3746a21a9273e79748e3e}{world\_size\_before\_init}}\ !=\ world\_size)\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{doctest_8cpp_aec379da2959e1a4d6d1ca8b957f797d2}{DOCTEST\_INTERNAL\_ERROR}}(}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \textcolor{stringliteral}{"{}doctest\ found\ "{}}+std::to\_string(\mbox{\hyperlink{namespacedoctest_a75102e771fb3746a21a9273e79748e3e}{world\_size\_before\_init}})+\textcolor{stringliteral}{"{}\ MPI\ processes\ before\ \`{}MPI\_Init\_thread`,"{}}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\ but\ MPI\_COMM\_WORLD\ is\ actually\ of\ size\ "{}}+std::to\_string(world\_size)+\textcolor{stringliteral}{"{}.\(\backslash\)n"{}}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \textcolor{stringliteral}{"{}This\ is\ most\ likely\ due\ to\ your\ MPI\ implementation\ not\ being\ well\ supported\ by\ doctest.\ Please\ report\ this\ issue\ on\ GitHub"{}}}
+\DoxyCodeLine{00068\ \ \ \ \ );}
+\DoxyCodeLine{00069\ \ \ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \textcolor{keywordflow}{if}\ (provided\_thread\_support!=required\_thread\_support)\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ std::cout\ <<}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}WARNING:\ "{}}\ +\ thread\_level\_to\_string(required\_thread\_support)\ +\ \textcolor{stringliteral}{"{}\ was\ asked,\ "{}}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ +\ \textcolor{stringliteral}{"{}but\ only\ "{}}\ +\ thread\_level\_to\_string(provided\_thread\_support)\ +\ \textcolor{stringliteral}{"{}\ is\ provided\ by\ the\ MPI\ library\(\backslash\)n"{}};}
+\DoxyCodeLine{00075\ \ \ \}}
+\DoxyCodeLine{00076\ \ \ \textcolor{keywordflow}{return}\ provided\_thread\_support;}
+\DoxyCodeLine{00077\ \}}
+\DoxyCodeLine{00078\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacedoctest_abe48bb917f3ad5bb3a129d6b11058bed}{mpi\_finalize}}()\ \{}
+\DoxyCodeLine{00079\ \ \ \textcolor{comment}{//\ We\ need\ to\ destroy\ all\ created\ sub-\/communicators\ before\ calling\ MPI\_Finalize()}}
+\DoxyCodeLine{00080\ \ \ \mbox{\hyperlink{namespacedoctest_a2be314193d767eb557519868f492cdc3}{doctest::sub\_comms\_by\_size}}.clear();}
+\DoxyCodeLine{00081\ \ \ MPI\_Finalize();}
+\DoxyCodeLine{00082\ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \}\ \textcolor{comment}{//\ doctest}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#else\ }\textcolor{comment}{//\ DOCTEST\_CONFIG\_IMPLEMENT}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mpi__sub__comm_8h}{doctest/extensions/mpi\_sub\_comm.h}}"{}}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#include\ <exception>}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacedoctest}{doctest}}\ \{}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{keyword}{extern}\ std::unordered\_map<int,mpi\_sub\_comm>\ \mbox{\hyperlink{namespacedoctest_a2be314193d767eb557519868f492cdc3}{sub\_comms\_by\_size}};}
+\DoxyCodeLine{00095\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespacedoctest_abc8d05c3f3012554ddf365d0d68726cf}{nb\_test\_cases\_skipped\_insufficient\_procs}};}
+\DoxyCodeLine{00096\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespacedoctest_a75102e771fb3746a21a9273e79748e3e}{world\_size\_before\_init}};}
+\DoxyCodeLine{00097\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespacedoctest_a43b461984ffead1ccd9e21c64be0c144}{mpi\_comm\_world\_size}}();}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespacedoctest_a3cadc91a1955b20cb6b529b0dd0fc069}{mpi\_init\_thread}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}\ *argv[],\ \textcolor{keywordtype}{int}\ required\_thread\_support);}
+\DoxyCodeLine{00100\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacedoctest_abe48bb917f3ad5bb3a129d6b11058bed}{mpi\_finalize}}();}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{keyword}{template}<\textcolor{keywordtype}{int}\ nb\_procs,\ \textcolor{keyword}{class}\ F>}
+\DoxyCodeLine{00103\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacedoctest_a05dbafe13fb331485d308b5c94117bd2}{execute\_mpi\_test\_case}}(F\ func)\ \{}
+\DoxyCodeLine{00104\ \ \ \textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{namespacedoctest_a2be314193d767eb557519868f492cdc3}{sub\_comms\_by\_size}}.find(nb\_procs);}
+\DoxyCodeLine{00105\ \ \ \textcolor{keywordflow}{if}\ (it==end(\mbox{\hyperlink{namespacedoctest_a2be314193d767eb557519868f492cdc3}{sub\_comms\_by\_size}}))\ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{bool}\ was\_emplaced\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00107\ \ \ \ \ std::tie(it,was\_emplaced)\ =\ \mbox{\hyperlink{namespacedoctest_a2be314193d767eb557519868f492cdc3}{sub\_comms\_by\_size}}.emplace(std::make\_pair(nb\_procs,\mbox{\hyperlink{structdoctest_1_1mpi__sub__comm}{mpi\_sub\_comm}}(nb\_procs)));}
+\DoxyCodeLine{00108\ \ \ \ \ assert(was\_emplaced);}
+\DoxyCodeLine{00109\ \ \ \}}
+\DoxyCodeLine{00110\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structdoctest_1_1mpi__sub__comm}{mpi\_sub\_comm}}\&\ sub\ =\ it-\/>second;}
+\DoxyCodeLine{00111\ \ \ \textcolor{keywordflow}{if}\ (sub.\mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_a49ced9b5710939127882e7d8a5d0f43b}{comm}}\ !=\ MPI\_COMM\_NULL)\ \{}
+\DoxyCodeLine{00112\ \ \ \ \ func(sub.\mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_a336b0077bb17427b3df8c04a2e8ad6e6}{rank}},nb\_procs,sub.\mbox{\hyperlink{structdoctest_1_1mpi__sub__comm_a49ced9b5710939127882e7d8a5d0f43b}{comm}},std::integral\_constant<int,nb\_procs>\{\});}
+\DoxyCodeLine{00113\ \ \ \};}
+\DoxyCodeLine{00114\ \}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}}
+\DoxyCodeLine{00117\ \mbox{\hyperlink{namespacedoctest_a76a218693ac1c707f8e4799571229267}{insufficient\_procs}}(\textcolor{keywordtype}{int}\ test\_nb\_procs)\ \{}
+\DoxyCodeLine{00118\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ world\_size\ =\ \mbox{\hyperlink{namespacedoctest_a43b461984ffead1ccd9e21c64be0c144}{mpi\_comm\_world\_size}}();}
+\DoxyCodeLine{00119\ \ \ \textcolor{keywordtype}{bool}\ insufficient\ =\ test\_nb\_procs>world\_size;}
+\DoxyCodeLine{00120\ \ \ \textcolor{keywordflow}{if}\ (insufficient)\ \{}
+\DoxyCodeLine{00121\ \ \ \ \ ++\mbox{\hyperlink{namespacedoctest_abc8d05c3f3012554ddf365d0d68726cf}{nb\_test\_cases\_skipped\_insufficient\_procs}};}
+\DoxyCodeLine{00122\ \ \ \}}
+\DoxyCodeLine{00123\ \ \ \textcolor{keywordflow}{return}\ insufficient;}
+\DoxyCodeLine{00124\ \}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \}\ \textcolor{comment}{//\ doctest}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#define\ DOCTEST\_MPI\_GEN\_ASSERTION(rank\_to\_test,\ assertion,\ ...)\ \(\backslash\)}}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\ \ static\_assert(rank\_to\_test<test\_nb\_procs\_as\_int\_constant.value,"{}Trying\ to\ assert\ on\ a\ rank\ greater\ than\ the\ number\ of\ procs\ of\ the\ test!"{});\ \(\backslash\)}}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\ \ if(rank\_to\_test\ ==\ test\_rank)\ assertion(\_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#define\ DOCTEST\_MPI\_WARN(rank\_to\_test,\ ...)\ \ DOCTEST\_MPI\_GEN\_ASSERTION(rank\_to\_test,DOCTEST\_WARN,\_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#define\ DOCTEST\_MPI\_CHECK(rank\_to\_test,\ ...)\ \ DOCTEST\_MPI\_GEN\_ASSERTION(rank\_to\_test,DOCTEST\_CHECK,\_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#define\ DOCTEST\_MPI\_REQUIRE(rank\_to\_test,\ ...)\ \ DOCTEST\_MPI\_GEN\_ASSERTION(rank\_to\_test,DOCTEST\_REQUIRE,\_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\#define\ DOCTEST\_MPI\_WARN\_FALSE(rank\_to\_test,\ ...)\ \ DOCTEST\_MPI\_GEN\_ASSERTION(rank\_to\_test,DOCTEST\_WARN\_FALSE,\_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#define\ DOCTEST\_MPI\_CHECK\_FALSE(rank\_to\_test,\ ...)\ \ DOCTEST\_MPI\_GEN\_ASSERTION(rank\_to\_test,DOCTEST\_CHECK\_FALSE,\_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#define\ DOCTEST\_MPI\_REQUIRE\_FALSE(rank\_to\_test,\ ...)\ \ DOCTEST\_MPI\_GEN\_ASSERTION(rank\_to\_test,DOCTEST\_REQUIRE\_FALSE,\_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#define\ DOCTEST\_CREATE\_MPI\_TEST\_CASE(name,nb\_procs,func)\ \(\backslash\)}}
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\ \ static\ void\ func(DOCTEST\_UNUSED\ int\ test\_rank,\ DOCTEST\_UNUSED\ int\ test\_nb\_procs,\ DOCTEST\_UNUSED\ MPI\_Comm\ test\_comm,\ DOCTEST\_UNUSED\ std::integral\_constant<int,nb\_procs>);\ \(\backslash\)}}
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\ \ TEST\_CASE(name\ *\ doctest::description("{}MPI\_TEST\_CASE"{})\ *\ doctest::skip(doctest::insufficient\_procs(nb\_procs)))\ \{\ \(\backslash\)}}
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\ \ \ \ doctest::execute\_mpi\_test\_case<nb\_procs>(func);\ \(\backslash\)}}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\ \ \}\ \(\backslash\)}}
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\ \ static\ void\ func(DOCTEST\_UNUSED\ int\ test\_rank,\ DOCTEST\_UNUSED\ int\ test\_nb\_procs,\ DOCTEST\_UNUSED\ MPI\_Comm\ test\_comm,\ DOCTEST\_UNUSED\ std::integral\_constant<int,nb\_procs>\ test\_nb\_procs\_as\_int\_constant)}}
+\DoxyCodeLine{00146\ \ \ \textcolor{comment}{//\ DOC:\ test\_rank,\ test\_nb\_procs,\ and\ test\_comm\ are\ available\ UNDER\ THESE\ SPECIFIC\ NAMES\ in\ the\ body\ of\ the\ unit\ test}}
+\DoxyCodeLine{00147\ \ \ \textcolor{comment}{//\ DOC:\ test\_nb\_procs\_as\_int\_constant\ is\ equal\ to\ test\_nb\_procs,\ but\ as\ a\ compile\ time\ value}}
+\DoxyCodeLine{00148\ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ (used\ in\ CHECK-\/like\ macros\ to\ assert\ the\ checked\ rank\ exists)}}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#define\ DOCTEST\_MPI\_TEST\_CASE(name,nb\_procs)\ \(\backslash\)}}
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\ \ DOCTEST\_CREATE\_MPI\_TEST\_CASE(name,nb\_procs,DOCTEST\_ANONYMOUS(DOCTEST\_MPI\_FUNC))}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \textcolor{comment}{//\ ==\ SHORT\ VERSIONS\ OF\ THE\ MACROS}}
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#if\ !defined(DOCTEST\_CONFIG\_NO\_SHORT\_MACRO\_NAMES)}}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#define\ MPI\_WARN\ \ \ \ \ \ \ \ \ \ \ DOCTEST\_MPI\_WARN}}
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#define\ MPI\_CHECK\ \ \ \ \ \ \ \ \ \ DOCTEST\_MPI\_CHECK}}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#define\ MPI\_REQUIRE\ \ \ \ \ \ \ \ DOCTEST\_MPI\_REQUIRE}}
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\#define\ MPI\_WARN\_FALSE\ \ \ \ \ DOCTEST\_MPI\_WARN\_FALSE}}
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\#define\ MPI\_CHECK\_FALSE\ \ \ \ DOCTEST\_MPI\_CHECK\_FALSE}}
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\#define\ MPI\_REQUIRE\_FALSE\ \ DOCTEST\_MPI\_REQUIRE\_FALSE}}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\#define\ MPI\_TEST\_CASE\ \ \ \ \ \ DOCTEST\_MPI\_TEST\_CASE}}
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DOCTEST\_CONFIG\_NO\_SHORT\_MACRO\_NAMES}}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DOCTEST\_CONFIG\_IMPLEMENT}}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DOCTEST\_MPI\_H}}
+
+\end{DoxyCode}

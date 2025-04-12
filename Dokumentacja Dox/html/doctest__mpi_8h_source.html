@@ -1,0 +1,312 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Jakość powietrza w Polsce: Plik źródłowy doctest/doctest/extensions/doctest_mpi.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Jakość powietrza w Polsce
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('doctest__mpi_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">doctest_mpi.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="doctest__mpi_8h.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef DOCTEST_MPI_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define DOCTEST_MPI_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#ifdef DOCTEST_CONFIG_IMPLEMENT</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="mpi__sub__comm_8h.html">doctest/extensions/mpi_sub_comm.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="mpi__reporter_8h.html">mpi_reporter.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacedoctest.html">doctest</a> {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">// Each time a MPI_TEST_CASE is executed on N procs,</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">// we need a sub-communicator of N procs to execute it.</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">// It is then registered here and can be re-used</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">// by other tests that requires a sub-comm of the same size</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>std::unordered_map&lt;int,mpi_sub_comm&gt; <a class="code hl_variable" href="namespacedoctest.html#a2be314193d767eb557519868f492cdc3">sub_comms_by_size</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">// Record if at least one MPI_TEST_CASE was registered &quot;skipped&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">// because there is not enought procs to execute it</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keywordtype">int</span> <a class="code hl_variable" href="namespacedoctest.html#abc8d05c3f3012554ddf365d0d68726cf">nb_test_cases_skipped_insufficient_procs</a> = 0;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>std::string thread_level_to_string(<span class="keywordtype">int</span> thread_lvl);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keywordtype">int</span> <a class="code hl_function" href="namespacedoctest.html#a3cadc91a1955b20cb6b529b0dd0fc069">mpi_init_thread</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[], <span class="keywordtype">int</span> required_thread_support);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacedoctest.html#abe48bb917f3ad5bb3a129d6b11058bed">mpi_finalize</a>();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">// Can be safely called before MPI_Init()</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">//   This is needed for MPI_TEST_CASE because we use doctest::skip()</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">//   to prevent execution of tests where there is not enough procs,</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">//   but doctest::skip() is called during test registration, that is, before main(), and hence before MPI_Init()</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keywordtype">int</span> <a class="code hl_function" href="namespacedoctest.html#a43b461984ffead1ccd9e21c64be0c144">mpi_comm_world_size</a>() {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">  #if defined(OPEN_MPI)</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* size_str = std::getenv(<span class="stringliteral">&quot;OMPI_COMM_WORLD_SIZE&quot;</span>);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">  #elif defined(I_MPI_VERSION) || defined(MPI_VERSION) </span><span class="comment">// Intel MPI + MPICH (at least)</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* size_str = std::getenv(<span class="stringliteral">&quot;PMI_SIZE&quot;</span>); <span class="comment">// see https://community.intel.com/t5/Intel-oneAPI-HPC-Toolkit/Environment-variables-defined-by-intel-mpirun/td-p/1096703</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">  #else</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">    #error &quot;Unknown MPI implementation: please submit an issue or a PR to doctest. Meanwhile, you can look at the output of e.g. `mpirun -np 3 env` to search for an environnement variable that contains the size of MPI_COMM_WORLD and extend this code accordingly&quot;</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">  #endif</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="keywordflow">if</span> (size_str==<span class="keyword">nullptr</span>) <span class="keywordflow">return</span> 1; <span class="comment">// not launched with mpirun/mpiexec, so assume only one process</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keywordflow">return</span> std::stoi(size_str);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>}</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">// Record size of MPI_COMM_WORLD with mpi_comm_world_size()</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keywordtype">int</span> <a class="code hl_variable" href="namespacedoctest.html#a75102e771fb3746a21a9273e79748e3e">world_size_before_init</a> = <a class="code hl_function" href="namespacedoctest.html#a43b461984ffead1ccd9e21c64be0c144">mpi_comm_world_size</a>();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>std::string thread_level_to_string(<span class="keywordtype">int</span> thread_lvl) {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keywordflow">switch</span> (thread_lvl) {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordflow">case</span> MPI_THREAD_SINGLE:     <span class="keywordflow">return</span> <span class="stringliteral">&quot;MPI_THREAD_SINGLE&quot;</span>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordflow">case</span> MPI_THREAD_FUNNELED:   <span class="keywordflow">return</span> <span class="stringliteral">&quot;MPI_THREAD_FUNNELED&quot;</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordflow">case</span> MPI_THREAD_SERIALIZED: <span class="keywordflow">return</span> <span class="stringliteral">&quot;MPI_THREAD_SERIALIZED&quot;</span>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordflow">case</span> MPI_THREAD_MULTIPLE:   <span class="keywordflow">return</span> <span class="stringliteral">&quot;MPI_THREAD_MULTIPLE&quot;</span>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">default</span>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;Invalid MPI thread level&quot;</span>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  }</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>}</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keywordtype">int</span> <a class="code hl_function" href="namespacedoctest.html#a3cadc91a1955b20cb6b529b0dd0fc069">mpi_init_thread</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[], <span class="keywordtype">int</span> required_thread_support) {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="keywordtype">int</span> provided_thread_support;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  MPI_Init_thread(&amp;argc, &amp;argv, required_thread_support, &amp;provided_thread_support);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <span class="keywordtype">int</span> world_size;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  MPI_Comm_size(MPI_COMM_WORLD,&amp;world_size);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="namespacedoctest.html#a75102e771fb3746a21a9273e79748e3e">world_size_before_init</a> != world_size) {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <a class="code hl_define" href="doctest_8cpp.html#aec379da2959e1a4d6d1ca8b957f797d2">DOCTEST_INTERNAL_ERROR</a>(</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>      <span class="stringliteral">&quot;doctest found &quot;</span>+std::to_string(<a class="code hl_variable" href="namespacedoctest.html#a75102e771fb3746a21a9273e79748e3e">world_size_before_init</a>)+<span class="stringliteral">&quot; MPI processes before `MPI_Init_thread`,&quot;</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>      <span class="stringliteral">&quot; but MPI_COMM_WORLD is actually of size &quot;</span>+std::to_string(world_size)+<span class="stringliteral">&quot;.\n&quot;</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>      <span class="stringliteral">&quot;This is most likely due to your MPI implementation not being well supported by doctest. Please report this issue on GitHub&quot;</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    );</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  }</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  <span class="keywordflow">if</span> (provided_thread_support!=required_thread_support) {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    std::cout &lt;&lt;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="stringliteral">&quot;WARNING: &quot;</span> + thread_level_to_string(required_thread_support) + <span class="stringliteral">&quot; was asked, &quot;</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>      + <span class="stringliteral">&quot;but only &quot;</span> + thread_level_to_string(provided_thread_support) + <span class="stringliteral">&quot; is provided by the MPI library\n&quot;</span>;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keywordflow">return</span> provided_thread_support;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>}</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacedoctest.html#abe48bb917f3ad5bb3a129d6b11058bed">mpi_finalize</a>() {</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <span class="comment">// We need to destroy all created sub-communicators before calling MPI_Finalize()</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <a class="code hl_variable" href="namespacedoctest.html#a2be314193d767eb557519868f492cdc3">doctest::sub_comms_by_size</a>.clear();</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  MPI_Finalize();</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>}</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>} <span class="comment">// doctest</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="preprocessor">#else </span><span class="comment">// DOCTEST_CONFIG_IMPLEMENT</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="preprocessor">#include &quot;<a class="code" href="mpi__sub__comm_8h.html">doctest/extensions/mpi_sub_comm.h</a>&quot;</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="preprocessor">#include &lt;exception&gt;</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacedoctest.html">doctest</a> {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="keyword">extern</span> std::unordered_map&lt;int,mpi_sub_comm&gt; <a class="code hl_variable" href="namespacedoctest.html#a2be314193d767eb557519868f492cdc3">sub_comms_by_size</a>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="namespacedoctest.html#abc8d05c3f3012554ddf365d0d68726cf">nb_test_cases_skipped_insufficient_procs</a>;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="namespacedoctest.html#a75102e771fb3746a21a9273e79748e3e">world_size_before_init</a>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="namespacedoctest.html#a43b461984ffead1ccd9e21c64be0c144">   97</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="namespacedoctest.html#a43b461984ffead1ccd9e21c64be0c144">mpi_comm_world_size</a>();</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="namespacedoctest.html#a3cadc91a1955b20cb6b529b0dd0fc069">   99</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="namespacedoctest.html#a3cadc91a1955b20cb6b529b0dd0fc069">mpi_init_thread</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[], <span class="keywordtype">int</span> required_thread_support);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="namespacedoctest.html#abe48bb917f3ad5bb3a129d6b11058bed">  100</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacedoctest.html#abe48bb917f3ad5bb3a129d6b11058bed">mpi_finalize</a>();</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="keyword">template</span>&lt;<span class="keywordtype">int</span> nb_procs, <span class="keyword">class</span> F&gt;</div>
+<div class="foldopen" id="foldopen00103" data-start="{" data-end="}">
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="namespacedoctest.html#a05dbafe13fb331485d308b5c94117bd2">  103</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacedoctest.html#a05dbafe13fb331485d308b5c94117bd2">execute_mpi_test_case</a>(F func) {</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  <span class="keyword">auto</span> it = <a class="code hl_variable" href="namespacedoctest.html#a2be314193d767eb557519868f492cdc3">sub_comms_by_size</a>.find(nb_procs);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  <span class="keywordflow">if</span> (it==end(<a class="code hl_variable" href="namespacedoctest.html#a2be314193d767eb557519868f492cdc3">sub_comms_by_size</a>)) {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keywordtype">bool</span> was_emplaced = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    std::tie(it,was_emplaced) = <a class="code hl_variable" href="namespacedoctest.html#a2be314193d767eb557519868f492cdc3">sub_comms_by_size</a>.emplace(std::make_pair(nb_procs,<a class="code hl_struct" href="structdoctest_1_1mpi__sub__comm.html">mpi_sub_comm</a>(nb_procs)));</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    assert(was_emplaced);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  }</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  <span class="keyword">const</span> <a class="code hl_struct" href="structdoctest_1_1mpi__sub__comm.html">mpi_sub_comm</a>&amp; sub = it-&gt;second;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  <span class="keywordflow">if</span> (sub.<a class="code hl_variable" href="structdoctest_1_1mpi__sub__comm.html#a49ced9b5710939127882e7d8a5d0f43b">comm</a> != MPI_COMM_NULL) {</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    func(sub.<a class="code hl_variable" href="structdoctest_1_1mpi__sub__comm.html#a336b0077bb17427b3df8c04a2e8ad6e6">rank</a>,nb_procs,sub.<a class="code hl_variable" href="structdoctest_1_1mpi__sub__comm.html#a49ced9b5710939127882e7d8a5d0f43b">comm</a>,std::integral_constant&lt;int,nb_procs&gt;{});</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  };</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>}</div>
+</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="keyword">inline</span> <span class="keywordtype">bool</span></div>
+<div class="foldopen" id="foldopen00117" data-start="{" data-end="}">
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="namespacedoctest.html#a76a218693ac1c707f8e4799571229267">  117</a></span><a class="code hl_function" href="namespacedoctest.html#a76a218693ac1c707f8e4799571229267">insufficient_procs</a>(<span class="keywordtype">int</span> test_nb_procs) {</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> world_size = <a class="code hl_function" href="namespacedoctest.html#a43b461984ffead1ccd9e21c64be0c144">mpi_comm_world_size</a>();</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  <span class="keywordtype">bool</span> insufficient = test_nb_procs&gt;world_size;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  <span class="keywordflow">if</span> (insufficient) {</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    ++<a class="code hl_variable" href="namespacedoctest.html#abc8d05c3f3012554ddf365d0d68726cf">nb_test_cases_skipped_insufficient_procs</a>;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  }</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  <span class="keywordflow">return</span> insufficient;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>}</div>
+</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>} <span class="comment">// doctest</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="foldopen" id="foldopen00129" data-start="" data-end="">
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="doctest__mpi_8h.html#a1b1e8fecfca4c9c53f8c39cc71793fa1">  129</a></span><span class="preprocessor">#define DOCTEST_MPI_GEN_ASSERTION(rank_to_test, assertion, ...) \</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="preprocessor">  static_assert(rank_to_test&lt;test_nb_procs_as_int_constant.value,&quot;Trying to assert on a rank greater than the number of procs of the test!&quot;); \</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="preprocessor">  if(rank_to_test == test_rank) assertion(__VA_ARGS__)</span></div>
+</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno"><a class="line" href="doctest__mpi_8h.html#a349e0bf3e930d2b695f6d6bcc5213c7c">  133</a></span><span class="preprocessor">#define DOCTEST_MPI_WARN(rank_to_test, ...)  DOCTEST_MPI_GEN_ASSERTION(rank_to_test,DOCTEST_WARN,__VA_ARGS__)</span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="doctest__mpi_8h.html#a9885fea329e333c6b7f0dccf0f943265">  134</a></span><span class="preprocessor">#define DOCTEST_MPI_CHECK(rank_to_test, ...)  DOCTEST_MPI_GEN_ASSERTION(rank_to_test,DOCTEST_CHECK,__VA_ARGS__)</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="doctest__mpi_8h.html#adbbd0db36fbb3f7b13bbedd7a2579402">  135</a></span><span class="preprocessor">#define DOCTEST_MPI_REQUIRE(rank_to_test, ...)  DOCTEST_MPI_GEN_ASSERTION(rank_to_test,DOCTEST_REQUIRE,__VA_ARGS__)</span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="doctest__mpi_8h.html#adf162cf76e877219fec983117723b2ae">  136</a></span><span class="preprocessor">#define DOCTEST_MPI_WARN_FALSE(rank_to_test, ...)  DOCTEST_MPI_GEN_ASSERTION(rank_to_test,DOCTEST_WARN_FALSE,__VA_ARGS__)</span></div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="doctest__mpi_8h.html#afbec629e82d955ffa05700623b402cc7">  137</a></span><span class="preprocessor">#define DOCTEST_MPI_CHECK_FALSE(rank_to_test, ...)  DOCTEST_MPI_GEN_ASSERTION(rank_to_test,DOCTEST_CHECK_FALSE,__VA_ARGS__)</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="doctest__mpi_8h.html#a6ab79d2efaf16ae6961c0418f9187fb9">  138</a></span><span class="preprocessor">#define DOCTEST_MPI_REQUIRE_FALSE(rank_to_test, ...)  DOCTEST_MPI_GEN_ASSERTION(rank_to_test,DOCTEST_REQUIRE_FALSE,__VA_ARGS__)</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="foldopen" id="foldopen00140" data-start="" data-end="">
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno"><a class="line" href="doctest__mpi_8h.html#a5fb0e49316b585cbec150c87c55cf268">  140</a></span><span class="preprocessor">#define DOCTEST_CREATE_MPI_TEST_CASE(name,nb_procs,func) \</span></div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span><span class="preprocessor">  static void func(DOCTEST_UNUSED int test_rank, DOCTEST_UNUSED int test_nb_procs, DOCTEST_UNUSED MPI_Comm test_comm, DOCTEST_UNUSED std::integral_constant&lt;int,nb_procs&gt;); \</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span><span class="preprocessor">  TEST_CASE(name * doctest::description(&quot;MPI_TEST_CASE&quot;) * doctest::skip(doctest::insufficient_procs(nb_procs))) { \</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span><span class="preprocessor">    doctest::execute_mpi_test_case&lt;nb_procs&gt;(func); \</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span><span class="preprocessor">  } \</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span><span class="preprocessor">  static void func(DOCTEST_UNUSED int test_rank, DOCTEST_UNUSED int test_nb_procs, DOCTEST_UNUSED MPI_Comm test_comm, DOCTEST_UNUSED std::integral_constant&lt;int,nb_procs&gt; test_nb_procs_as_int_constant)</span></div>
+</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>  <span class="comment">// DOC: test_rank, test_nb_procs, and test_comm are available UNDER THESE SPECIFIC NAMES in the body of the unit test</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>  <span class="comment">// DOC: test_nb_procs_as_int_constant is equal to test_nb_procs, but as a compile time value</span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>  <span class="comment">//          (used in CHECK-like macros to assert the checked rank exists)</span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="foldopen" id="foldopen00150" data-start="" data-end="">
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="doctest__mpi_8h.html#a17453f9e65c5915841334f110cc39342">  150</a></span><span class="preprocessor">#define DOCTEST_MPI_TEST_CASE(name,nb_procs) \</span></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span><span class="preprocessor">  DOCTEST_CREATE_MPI_TEST_CASE(name,nb_procs,DOCTEST_ANONYMOUS(DOCTEST_MPI_FUNC))</span></div>
+</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="comment">// == SHORT VERSIONS OF THE MACROS</span></div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span><span class="preprocessor">#if !defined(DOCTEST_CONFIG_NO_SHORT_MACRO_NAMES)</span></div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno"><a class="line" href="doctest__mpi_8h.html#a77741357d8fcc5c8d8e44e53b4bb4f45">  156</a></span><span class="preprocessor">#define MPI_WARN           DOCTEST_MPI_WARN</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno"><a class="line" href="doctest__mpi_8h.html#ad4c11f2e4f10a81ac76e5e24d5dad03f">  157</a></span><span class="preprocessor">#define MPI_CHECK          DOCTEST_MPI_CHECK</span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno"><a class="line" href="doctest__mpi_8h.html#a60d1578d0ac1210a973e301214190742">  158</a></span><span class="preprocessor">#define MPI_REQUIRE        DOCTEST_MPI_REQUIRE</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno"><a class="line" href="doctest__mpi_8h.html#ac7c4f004861dc7f0013ded640196d297">  159</a></span><span class="preprocessor">#define MPI_WARN_FALSE     DOCTEST_MPI_WARN_FALSE</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno"><a class="line" href="doctest__mpi_8h.html#adfdc69638506ac200c73eb106356b9c4">  160</a></span><span class="preprocessor">#define MPI_CHECK_FALSE    DOCTEST_MPI_CHECK_FALSE</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno"><a class="line" href="doctest__mpi_8h.html#a649d92bf658e11b3c147dbf7b44ab43b">  161</a></span><span class="preprocessor">#define MPI_REQUIRE_FALSE  DOCTEST_MPI_REQUIRE_FALSE</span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno"><a class="line" href="doctest__mpi_8h.html#adeb675f0bdbca13fc774b131c5288200">  163</a></span><span class="preprocessor">#define MPI_TEST_CASE      DOCTEST_MPI_TEST_CASE</span></div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span><span class="preprocessor">#endif </span><span class="comment">// DOCTEST_CONFIG_NO_SHORT_MACRO_NAMES</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span><span class="preprocessor">#endif </span><span class="comment">// DOCTEST_CONFIG_IMPLEMENT</span></div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span><span class="preprocessor">#endif </span><span class="comment">// DOCTEST_MPI_H</span></div>
+<div class="ttc" id="adoctest_8cpp_html_aec379da2959e1a4d6d1ca8b957f797d2"><div class="ttname"><a href="doctest_8cpp.html#aec379da2959e1a4d6d1ca8b957f797d2">DOCTEST_INTERNAL_ERROR</a></div><div class="ttdeci">#define DOCTEST_INTERNAL_ERROR(msg)</div><div class="ttdef"><b>Definicja</b> doctest.cpp:211</div></div>
+<div class="ttc" id="ampi__reporter_8h_html"><div class="ttname"><a href="mpi__reporter_8h.html">mpi_reporter.h</a></div></div>
+<div class="ttc" id="ampi__sub__comm_8h_html"><div class="ttname"><a href="mpi__sub__comm_8h.html">mpi_sub_comm.h</a></div></div>
+<div class="ttc" id="anamespacedoctest_html"><div class="ttname"><a href="namespacedoctest.html">doctest</a></div><div class="ttdef"><b>Definicja</b> doctest.h:446</div></div>
+<div class="ttc" id="anamespacedoctest_html_a05dbafe13fb331485d308b5c94117bd2"><div class="ttname"><a href="namespacedoctest.html#a05dbafe13fb331485d308b5c94117bd2">doctest::execute_mpi_test_case</a></div><div class="ttdeci">void execute_mpi_test_case(F func)</div><div class="ttdef"><b>Definicja</b> doctest_mpi.h:103</div></div>
+<div class="ttc" id="anamespacedoctest_html_a2be314193d767eb557519868f492cdc3"><div class="ttname"><a href="namespacedoctest.html#a2be314193d767eb557519868f492cdc3">doctest::sub_comms_by_size</a></div><div class="ttdeci">std::unordered_map&lt; int, mpi_sub_comm &gt; sub_comms_by_size</div></div>
+<div class="ttc" id="anamespacedoctest_html_a3cadc91a1955b20cb6b529b0dd0fc069"><div class="ttname"><a href="namespacedoctest.html#a3cadc91a1955b20cb6b529b0dd0fc069">doctest::mpi_init_thread</a></div><div class="ttdeci">int mpi_init_thread(int argc, char *argv[], int required_thread_support)</div></div>
+<div class="ttc" id="anamespacedoctest_html_a43b461984ffead1ccd9e21c64be0c144"><div class="ttname"><a href="namespacedoctest.html#a43b461984ffead1ccd9e21c64be0c144">doctest::mpi_comm_world_size</a></div><div class="ttdeci">int mpi_comm_world_size()</div></div>
+<div class="ttc" id="anamespacedoctest_html_a75102e771fb3746a21a9273e79748e3e"><div class="ttname"><a href="namespacedoctest.html#a75102e771fb3746a21a9273e79748e3e">doctest::world_size_before_init</a></div><div class="ttdeci">int world_size_before_init</div></div>
+<div class="ttc" id="anamespacedoctest_html_a76a218693ac1c707f8e4799571229267"><div class="ttname"><a href="namespacedoctest.html#a76a218693ac1c707f8e4799571229267">doctest::insufficient_procs</a></div><div class="ttdeci">bool insufficient_procs(int test_nb_procs)</div><div class="ttdef"><b>Definicja</b> doctest_mpi.h:117</div></div>
+<div class="ttc" id="anamespacedoctest_html_abc8d05c3f3012554ddf365d0d68726cf"><div class="ttname"><a href="namespacedoctest.html#abc8d05c3f3012554ddf365d0d68726cf">doctest::nb_test_cases_skipped_insufficient_procs</a></div><div class="ttdeci">int nb_test_cases_skipped_insufficient_procs</div><div class="ttdef"><b>Definicja</b> mpi_reporter.h:15</div></div>
+<div class="ttc" id="anamespacedoctest_html_abe48bb917f3ad5bb3a129d6b11058bed"><div class="ttname"><a href="namespacedoctest.html#abe48bb917f3ad5bb3a129d6b11058bed">doctest::mpi_finalize</a></div><div class="ttdeci">void mpi_finalize()</div></div>
+<div class="ttc" id="astructdoctest_1_1mpi__sub__comm_html"><div class="ttname"><a href="structdoctest_1_1mpi__sub__comm.html">doctest::mpi_sub_comm</a></div><div class="ttdef"><b>Definicja</b> mpi_sub_comm.h:18</div></div>
+<div class="ttc" id="astructdoctest_1_1mpi__sub__comm_html_a336b0077bb17427b3df8c04a2e8ad6e6"><div class="ttname"><a href="structdoctest_1_1mpi__sub__comm.html#a336b0077bb17427b3df8c04a2e8ad6e6">doctest::mpi_sub_comm::rank</a></div><div class="ttdeci">int rank</div><div class="ttdef"><b>Definicja</b> mpi_sub_comm.h:20</div></div>
+<div class="ttc" id="astructdoctest_1_1mpi__sub__comm_html_a49ced9b5710939127882e7d8a5d0f43b"><div class="ttname"><a href="structdoctest_1_1mpi__sub__comm.html#a49ced9b5710939127882e7d8a5d0f43b">doctest::mpi_sub_comm::comm</a></div><div class="ttdeci">MPI_Comm comm</div><div class="ttdef"><b>Definicja</b> mpi_sub_comm.h:21</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_43da05b65ffbb65743beb36240116ac9.html">doctest</a></li><li class="navelem"><a class="el" href="dir_2b8a7629f33b5b764148d7be5ced96bf.html">doctest</a></li><li class="navelem"><a class="el" href="dir_7cc9ca4b33dc5a722dba722a59d1e0fa.html">extensions</a></li><li class="navelem"><a class="el" href="doctest__mpi_8h.html">doctest_mpi.h</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>
