@@ -217,24 +217,6 @@ Atrybuty prywatne</h2></td></tr>
 <tr class="memitem:aaa6b509df52bb177db6cf1051068c067" id="r_aaa6b509df52bb177db6cf1051068c067"><td class="memItemLeft" align="right" valign="top">Json::Value&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa6b509df52bb177db6cf1051068c067">currentSensorData</a></td></tr>
 <tr class="memdesc:aaa6b509df52bb177db6cf1051068c067"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualne dane pomiarowe w formacie JSON.  <br /></td></tr>
 <tr class="separator:aaa6b509df52bb177db6cf1051068c067"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7f4d6e0b6e1289e3cd2d7352062ae42" id="r_af7f4d6e0b6e1289e3cd2d7352062ae42"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af7f4d6e0b6e1289e3cd2d7352062ae42">stationMapMutex</a></td></tr>
-<tr class="memdesc:af7f4d6e0b6e1289e3cd2d7352062ae42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Muteks dla mapy stacji.  <br /></td></tr>
-<tr class="separator:af7f4d6e0b6e1289e3cd2d7352062ae42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a694de269b67f4f3718974ffe820f189f" id="r_a694de269b67f4f3718974ffe820f189f"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a694de269b67f4f3718974ffe820f189f">sensorMapMutex</a></td></tr>
-<tr class="memdesc:a694de269b67f4f3718974ffe820f189f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Muteks dla mapy sensorów.  <br /></td></tr>
-<tr class="separator:a694de269b67f4f3718974ffe820f189f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5858417a2850d1213d0450492bc9dc8" id="r_ac5858417a2850d1213d0450492bc9dc8"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac5858417a2850d1213d0450492bc9dc8">valuesMutex</a></td></tr>
-<tr class="memdesc:ac5858417a2850d1213d0450492bc9dc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Muteks dla wartoœci pomiarowych.  <br /></td></tr>
-<tr class="separator:ac5858417a2850d1213d0450492bc9dc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb7a0ee628bd5b132542770bf26b9e73" id="r_adb7a0ee628bd5b132542770bf26b9e73"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb7a0ee628bd5b132542770bf26b9e73">stationsLoading</a></td></tr>
-<tr class="memdesc:adb7a0ee628bd5b132542770bf26b9e73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flaga informuj¹ca czy stacje s¹ w trakcie ³adowania.  <br /></td></tr>
-<tr class="separator:adb7a0ee628bd5b132542770bf26b9e73"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaecc422f4d1595f65607536a8e8dda21" id="r_aaecc422f4d1595f65607536a8e8dda21"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaecc422f4d1595f65607536a8e8dda21">sensorsLoading</a></td></tr>
-<tr class="memdesc:aaecc422f4d1595f65607536a8e8dda21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flaga informuj¹ca czy sensory s¹ w trakcie ³adowania.  <br /></td></tr>
-<tr class="separator:aaecc422f4d1595f65607536a8e8dda21"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a757f7d6ca3a0e7fd6b9b5efcbd48f1c8" id="r_a757f7d6ca3a0e7fd6b9b5efcbd48f1c8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a757f7d6ca3a0e7fd6b9b5efcbd48f1c8">measurementsLoading</a></td></tr>
-<tr class="memdesc:a757f7d6ca3a0e7fd6b9b5efcbd48f1c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flaga informuj¹ca czy pomiary s¹ w trakcie ³adowania.  <br /></td></tr>
-<tr class="separator:a757f7d6ca3a0e7fd6b9b5efcbd48f1c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Opis szczegÃ³Å‚owy</h2>
 <div class="textblock"><p>G³ówna klasa okna aplikacji, dziedziczy po <code>wxFrame</code>. </p>
@@ -839,30 +821,6 @@ Atrybuty prywatne</h2></td></tr>
 
 </div>
 </div>
-<a id="a757f7d6ca3a0e7fd6b9b5efcbd48f1c8" name="a757f7d6ca3a0e7fd6b9b5efcbd48f1c8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a757f7d6ca3a0e7fd6b9b5efcbd48f1c8">&#9670;&#160;</a></span>measurementsLoading</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool MainFrame::measurementsLoading</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Flaga informuj¹ca czy pomiary s¹ w trakcie ³adowania. </p>
-
-</div>
-</div>
 <a id="a0f25063c86baa81b7c794becd64dfc68" name="a0f25063c86baa81b7c794becd64dfc68"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0f25063c86baa81b7c794becd64dfc68">&#9670;&#160;</a></span>plotPanel</h2>
 
@@ -1007,54 +965,6 @@ Atrybuty prywatne</h2></td></tr>
 
 </div>
 </div>
-<a id="a694de269b67f4f3718974ffe820f189f" name="a694de269b67f4f3718974ffe820f189f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a694de269b67f4f3718974ffe820f189f">&#9670;&#160;</a></span>sensorMapMutex</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::mutex MainFrame::sensorMapMutex</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Muteks dla mapy sensorów. </p>
-
-</div>
-</div>
-<a id="aaecc422f4d1595f65607536a8e8dda21" name="aaecc422f4d1595f65607536a8e8dda21"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaecc422f4d1595f65607536a8e8dda21">&#9670;&#160;</a></span>sensorsLoading</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool MainFrame::sensorsLoading</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Flaga informuj¹ca czy sensory s¹ w trakcie ³adowania. </p>
-
-</div>
-</div>
 <a id="a429a57f3997d93308f51bc34a45401be" name="a429a57f3997d93308f51bc34a45401be"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a429a57f3997d93308f51bc34a45401be">&#9670;&#160;</a></span>startDateChoice</h2>
 
@@ -1103,54 +1013,6 @@ Atrybuty prywatne</h2></td></tr>
 
 </div>
 </div>
-<a id="af7f4d6e0b6e1289e3cd2d7352062ae42" name="af7f4d6e0b6e1289e3cd2d7352062ae42"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af7f4d6e0b6e1289e3cd2d7352062ae42">&#9670;&#160;</a></span>stationMapMutex</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::mutex MainFrame::stationMapMutex</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Muteks dla mapy stacji. </p>
-
-</div>
-</div>
-<a id="adb7a0ee628bd5b132542770bf26b9e73" name="adb7a0ee628bd5b132542770bf26b9e73"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb7a0ee628bd5b132542770bf26b9e73">&#9670;&#160;</a></span>stationsLoading</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool MainFrame::stationsLoading</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Flaga informuj¹ca czy stacje s¹ w trakcie ³adowania. </p>
-
-</div>
-</div>
 <a id="a575cc3c411185b59e507467a371e92c0" name="a575cc3c411185b59e507467a371e92c0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a575cc3c411185b59e507467a371e92c0">&#9670;&#160;</a></span>timestamps</h2>
 
@@ -1196,30 +1058,6 @@ Atrybuty prywatne</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Wszystkie dane pomiarowe przed filtrowaniem. </p>
-
-</div>
-</div>
-<a id="ac5858417a2850d1213d0450492bc9dc8" name="ac5858417a2850d1213d0450492bc9dc8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac5858417a2850d1213d0450492bc9dc8">&#9670;&#160;</a></span>valuesMutex</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::mutex MainFrame::valuesMutex</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Muteks dla wartoœci pomiarowych. </p>
 
 </div>
 </div>

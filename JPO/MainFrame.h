@@ -54,16 +54,6 @@ private:
     std::vector<std::pair<wxString, double>> values; ///< Wszystkie dane pomiarowe przed filtrowaniem.
     Json::Value currentSensorData; ///< Aktualne dane pomiarowe w formacie JSON.
 
-    // Muteksy do synchronizacji dostêpu do danych wspó³dzielonych
-    std::mutex stationMapMutex; ///< Muteks dla mapy stacji.
-    std::mutex sensorMapMutex; ///< Muteks dla mapy sensorów.
-    std::mutex valuesMutex; ///< Muteks dla wartoœci pomiarowych.
-
-    // Flagi stanu operacji
-    bool stationsLoading; ///< Flaga informuj¹ca czy stacje s¹ w trakcie ³adowania.
-    bool sensorsLoading; ///< Flaga informuj¹ca czy sensory s¹ w trakcie ³adowania.
-    bool measurementsLoading; ///< Flaga informuj¹ca czy pomiary s¹ w trakcie ³adowania.
-
     /**
      * @brief Pobiera dane o jakoœci powietrza z serwera.
      *

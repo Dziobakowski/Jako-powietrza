@@ -81,19 +81,7 @@ std\+::vector$<$ wx\+String $>$ \mbox{\hyperlink{class_main_frame_a575cc3c411185
 std\+::vector$<$ std\+::pair$<$ wx\+String, double $>$ $>$ \mbox{\hyperlink{class_main_frame_ab585105ec6f2382aded506db7a5cd9b2}{values}}
 \begin{DoxyCompactList}\small\item\em Wszystkie dane pomiarowe przed filtrowaniem. \end{DoxyCompactList}\item 
 Json\+::\+Value \mbox{\hyperlink{class_main_frame_aaa6b509df52bb177db6cf1051068c067}{current\+Sensor\+Data}}
-\begin{DoxyCompactList}\small\item\em Aktualne dane pomiarowe w formacie JSON. \end{DoxyCompactList}\item 
-std\+::mutex \mbox{\hyperlink{class_main_frame_af7f4d6e0b6e1289e3cd2d7352062ae42}{station\+Map\+Mutex}}
-\begin{DoxyCompactList}\small\item\em Muteks dla mapy stacji. \end{DoxyCompactList}\item 
-std\+::mutex \mbox{\hyperlink{class_main_frame_a694de269b67f4f3718974ffe820f189f}{sensor\+Map\+Mutex}}
-\begin{DoxyCompactList}\small\item\em Muteks dla mapy sensorów. \end{DoxyCompactList}\item 
-std\+::mutex \mbox{\hyperlink{class_main_frame_ac5858417a2850d1213d0450492bc9dc8}{values\+Mutex}}
-\begin{DoxyCompactList}\small\item\em Muteks dla wartoœci pomiarowych. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{class_main_frame_adb7a0ee628bd5b132542770bf26b9e73}{stations\+Loading}}
-\begin{DoxyCompactList}\small\item\em Flaga informuj¹ca czy stacje s¹ w trakcie ³adowania. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{class_main_frame_aaecc422f4d1595f65607536a8e8dda21}{sensors\+Loading}}
-\begin{DoxyCompactList}\small\item\em Flaga informuj¹ca czy sensory s¹ w trakcie ³adowania. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{class_main_frame_a757f7d6ca3a0e7fd6b9b5efcbd48f1c8}{measurements\+Loading}}
-\begin{DoxyCompactList}\small\item\em Flaga informuj¹ca czy pomiary s¹ w trakcie ³adowania. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Aktualne dane pomiarowe w formacie JSON. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Opis szczegÃ³Å‚owy}
@@ -442,16 +430,6 @@ wx\+Button\texorpdfstring{$\ast$}{*} Main\+Frame\+::load\+Button\hspace{0.3cm}{\
 
 Przycisk do ³adowania danych z pliku JSON. 
 
-\Hypertarget{class_main_frame_a757f7d6ca3a0e7fd6b9b5efcbd48f1c8}\index{MainFrame@{MainFrame}!measurementsLoading@{measurementsLoading}}
-\index{measurementsLoading@{measurementsLoading}!MainFrame@{MainFrame}}
-\doxysubsubsection{\texorpdfstring{measurementsLoading}{measurementsLoading}}
-{\footnotesize\ttfamily \label{class_main_frame_a757f7d6ca3a0e7fd6b9b5efcbd48f1c8} 
-bool Main\+Frame\+::measurements\+Loading\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Flaga informuj¹ca czy pomiary s¹ w trakcie ³adowania. 
-
 \Hypertarget{class_main_frame_a0f25063c86baa81b7c794becd64dfc68}\index{MainFrame@{MainFrame}!plotPanel@{plotPanel}}
 \index{plotPanel@{plotPanel}!MainFrame@{MainFrame}}
 \doxysubsubsection{\texorpdfstring{plotPanel}{plotPanel}}
@@ -512,26 +490,6 @@ std\+::map$<$wx\+String, int$>$ Main\+Frame\+::sensor\+Map\hspace{0.3cm}{\ttfami
 
 Mapa stanowisk pomiarowych i ich identyfikatorów. 
 
-\Hypertarget{class_main_frame_a694de269b67f4f3718974ffe820f189f}\index{MainFrame@{MainFrame}!sensorMapMutex@{sensorMapMutex}}
-\index{sensorMapMutex@{sensorMapMutex}!MainFrame@{MainFrame}}
-\doxysubsubsection{\texorpdfstring{sensorMapMutex}{sensorMapMutex}}
-{\footnotesize\ttfamily \label{class_main_frame_a694de269b67f4f3718974ffe820f189f} 
-std\+::mutex Main\+Frame\+::sensor\+Map\+Mutex\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Muteks dla mapy sensorów. 
-
-\Hypertarget{class_main_frame_aaecc422f4d1595f65607536a8e8dda21}\index{MainFrame@{MainFrame}!sensorsLoading@{sensorsLoading}}
-\index{sensorsLoading@{sensorsLoading}!MainFrame@{MainFrame}}
-\doxysubsubsection{\texorpdfstring{sensorsLoading}{sensorsLoading}}
-{\footnotesize\ttfamily \label{class_main_frame_aaecc422f4d1595f65607536a8e8dda21} 
-bool Main\+Frame\+::sensors\+Loading\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Flaga informuj¹ca czy sensory s¹ w trakcie ³adowania. 
-
 \Hypertarget{class_main_frame_a429a57f3997d93308f51bc34a45401be}\index{MainFrame@{MainFrame}!startDateChoice@{startDateChoice}}
 \index{startDateChoice@{startDateChoice}!MainFrame@{MainFrame}}
 \doxysubsubsection{\texorpdfstring{startDateChoice}{startDateChoice}}
@@ -552,26 +510,6 @@ std\+::map$<$wx\+String, int$>$ Main\+Frame\+::station\+Map\hspace{0.3cm}{\ttfam
 
 Mapa stacji i ich identyfikatorów. 
 
-\Hypertarget{class_main_frame_af7f4d6e0b6e1289e3cd2d7352062ae42}\index{MainFrame@{MainFrame}!stationMapMutex@{stationMapMutex}}
-\index{stationMapMutex@{stationMapMutex}!MainFrame@{MainFrame}}
-\doxysubsubsection{\texorpdfstring{stationMapMutex}{stationMapMutex}}
-{\footnotesize\ttfamily \label{class_main_frame_af7f4d6e0b6e1289e3cd2d7352062ae42} 
-std\+::mutex Main\+Frame\+::station\+Map\+Mutex\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Muteks dla mapy stacji. 
-
-\Hypertarget{class_main_frame_adb7a0ee628bd5b132542770bf26b9e73}\index{MainFrame@{MainFrame}!stationsLoading@{stationsLoading}}
-\index{stationsLoading@{stationsLoading}!MainFrame@{MainFrame}}
-\doxysubsubsection{\texorpdfstring{stationsLoading}{stationsLoading}}
-{\footnotesize\ttfamily \label{class_main_frame_adb7a0ee628bd5b132542770bf26b9e73} 
-bool Main\+Frame\+::stations\+Loading\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Flaga informuj¹ca czy stacje s¹ w trakcie ³adowania. 
-
 \Hypertarget{class_main_frame_a575cc3c411185b59e507467a371e92c0}\index{MainFrame@{MainFrame}!timestamps@{timestamps}}
 \index{timestamps@{timestamps}!MainFrame@{MainFrame}}
 \doxysubsubsection{\texorpdfstring{timestamps}{timestamps}}
@@ -591,16 +529,6 @@ std\+::vector$<$std\+::pair$<$wx\+String, double$>$ $>$ Main\+Frame\+::values\hs
 
 
 Wszystkie dane pomiarowe przed filtrowaniem. 
-
-\Hypertarget{class_main_frame_ac5858417a2850d1213d0450492bc9dc8}\index{MainFrame@{MainFrame}!valuesMutex@{valuesMutex}}
-\index{valuesMutex@{valuesMutex}!MainFrame@{MainFrame}}
-\doxysubsubsection{\texorpdfstring{valuesMutex}{valuesMutex}}
-{\footnotesize\ttfamily \label{class_main_frame_ac5858417a2850d1213d0450492bc9dc8} 
-std\+::mutex Main\+Frame\+::values\+Mutex\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Muteks dla wartoœci pomiarowych. 
 
 
 

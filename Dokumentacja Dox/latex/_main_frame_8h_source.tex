@@ -42,35 +42,25 @@
 \DoxyCodeLine{00054\ \ \ \ \ std::vector<std::pair<wxString,\ double>>\ \mbox{\hyperlink{class_main_frame_ab585105ec6f2382aded506db7a5cd9b2}{values}};\ }
 \DoxyCodeLine{00055\ \ \ \ \ Json::Value\ \mbox{\hyperlink{class_main_frame_aaa6b509df52bb177db6cf1051068c067}{currentSensorData}};\ }
 \DoxyCodeLine{00056\ }
-\DoxyCodeLine{00057\ \ \ \ \ \textcolor{comment}{//\ Muteksy\ do\ synchronizacji\ dostêpu\ do\ danych\ wspó³dzielonych}}
-\DoxyCodeLine{00058\ \ \ \ \ std::mutex\ \mbox{\hyperlink{class_main_frame_af7f4d6e0b6e1289e3cd2d7352062ae42}{stationMapMutex}};\ }
-\DoxyCodeLine{00059\ \ \ \ \ std::mutex\ \mbox{\hyperlink{class_main_frame_a694de269b67f4f3718974ffe820f189f}{sensorMapMutex}};\ }
-\DoxyCodeLine{00060\ \ \ \ \ std::mutex\ \mbox{\hyperlink{class_main_frame_ac5858417a2850d1213d0450492bc9dc8}{valuesMutex}};\ }
-\DoxyCodeLine{00061\ }
-\DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{//\ Flagi\ stanu\ operacji}}
-\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_main_frame_adb7a0ee628bd5b132542770bf26b9e73}{stationsLoading}};\ }
-\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_main_frame_aaecc422f4d1595f65607536a8e8dda21}{sensorsLoading}};\ }
-\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_main_frame_a757f7d6ca3a0e7fd6b9b5efcbd48f1c8}{measurementsLoading}};\ }
-\DoxyCodeLine{00066\ }
-\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_frame_a242c8190443f5149e2d277f263bba99b}{PobierzDane}}();}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_frame_a242c8190443f5149e2d277f263bba99b}{PobierzDane}}();}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_frame_ab57830e125abe1d6299a9eb5eb7092dc}{FiltrujStacje}}(wxCommandEvent\&\ event);}
 \DoxyCodeLine{00075\ }
-\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_frame_ab57830e125abe1d6299a9eb5eb7092dc}{FiltrujStacje}}(wxCommandEvent\&\ event);}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_frame_aacc88f4a5f97cbd0e84f1ff2550cdf77}{WyswietlStanowiska}}(wxCommandEvent\&\ event);}
 \DoxyCodeLine{00085\ }
-\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_frame_aacc88f4a5f97cbd0e84f1ff2550cdf77}{WyswietlStanowiska}}(wxCommandEvent\&\ event);}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_frame_a1c35270fa8b48c39e00632a40e913076}{WyswietlDanePomiarowe}}(wxCommandEvent\&\ event);}
 \DoxyCodeLine{00095\ }
-\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_frame_a1c35270fa8b48c39e00632a40e913076}{WyswietlDanePomiarowe}}(wxCommandEvent\&\ event);}
-\DoxyCodeLine{00105\ }
-\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_frame_abedf1166fbb744e1f2d835d42055b118}{AnalizujDane}}(\textcolor{keyword}{const}\ Json::Value\&\ data);\ }
-\DoxyCodeLine{00116\ }
-\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_frame_aef3d76628efa0328cbdc4b25ade1bd19}{PotwierdzZakres}}(wxCommandEvent\&\ event);}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_frame_abedf1166fbb744e1f2d835d42055b118}{AnalizujDane}}(\textcolor{keyword}{const}\ Json::Value\&\ data);\ }
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_frame_aef3d76628efa0328cbdc4b25ade1bd19}{PotwierdzZakres}}(wxCommandEvent\&\ event);}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_frame_a290cd87cd021d0d05f21d50191355a6d}{ZapiszDane}}(wxCommandEvent\&\ event);}
 \DoxyCodeLine{00128\ }
-\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_frame_a290cd87cd021d0d05f21d50191355a6d}{ZapiszDane}}(wxCommandEvent\&\ event);}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_frame_a97006013de74404bd13b5de71fbf0852}{ZaladujDane}}(wxCommandEvent\&\ event);}
 \DoxyCodeLine{00138\ }
-\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_frame_a97006013de74404bd13b5de71fbf0852}{ZaladujDane}}(wxCommandEvent\&\ event);}
-\DoxyCodeLine{00148\ }
-\DoxyCodeLine{00154\ \ \ \ \ wxString\ \mbox{\hyperlink{class_main_frame_a0e7f98fcb096bc7648020c35d28b74a7}{GenerujNazwePliku}}();}
-\DoxyCodeLine{00155\ \};}
-\DoxyCodeLine{00156\ }
-\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00144\ \ \ \ \ wxString\ \mbox{\hyperlink{class_main_frame_a0e7f98fcb096bc7648020c35d28b74a7}{GenerujNazwePliku}}();}
+\DoxyCodeLine{00145\ \};}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}
