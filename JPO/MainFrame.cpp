@@ -118,9 +118,19 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title, 
 
     PobierzDane();
 
-    // Tworzymy obiekt ikony
-    wxIcon myIcon("C:\\Users\\Dziobakowski\\source\\repos\\JPO z chujowym wykresem\\JPO\\cloud.ico", wxBITMAP_TYPE_ICO);
-    SetIcon(myIcon);
+    // Ikona
+    wxIcon myIcon;
+    if (wxFileExists("cloud.ico")) {
+        myIcon.LoadFile("cloud.ico", wxBITMAP_TYPE_ICO);
+        SetIcon(myIcon);
+    }
+    else if (wxFileExists("./cloud.ico")) {
+        myIcon.LoadFile("./cloud.ico", wxBITMAP_TYPE_ICO);
+        SetIcon(myIcon);
+    }
+    else {
+        wxLogWarning("Nie mo¿na znaleŸæ pliku ikony cloud.ico");
+    }
 }
 
 /**

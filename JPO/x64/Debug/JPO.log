@@ -1,7 +1,7 @@
 ﻿  App.cpp
   Curl.cpp
   MainFrame.cpp
-C:\Users\Dziobakowski\source\repos\JPO z chujowym wykresem\JPO\MainFrame.cpp(155,27): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Dziobakowski\source\repos\JPO z chujowym wykresem\JPO\MainFrame.cpp(165,27): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
   PlotPanel.cpp
   Generowanie kodu...
   JPO.vcxproj -> C:\Users\Dziobakowski\source\repos\JPO z chujowym wykresem\x64\Debug\JPO.exe
